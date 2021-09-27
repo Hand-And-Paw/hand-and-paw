@@ -1,0 +1,28 @@
+# https://github.com/JamesIves/github-pages-deploy-action
+
+name: Build & Deploy
+
+on:
+  pull_request:
+    branches: [master, main]
+    types: [closed]
+  push:
+    branches: [master, main]
+
+jobs:
+  build-and-deploy:
+    # https://stackoverflow.com/a/67833464
+    if: ${{ github.event.pull_request.merged }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run build:client
+
+      - name: Deploy 🚀
+        run: echo deploy this repo to heroku
