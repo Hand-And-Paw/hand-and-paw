@@ -1,1 +1,1 @@
-# Hand an Paw
+# Hand and Paw
