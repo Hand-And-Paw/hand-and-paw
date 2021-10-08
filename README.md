@@ -1,3 +1,4 @@
+
 # Hand an Paw
 
 - [What is 'Hand and Paw'?](#about)
@@ -49,8 +50,3 @@
 **UX/UI designer:** [Oksana](https://github.com/OksanaShulha), [Zehra](https://github.com/zehrayelkenci)<br>
 
 **Dev-Ops:** [Alina](https://github.com/alinamarasca)
-
-
-
-
-
