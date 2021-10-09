@@ -1,8 +1,6 @@
-"use strict";
-
 const fs = require("fs");
 const path = require("path");
-const db = require("./db-connection");
+require("./db-connection");
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -19,34 +17,34 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use(
-	morgan("combined", {
-		stream: fs.createWriteStream(path.join(__dirname, "access.log"), {
-			flags: "a",
-		}),
-	})
+  morgan("combined", {
+    stream: fs.createWriteStream(path.join(__dirname, "access.log"), {
+      flags: "a",
+    }),
+  })
 );
 
 if (config.MODE === "development") {
-	app.use(morgan("dev"));
+  app.use(morgan("dev"));
 }
 
 app.get("/", (req, res) => {
-	res.send("API! go to `/api`");
+  res.send("API! go to `/api`");
 });
 app.use("/api", routes);
 
 /* eslint-disable */
 app.use((err, req, res, next) => {
-	console.error(err.stack);
-	res.status(500).end();
+  console.error(err.stack);
+  res.status(500).end();
 });
 
 app.listen(config.PORT, (err) => {
-	if (err) {
-		console.error(err);
-	} else {
-		console.log(
-			`listening at http://localhost:${config.PORT} (${config.MODE} mode)`
-		);
-	}
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(
+      `listening at http://localhost:${config.PORT} (${config.MODE} mode)`
+    );
+  }
 });

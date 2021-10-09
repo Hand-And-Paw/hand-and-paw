@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
-const express = require('express');
+const express = require("express");
 
 const routes = express.Router();
 
 // require routes files
-const resourceRoutes = require('./resource');
+const personSubscription = require("./person-subscription");
 
 // use them with this router
-routes.use('/resource', resourceRoutes);
+routes.use("/personSubscription", personSubscription);
 
 // export the routes
 module.exports = routes;
