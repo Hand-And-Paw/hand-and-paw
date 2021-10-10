@@ -10,8 +10,8 @@ const personSubscriptionManager = {
     };
     return databaseAccess.create(subscriber);
   },
-  updateSubscriber: async (newData) => {
-    const updateSubscriber = await databaseAccess.update(newData);
+  updateSubscriber: async (newData, avatar) => {
+    const updateSubscriber = await databaseAccess.update(newData, avatar);
     return updateSubscriber;
   },
   removeSubscriber: async (subscriberId) => {

@@ -9,26 +9,24 @@ const databaseAccess = {
     return newSubscriber;
   },
 
-  update: async (newData) => {
+  update: async (newData, userAvatar) => {
     console.log(newData);
-    const subscriber = await Subscriber.find({ _id: newData._id });
+    const subscriber = await Subscriber.find({ _id: newData.id });
 
     if (subscriber.length === 0) {
       throw new Error(`Cannot update user, id doesn't exist`);
     }
     const subscriberUpdated = Subscriber.updateOne(
-      { _id: newData._id },
+      { _id: newData.id },
       {
         $set: {
           personName: newData.name,
           surname: newData.surname,
           password: newData.password,
           location: newData.location,
-          contact: {
-            phone: newData.phone,
-            email: newData.email,
-          },
-          avatar: newData.avatar,
+          phone: newData.phone,
+          email: newData.email,
+          avatar: userAvatar,
           updateDate: Date.now(),
         },
       }

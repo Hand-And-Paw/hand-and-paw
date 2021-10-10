@@ -1,15 +1,12 @@
 const multer = require("multer");
-const path = require("path");
 
 const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    callback(
-      null,
-      path.join(__dirname, "..", "..", "client", "public", "avatar-img")
-    );
+  destination: (req, file, cb) => {
+    cb(null, "./uploads/");
   },
-  filename: (req, file, callback) => {
-    callback(null, file.originalname);
+  filename: (req, file, cb) => {
+    // eslint-disable-next-line prefer-template
+    cb(null, file.originalname);
   },
 });
 

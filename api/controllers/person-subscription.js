@@ -1,4 +1,6 @@
+/* eslint-disable no-buffer-constructor */
 /* eslint-disable no-underscore-dangle */
+
 const subscriberManager = require("../business-logic/person-subscription");
 const hashCreator = require("../utils/hash");
 const databaseAccess = require("../data-access/person-subscription");
@@ -26,12 +28,15 @@ const personSubscription = {
       console.log(req.file);
       const { id } = req.params;
       const newData = req.body;
-      if (newData._id !== id) {
-        throw Error("Cannot change channel ID after creation!");
+      if (newData.id !== id) {
+        throw Error("Cannot change subscriber ID after creation!");
       }
+      const userAvatar = req.file.path;
       const updateSubscriber = await subscriberManager.updateSubscriber(
-        newData
+        newData,
+        userAvatar
       );
+
       res.status(200).send(updateSubscriber);
     } catch (error) {
       res.status(401).json({ message: error.message });
@@ -59,7 +64,6 @@ const personSubscription = {
       }
       // check if email exist
       const dbSubscriber = await databaseAccess.findUserByEmail(userEmail);
-      console.log(dbSubscriber);
       if (dbSubscriber.length !== 0) {
         throw new Error(
           `Cannot create user with the email: ${dbSubscriber[0].email}, already exists`

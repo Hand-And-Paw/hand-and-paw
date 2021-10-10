@@ -15,6 +15,7 @@ const subscribersSchema = new mongoose.Schema({
   },
   avatar: {
     type: String,
+    default: "",
   },
   subscribeDate: {
     type: Date,
