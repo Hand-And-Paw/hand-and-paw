@@ -2,8 +2,8 @@
 const express = require("express");
 const multer = require("multer");
 
-const storageAvatar = require("../middleware/multer-upload-avatar");
-const personRegisterController = require("../controllers/person-subscription");
+const storageAvatar = require("../../middleware/multer-upload-avatar");
+const personRegisterController = require("../../controllers/person-subscription");
 
 const personRegister = express.Router();
 const imageFilter = (req, file, callback) => {
@@ -17,7 +17,7 @@ const imageFilter = (req, file, callback) => {
 const upload = multer({
   storage: storageAvatar,
   limits: {
-    fileSize: 1024 * 1024 * 5,
+    fileSize: 1024 * 1024,
   },
   fileFilter: imageFilter,
 });

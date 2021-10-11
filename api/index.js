@@ -28,11 +28,13 @@ if (config.MODE === "development") {
   app.use(morgan("dev"));
 }
 
+if (config.MODE === "default") {
+  app.use("/uploads", express.static("uploads"));
+}
 app.get("/", (req, res) => {
   res.send("API! go to `/api`");
 });
 app.use("/api", routes);
-
 /* eslint-disable */
 app.use((err, req, res, next) => {
   console.error(err.stack);
