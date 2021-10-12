@@ -15,10 +15,16 @@
 "Hand and Paw" is created to promote animal adoption in Belgium.
 
 * it helps people to search for an animal they want
+  * people can find shelters by location
+  * people can find and add to favorites animals the concider for adoption
 * it helps shelters to get more attention
-* it helps newcomers to find animal shelters
-* ....
-
+   * we aggregate all shelters in one app
+   * people can register new shelter
+   * shelters can create and account and add animals  which will be found in a global pet search
+* it helps newcomers with adoption process in Belgium
+   * the website provides information about adoption process in Belgium
+   * the website is in English
+   
 ## Screenshots
 
 ## Features
