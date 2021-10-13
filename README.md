@@ -30,6 +30,7 @@
 ## Features
 
 ## License
+MIT License
 
 ## Tools and Technologies
 
@@ -39,6 +40,7 @@
 * CSS
 * JavaScript
 ### Back-End
+
 ### Dev-OPs
  * Heroku
  * 
