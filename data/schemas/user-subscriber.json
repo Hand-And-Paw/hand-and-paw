@@ -1,0 +1,129 @@
+{
+  "title": "user Subscriber",
+  "description": "Subscription to have access to publish pet and add favorite",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "String"
+    },
+    "email": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "repeatPassword": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "favorites": {
+      "type": "array",
+      "description": "favorite pets",
+      "items": {
+        "type": "String",
+        "description": "the id of the pet"
+      }
+    },
+    "publicAccess": {
+      "type": "object",
+      "description": "days and hours of public access to shelters",
+      "properties": {
+        "monday": {
+          "type": "object",
+          "properties": {
+            "access": {
+              "type": "boolean"
+            },
+            "hours": {
+              "type": "string"
+            }
+          },
+          "tuesday": {
+            "type": "object",
+            "properties": {
+              "access": {
+                "type": "boolean"
+              },
+              "hours": {
+                "type": "string"
+              }
+            }
+          },
+          "wednesday": {
+            "type": "object",
+            "properties": {
+              "access": {
+                "type": "boolean"
+              },
+              "hours": {
+                "type": "string"
+              }
+            }
+          },
+          "thursday": {
+            "type": "object",
+            "properties": {
+              "access": {
+                "type": "boolean"
+              },
+              "hours": {
+                "type": "string"
+              }
+            }
+          },
+          "friday": {
+            "type": "object",
+            "properties": {
+              "access": {
+                "type": "boolean"
+              },
+              "hours": {
+                "type": "string"
+              }
+            }
+          },
+          "saturday": {
+            "type": "object",
+            "properties": {
+              "access": {
+                "type": "boolean"
+              },
+              "hours": {
+                "type": "string"
+              }
+            }
+          },
+          "sunday": {
+            "type": "object",
+            "properties": {
+              "access": {
+                "type": "boolean"
+              },
+              "hours": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "publishPet": {
+      "type": "string"
+    }
+  },
+  "required": ["id", "name", "email", "password", "repeatPassword"]
+}

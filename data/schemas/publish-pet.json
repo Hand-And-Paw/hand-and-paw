@@ -1,0 +1,65 @@
+{
+  "title": "pet publication",
+  "description": "publish pet",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "breed": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "character": {
+      "type": "string"
+    },
+    "dateBirth": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "webSite": {
+      "type": "string"
+    },
+    "describePet": {
+      "type": "string"
+    },
+    "pictures": {
+      "type": "array",
+      "description": "array of stored items by path, maximum 4 images to upload",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "userId",
+    "name",
+    "type",
+    "breed",
+    "gender",
+    "character",
+    "dateBirth",
+    "location",
+    "phone",
+    "webSite",
+    "describePet",
+    "pictures"
+  ]
+}
