@@ -1,9 +1,10 @@
+/* eslint-disable no-undefined */
 /* eslint-disable no-buffer-constructor */
 /* eslint-disable no-underscore-dangle */
 
-const subscriberManager = require("../business-logic/person-subscription");
+const subscriberManager = require("../business-logic/subscriber");
 const hashCreator = require("../utils/hash");
-const databaseAccess = require("../data-access/person-subscription");
+const databaseAccess = require("../data-access/subscriber");
 
 const personSubscription = {
   getAllUsers: async (req, res) => {
@@ -25,26 +26,43 @@ const personSubscription = {
   },
   updateUser: async (req, res) => {
     try {
-      console.log(req.file);
       const { id } = req.params;
       const newData = req.body;
       if (newData.id !== id) {
         throw Error("Cannot change subscriber ID after creation!");
       }
-      const userAvatar = req.file.path;
-      const updateSubscriber = await subscriberManager.updateSubscriber(
-        newData,
-        userAvatar
-      );
-
-      res.status(200).send(updateSubscriber);
+      // check old password before update the newOne
+      if (newData.newPassword && newData.oldPassword) {
+        const subscriber = await subscriberManager.getSubscriber(id);
+        const newPassword = hashCreator(req.body.newPassword);
+        const oldPassword = hashCreator(req.body.oldPassword);
+        if (subscriber[0].password !== oldPassword) {
+          throw Error("Old password incorrect!");
+        } else {
+          newData.password = newPassword;
+        }
+      }
+      // if there is an image uploaded
+      if (req.file !== undefined) {
+        await subscriberManager.updateSubscriber(newData, req.file.filename);
+        const subscriberUpdated = await subscriberManager.getSubscriber(id);
+        res.status(200).send(subscriberUpdated);
+        return;
+      }
+      await subscriberManager.updateSubscriber(newData);
+      // return updated object
+      const subscriberUpdated = await subscriberManager.getSubscriber(id);
+      res.status(200).send(subscriberUpdated);
     } catch (error) {
+      // if any error ,make sure multer doesn't store image
+      await subscriberManager.deleteImage(req.file.filename);
       res.status(401).json({ message: error.message });
     }
   },
   deleteUser: async (req, res) => {
     try {
       const { id } = req.params;
+
       const userDeleted = await subscriberManager.removeSubscriber(id);
       res.status(200).send(userDeleted);
     } catch (error) {

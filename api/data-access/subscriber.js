@@ -10,7 +10,6 @@ const databaseAccess = {
   },
 
   update: async (newData, userAvatar) => {
-    console.log(newData);
     const subscriber = await Subscriber.find({ _id: newData.id });
 
     if (subscriber.length === 0) {
@@ -20,14 +19,43 @@ const databaseAccess = {
       { _id: newData.id },
       {
         $set: {
-          personName: newData.name,
-          surname: newData.surname,
+          name: newData.name,
           password: newData.password,
           location: newData.location,
           phone: newData.phone,
           email: newData.email,
           avatar: userAvatar,
           updateDate: Date.now(),
+          publicAccess: {
+            monday: {
+              access: newData["monday-access"],
+              hours: newData["monday-hours"],
+            },
+            tuesday: {
+              access: newData["tuesday-access"],
+              hours: newData["tuesday-hours"],
+            },
+            wednesday: {
+              access: newData["wednesday-access"],
+              hours: newData["wednesday-hours"],
+            },
+            thursday: {
+              access: newData["thursday-access"],
+              hours: newData["thursday.hours"],
+            },
+            friday: {
+              access: newData["friday-access"],
+              hours: newData["friday-hours"],
+            },
+            saturday: {
+              access: newData["saturday-access"],
+              hours: newData["saturday-hours"],
+            },
+            sunday: {
+              access: newData["sunday-access"],
+              hours: newData["sunday-hours"],
+            },
+          },
         },
       }
     );
@@ -50,9 +78,8 @@ const databaseAccess = {
     const subscriber = await Subscriber.find({ _id: id });
 
     if (subscriber.length === 0) {
-      throw new Error(`Cannot find user, id doesn't exist`);
+      throw Error(`Cannot find user, id doesn't exist`);
     }
-
     return subscriber;
   },
 
@@ -68,30 +95,6 @@ const databaseAccess = {
     const subscriber = await Subscriber.find({ email: userEmail }, "email");
     return subscriber;
   },
-
-  //   findUserLog: async (userOrEmail, password) => {
-  //     const database = await db;
-  //     const queryString = `SELECT username,email,password,id FROM user`;
-  //     const emails = await database.all(queryString);
-
-  //     // eslint-disable-next-line consistent-return
-  //     const userMatch = emails.find((entry) => {
-  //       if (
-  //         (userOrEmail === entry.username && password !== entry.password) ||
-  //         (userOrEmail === entry.email && password !== entry.password)
-  //       ) {
-  //         throw new Error("Password Incorrect");
-  //       }
-  //       if (
-  //         (userOrEmail === entry.username && password === entry.password) ||
-  //         (userOrEmail === entry.email && password === entry.password)
-  //       ) {
-  //         return entry;
-  //       }
-  //     });
-
-  //     return userMatch;
-  //   },
 };
 
 module.exports = databaseAccess;

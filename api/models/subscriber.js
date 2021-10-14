@@ -1,21 +1,27 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 const subscribersSchema = new mongoose.Schema({
-  personName: {
-    type: String,
-    required: true,
-  },
-  password: {
+  name: {
     type: String,
     required: true,
   },
   email: {
     type: String,
     required: true,
+    validate: {
+      validator: validator.isEmail,
+      message: "{VALUE} is not a valid email",
+      isAsync: false,
+    },
+    unique: true,
   },
-  avatar: {
+  password: {
     type: String,
-    default: "",
+    required: true,
+  },
+  repeatPassword: {
+    type: String,
   },
   subscribeDate: {
     type: Date,
@@ -24,24 +30,56 @@ const subscribersSchema = new mongoose.Schema({
   },
   updateDate: {
     type: Date,
-    default: null,
-  },
-  surname: {
-    type: String,
-    default: null,
   },
   phone: {
     type: String,
-    default: null,
+    validate: {
+      validator: validator.isMobilePhone,
+      message: "{VALUE} is not a valid phone",
+      isAsync: false,
+    },
   },
   location: {
     type: String,
-    default: null,
   },
-  animalForAdoption: {
-    type: Boolean,
-    default: false,
+  website: {
+    type: String,
   },
+  avatar: {
+    type: String,
+  },
+  favorites: [String],
+  publicAccess: {
+    monday: {
+      access: Boolean,
+      hours: String,
+    },
+    tuesday: {
+      access: Boolean,
+      hours: String,
+    },
+    wednesday: {
+      access: Boolean,
+      hours: String,
+    },
+    thursday: {
+      access: Boolean,
+      hours: String,
+    },
+    friday: {
+      access: Boolean,
+      hours: String,
+    },
+    saturday: {
+      access: Boolean,
+      hours: String,
+    },
+    sunday: {
+      access: Boolean,
+      hours: String,
+    },
+  },
+  publishPet: [String],
 });
 
 module.exports = mongoose.model("Subscriber", subscribersSchema);

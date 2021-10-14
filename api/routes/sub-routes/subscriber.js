@@ -1,26 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 const express = require("express");
-const multer = require("multer");
+const upload = require("../../middleware/multer-upload-avatar");
 
-const storageAvatar = require("../../middleware/multer-upload-avatar");
-const personRegisterController = require("../../controllers/person-subscription");
+const personRegisterController = require("../../controllers/subscriber");
 
 const personRegister = express.Router();
-const imageFilter = (req, file, callback) => {
-  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-    callback(null, true);
-  } else {
-    callback(null, false);
-  }
-};
-
-const upload = multer({
-  storage: storageAvatar,
-  limits: {
-    fileSize: 1024 * 1024,
-  },
-  fileFilter: imageFilter,
-});
 
 personRegister.get("/", personRegisterController.getAllUsers);
 personRegister.get("/:id", personRegisterController.getUser);

@@ -1,13 +1,31 @@
 const multer = require("multer");
+const uuid = require("uuid");
+const path = require("path");
 
-const storage = multer.diskStorage({
+const storageImage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "./uploads/");
+    cb(null, "./client/public/avatar-uploads/");
   },
   filename: (req, file, cb) => {
     // eslint-disable-next-line prefer-template
-    cb(null, file.originalname);
+    cb(null, uuid.v4() + path.extname(file.originalname));
   },
 });
 
-module.exports = storage;
+const imageFilter = (req, file, callback) => {
+  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+    callback(null, true);
+  } else {
+    callback(null, false);
+  }
+};
+
+const upload = multer({
+  storage: storageImage,
+  limits: {
+    fileSize: 1024 * 1024,
+  },
+  fileFilter: imageFilter,
+});
+
+module.exports = upload;
