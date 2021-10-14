@@ -18,6 +18,9 @@
     "repeatPassword": {
       "type": "string"
     },
+    "oldPassword": {
+      "type": "string"
+    },
     "phone": {
       "type": "string"
     },
@@ -122,7 +125,12 @@
       }
     },
     "publishPet": {
-      "type": "string"
+      "type": "Array",
+      "description": "array of pets id published by the user",
+      "items": {
+        "type": "string",
+        "description": "pet's id"
+      }
     }
   },
   "required": ["id", "name", "email", "password", "repeatPassword"]
