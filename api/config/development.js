@@ -1,3 +1,4 @@
 module.exports = {
-  MODE: 'development',
+  MODE: "development",
+  DB_PATH: "mongodb://localhost/handAndPaw",
 };
