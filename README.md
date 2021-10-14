@@ -35,6 +35,8 @@ MIT License
 ## Tools and Technologies
 
 ### UX/UI
+Figma
+
 ### Front-End
 * HTML
 * CSS
@@ -43,7 +45,7 @@ MIT License
 
 ### Dev-OPs
  * Heroku
- * 
+ 
 ## Contribute
 
 ## Contact
