@@ -28,9 +28,6 @@ if (config.MODE === "development") {
   app.use(morgan("dev"));
 }
 
-if (config.MODE === "default") {
-  app.use("/uploads", express.static("uploads"));
-}
 app.get("/", (req, res) => {
   res.send("API! go to `/api`");
 });
