@@ -20,9 +20,6 @@ const subscribersSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  repeatPassword: {
-    type: String,
-  },
   subscribeDate: {
     type: Date,
     required: true,

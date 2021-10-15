@@ -12,6 +12,9 @@
     "email": {
       "type": "string"
     },
+    "repeatEmail": {
+      "type": "string"
+    },
     "password": {
       "type": "string"
     },
