@@ -46,6 +46,12 @@ const personSubscription = {
       if (newData.email !== newData.repeatEmail) {
         throw Error("Emails do not match!");
       }
+      const foundEmail = await databaseAccess.findUserByEmail(newData.email);
+      if (foundEmail.length !== 0) {
+        throw new Error(
+          `Cannot update email, the email: ${foundEmail[0].email}, already exists`
+        );
+      }
 
       // if there is an image uploaded
       if (req.file !== undefined) {
