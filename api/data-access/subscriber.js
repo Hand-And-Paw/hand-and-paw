@@ -95,6 +95,13 @@ const databaseAccess = {
     const subscriber = await Subscriber.find({ email: userEmail }, "email");
     return subscriber;
   },
+  findUserLog: async (userEmail, userPassword) => {
+    const subscriber = await Subscriber.find({
+      email: userEmail,
+      password: userPassword,
+    });
+    return subscriber;
+  },
 };
 
 module.exports = databaseAccess;
