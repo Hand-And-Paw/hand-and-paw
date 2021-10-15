@@ -42,6 +42,11 @@ const personSubscription = {
           newData.password = newPassword;
         }
       }
+      // check if user update the email
+      if (newData.email !== newData.repeatEmail) {
+        throw Error("Emails do not match!");
+      }
+
       // if there is an image uploaded
       if (req.file !== undefined) {
         await subscriberManager.updateSubscriber(newData, req.file.filename);
@@ -55,7 +60,9 @@ const personSubscription = {
       res.status(200).send(subscriberUpdated);
     } catch (error) {
       // if any error ,make sure multer doesn't store image
-      await subscriberManager.deleteImage(req.file.filename);
+      if (req.file) {
+        await subscriberManager.deleteImage(req.file.filename);
+      }
       res.status(401).json({ message: error.message });
     }
   },
