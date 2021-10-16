@@ -5,6 +5,7 @@
 const subscriberManager = require("../business-logic/subscriber");
 const hashCreator = require("../utils/hash");
 const databaseAccess = require("../data-access/subscriber");
+const deleteAvatar = require("../utils/delete-avatar");
 
 const personSubscription = {
   getAllUsers: async (req, res) => {
@@ -67,7 +68,7 @@ const personSubscription = {
     } catch (error) {
       // if any error ,make sure multer doesn't store image
       if (req.file) {
-        await subscriberManager.deleteImage(req.file.filename);
+        await deleteAvatar.deleteImageAsync(req.file.filename);
       }
       res.status(401).json({ message: error.message });
     }

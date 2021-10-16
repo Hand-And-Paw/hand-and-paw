@@ -1,7 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-const fs = require("fs");
-const path = require("path");
-
+const deleteAvatar = require("../utils/delete-avatar");
 const databaseAccess = require("../data-access/subscriber");
 
 const personSubscriptionManager = {
@@ -17,49 +15,17 @@ const personSubscriptionManager = {
   updateSubscriber: async (newData, avatar) => {
     if (avatar) {
       const subscriber = await databaseAccess.read(newData.id);
-      if (subscriber[0].avatar) {
-        fs.unlink(
-          path.join(
-            __dirname,
-            "..",
-            "..",
-            "client",
-            "public",
-            "avatar-uploads",
-            `${subscriber[0].avatar}`
-          ),
-          (err) => {
-            if (err) console.log(err);
-            else {
-              console.log("\nDeleted file: example_file.txt");
-            }
-          }
-        );
-      }
+      if (subscriber[0].avatar)
+        deleteAvatar.deleteImageSync(subscriber[0].avatar);
+
+      const updateSubscriber = await databaseAccess.update(newData, avatar);
+      return updateSubscriber;
     }
-    const updateSubscriber = await databaseAccess.update(newData, avatar);
-    return updateSubscriber;
   },
   removeSubscriber: async (subscriberId) => {
     const subscriber = await databaseAccess.read(subscriberId);
     if (subscriber[0].avatar) {
-      fs.unlink(
-        path.join(
-          __dirname,
-          "..",
-          "..",
-          "client",
-          "public",
-          "avatar-uploads",
-          `${subscriber[0].avatar}`
-        ),
-        (err) => {
-          if (err) console.log(err);
-          else {
-            console.log("\nDeleted file: example_file.txt");
-          }
-        }
-      );
+      deleteAvatar.deleteImageAsync(subscriber[0].avatar);
     }
     const removeSubscriber = await databaseAccess.remove(subscriberId);
     return removeSubscriber;
@@ -71,26 +37,6 @@ const personSubscriptionManager = {
   },
   getAllSubscribers: async () => {
     return databaseAccess.all();
-  },
-  deleteImage: async (fileName) => {
-    await fs.unlink(
-      path.join(
-        __dirname,
-        "..",
-        "..",
-        "client",
-        "public",
-        "avatar-uploads",
-        `${fileName}`
-      ),
-      (err) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(`\nDeleted file: ${fileName}`);
-        }
-      }
-    );
   },
 };
 
