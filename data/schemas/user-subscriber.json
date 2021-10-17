@@ -127,7 +127,7 @@
         }
       }
     },
-    "publishPet": {
+    "publishedAnimals": {
       "type": "Array",
       "description": "array of pets id published by the user",
       "items": {
