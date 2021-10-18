@@ -1,4 +1,4 @@
-How data is stored in teh system.
+How data is stored in the system.
 
 # Data Access
 

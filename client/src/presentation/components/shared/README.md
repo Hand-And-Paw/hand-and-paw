@@ -1,0 +1,1 @@
+Shared components - those which are used on a few pages.
