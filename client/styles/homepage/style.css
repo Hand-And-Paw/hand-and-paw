@@ -1,0 +1,29 @@
+:root {
+  --yellow:#F5D042;
+  --purple:#793093;
+  --primary-bg:#fff;
+  --secondary-bg:#F2F7FD;
+  --font-color: #1E0B25;
+  }
+
+* {
+box-sizing: border-box;
+}
+
+body{
+  background-color: var(--primary-bg);
+  color:var(--font-color);
+}
+
+.container{
+  max-width:90%;
+  padding:1rem;
+}
+
+.secondary{
+  background-color: var(--secondary-bg);
+}
+
+.shadow{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
