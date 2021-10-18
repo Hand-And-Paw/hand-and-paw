@@ -1,0 +1,1 @@
+Here goes functions which compile the page.
