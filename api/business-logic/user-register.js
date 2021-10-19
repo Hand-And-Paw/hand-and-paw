@@ -16,15 +16,16 @@ const userSubscriptionManager = {
     if (avatar) {
       const user = await databaseAccess.read(newData.id);
       if (user[0].avatar) deleteAvatar.deleteImageSync(user[0].avatar);
-
       const updateUser = await databaseAccess.update(newData, avatar);
       return updateUser;
     }
+    const updateUser = await databaseAccess.update(newData);
+    return updateUser;
   },
   removeUser: async (userId) => {
     const user = await databaseAccess.read(userId);
     if (user[0].avatar) {
-      deleteAvatar.deleteImageAsync(user[0].avatar);
+      deleteAvatar.deleteImageSync(user[0].avatar);
     }
     const removeUser = await databaseAccess.remove(userId);
     return removeUser;

@@ -11,7 +11,6 @@ const databaseAccess = {
       _id: savedUser._id,
       name: savedUser.name,
       email: savedUser.email,
-      registerDate: savedUser.registerDate,
     };
     return returnUser;
   },
