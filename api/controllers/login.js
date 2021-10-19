@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const hashCreator = require("../utils/hash");
-const databaseAccess = require("../data-access/subscriber");
+const databaseAccess = require("../data-access/user-register");
 
 const loginController = {
   addUserLogin: async (req, res) => {
