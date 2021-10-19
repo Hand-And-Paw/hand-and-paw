@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const performFetch = async (path) => {
-  const URL = `http://localhost:8080/api/${path}`;
+  const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {

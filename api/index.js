@@ -28,6 +28,8 @@ if (config.MODE === "development") {
   app.use(morgan("dev"));
 }
 
+app.use("/", express.static(path.join(__dirname, "..", config.STATIC_DIR)));
+
 app.get("/", (req, res) => {
   res.send("API! go to `/api`");
 });
