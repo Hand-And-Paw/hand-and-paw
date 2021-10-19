@@ -53,5 +53,9 @@
     "stylelint-config-standard": "^22.0.0",
     "supertest": "^4.0.2",
     "vite": "^2.6.10"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   }
 }
