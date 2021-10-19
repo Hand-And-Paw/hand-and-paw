@@ -10,7 +10,7 @@ During the lecture the endpoints of the messages repo should be implemented in o
 
 Follow the steps explained by [mongodb](https://docs.mongodb.com/manual/administration/install-community/)
 
-### In the repo
+### In the Hand and Paw app repo
 
 - `npm install`
 - **run the server**
@@ -18,16 +18,16 @@ Follow the steps explained by [mongodb](https://docs.mongodb.com/manual/administ
 - **run the front end**
   - `npm run dev:client` - deploy the front end using `vite` package
 
-### Using the app
+### Using the API
 
 - **from postman**
   - `http://localhost:xxxx/api` - the main entry point to the API
 - **from the browser**
-  - `http://localhost:xxxx/` serves `/api/<rout-api>`
+  - `http://localhost:xxxx/` serves `/api/<route-api>`
 
 ### Fetch data from the API
 
-Must run at the same time the server: `npm run dev:api` and the the client `npm run dev:client`
+You must run at the same time the server: `npm run dev:api` and the the client `npm run dev:client`(in different VSCode windows)
 
 ## The API Documentation
 
@@ -70,9 +70,9 @@ Creates a new user.
 
 ## Fetch users
 
-Get all users from the collection
+Get all users from the collection.
 
-> To use this rout, you must register and them login, once logged in in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
 
 Returns json data about a single channel.
 
@@ -106,11 +106,11 @@ Returns json data about a single channel.
 
 ---
 
-## fetch one user
+## Fetch one user
 
 Get one user from the system.
 
-> To use this rout, you must register and them login, once logged in in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -146,11 +146,11 @@ Get one user from the system.
 
 ---
 
-## delete user
+## Delete user
 
-Removes a user of the dataBase.
+Remove a user of the dataBase.
 
-> To use this rout, you must register and them login, once logged in in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -178,7 +178,7 @@ Removes a user of the dataBase.
 
 ## Update Channel
 
-> To use this rout, you must register and them login, once logged in in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
