@@ -1,21 +1,21 @@
 /* eslint-disable no-underscore-dangle */
 
-const Subscriber = require("../models/subscriber");
+const Users = require("../models/user-register");
 
 const databaseAccess = {
   create: async (newUser) => {
-    const subscriber = new Subscriber(newUser);
-    const newSubscriber = await subscriber.save();
-    return newSubscriber;
+    const subscriber = new Users(newUser);
+    const newUsers = await subscriber.save();
+    return newUsers;
   },
 
   update: async (newData, userAvatar) => {
-    const subscriber = await Subscriber.find({ _id: newData.id });
+    const subscriber = await Users.find({ _id: newData.id });
 
     if (subscriber.length === 0) {
       throw new Error(`Cannot update user, id doesn't exist`);
     }
-    const subscriberUpdated = Subscriber.updateOne(
+    const subscriberUpdated = Users.updateOne(
       { _id: newData.id },
       {
         $set: {
@@ -63,7 +63,7 @@ const databaseAccess = {
   },
 
   remove: async (id) => {
-    let removeUser = await Subscriber.deleteOne({ _id: id });
+    let removeUser = await Users.deleteOne({ _id: id });
     if (removeUser.deletedCount === 0) {
       throw new Error(`Cannot delete user, id doesn't exist`);
     }
@@ -75,7 +75,7 @@ const databaseAccess = {
   },
 
   read: async (id = "") => {
-    const subscriber = await Subscriber.find({ _id: id });
+    const subscriber = await Users.find({ _id: id });
 
     if (subscriber.length === 0) {
       throw Error(`Cannot find user, id doesn't exist`);
@@ -84,19 +84,19 @@ const databaseAccess = {
   },
 
   all: async () => {
-    let subscribers = await Subscriber.find();
+    let subscribers = await Users.find();
     if (subscribers.length === 0) {
-      subscribers = `the are not subscribers in person-subscription collection`;
+      subscribers = `there are not users in users collection`;
     }
     return subscribers;
   },
 
   findUserByEmail: async (userEmail) => {
-    const subscriber = await Subscriber.find({ email: userEmail }, "email");
+    const subscriber = await Users.find({ email: userEmail }, "email");
     return subscriber;
   },
   findUserLog: async (userEmail, userPassword) => {
-    const subscriber = await Subscriber.find({
+    const subscriber = await Users.find({
       email: userEmail,
       password: userPassword,
     });

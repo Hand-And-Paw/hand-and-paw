@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
-const subscribersSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -79,4 +79,4 @@ const subscribersSchema = new mongoose.Schema({
   publishPet: [String],
 });
 
-module.exports = mongoose.model("Subscriber", subscribersSchema);
+module.exports = mongoose.model("Users", userSchema);

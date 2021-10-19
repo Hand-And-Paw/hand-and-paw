@@ -2,16 +2,16 @@
 /* eslint-disable no-buffer-constructor */
 /* eslint-disable no-underscore-dangle */
 
-const subscriberManager = require("../business-logic/subscriber");
+const userManager = require("../business-logic/user-register");
 const hashCreator = require("../utils/hash");
-const databaseAccess = require("../data-access/subscriber");
+const databaseAccess = require("../data-access/user-register");
 const deleteAvatar = require("../utils/delete-avatar");
 
-const personSubscription = {
+const userRegister = {
   getAllUsers: async (req, res) => {
     try {
-      const subscribers = await subscriberManager.getAllSubscribers();
-      res.status(200).send(subscribers);
+      const users = await userManager.getAllUsers();
+      res.status(200).send(users);
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
@@ -19,8 +19,8 @@ const personSubscription = {
   getUser: async (req, res) => {
     try {
       const { id } = req.params;
-      const subscriber = await subscriberManager.getSubscriber(id);
-      res.status(200).send(subscriber);
+      const user = await userManager.getUser(id);
+      res.status(200).send(user);
     } catch (error) {
       res.status(401).json({ message: error.message });
     }
@@ -30,14 +30,14 @@ const personSubscription = {
       const { id } = req.params;
       const newData = req.body;
       if (newData.id !== id) {
-        throw Error("Cannot change subscriber ID after creation!");
+        throw Error("Cannot change user ID after creation!");
       }
       // check old password before update the newOne
       if (newData.newPassword && newData.oldPassword) {
-        const subscriber = await subscriberManager.getSubscriber(id);
+        const user = await userManager.getUser(id);
         const newPassword = hashCreator(req.body.newPassword);
         const oldPassword = hashCreator(req.body.oldPassword);
-        if (subscriber[0].password !== oldPassword) {
+        if (user[0].password !== oldPassword) {
           throw Error("Old password incorrect!");
         } else {
           newData.password = newPassword;
@@ -56,15 +56,15 @@ const personSubscription = {
 
       // if there is an image uploaded
       if (req.file !== undefined) {
-        await subscriberManager.updateSubscriber(newData, req.file.filename);
-        const subscriberUpdated = await subscriberManager.getSubscriber(id);
-        res.status(200).send(subscriberUpdated);
+        await userManager.updateUser(newData, req.file.filename);
+        const userUpdated = await userManager.getUser(id);
+        res.status(200).send(userUpdated);
         return;
       }
-      await subscriberManager.updateSubscriber(newData);
+      await userManager.updateUser(newData);
       // return updated object
-      const subscriberUpdated = await subscriberManager.getSubscriber(id);
-      res.status(200).send(subscriberUpdated);
+      const userUpdated = await userManager.getUser(id);
+      res.status(200).send(userUpdated);
     } catch (error) {
       // if any error ,make sure multer doesn't store image
       if (req.file) {
@@ -77,7 +77,7 @@ const personSubscription = {
     try {
       const { id } = req.params;
 
-      const userDeleted = await subscriberManager.removeSubscriber(id);
+      const userDeleted = await userManager.removeUser(id);
       res.status(200).send(userDeleted);
     } catch (error) {
       res.status(500).json({ message: error.message });
@@ -95,10 +95,10 @@ const personSubscription = {
         throw Error("passwords are not equal!");
       }
       // check if email exist
-      const dbSubscriber = await databaseAccess.findUserByEmail(userEmail);
-      if (dbSubscriber.length !== 0) {
+      const dbUser = await databaseAccess.findUserByEmail(userEmail);
+      if (dbUser.length !== 0) {
         throw new Error(
-          `Cannot create user with the email: ${dbSubscriber[0].email}, already exists`
+          `Cannot create user with the email: ${dbUser[0].email}, already exists`
         );
       }
       const newUser = {
@@ -106,13 +106,13 @@ const personSubscription = {
         password: userPassword,
         email: userEmail,
       };
-      const newSubscription = await subscriberManager.createSubscriber(newUser);
+      const newRegister = await userManager.createUser(newUser);
 
-      res.status(201).json(newSubscription);
+      res.status(201).json(newRegister);
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
   },
 };
 
-module.exports = personSubscription;
+module.exports = userRegister;
