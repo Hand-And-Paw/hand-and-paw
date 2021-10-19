@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  subscribeDate: {
+  registerDate: {
     type: Date,
     required: true,
     default: Date.now,

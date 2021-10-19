@@ -4,9 +4,16 @@ const Users = require("../models/user-register");
 
 const databaseAccess = {
   create: async (newUser) => {
-    const subscriber = new Users(newUser);
-    const newUsers = await subscriber.save();
-    return newUsers;
+    const user = new Users(newUser);
+    const savedUser = await user.save();
+
+    const returnUser = {
+      _id: savedUser._id,
+      name: savedUser.name,
+      email: savedUser.email,
+      registerDate: savedUser.registerDate,
+    };
+    return returnUser;
   },
 
   update: async (newData, userAvatar) => {
