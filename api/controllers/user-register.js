@@ -58,12 +58,13 @@ const userRegister = {
       if (req.file !== undefined) {
         await userManager.updateUser(newData, req.file.filename);
         const userUpdated = await userManager.getUser(id);
+        userUpdated[0].password = undefined;
         res.status(200).send(userUpdated);
         return;
       }
       await userManager.updateUser(newData);
-      // return updated object
       const userUpdated = await userManager.getUser(id);
+      userUpdated[0].password = undefined;
       res.status(200).send(userUpdated);
     } catch (error) {
       // if any error ,make sure multer doesn't store image
