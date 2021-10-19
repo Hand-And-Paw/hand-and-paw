@@ -1,1 +1,1 @@
-web: node client/src/presentation/init/index.js
+web: node api/index.js
