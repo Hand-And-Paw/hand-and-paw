@@ -31,6 +31,11 @@ You must run at the same time the server: `npm run dev:api` and the the client `
 
 ## The API Documentation
 
+### Routes
+
+- [Users](#users)
+- [animals](#animals)
+
 ### Users
 
 #### Create new User
@@ -174,9 +179,9 @@ Remove a user of the dataBase.
     }
   ```
 
-  ***
+---
 
-## Update Channel
+## Update User
 
 > To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
 
@@ -186,40 +191,43 @@ Remove a user of the dataBase.
 
 - **Method:**
 
-  `PUT`
+  `POST`
 
 - **URL Params**
 
   **Required:**
 
-  `id= string`
+  `i`
 
 - **Body**
 
 Multiform data
 
-id:616ed72339ecbbf9b4c1c0b5
-name:rafael
-location:location phote
-phone:0471758204
-email:abcd@hyf.com
-repeatEmail:abcd@hyf.com
-newPassword:hello
-oldPassword:hello123
-monday-access:true
-monday-hours:8:00
-tuesday-access:true
-tuesday-hours:9:00 to 18:00
-wednesday-access:true
-wednesday-hours:9:00 to 18:00
-thursday-access:true
-thursday-hours:9:00 to 18:00
-friday-access:true
-friday-hours:9:00 to 18:00
-saturday-access:true
-saturday-hours:9:00 to 18:00
-sunday-access:true
-sunday-hours:9:00 to 18:00
+| key              | value                    | type    |
+| ---------------- | ------------------------ | ------- |
+| id               | 616ed72339ecbbf9b4c1c0b5 | text    |
+| name             | rafael                   | text    |
+| location         | location phote           | text    |
+| phone            | 0471758204               | text    |
+| email            | abcd@hyf.com             | text    |
+| repeatEmail      | abcd@hyf.com             | text    |
+| newPassword      | hello                    | text    |
+| oldPassword      | hello123                 | text    |
+| monday-access    | true                     | boolean |
+| monday-hours     | 8:00                     | text    |
+| tuesday-access   | true                     | boolean |
+| tuesday-hours    | 9:00 to 18:00            | text    |
+| wednesday-access | true                     | boolean |
+| wednesday-hours  | 9:00 to 18:00            | text    |
+| thursday-access  | true                     | boolean |
+| thursday-hours   | 9:00 to 18:00            | text    |
+| friday-access    | true                     | boolean |
+| friday-hours     | 9:00 to 18:00            | text    |
+| saturday-access  | true                     | boolean |
+| saturday-hours   | 9:00 to 18:00            | text    |
+| sunday-access    | true                     | boolean |
+| sunday-hours     | 9:00 to 18:00            | text    |
+| avatar           | profile.jpg              | file    |
 
 - **Result:**
 
@@ -271,3 +279,266 @@ sunday-hours:9:00 to 18:00
   ```
 
 ---
+
+### Animals
+
+#### Create new animal
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+Creates a new user.
+
+- **URL**
+
+  /api/publish-animal
+
+- **Method:**
+
+  `POST`
+
+- **required:**
+
+  `userId, name, type, breed, gender, character, dateBirth, location, phone, webSite, describeAnimal, pictures`
+
+- **Body**
+
+Multiform data
+
+| key            | value                    | type |
+| -------------- | ------------------------ | ---- |
+| userId         | 616fc83826985b2f4d966763 | text |
+| name           | canelo                   | text |
+| type           | dog                      | text |
+| breed          | cocker                   | text |
+| gender         | male                     | text |
+| character      | angry                    | text |
+| dateBirth      | 18/12/15                 | text |
+| location       | guanare                  | text |
+| phone          | 6584564564               | text |
+| webSite        | www.dfss.com             | text |
+| describeAnimal | fdsfdsfdsf dsf           | text |
+| picture1       | dog1.jpg                 | file |
+| picture2       | dog2.jpg                 | file |
+| picture3       | dog3.jpg                 | file |
+| picture4       | dog4.jpg                 | file |
+
+- **return:**
+
+  ```js
+  {
+    "userId": "616fc83826985b2f4d966763",
+    "name": "canelo",
+    "type": "lion",
+    "breed": "cocker",
+    "gender": "male",
+    "character": "angry",
+    "dateBirth": "18/12/15",
+    "location": "guanare",
+    "phone": "6584564564",
+    "webSite": "www.dfss.com",
+    "describeAnimal": "fdsfdsfdsf dsf
+    "pictures": [
+        "bfc8a5bb-8ecd-416b-8da1-80793f300c19.jpg",
+        "2e1100b5-6536-4fdb-9a5e-7018a97fdaa7.jpg",
+        "10c94ae4-f58a-48aa-b17b-3b71260ffde9.jpg",
+        "1f9e71ad-00f4-4299-8995-7c2b9b24bf74.jpg"
+    ],
+    "_id": "616fc88526985b2f4d966767",
+    "publishDate": "2021-10-20T07:43:01.071Z",
+    "__v": 0
+  }
+  ```
+
+---
+
+## Fetch animals
+
+Get all users from the collection.
+
+> no login or register required
+
+Returns json data about a single channel.
+
+- **URL**
+
+  /api/publish-animal
+
+- **Method:**
+
+`GET`
+
+- **Result:**
+
+```js
+[
+  {
+    "userId": "616fc83826985b2f4d966763",
+    "name": "canelo",
+    "type": "lion",
+    "breed": "cocker",
+    "gender": "male",
+    "character": "angry",
+    "dateBirth": "18/12/15",
+    "location": "guanare",
+    "phone": "6584564564",
+    "webSite": "www.dfss.com",
+    "describeAnimal": "fdsfdsfdsf dsf
+    "pictures": [
+        "bfc8a5bb-8ecd-416b-8da1-80793f300c19.jpg",
+        "2e1100b5-6536-4fdb-9a5e-7018a97fdaa7.jpg",
+        "10c94ae4-f58a-48aa-b17b-3b71260ffde9.jpg",
+        "1f9e71ad-00f4-4299-8995-7c2b9b24bf74.jpg"
+    ],
+    "_id": "616fc88526985b2f4d966767",
+    "publishDate": "2021-10-20T07:43:01.071Z",
+    "__v": 0
+  }
+]
+```
+
+---
+
+## Fetch one animal
+
+Get one user from the system.
+
+No registration or authorization required
+
+- **URL**
+
+  /api/publish-animal/:id
+
+- **Method:**
+
+  `GET`
+
+- **URL Params**
+
+  **Required:**
+
+  `id = string`
+
+- **Result:**
+
+  ```js
+  {
+    "userId": "616fc83826985b2f4d966763",
+    "name": "canelo",
+    "type": "lion",
+    "breed": "cocker",
+    "gender": "male",
+    "character": "angry",
+    "dateBirth": "18/12/15",
+    "location": "guanare",
+    "phone": "6584564564",
+    "webSite": "www.dfss.com",
+    "describeAnimal": "fdsfdsfdsf dsf
+    "pictures": [
+        "bfc8a5bb-8ecd-416b-8da1-80793f300c19.jpg",
+        "2e1100b5-6536-4fdb-9a5e-7018a97fdaa7.jpg",
+        "10c94ae4-f58a-48aa-b17b-3b71260ffde9.jpg",
+        "1f9e71ad-00f4-4299-8995-7c2b9b24bf74.jpg"
+    ],
+    "_id": "616fc88526985b2f4d966767",
+    "publishDate": "2021-10-20T07:43:01.071Z",
+    "__v": 0
+  }
+  ```
+
+---
+
+## Delete Animal
+
+Remove an animal of the dataBase.
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/publish-animal/:id
+
+- **Method:**
+
+  `DELETE`
+
+  **Required:**
+
+  `id = string`s
+
+- **Result:**
+
+  ```js
+    }
+     "message":"Animal, with the id: '616fc5693e31fe2c1f5629a0' removed successfully"
+    }
+  ```
+
+---
+
+## Update Animal
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/publish-animal/:id
+
+- **Method:**
+
+  `PUT`
+
+- **URL Params**
+
+  **Required:**
+
+  `id, userId`
+
+- **Body**
+
+Multiform data
+
+| key            | value                    | type |
+| -------------- | ------------------------ | ---- |
+| userId         | 616fc83826985b2f4d966763 | text |
+| name           | canelo                   | text |
+| type           | dog                      | text |
+| breed          | cocker                   | text |
+| gender         | male                     | text |
+| character      | angry                    | text |
+| dateBirth      | 18/12/15                 | text |
+| location       | guanare                  | text |
+| phone          | 6584564564               | text |
+| webSite        | www.dfss.com             | text |
+| describeAnimal | fdsfdsfdsf dsf           | text |
+| picture1       | cat1.jpg                 | file |
+| picture2       | cat2.jpg                 | file |
+| picture3       | cat3.jpg                 | file |
+| picture4       | cat4.jpg                 | file |
+
+- **Result:**
+
+  ```js
+  {
+    "userId": "616fc83826985b2f4d966763",
+    "name": "canelo",
+    "type": "cat",
+    "breed": "cocker",
+    "gender": "male",
+    "character": "angry",
+    "dateBirth": "18/12/15",
+    "location": "guanare",
+    "phone": "6584564564",
+    "webSite": "www.dfss.com",
+    "describeAnimal": "fdsfdsfdsf dsf
+    "pictures": [
+        "bfc8a5bb-8ecd-416b-8da1-80793f300c19.jpg",
+        "2e1100b5-6536-4fdb-9a5e-7018a97fdaa7.jpg",
+        "10c94ae4-f58a-48aa-b17b-3b71260ffde9.jpg",
+        "1f9e71ad-00f4-4299-8995-7c2b9b24bf74.jpg"
+    ],
+    "_id": "616fc88526985b2f4d966767",
+    "publishDate": "2021-10-20T07:43:01.071Z",
+    "__v": 0
+  }
+  ];
+  ```

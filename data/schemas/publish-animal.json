@@ -1,6 +1,6 @@
 {
-  "title": "pet publication",
-  "description": "publish pet",
+  "title": "animal publication",
+  "description": "publish animal",
   "type": "object",
   "properties": {
     "_id": {
@@ -36,7 +36,7 @@
     "webSite": {
       "type": "string"
     },
-    "describePet": {
+    "describeAnimal": {
       "type": "string"
     },
     "pictures": {
@@ -59,7 +59,7 @@
     "location",
     "phone",
     "webSite",
-    "describePet",
+    "describeAnimal",
     "pictures"
   ]
 }

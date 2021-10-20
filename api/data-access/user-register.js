@@ -96,6 +96,13 @@ const databaseAccess = {
     }
     return subscribers;
   },
+  updateUserPublication: async (animalId, userId) => {
+    const publishedAnimals = Users.updateOne(
+      { _id: userId },
+      { $push: { publishedAnimals: animalId } }
+    );
+    return publishedAnimals;
+  },
 
   findUserByEmail: async (userEmail) => {
     const subscriber = await Users.find({ email: userEmail }, "email");

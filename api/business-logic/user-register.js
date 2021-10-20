@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-const deleteAvatar = require("../utils/delete-avatar");
+const deleteAvatar = require("../utils/delete-image");
 const databaseAccess = require("../data-access/user-register");
 
 const userSubscriptionManager = {
@@ -15,7 +15,9 @@ const userSubscriptionManager = {
   updateUser: async (newData, avatar) => {
     if (avatar) {
       const user = await databaseAccess.read(newData.id);
-      if (user[0].avatar) deleteAvatar.deleteImageSync(user[0].avatar);
+      if (user[0].avatar)
+        deleteAvatar.deleteImageSync(user[0].avatar, "avatar-uploads");
+
       const updateUser = await databaseAccess.update(newData, avatar);
       return updateUser;
     }
@@ -25,7 +27,7 @@ const userSubscriptionManager = {
   removeUser: async (userId) => {
     const user = await databaseAccess.read(userId);
     if (user[0].avatar) {
-      deleteAvatar.deleteImageSync(user[0].avatar);
+      deleteAvatar.deleteImageAsync(user[0].avatar, "avatar-uploads");
     }
     const removeUser = await databaseAccess.remove(userId);
     return removeUser;

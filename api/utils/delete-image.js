@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-const deleteImageAsync = async (fileName) => {
+const deleteImageAsync = async (fileName, imageFolder) => {
   fs.unlink(
     path.join(
       __dirname,
@@ -9,7 +9,7 @@ const deleteImageAsync = async (fileName) => {
       "..",
       "client",
       "public",
-      "avatar-uploads",
+      `${imageFolder}`,
       `${fileName}`
     ),
     (err) => {
@@ -22,7 +22,7 @@ const deleteImageAsync = async (fileName) => {
   );
 };
 
-const deleteImageSync = (fileName) => {
+const deleteImageSync = (fileName, imageFolder) => {
   fs.unlink(
     path.join(
       __dirname,
@@ -30,7 +30,7 @@ const deleteImageSync = (fileName) => {
       "..",
       "client",
       "public",
-      "avatar-uploads",
+      `${imageFolder}`,
       `${fileName}`
     ),
     (err) => {
