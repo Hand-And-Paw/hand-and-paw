@@ -278,6 +278,44 @@ Multiform data
   ];
   ```
 
+## Delete user publication
+
+Remove the animal id in the `publishedAnimals` property, and deletes the animal in Animal collection
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/user-register/delete-animal/:id
+
+- **Method:**
+
+  `PATCH`
+
+- **URL Params**
+
+  `id = string`
+
+  **Required:**
+
+  `id = string, animalId = string`
+
+  **Body**
+
+```js
+  {
+    "animalId": "61701cf768400ebe536a57c8"
+  }
+```
+
+- **Result:**
+
+  ```js
+    }
+      "message": "publication id: 61701cf768400ebe536a57c8 was removed successfully"
+    }
+  ```
+
 ---
 
 ### Animals
