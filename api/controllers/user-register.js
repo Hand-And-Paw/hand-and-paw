@@ -5,6 +5,7 @@
 const userManager = require("../business-logic/user-register");
 const hashCreator = require("../utils/hash");
 const databaseAccess = require("../data-access/user-register");
+const animalManager = require("../business-logic/publish-animal");
 const deleteAvatar = require("../utils/delete-image");
 
 const userRegister = {
@@ -113,6 +114,35 @@ const userRegister = {
       const newRegister = await userManager.createUser(newUser);
 
       res.status(201).json(newRegister);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  },
+  deletePublishedAnimal: async (req, res) => {
+    try {
+      const userId = req.params.id;
+
+      const { animalId } = req.body;
+      console.log(animalId);
+
+      const user = await userManager.getUser(userId);
+      if (user.length === 0) {
+        throw new Error(`Cannot delete animal user doesn't exist`);
+      }
+      const animal = await animalManager.getAnimal(animalId);
+      if (animal.length === 0) {
+        throw new Error(`Cannot delete animal, animal doesn't exist`);
+      }
+
+      const updateUser = await userManager.deletePublishedAnimal(
+        userId,
+        animalId
+      );
+      if (updateUser.acknowledged === true) {
+        res.status(200).json({
+          message: `publication id: ${animalId} was removed successfully`,
+        });
+      }
     } catch (error) {
       res.status(400).json({ message: error.message });
     }

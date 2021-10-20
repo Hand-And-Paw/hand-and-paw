@@ -26,6 +26,10 @@ userRegister.use((req, res, next) => {
 
 userRegister.use("/uploads", express.static(uploadAvatarPath));
 userRegister.get("/", userRegisterController.getAllUsers);
+userRegister.patch(
+  "/delete-animal/:id",
+  userRegisterController.deletePublishedAnimal
+);
 userRegister.get("/:id", userRegisterController.getUser);
 userRegister.put(
   "/:id",
