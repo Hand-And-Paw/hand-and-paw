@@ -9,7 +9,7 @@ const databaseAccess = {
     return newAnimal;
   },
 
-  update: async (newData, userAvatar) => {
+  update: async (newData) => {
     const animal = await Animal.find({ _id: newData.id });
 
     if (animal.length === 0) {
@@ -20,11 +20,16 @@ const databaseAccess = {
       {
         $set: {
           name: newData.name,
-          password: newData.password,
+          type: newData.type,
+          breed: newData.breed,
+          gender: newData.gender,
+          character: newData.character,
+          dateBirth: newData.dateBirth,
           location: newData.location,
           phone: newData.phone,
-          email: newData.email,
-          avatar: userAvatar,
+          webSite: newData.website,
+          describeAnimal: newData.describeAnimal,
+          pictures: newData.pictures,
           updateDate: Date.now(),
         },
       }
@@ -56,7 +61,7 @@ const databaseAccess = {
   all: async () => {
     let animals = await Animal.find();
     if (animals.length === 0) {
-      animals = `the are not animals in person-subscription collection`;
+      animals = `the are not animals in publish-animal collection`;
     }
     return animals;
   },
