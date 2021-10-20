@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 const deleteAvatar = require("../utils/delete-image");
 const databaseAccess = require("../data-access/user-register");
+const animalManager = require("./publish-animal");
 
 const userSubscriptionManager = {
   createUser: async (newUser) => {
@@ -38,6 +39,16 @@ const userSubscriptionManager = {
   },
   getAllUsers: async () => {
     return databaseAccess.all();
+  },
+  deletePublishedAnimal: async (userId, animalId) => {
+    const updateUserPublications = await databaseAccess.deleteUserPublication(
+      userId,
+      animalId
+    );
+
+    await animalManager.removeAnimal(animalId);
+
+    return updateUserPublications;
   },
 };
 

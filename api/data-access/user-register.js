@@ -103,6 +103,13 @@ const databaseAccess = {
     );
     return publishedAnimals;
   },
+  deleteUserPublication: async (userId, animalId) => {
+    const publishedAnimals = Users.updateOne(
+      { _id: userId },
+      { $pull: { publishedAnimals: animalId } }
+    );
+    return publishedAnimals;
+  },
 
   findUserByEmail: async (userEmail) => {
     const subscriber = await Users.find({ email: userEmail }, "email");
