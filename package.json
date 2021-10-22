@@ -2,7 +2,7 @@
   "name": "final-project-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "NODE_ENV=production PORT=3000 STATIC_DIR=client DATA_DIR=data DB_PATH=mongodb://localhost/handAndPaw node ./api/index.js",
     "dev:api": "nodemon api/index.js",
@@ -12,7 +12,8 @@
     "document": "node ./dev-scripts/document client api",
     "lint:js": "eslint --max-warnings=0 --ext=.js --format=codeframe --fix",
     "lint": "npm run lint:js",
-    "format": "prettier --write ./"
+    "format": "prettier --write ./",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +33,9 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-jest": "^27.3.1",
     "dependency-cruiser": "^10.0.6",
     "esbuild": "^0.12.18",
     "eslint": "^7.31.0",
