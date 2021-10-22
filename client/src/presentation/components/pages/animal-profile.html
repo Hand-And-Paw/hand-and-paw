@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../../styles/index.css">
+  <title>Hand and Paw</title>
+</head>
+<body>
+  <header>
+    <nav></nav>
+  </header>
+  <div class="main">
+    <div class="navigate">
+      <div class="container"><a href="#backtosearchresults">back to search results</a></div>
+    </div>
+    <section class="main-information">
+      <div class="container">
+        <div class="about-animal">
+          <!-- basically animal card component -> maybe use divs from there -->
+          <div class="image-gallery"></div>
+          <div class="animal-info"></div>
+          <div class="contact">
+          <button class="button email-shelter-btn">Get in touch</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="animal-story">
+      <div class="container">
+        <article>
+          <!-- maybe make dynamical name -->
+          <h2>About "animal name"</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, ratione illo expedita quae numquam impedit repellendus quasi dicta velit minima unde, id quis eum sint dolorum? Minima optio nostrum voluptatibus, nobis eaque repudiandae veniam sequi tenetur non. Autem fuga recusandae qui ipsam deserunt voluptatem, tempore dolorem provident iste molestias temporibus architecto hic laborum voluptatibus quod optio in quo adipisci similique impedit nisi distinctio quisquam! Fugiat odio et reiciendis eveniet aperiam.</p>
+        </article>
+      </div>
+    </section>
+  </div>
+  <div class="modal-bg">
+    <div class="modal">
+      <!-- can be icon to close -->
+      <span class="close-modal">X</span>
+      <div class="modal-content">
+        <form>
+          <!-- placeholders instead of labels? -->
+          <h1>Send an e-mail to the shelter.</h1>
+          <label for="name">Name:</label>
+          <input type="text" name="name"> <br />
+          <label for="phone">Contact phone number:</label>
+          <input type="number" name="phone-number"><br>
+          <label for="email">Email:</label>
+          <input type="email" name="email" autocomplete="email" /><br />
+          <label for="message">Message:</label>
+          <textarea class="contact-shelter-text" name="contact-shelter" rows=20 cols=30></textarea><br>
+
+          <button class="send-btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</body>
+</html>
