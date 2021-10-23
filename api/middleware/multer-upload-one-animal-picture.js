@@ -27,16 +27,9 @@ const imageFilter = (req, file, callback) => {
 const upload = multer({
   storage: storageImage,
   limits: {
-    fileSize: 2097520,
+    fileSize: 1024 * 1024,
   },
   fileFilter: imageFilter,
 });
 
-const multipleUploads = upload.fields([
-  { name: "picture1", maxCount: 1 },
-  { name: "picture2", maxCount: 1 },
-  { name: "picture3", maxCount: 1 },
-  { name: "picture4", maxCount: 1 },
-]);
-
-module.exports = multipleUploads;
+module.exports = upload;

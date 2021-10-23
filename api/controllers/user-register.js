@@ -20,6 +20,9 @@ const userRegister = {
   getUser: async (req, res) => {
     try {
       const { id } = req.params;
+      if ([...id].length !== 24) {
+        throw new Error(`invalid id`);
+      }
       const user = await userManager.getUser(id);
       res.status(200).send(user);
     } catch (error) {
@@ -30,6 +33,9 @@ const userRegister = {
     try {
       const { id } = req.params;
       const newData = req.body;
+      if ([...id].length !== 24 || [...newData.id].length !== 24) {
+        throw new Error(`invalid id`);
+      }
       if (newData.id !== id) {
         throw Error("Cannot change user ID after creation!");
       }
@@ -81,7 +87,9 @@ const userRegister = {
   deleteUser: async (req, res) => {
     try {
       const { id } = req.params;
-
+      if ([...id].length !== 24) {
+        throw new Error(`invalid id`);
+      }
       const userDeleted = await userManager.removeUser(id);
       res.status(200).send(userDeleted);
     } catch (error) {
@@ -121,9 +129,10 @@ const userRegister = {
   deletePublishedAnimal: async (req, res) => {
     try {
       const userId = req.params.id;
-
       const { animalId } = req.body;
-      console.log(animalId);
+      if ([...userId].length !== 24 || [...animalId].length !== 24) {
+        throw new Error(`invalid id`);
+      }
 
       const user = await userManager.getUser(userId);
       if (user.length === 0) {
