@@ -535,7 +535,7 @@ padding-top: 56px;
     margin: 0 auto;
     padding: 0 15px;
     display: grid;
-    grid-template-columns: 500px 100px auto; 
+    grid-template-columns: 200px 600px auto; 
     grid-template-rows: 150px 200px 200px;
     align-items: center;    
 }
@@ -547,7 +547,10 @@ padding-top: 56px;
     grid-column-start: 1;
     grid-column-end: end;
     grid-row-start: 1;   
-    grid-row-end: 3;   
+    grid-row-end: 3;
+    display: flex;
+    justify-content: end;
+  
 }
 .intro_title{
     grid-column-start: 1;
@@ -589,13 +592,6 @@ text-decoration: none;
 
 btn:hover, .btn:focus, .btn:active{
     background:#370049;
-}
-
-.intro_pic {
-    grid-column-start: 3;
-    grid-column-end: end;
-    grid-row-start: 1;   
-    grid-row-end: 3;   
 }
 
 /*Intro styles end*/
