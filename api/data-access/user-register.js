@@ -16,12 +16,12 @@ const databaseAccess = {
   },
 
   update: async (newData, userAvatar) => {
-    const subscriber = await Users.find({ _id: newData.id });
+    const user = await Users.find({ _id: newData.id });
 
-    if (subscriber.length === 0) {
+    if (user.length === 0) {
       throw new Error(`Cannot update user, id doesn't exist`);
     }
-    const subscriberUpdated = Users.updateOne(
+    const userUpdated = Users.updateOne(
       { _id: newData.id },
       {
         $set: {
@@ -65,7 +65,7 @@ const databaseAccess = {
         },
       }
     );
-    return subscriberUpdated;
+    return userUpdated;
   },
 
   remove: async (id) => {
@@ -81,20 +81,20 @@ const databaseAccess = {
   },
 
   read: async (id = "") => {
-    const subscriber = await Users.find({ _id: id });
-
-    if (subscriber.length === 0) {
+    const user = await Users.find({ _id: id });
+    console.log(user);
+    if (user.length === 0) {
       throw Error(`Cannot find user, id doesn't exist`);
     }
-    return subscriber;
+    return user;
   },
 
   all: async () => {
-    let subscribers = await Users.find();
-    if (subscribers.length === 0) {
-      subscribers = `there are not users in users collection`;
+    let users = await Users.find();
+    if (users.length === 0) {
+      users = `there are not users in users collection`;
     }
-    return subscribers;
+    return users;
   },
   updateUserPublication: async (animalId, userId) => {
     const publishedAnimals = Users.updateOne(
@@ -112,15 +112,15 @@ const databaseAccess = {
   },
 
   findUserByEmail: async (userEmail) => {
-    const subscriber = await Users.find({ email: userEmail }, "email");
-    return subscriber;
+    const user = await Users.find({ email: userEmail }, "email");
+    return user;
   },
   findUserLog: async (userEmail, userPassword) => {
-    const subscriber = await Users.find({
+    const user = await Users.find({
       email: userEmail,
       password: userPassword,
     });
-    return subscriber;
+    return user;
   },
 };
 

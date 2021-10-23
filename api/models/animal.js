@@ -45,7 +45,13 @@ const animalsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  pictures: [String],
+  pictures: [
+    {
+      picture: { type: String, default: "" },
+      isPrincipal: { type: String, default: false },
+      fieldname: String,
+    },
+  ],
   publishDate: {
     type: Date,
     required: true,

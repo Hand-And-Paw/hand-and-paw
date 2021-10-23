@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 
 const Animal = require("../models/animal");
+const deleteImage = require("../utils/delete-image");
 
 const databaseAccess = {
   create: async (animalObj) => {
@@ -13,7 +14,7 @@ const databaseAccess = {
     const animal = await Animal.find({ _id: newData.id });
 
     if (animal.length === 0) {
-      throw new Error(`Cannot update user, id doesn't exist`);
+      throw new Error(`Cannot update animal, id doesn't exist`);
     }
     const animalUpdated = Animal.updateOne(
       { _id: newData.id },
@@ -29,7 +30,6 @@ const databaseAccess = {
           phone: newData.phone,
           webSite: newData.website,
           describeAnimal: newData.describeAnimal,
-          pictures: newData.pictures,
           updateDate: Date.now(),
         },
       }
@@ -40,7 +40,7 @@ const databaseAccess = {
   remove: async (id) => {
     let removeAnimal = await Animal.deleteOne({ _id: id });
     if (removeAnimal.deletedCount === 0) {
-      throw new Error(`Cannot delete user, id doesn't exist`);
+      throw new Error(`Cannot delete animal, id doesn't exist`);
     }
 
     if (removeAnimal.deletedCount === 1) {
@@ -53,7 +53,7 @@ const databaseAccess = {
     const animal = await Animal.find({ _id: id });
 
     if (animal.length === 0) {
-      throw Error(`Cannot find user, id doesn't exist`);
+      throw Error(`Cannot find animal, id doesn't exist`);
     }
     return animal;
   },
@@ -61,21 +61,71 @@ const databaseAccess = {
   all: async () => {
     let animals = await Animal.find();
     if (animals.length === 0) {
-      animals = `the are not animals in publish-animal collection`;
+      animals = `the are not animals in Animal collection`;
     }
     return animals;
   },
-
-  findAnimalByEmail: async (userEmail) => {
-    const animal = await Animal.find({ email: userEmail }, "email");
-    return animal;
-  },
-  findAnimalLog: async (userEmail, userPassword) => {
-    const animal = await Animal.find({
-      email: userEmail,
-      password: userPassword,
+  updateAnimalPictures: async (previousPictures, newPictures, animalId) => {
+    newPictures.forEach(async (newPicture) => {
+      previousPictures.forEach(async (prevPicture) => {
+        if (newPicture.fieldname === prevPicture.fieldname) {
+          deleteImage.deleteImageSync(prevPicture.picture, "animal-uploads");
+          await Animal.updateOne(
+            { $and: [{ _id: animalId }, { "pictures._id": prevPicture._id }] },
+            {
+              $set: {
+                "pictures.$.picture": `${newPicture.filename}`,
+                "pictures.$.isPrincipal": `${newPicture.isPrincipal}`,
+              },
+            }
+          );
+        }
+      });
     });
-    return animal;
+  },
+  updateOneAnimalPicture: async (pictureId, filename) => {
+    const update = await Animal.updateOne(
+      { "pictures._id": pictureId },
+      { $set: { "pictures.$.picture": `${filename}` } }
+    );
+    return update;
+  },
+  deleteOneAnimalPicture: async (animalId, pictureId) => {
+    const deletePicture = await Animal.updateOne(
+      { _id: animalId },
+      {
+        $pull: {
+          pictures: {
+            _id: pictureId,
+          },
+        },
+      }
+    );
+    return deletePicture;
+  },
+  uploadPictures: async (animalId, pictures) => {
+    let uploadPictures;
+    pictures.forEach(async (picture) => {
+      uploadPictures = await Animal.updateOne(
+        { _id: animalId },
+        {
+          $push: {
+            pictures: {
+              picture: picture.filename,
+              fieldname: picture.fieldname,
+            },
+          },
+        }
+      );
+    });
+    return uploadPictures;
+  },
+  updatePrincipalPicture: async (animalId, pictureId, isPrincipal) => {
+    const update = await Animal.updateOne(
+      { $and: [{ _id: animalId }, { "pictures._id": pictureId }] },
+      { $set: { "pictures.$.isPrincipal": `${isPrincipal}` } }
+    );
+    return update;
   },
 };
 

@@ -320,6 +320,14 @@ Remove the animal id in the `publishedAnimals` property, and deletes the animal 
 
 ### Animals
 
+#### Routes for animals
+
+- [Create new animal](#Create new animal)
+- [Fetch Animals](#Fetch animals)
+- [Fetch one Animal](#Fetch animals)
+- [Delete one Animal](#Fetch animals)
+- [update one Animal](#Fetch animals)
+
 #### Create new animal
 
 > To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.

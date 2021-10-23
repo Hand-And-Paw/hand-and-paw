@@ -43,7 +43,15 @@
       "type": "array",
       "description": "array of stored items by path, maximum 4 images to upload",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "picture": {
+            "type": "string"
+          },
+          "isPrincipal": {
+            "type": "boolean"
+          }
+        }
       }
     }
   },
