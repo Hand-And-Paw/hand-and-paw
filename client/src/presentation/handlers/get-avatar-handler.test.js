@@ -1,13 +1,13 @@
 const getAvatarHandler = require('./get-avatar-handler.js')
 
 const arr = [
-  { image: 'one.jpeg', isPrincipal: true },
-  { image: 'two.png', isPrincipal: false },
+  { picture: 'one.jpeg', isPrincipal: true },
+  { picture: 'two.png', isPrincipal: false },
 ]
 
 const arrNoTrue = [
-  { image: 'one.jpeg', isPrincipal: false },
-  { image: 'two.png', isPrincipal: false },
+  { picture: 'one.jpeg', isPrincipal: false },
+  { picture: 'two.png', isPrincipal: false },
 ]
 
 const arrEmpty = []
