@@ -7,7 +7,7 @@ const getAvatarHandler = (array) => {
     mainPicture = null
   } else {
     mainPicture = array
-      .map((item) => (item.isPrincipal ? item.image : null))
+      .map((item) => (item.isPrincipal ? item.picture : null))
       .filter((item) => item)[0]
   }
   return mainPicture
