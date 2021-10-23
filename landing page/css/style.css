@@ -496,8 +496,9 @@ body{
     background: #FCC521;
 }
 .header_nav{
-    margin-right: 30px;
+    margin-right: 50px;
 }
+
 .header_wrapper{
 display: flex;
 flex-wrap: wrap;
