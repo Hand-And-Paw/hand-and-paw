@@ -495,7 +495,9 @@ body{
 .header_active{
     background: #FCC521;
 }
-
+.header_nav{
+    margin-right: 30px;
+}
 .header_wrapper{
 display: flex;
 flex-wrap: wrap;
@@ -535,7 +537,7 @@ padding-top: 56px;
     margin: 0 auto;
     padding: 0 15px;
     display: grid;
-    grid-template-columns: 200px 600px auto; 
+    grid-template-columns: 340px 600px auto; 
     grid-template-rows: 150px 200px 200px;
     align-items: center;    
 }
@@ -544,7 +546,7 @@ padding-top: 56px;
     margin-top:200px;        
 }
 .intro_pic {
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-column-end: end;
     grid-row-start: 1;   
     grid-row-end: 3;
