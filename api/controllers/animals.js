@@ -1,18 +1,18 @@
 /* eslint-disable no-undefined */
 /* eslint-disable no-underscore-dangle */
 
-const animalManager = require("../business-logic/publish-animal");
+const animalManager = require("../business-logic/animals");
 // const animalDbAccess = require("../data-access/publish-animal");
 const userDbAccess = require("../data-access/user-register");
 const deleteImage = require("../utils/delete-image");
 
-const personPublication = {
+const animalsController = {
   getAllAnimals: async (req, res) => {
     try {
       const animals = await animalManager.getAllAnimals();
       res.status(200).send(animals);
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: error.message, stack: error.stack });
     }
   },
   getAnimal: async (req, res) => {
@@ -24,7 +24,7 @@ const personPublication = {
       const animal = await animalManager.getAnimal(id);
       res.status(200).send(animal);
     } catch (error) {
-      res.status(401).json({ message: error.message });
+      res.status(401).json({ message: error.message, stack: error.stack });
     }
   },
   updateAnimal: async (req, res) => {
@@ -76,7 +76,7 @@ const personPublication = {
       const userDeleted = await animalManager.removeAnimal(id);
       res.status(200).send(userDeleted);
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: error.message, stack: error.stack });
     }
   },
   postAnimal: async (req, res) => {
@@ -111,7 +111,7 @@ const personPublication = {
           );
         }
       }
-      res.status(400).json({ message: error.message });
+      res.status(400).json({ message: error.message, stack: error.stack });
     }
   },
   updateOnePictureAnimal: async (req, res) => {
@@ -138,7 +138,7 @@ const personPublication = {
       if (req.file) {
         await deleteImage.deleteImageAsync(req.file.filename, "animal-uploads");
       }
-      res.status(400).json({ message: error.message });
+      res.status(400).json({ message: error.message, stack: error.stack });
     }
   },
   deleteOnePictureAnimal: async (req, res) => {
@@ -218,4 +218,4 @@ const personPublication = {
   },
 };
 
-module.exports = personPublication;
+module.exports = animalsController;
