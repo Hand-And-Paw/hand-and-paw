@@ -1,4 +1,7 @@
+import { navbar } from "../components/layout/navbar.js";
+
 const buildPage = () => {
-  console.log("Hello! This is index page JS file.");
+  document.querySelector(".container").appendChild(navbar());
+  console.log("Hello!");
 };
 buildPage();
