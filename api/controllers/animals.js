@@ -179,13 +179,13 @@ const animalsController = {
         throw new Error("You can only have 4 pictures by registration");
       }
 
-      const newPublication = await animalManager.uploadPictures(
-        animalId,
-        req.files
-      );
+      await animalManager.uploadPictures(animalId, req.files);
       // add the animal to the subscriber.publications
-
-      res.status(201).json(newPublication);
+      if (newPicturesLength > 1) {
+        res.status(201).json({ message: "pictures uploaded successfully" });
+        return;
+      }
+      res.status(201).json({ message: "picture uploaded successfully" });
     } catch (error) {
       if (req.files) {
         const pictures = req.files;
