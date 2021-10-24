@@ -5,7 +5,7 @@
 const userManager = require("../business-logic/user-register");
 const hashCreator = require("../utils/hash");
 const databaseAccess = require("../data-access/user-register");
-const animalManager = require("../business-logic/publish-animal");
+const animalManager = require("../business-logic/animals");
 const deleteAvatar = require("../utils/delete-image");
 
 const userRegister = {
