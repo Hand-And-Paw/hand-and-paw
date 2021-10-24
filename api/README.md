@@ -4,6 +4,35 @@ This project will serve as the first introduction to setting up a simple REST ba
 
 During the lecture the endpoints of the messages repo should be implemented in order to make the chat client work. A reference implementation of the end goal can be found on the reference-implementation branch.
 
+## Index
+
+- [Hand and paw API](#hand-and-paw-api)
+  - [Index](#index)
+  - [Getting Started](#getting-started)
+    - [Install database server](#install-database-server)
+    - [In the Hand and Paw app repo](#in-the-hand-and-paw-app-repo)
+    - [Using the API](#using-the-api)
+    - [Fetch data from the API](#fetch-data-from-the-api)
+  - [The API Documentation](#the-api-documentation)
+    - [Routes](#routes)
+  - [Users](#users)
+    - [Create new User](#create-new-user)
+    - [Fetch users](#fetch-users)
+    - [Fetch one user](#fetch-one-user)
+    - [Delete user](#delete-user)
+    - [Update User](#update-user)
+    - [Delete user publication](#delete-user-publication)
+  - [Animals](#animals)
+    - [Create new animal](#create-new-animal)
+    - [Get animals](#get-animals)
+    - [Get one animal](#get-one-animal)
+    - [Delete Animal](#delete-animal)
+    - [Update Animal](#update-animal)
+    - [Upload Pictures](#upload-pictures)
+    - [Delete Picture](#delete-picture)
+    - [Update Picture](#update-picture)
+    - [Update Principal picture](#update-principal-picture)
+
 ## Getting Started
 
 ### Install database server
@@ -36,9 +65,9 @@ You must run at the same time the server: `npm run dev:api` and the the client `
 - [Users](#users)
 - [animals](#animals)
 
-### Users
+## Users
 
-#### Create new User
+### Create new User
 
 Creates a new user.
 
@@ -73,7 +102,7 @@ Creates a new user.
 
 ---
 
-## Fetch users
+### Fetch users
 
 Get all users from the collection.
 
@@ -111,7 +140,7 @@ Returns json data about a single channel.
 
 ---
 
-## Fetch one user
+### Fetch one user
 
 Get one user from the system.
 
@@ -151,7 +180,7 @@ Get one user from the system.
 
 ---
 
-## Delete user
+### Delete user
 
 Remove a user of the dataBase.
 
@@ -181,7 +210,7 @@ Remove a user of the dataBase.
 
 ---
 
-## Update User
+### Update User
 
 > To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
 
@@ -278,7 +307,7 @@ Multiform data
   ];
   ```
 
-## Delete user publication
+### Delete user publication
 
 Remove the animal id in the `publishedAnimals` property, and deletes the animal in Animal collection
 
@@ -318,17 +347,9 @@ Remove the animal id in the `publishedAnimals` property, and deletes the animal 
 
 ---
 
-### Animals
+## Animals
 
-#### Routes for animals
-
-- [Create new animal](#Create new animal)
-- [Fetch Animals](#Fetch animals)
-- [Fetch one Animal](#Fetch animals)
-- [Delete one Animal](#Fetch animals)
-- [update one Animal](#Fetch animals)
-
-#### Create new animal
+### Create new animal
 
 > To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
 
@@ -336,7 +357,7 @@ Creates a new user.
 
 - **URL**
 
-  /api/publish-animal
+  /api/animals/register
 
 - **Method:**
 
@@ -395,9 +416,11 @@ Multiform data
   }
   ```
 
+  > [Back to main animal routes](#animals)
+
 ---
 
-## Fetch animals
+### Get animals
 
 Get all users from the collection.
 
@@ -407,7 +430,7 @@ Returns json data about a single channel.
 
 - **URL**
 
-  /api/publish-animal
+  /api/animals
 
 - **Method:**
 
@@ -442,9 +465,11 @@ Returns json data about a single channel.
 ]
 ```
 
+> [Back to main animal routes](#animals)
+
 ---
 
-## Fetch one animal
+### Get one animal
 
 Get one user from the system.
 
@@ -452,7 +477,7 @@ No registration or authorization required
 
 - **URL**
 
-  /api/publish-animal/:id
+  /api/animals/:id
 
 - **Method:**
 
@@ -491,9 +516,11 @@ No registration or authorization required
   }
   ```
 
+  > [Back to main animal routes](#animals)
+
 ---
 
-## Delete Animal
+### Delete Animal
 
 Remove an animal of the dataBase.
 
@@ -501,7 +528,7 @@ Remove an animal of the dataBase.
 
 - **URL**
 
-  /api/publish-animal/:id
+  /api/animals/delete/:id
 
 - **Method:**
 
@@ -519,15 +546,17 @@ Remove an animal of the dataBase.
     }
   ```
 
+> [Back to main animal routes](#animals)
+
 ---
 
-## Update Animal
+### Update Animal
 
 > To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
-  /api/publish-animal/:id
+  /api/animals/:id
 
 - **Method:**
 
@@ -587,4 +616,182 @@ Multiform data
     "__v": 0
   }
   ];
+
   ```
+
+  > [Back to main animal routes](#animals)
+
+---
+
+### Upload Pictures
+
+Upload one or multiple pictures
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/animals/upload-pictures/:animalId
+
+- **Method:**
+
+  `patch`
+
+- **URL Params**
+
+`animalId: string`
+
+**Required:**
+
+`animalId`
+
+- **Body**
+
+Multiform Data
+
+| key      | value    | type |
+| -------- | -------- | ---- |
+| picture1 | cat1.jpg | file |
+| picture2 | cat2.jpg | file |
+| picture3 | cat3.jpg | file |
+| picture4 | cat4.jpg | file |
+
+- **Result:**
+
+  ```js
+  {
+    message: "pictures uploaded successfully";
+  }
+  ```
+
+  > [Back to main animal routes](#animals)
+
+---
+
+### Delete Picture
+
+Deletes one picture
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/animals/delete-picture/:animalId
+
+- **Method:**
+
+  `patch`
+
+- **URL Params**
+
+`animalId: string`
+
+**Required:**
+
+`animalId`, `pictureId`
+
+- **Body**
+
+```js
+{
+    "pictureId": "61751428e9e34386a8e8cf01"
+}
+```
+
+- **Result:**
+
+  ```js
+  {
+    message: `picture, with the id: '61751428e9e34386a8e8cf01' removed successfully`;
+  }
+  ```
+
+  > [Back to main animal routes](#animals)
+
+---
+
+### Update Picture
+
+Updates one picture
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/animals/update-picture/:animalId
+
+- **Method:**
+
+  `patch`
+
+- **URL Params**
+
+`animalId: string`
+
+**Required:**
+
+`animalId`, `pictureId`
+
+- **Body**
+
+Multiform Data
+
+| key            | value    | type   |
+| -------------- | -------- | ------ |
+| animal-picture | cat1.jpg | file   |
+| pictureId      | cat2.jpg | string |
+
+- **Result:**
+
+  ```js
+  {
+    message: `picture updated successfully`;
+  }
+  ```
+
+> [Back to main animal routes](#animals)
+
+---
+
+### Update Principal picture
+
+Updates the principal picture of the animal
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/animals/update-isPrincipal/:animalId
+
+- **Method:**
+
+  `patch`
+
+- **URL Params**
+
+`animalId: string`
+
+**Required:**
+
+`animalId`, `pictureId`
+
+- **Body**
+
+```js
+{
+    "pictureId": "6172db4b6840eeb401673096",
+    "isPrincipal": true
+}
+```
+
+- **Result:**
+
+  ```js
+  {
+    message: `picture, with the id: '61751428e9e34386a8e8cf02' updated successfully`;
+  }
+  ```
+
+> [Back to main animal routes](#animals)
+
+---
