@@ -1,4 +1,6 @@
 const buildPage = () => {
-  console.log("Hello! This is add-animals JS file.");
+
+  console.log("Hello! This is added-animals JS file.");
+
 };
 buildPage();

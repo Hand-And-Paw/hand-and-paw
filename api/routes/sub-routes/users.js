@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 
 const upload = require("../../middleware/multer-upload-avatar");
-const userRegisterController = require("../../controllers/user-register");
+const userRegisterController = require("../../controllers/users");
 const tokenChecker = require("../../middleware/token-login");
 
 const uploadAvatarPath = path.join(
@@ -18,7 +18,7 @@ const uploadAvatarPath = path.join(
 
 const userRegister = express.Router();
 
-userRegister.post("/", userRegisterController.postUser);
+userRegister.post("/register", userRegisterController.postUser);
 
 userRegister.use((req, res, next) => {
   tokenChecker(req, res, next);
@@ -32,10 +32,10 @@ userRegister.patch(
 );
 userRegister.get("/:id", userRegisterController.getUser);
 userRegister.put(
-  "/:id",
+  "/update/:id",
   upload.single("avatar"),
   userRegisterController.updateUser
 );
-userRegister.delete("/:id", userRegisterController.deleteUser);
+userRegister.delete("/delete/:id", userRegisterController.deleteUser);
 
 module.exports = userRegister;
