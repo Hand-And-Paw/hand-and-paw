@@ -15,10 +15,10 @@ export const navbar = () => {
 
   if (isLoggedIn) {
     ul.innerHTML = `
-    <li> <a href = "#"> Find an animal</a></li>
-    <li> <button class="register-animal"> Register animal</button></li>
-    <li> <a href = "#"> Find a shelter</a></li>
-    <li> <a href = "#"> About adoption</a></li>
+    <li> <a href = "./src/presentation/pages/find-animal.html"> Find an animal</a></li>
+    <li> <button class="register-animal-btn"> Register animal</button></li>
+    <li> <a href =  "./client/src/presentation/pages/find-shelter.html"> Find a shelter</a></li>
+    <li> <a href =  "./client/src/presentation/pages/about-adoption.html"> About adoption</a></li>
     <li> <button class="log-in"> Sign Out</button></li>
     `;
   } else {
@@ -35,5 +35,3 @@ export const navbar = () => {
   navbarEl.appendChild(ul);
   return navbarEl;
 };
-
-const item = document.getElementsByClassName("find-an-animal");
