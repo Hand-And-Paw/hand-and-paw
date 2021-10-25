@@ -52,7 +52,7 @@ const animalsSchema = new mongoose.Schema({
       fieldname: String,
     },
   ],
-  publishDate: {
+  registerDate: {
     type: Date,
     required: true,
     default: Date.now,

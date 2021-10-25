@@ -75,7 +75,6 @@ const databaseAccess = {
             {
               $set: {
                 "pictures.$.picture": `${newPicture.filename}`,
-                "pictures.$.isPrincipal": `${newPicture.isPrincipal}`,
               },
             }
           );
