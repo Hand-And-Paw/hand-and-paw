@@ -504,7 +504,7 @@ display: flex;
 flex-wrap: wrap;
 align-items: flex-end;
 justify-content: space-between;
-padding-top: 56px;
+padding-top: 30px;
 }
 
 .header_list{
@@ -514,6 +514,7 @@ padding-top: 56px;
 
 .header_item{
     margin-right: 50px;
+    margin-bottom: 25px;
 }
 .header_item:last-child{
     margin-right: 0;
