@@ -1,0 +1,52 @@
+/* to delete */
+.container{
+  display:flex;
+  flex-direction: row;
+}
+/*  */
+
+img{
+  width:300px;
+  height:300px;
+  object-fit:cover;
+  border-radius: 5px;
+  position:absolute;
+  z-index: 1;
+  }
+
+  .image-background{
+    position: relative;
+    background: #fff;
+    display:block;
+    width: 325px;
+    height:325px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.6);
+    top:0;
+    left:0;
+    z-index:0;
+  }
+
+  .image-rotate-left{
+    transform: rotate(-15deg); 
+    
+  
+  }
+  .image-rotate-right{
+    transform: rotate(15deg); 
+    }
+
+  .bgr-rotate-left{
+    transform: rotate(-5deg); 
+  }
+  .bgr-rotate-right{
+    transform: rotate(30deg); 
+  }
+
+  
+.card-images{
+  background-color: aquamarine;
+  display:grid;
+}
+
+
