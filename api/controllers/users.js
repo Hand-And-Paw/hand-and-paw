@@ -2,10 +2,10 @@
 /* eslint-disable no-buffer-constructor */
 /* eslint-disable no-underscore-dangle */
 
-const userManager = require("../business-logic/user-register");
+const userManager = require("../business-logic/users");
 const hashCreator = require("../utils/hash");
-const databaseAccess = require("../data-access/user-register");
-const animalManager = require("../business-logic/publish-animal");
+const databaseAccess = require("../data-access/users");
+const animalManager = require("../business-logic/animals");
 const deleteAvatar = require("../utils/delete-image");
 
 const userRegister = {

@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 
-const Users = require("../models/user-register");
+const Users = require("../models/user");
 
 const databaseAccess = {
   create: async (newUser) => {
@@ -82,7 +82,6 @@ const databaseAccess = {
 
   read: async (id = "") => {
     const user = await Users.find({ _id: id });
-    console.log(user);
     if (user.length === 0) {
       throw Error(`Cannot find user, id doesn't exist`);
     }
@@ -97,18 +96,18 @@ const databaseAccess = {
     return users;
   },
   updateUserPublication: async (animalId, userId) => {
-    const publishedAnimals = Users.updateOne(
+    const registeredAnimals = Users.updateOne(
       { _id: userId },
-      { $push: { publishedAnimals: animalId } }
+      { $push: { registeredAnimals: animalId } }
     );
-    return publishedAnimals;
+    return registeredAnimals;
   },
   deleteUserPublication: async (userId, animalId) => {
-    const publishedAnimals = Users.updateOne(
+    const registeredAnimals = Users.updateOne(
       { _id: userId },
-      { $pull: { publishedAnimals: animalId } }
+      { $pull: { registeredAnimals: animalId } }
     );
-    return publishedAnimals;
+    return registeredAnimals;
   },
 
   findUserByEmail: async (userEmail) => {

@@ -1,12 +1,12 @@
 /* eslint-disable no-undefined */
 /* eslint-disable no-underscore-dangle */
 
-const animalManager = require("../business-logic/publish-animal");
+const animalManager = require("../business-logic/animals");
 // const animalDbAccess = require("../data-access/publish-animal");
-const userDbAccess = require("../data-access/user-register");
+const userDbAccess = require("../data-access/users");
 const deleteImage = require("../utils/delete-image");
 
-const personPublication = {
+const animalsController = {
   getAllAnimals: async (req, res) => {
     try {
       const animals = await animalManager.getAllAnimals();
@@ -64,7 +64,7 @@ const personPublication = {
           );
         }
       }
-      res.status(401).json({ message: error.message, stack: error.stack });
+      res.status(401).json({ message: error.message });
     }
   },
   deleteAnimal: async (req, res) => {
@@ -157,7 +157,7 @@ const personPublication = {
       if (req.file) {
         await deleteImage.deleteImageAsync(req.file.filename, "animal-uploads");
       }
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
   uploadPictures: async (req, res) => {
@@ -179,13 +179,13 @@ const personPublication = {
         throw new Error("You can only have 4 pictures by registration");
       }
 
-      const newPublication = await animalManager.uploadPictures(
-        animalId,
-        req.files
-      );
+      await animalManager.uploadPictures(animalId, req.files);
       // add the animal to the subscriber.publications
-
-      res.status(201).json(newPublication);
+      if (newPicturesLength > 1) {
+        res.status(201).json({ message: "pictures uploaded successfully" });
+        return;
+      }
+      res.status(201).json({ message: "picture uploaded successfully" });
     } catch (error) {
       if (req.files) {
         const pictures = req.files;
@@ -196,7 +196,7 @@ const personPublication = {
           );
         }
       }
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
   updatePrincipalPicture: async (req, res) => {
@@ -213,9 +213,9 @@ const personPublication = {
       );
       res.status(200).json(updatePicture);
     } catch (error) {
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
 };
 
-module.exports = personPublication;
+module.exports = animalsController;
