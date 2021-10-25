@@ -29,15 +29,9 @@ export const navbar = () => {
   <li> <button class="log-in"> Log In/Sign Up</button></li>
   `;
   }
-  const button = document.createElement("button");
-  button.innerText = "test";
-  ul.appendChild(button);
-  button.addEventListener("click", () => console.log(111));
-
-  // document
-  //   .getElementById("register-animal-btn")
-  //   .addEventListener("click", console.log("from component"));
-  // li.className = item.replaceAll(" ", "-").toLowerCase();
   navbarEl.appendChild(ul);
+  navbarEl.addEventListener("click", (e) =>
+    console.log("I am working Navbar listener.")
+  );
   return navbarEl;
 };
