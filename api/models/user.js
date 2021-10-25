@@ -76,7 +76,7 @@ const userSchema = new mongoose.Schema({
       hours: String,
     },
   },
-  publishedAnimals: [String],
+  registeredAnimals: [String],
 });
 
 module.exports = mongoose.model("Users", userSchema);

@@ -3,9 +3,9 @@
 const { ObjectID } = require("mongoose").mongo;
 
 const deleteImage = require("../utils/delete-image");
-const databaseAccess = require("../data-access/publish-animal");
+const databaseAccess = require("../data-access/animals");
 
-const animalPublicationManager = {
+const animalsManager = {
   createAnimal: async (newAnimal, pictures) => {
     for (const picture in pictures) {
       newAnimal.pictures.push({
@@ -29,8 +29,6 @@ const animalPublicationManager = {
             fieldname: pictures[picture][0].fieldname,
           });
         }
-
-        console.log("new animal inside BL =>", newAnimalPictures);
         await databaseAccess.updateAnimalPictures(
           animal[0].pictures,
           newAnimalPictures,
@@ -140,4 +138,4 @@ const animalPublicationManager = {
   },
 };
 
-module.exports = animalPublicationManager;
+module.exports = animalsManager;
