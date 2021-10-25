@@ -1,4 +1,6 @@
-import getAvatarHandler from "../../handlers/get-avatar-handler.js";
+
+import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
+
 
 export const animalCard = (animal) => {
   const { type, breed, gender, character, dateBirth, pictures, location } =
