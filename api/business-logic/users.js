@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 const deleteAvatar = require("../utils/delete-image");
-const databaseAccess = require("../data-access/user-register");
+const databaseAccess = require("../data-access/users");
 const animalManager = require("./animals");
 
 const userSubscriptionManager = {
