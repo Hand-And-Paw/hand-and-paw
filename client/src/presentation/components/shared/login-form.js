@@ -1,9 +1,10 @@
 import loginFormHandler from "../../handlers/login-form-handler.js";
 
 export const loginForm = () => {
-  // h1 Log In
   const form = document.createElement("form");
   form.id = "login-form";
+  const header = document.createElement("h1");
+  header.innerText = "Register an account.";
   form.innerHTML = `
   <label for="email">Email:</label><br />
     <input type="email" name="email" autocomplete="email"  required/><br />
