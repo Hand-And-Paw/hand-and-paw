@@ -3,7 +3,7 @@
 
 const animalManager = require("../business-logic/animals");
 // const animalDbAccess = require("../data-access/publish-animal");
-const userDbAccess = require("../data-access/user-register");
+const userDbAccess = require("../data-access/users");
 const deleteImage = require("../utils/delete-image");
 
 const animalsController = {
@@ -12,7 +12,7 @@ const animalsController = {
       const animals = await animalManager.getAllAnimals();
       res.status(200).send(animals);
     } catch (error) {
-      res.status(500).json({ message: error.message, stack: error.stack });
+      res.status(500).json({ message: error.message });
     }
   },
   getAnimal: async (req, res) => {
@@ -24,7 +24,7 @@ const animalsController = {
       const animal = await animalManager.getAnimal(id);
       res.status(200).send(animal);
     } catch (error) {
-      res.status(401).json({ message: error.message, stack: error.stack });
+      res.status(401).json({ message: error.message });
     }
   },
   updateAnimal: async (req, res) => {
@@ -64,7 +64,7 @@ const animalsController = {
           );
         }
       }
-      res.status(401).json({ message: error.message, stack: error.stack });
+      res.status(401).json({ message: error.message });
     }
   },
   deleteAnimal: async (req, res) => {
@@ -76,7 +76,7 @@ const animalsController = {
       const userDeleted = await animalManager.removeAnimal(id);
       res.status(200).send(userDeleted);
     } catch (error) {
-      res.status(500).json({ message: error.message, stack: error.stack });
+      res.status(500).json({ message: error.message });
     }
   },
   postAnimal: async (req, res) => {
@@ -111,7 +111,7 @@ const animalsController = {
           );
         }
       }
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
   updateOnePictureAnimal: async (req, res) => {
@@ -138,7 +138,7 @@ const animalsController = {
       if (req.file) {
         await deleteImage.deleteImageAsync(req.file.filename, "animal-uploads");
       }
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
   deleteOnePictureAnimal: async (req, res) => {
@@ -157,7 +157,7 @@ const animalsController = {
       if (req.file) {
         await deleteImage.deleteImageAsync(req.file.filename, "animal-uploads");
       }
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
   uploadPictures: async (req, res) => {
@@ -196,7 +196,7 @@ const animalsController = {
           );
         }
       }
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
   updatePrincipalPicture: async (req, res) => {
@@ -213,7 +213,7 @@ const animalsController = {
       );
       res.status(200).json(updatePicture);
     } catch (error) {
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
 };

@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const hashCreator = require("../utils/hash");
-const databaseAccess = require("../data-access/user-register");
+const databaseAccess = require("../data-access/users");
 
 const loginController = {
   addUserLogin: async (req, res) => {
@@ -52,7 +52,7 @@ const loginController = {
         },
       });
     } catch (error) {
-      res.status(401).json({ message: error.message, stack: error.stack });
+      res.status(401).json({ message: error.message });
     }
   },
 };
