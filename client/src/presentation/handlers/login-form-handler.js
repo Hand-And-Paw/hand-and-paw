@@ -1,4 +1,5 @@
 import { registerForm } from "../components/shared/register-form.js";
+import closeModal from "./close-modal.js";
 
 const loginFormHandler = (event) => {
   if (event.target.className === "open-register-form") {
@@ -11,6 +12,9 @@ const loginFormHandler = (event) => {
   }
   if (event.target.className === "submit-btn") {
     // submitting login password
+
+    // close modal
+    closeModal();
   }
 };
 
