@@ -4,7 +4,7 @@ export const loginForm = () => {
   const form = document.createElement("form");
   form.id = "login-form";
   const header = document.createElement("h1");
-  header.innerText = "Register an account.";
+  header.innerText = "Please, log in.";
   form.innerHTML = `
   <label for="email">Email:</label><br />
     <input type="email" name="email" autocomplete="email"  required/><br />

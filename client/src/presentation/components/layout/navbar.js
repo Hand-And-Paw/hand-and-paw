@@ -22,8 +22,7 @@ export const navbar = () => {
     <li> <a href = ".src/presentation/components/pages/add-animal.html"> Register an animal</li>
     <li> <a href =  "./src/presentation/components/pages/find-shelter.html"> Find a shelter</a></li>
     <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
-
-    <li> <button id="log-in"> Sign Out</button></li>
+    <li> <button id="log-out"> Log out </button></li>
     `;
     navbarEl.addEventListener("click", () =>
       console.log("drop down menu handler")

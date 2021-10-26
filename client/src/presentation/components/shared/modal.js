@@ -1,7 +1,4 @@
-// import { loginForm } from "./login-form.js";
-
 const createModal = (content) => {
-  // condition if log in is pressed)
   const modalDiv = document.createElement("div");
   modalDiv.className = "modal-background";
   const modal = document.createElement("div");
