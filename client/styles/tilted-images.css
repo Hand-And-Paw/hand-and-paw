@@ -1,11 +1,27 @@
 /* to delete */
-.container{
-  display:flex;
-  flex-direction: row;
+.container.why-grid{
+  display: grid;
+  grid-template-columns: repeat(12, 20fr);
+  gap: 24px;
+  
 }
+  .article{
+background-color: burlywood;
+grid-column: 1 / span 6;
+  }
+
 /*  */
 
-img{
+.card-images{
+  /* justify-content: center; */
+  grid-column:7 / span 6;
+  background-color: burlywood;
+  display: grid;
+  grid-template-rows: repeat(5, 20%);
+  
+  }
+
+.card-images img{
   width:300px;
   height:300px;
   object-fit:cover;
@@ -44,9 +60,15 @@ img{
   }
 
   
-.card-images{
-  background-color: aquamarine;
-  display:grid;
-}
+  .image1{
+    grid-column: 6 / span 4 ;
+    grid-column-end:3 ;
+    }
+
+  .image2{
+    grid-column: 4 / span 4;
+    grid-row-start: 3;
+   }
+
 
 
