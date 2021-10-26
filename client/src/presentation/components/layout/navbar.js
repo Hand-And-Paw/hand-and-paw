@@ -13,14 +13,17 @@ export const navbar = () => {
   const ul = document.createElement("ul");
   ul.className = "menu";
   // visitor or logged in user
-  const isLoggedIn = true;
+
+  const isLoggedIn = false;
+
   if (isLoggedIn) {
     ul.innerHTML = `
     <li> <a href = "./src/presentation/components/pages/find-animal.html"> Find an animal</a></li>
     <li> <a href = ".src/presentation/components/pages/add-animal.html"> Register an animal</li>
     <li> <a href =  "./src/presentation/components/pages/find-shelter.html"> Find a shelter</a></li>
     <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
-    <li> <button id="log-out"> Log out </button></li>
+
+    <li> <button id="log-in"> Sign Out</button></li>
     `;
     navbarEl.addEventListener("click", () =>
       console.log("drop down menu handler")
@@ -36,10 +39,5 @@ export const navbar = () => {
     navbarEl.addEventListener("click", callForm);
   }
   navbarEl.appendChild(ul);
-<<<<<<< HEAD
-
-=======
-  navbarEl.addEventListener("click", createModalHandler);
->>>>>>> login/register forms
   return navbarEl;
 };
