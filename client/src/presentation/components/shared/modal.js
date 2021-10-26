@@ -1,6 +1,6 @@
 // import { loginForm } from "./login-form.js";
 
-export const createModal = (content) => {
+const createModal = (content) => {
   // condition if log in is pressed)
   const modalDiv = document.createElement("div");
   modalDiv.className = "modal-background";
@@ -16,3 +16,5 @@ export const createModal = (content) => {
   modalDiv.appendChild(modal);
   return modalDiv;
 };
+
+export default createModal;

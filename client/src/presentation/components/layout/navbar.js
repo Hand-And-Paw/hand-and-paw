@@ -36,6 +36,10 @@ export const navbar = () => {
     navbarEl.addEventListener("click", callForm);
   }
   navbarEl.appendChild(ul);
+<<<<<<< HEAD
 
+=======
+  navbarEl.addEventListener("click", createModalHandler);
+>>>>>>> login/register forms
   return navbarEl;
 };
