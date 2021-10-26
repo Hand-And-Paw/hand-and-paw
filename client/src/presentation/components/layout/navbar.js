@@ -13,16 +13,19 @@ export const navbar = () => {
   const ul = document.createElement("ul");
   ul.className = "menu";
   // visitor or logged in user
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   if (isLoggedIn) {
     ul.innerHTML = `
     <li> <a href = "./src/presentation/components/pages/find-animal.html"> Find an animal</a></li>
-    <li> <button id="register-animal-btn"> Register animal</button></li>
+    <li> <a href = ".src/presentation/components/pages/add-animal.html"> Register an animal</li>
     <li> <a href =  "./src/presentation/components/pages/find-shelter.html"> Find a shelter</a></li>
     <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
-    <li> <button id="log-in"> Sign Out</button></li>
+    <li> <button id="log-out"> Log out </button></li>
     `;
+    navbarEl.addEventListener("click", () =>
+      console.log("drop down menu handler")
+    );
   } else {
     ul.innerHTML = `
   <li> <a href = "./src/presentation/components/pages/find-animal.html">Find an animal</a></li>
@@ -31,8 +34,9 @@ export const navbar = () => {
   <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
   <li> <button id="log-in"> Log In/Sign Up</button></li>
   `;
+    navbarEl.addEventListener("click", callForm);
   }
   navbarEl.appendChild(ul);
-  navbarEl.addEventListener("click", callForm);
+
   return navbarEl;
 };

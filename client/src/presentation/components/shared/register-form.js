@@ -15,13 +15,14 @@ export const registerForm = () => {
     <input
       type="password"
       name="password"
-      autocomplete="current-password" required
+      autocomplete="new-password" required
     />
     <br />
     <label for="repeat-password">Repeat password:</label><br />
     <input
       type="password"
       name="repeatPassword"
+      autocomplete="new-password" 
       required
     /></br>
     <button class="submit-btn">Register</button>

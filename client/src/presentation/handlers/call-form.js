@@ -2,7 +2,6 @@ import createModal from "../components/shared/modal.js";
 import { loginForm } from "../components/shared/login-form.js";
 
 const callForm = (event) => {
-  // check if there is modal in body - if yes, close old, open new
   const modal = document.querySelector(".modal-background");
   if (!document.body.contains(modal)) {
     if (
