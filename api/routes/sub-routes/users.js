@@ -18,7 +18,11 @@ const uploadAvatarPath = path.join(
 
 const userRegister = express.Router();
 
-userRegister.post("/register", userRegisterController.postUser);
+userRegister.post(
+  "/register",
+  upload.single(""),
+  userRegisterController.postUser
+);
 
 userRegister.use((req, res, next) => {
   tokenChecker(req, res, next);
