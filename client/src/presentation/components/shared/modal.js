@@ -1,3 +1,5 @@
+import closeModal from "../../handlers/close-modal.js";
+
 const createModal = (content) => {
   const modalDiv = document.createElement("div");
   modalDiv.className = "modal-background";
@@ -11,6 +13,7 @@ const createModal = (content) => {
   modal.appendChild(close);
   modal.appendChild(modalContent);
   modalDiv.appendChild(modal);
+  close.addEventListener("click", closeModal);
   return modalDiv;
 };
 
