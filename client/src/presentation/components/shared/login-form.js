@@ -1,4 +1,5 @@
 export const loginForm = () => {
+  // h1 Log In
   const form = document.createElement("form");
   form.innerHTML = `
   <label for="email">Email:</label><br />
@@ -10,8 +11,10 @@ export const loginForm = () => {
       autocomplete="current-password"
     />
     <br />
+    // Not registered? Create an account
     <button class="submit-btn">Log In</button>
   `;
+
   form.addEventListener("click", (e) => console.log("workig listener"));
   return form;
 };
