@@ -1,3 +1,5 @@
+import createModalHandler from "../../handlers/create-modal-handler.js";
+
 export const navbar = () => {
   const navbarEl = document.createElement("navbar");
   // logo
@@ -30,8 +32,6 @@ export const navbar = () => {
   `;
   }
   navbarEl.appendChild(ul);
-  navbarEl.addEventListener("click", (e) =>
-    console.log("I am working Navbar listener.")
-  );
+  navbarEl.addEventListener("click", createModalHandler);
   return navbarEl;
 };
