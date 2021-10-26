@@ -3,10 +3,8 @@ export const registerForm = () => {
   form.action = "/users/register";
   form.method = "POST";
   form.enctype = "multipart/form-data";
-  const header = document.createElement("h1");
-  header.innerText = "Register an account.";
-  form.appendChild(header);
   form.innerHTML = `
+  <h1> Register an account. </h1>
   <label for="name"> Name:</label><br />
     <input type="name" name="name" required/><br />
   <label for="email">Email:</label><br />

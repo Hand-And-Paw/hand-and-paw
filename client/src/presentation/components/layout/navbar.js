@@ -13,7 +13,6 @@ export const navbar = () => {
   const ul = document.createElement("ul");
   ul.className = "menu";
   // visitor or logged in user
-
   const isLoggedIn = false;
 
   if (isLoggedIn) {

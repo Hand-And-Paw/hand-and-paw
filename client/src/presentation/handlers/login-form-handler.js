@@ -1,7 +1,6 @@
 import { registerForm } from "../components/shared/register-form.js";
 
 const loginFormHandler = (event) => {
-  // is user is logged in - farm is not called
   if (event.target.className === "open-register-form") {
     // hide login
     const modalContent = document.querySelector(".modal-content");
