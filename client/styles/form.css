@@ -27,7 +27,7 @@ input{
     font-size: 1.2rem;
     background-color: var(--submitButton);
     color: var(--primary2);
-    background-color: tomato;
+    /* background-color: tomato; */
     margin-top: 1rem;
     /* width:100%; */
    }
