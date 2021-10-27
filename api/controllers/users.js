@@ -121,7 +121,9 @@ const userRegister = {
       };
       const newRegister = await userManager.createUser(newUser);
 
-      res.status(201).json(newRegister);
+      res
+        .status(200)
+        .json({ message: "You're successfully registered", user: newRegister });
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
