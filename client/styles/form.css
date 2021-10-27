@@ -22,3 +22,23 @@ input{
   margin-bottom: 2rem;
   }
 
+  .submit-form-button{
+    
+    font-size: 1.2rem;
+    background-color: var(--submitButton);
+    color: var(--primary2);
+    background-color: tomato;
+    margin-top: 1rem;
+    /* width:100%; */
+   }
+
+
+   /* .submit-form-button{
+    border-radius: var(--borderRadius);
+    border: 2px solid var(--primary2);
+    padding: 0.5em 1em;
+    font-size: 1.2rem;
+    width:100%;
+    margin-top: 0.2rem;
+    margin-bottom: 2rem;
+    } */
