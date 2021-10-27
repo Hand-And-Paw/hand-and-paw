@@ -1,88 +1,52 @@
-/* to delete */
-.container.why-grid{
-  /* width:1440px; */
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 50px;
-  align-items:center;
-  height: 700px;
-  background: rgb(175, 203, 255);
-}
-
-h2{
-  font-size: 29px;
-}
-  .article{
-    font-size: 1.2rem;
-    line-height: 150%;
-    /* border: 1px solid green; */
-    grid-column: 2 / span 5;
-    padding: 4rem;
-  }
-
-/*  */
-
-.card-images{
-  /* justify-content: center; */
-  grid-column: 7 / span 5;
-  /* grid-column-start: 7;
-  grid-column-end: auto; */
-  /* border: 1px solid yellow; */
+.card-images {
   display: grid;
   grid-template-rows: repeat(5, 20%);
   height: 609px;
-  width:570px;
- 
-  }
-
-.card-images img{
-  width:297px;
-  height:297px;
-  object-fit:cover;
-  border-radius: 5px;
-  position:absolute;
-  z-index: 1;
-  }
-
-.image-background{
-  position: relative;
-  background: #fff;
-  display:block;
-  width: 325px;
-  height:325px;
-  border-radius: 15px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-  top:0;
-  left:0;
-  z-index:0;
+  width: 570px;
 }
 
-  .image-rotate-left{
-    transform: rotate(-15deg); 
-    
-  
-  }
-  .image-rotate-right{
-    transform: rotate(15deg); 
-    }
+.card-images img {
+  width: 297px;
+  height: 297px;
+  object-fit: cover;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+}
 
-  .bgr-rotate-left{
-    transform: rotate(-5deg); 
-  }
-  .bgr-rotate-right{
-    transform: rotate(30deg); 
-  }
+.image-background {
+  position: relative;
+  background: #fff;
+  display: block;
+  width: 325px;
+  height: 325px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
 
-  
-  .image1{
-    grid-column: 6 / span 4 ;
-    grid-column-end:3 ;
-    }
+.image-rotate-left {
+  transform: rotate(-15deg);
+}
+.image-rotate-right {
+  transform: rotate(15deg);
+}
 
-  .image2{
-    grid-column: 4 / span 4;
-    grid-row-start: 3;
-   }
+.bgr-rotate-left {
+  transform: rotate(-5deg);
+}
+.bgr-rotate-right {
+  transform: rotate(30deg);
+}
 
+.image1 {
+  grid-column: 6 / span 4;
+  grid-column-end: 3;
+}
 
-
+.image2 {
+  grid-column: 4 / span 4;
+  grid-row-start: 3;
+}
