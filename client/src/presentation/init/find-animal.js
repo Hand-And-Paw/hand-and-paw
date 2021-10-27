@@ -1,8 +1,8 @@
 import animalSearchResults from "../components/shared/animal-search-results.js";
-import { fetchAnimals } from "../../data-access/animal-access/fetch-animals.js";
+import { getAnimals } from "../../data-access/animal-access/get-animals.js";
 
 const buildPage = async () => {
-  const array = await fetchAnimals();
+  const array = await getAnimals();
   document
     .querySelector(".animal-search-results")
     .appendChild(animalSearchResults(array));

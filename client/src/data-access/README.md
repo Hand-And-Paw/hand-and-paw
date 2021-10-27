@@ -39,10 +39,10 @@ This function will add a new key/value pair to your program's state. It will onl
 <summary>use case</summary>
 
 ```js
-import { insert } from '... ... data-access/insert.js';
+import { insert } from "... ... data-access/insert.js";
 
 // a business logic function
-export const addNewUser = (userName = '', email = '') => {
+export const addNewUser = (userName = "", email = "") => {
   try {
     insert(userName, email);
     return `success! new user "${userName}" was created`;
@@ -71,10 +71,10 @@ This function will return the value saved behind a specific key. It can only fin
 <summary>use case</summary>
 
 ```js
-import { find } from '... ... data-access/find.js';
+import { find } from "... ... data-access/find.js";
 
 // a business logic function
-export const getUser = (userName = '') => {
+export const getUser = (userName = "") => {
   try {
     const userEmail = find(userName);
     return userEmail;
@@ -100,7 +100,7 @@ Returns all of the key/value pairs in state as an array of objects:
 <summary>use case</summary>
 
 ```js
-import { findAll } from '... ... data-access/find-all.js';
+import { findAll } from "... ... data-access/find-all.js";
 
 // a business logic function
 export const listUsers = () => {
@@ -114,7 +114,7 @@ export const listUsers = () => {
     ]
   */
   const allUserNames = allUsers.map((userEntry) => userEntry.key);
-  const formattedUserNames = 'all users:\n- ' + allUserNames.join('\n- ');
+  const formattedUserNames = "all users:\n- " + allUserNames.join("\n- ");
   console.log(formattedUserNames); /*
     all users:
     - user 1
@@ -146,10 +146,10 @@ Updates an existing entry in state with a new value. If the key does not already
 <summary>use case</summary>
 
 ```js
-import { save } from '... ... data-access/save.js';
+import { save } from "... ... data-access/save.js";
 
 // a business logic function
-export const changeEmail = (userName = '', newEmail = '') => {
+export const changeEmail = (userName = "", newEmail = "") => {
   try {
     save(userName, email);
     return `success! ${userName}'s email has been changed`;
@@ -178,10 +178,10 @@ Removes a key/value pair from state.
 <summary>use case</summary>
 
 ```js
-import { remove } from '... ... data-access/remove.js';
+import { remove } from "... ... data-access/remove.js";
 
 // a business logic function
-export const deleteUser = (userName = '') => {
+export const deleteUser = (userName = "") => {
   try {
     remove(userName);
     return `success! ${userName} has been deleted`;
@@ -207,12 +207,12 @@ Removes all key/value pairs
 <summary>use case</summary>
 
 ```js
-import { removeAll } from '... ... data-access/remove-all.js';
+import { removeAll } from "... ... data-access/remove-all.js";
 
 // a business logic function
 export const closeWebsite = () => {
   removeAll();
-  return 'your website has been closed, there are no more users';
+  return "your website has been closed, there are no more users";
 };
 ```
 
@@ -235,11 +235,11 @@ Tells you if a specific key exists in your state.
 <summary>use case</summary>
 
 ```js
-import { hasKey } from '... ... data-access/has-key.js';
-import { remove } from '... ... data-access/remove.js';
+import { hasKey } from "... ... data-access/has-key.js";
+import { remove } from "... ... data-access/remove.js";
 
 // a business logic function
-export const deleteUser = (userName = '') => {
+export const deleteUser = (userName = "") => {
   if (!hasKey(userName)) {
     return `user "${userName}" does not exist, cannot delete.`;
   }
@@ -264,7 +264,7 @@ Returns an array containing all the keys in state.
 <summary>use case</summary>
 
 ```js
-import { allKeys } from '... ... data-access/all-keys.js';
+import { allKeys } from "... ... data-access/all-keys.js";
 
 // a business logic function
 export const listUsers = () => {
@@ -277,7 +277,7 @@ export const listUsers = () => {
       ...
     ]
   */
-  const formattedUserNames = 'all users:\n- ' + allUserNames.join('\n- ');
+  const formattedUserNames = "all users:\n- " + allUserNames.join("\n- ");
   console.log(formattedUserNames); /*
     all users:
     - user 1
@@ -317,12 +317,12 @@ It also works using `async`/`await` - you don't need to be understand this! The 
 <summary>use case</summary>
 
 ```js
-import { load } from '... ... data-access/load.js';
+import { load } from "... ... data-access/load.js";
 
 // a business logic function
 export const initializeState = async () => {
   // it will fetch this JSON data and initialize your program state
-  await load('../ ... /path/to/data-file.json', import.meta);
+  await load("../ ... /path/to/data-file.json", import.meta);
 };
 ```
 
