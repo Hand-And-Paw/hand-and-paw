@@ -23,7 +23,7 @@ export const registerForm = () => {
       autocomplete="new-password" 
       required
     /></br>
-    <button class="submit-btn">Register</button>
+    <button class="button submit-form-button">Register</button>
   `;
 
   form.addEventListener("click", () => console.log("working listener"));
