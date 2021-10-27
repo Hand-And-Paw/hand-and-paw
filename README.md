@@ -15,7 +15,8 @@
     - [Install database server](#install-database-server)
     - [In the Hand and Paw app repo](#in-the-hand-and-paw-app-repo)
     - [Using the API](#using-the-api)
-    - [Fetch data from the API](#fetch-data-from-the-api)
+    - [Fetch data from the API using VITE](#fetch-data-from-the-api-using-vite)
+    - [Run the app](#run-the-app)
   - [Contact](#contact)
 
 ## About
@@ -83,9 +84,13 @@ Follow the steps explained by [mongodb](https://docs.mongodb.com/manual/administ
 - **from the browser**
   - `http://localhost:xxxx/` serves `/api/<route-api>`
 
-### Fetch data from the API
+### Fetch data from the API using VITE
 
 You must run at the same time the server: `npm run dev:api` and the the client `npm run dev:client`(in different VSCode windows)
+
+### Run the app
+
+Only run the script `npm start`
 
 ## Contact
 
