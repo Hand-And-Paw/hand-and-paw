@@ -1,5 +1,6 @@
 import createModal from "../components/shared/modal.js";
 import { loginForm } from "../components/shared/login-form.js";
+import closeModal from "./close-modal.js";
 
 const callForm = (event) => {
   const modal = document.querySelector(".modal-background");
@@ -13,8 +14,7 @@ const callForm = (event) => {
         .insertAdjacentElement("beforeend", createModal(loginForm()));
     }
   } else {
-    const body = document.querySelector("body");
-    body.removeChild(modal);
+    closeModal();
   }
 };
 
