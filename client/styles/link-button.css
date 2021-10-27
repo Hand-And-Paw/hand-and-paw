@@ -1,0 +1,7 @@
+.link-button{
+  all:unset;
+  color: var(--linkBtn);
+}
+.link-button:hover{
+  cursor:pointer
+}
