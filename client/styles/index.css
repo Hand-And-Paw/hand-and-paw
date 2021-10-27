@@ -7,7 +7,30 @@
 @import url("./form.css");
 @import url("./link-button.css");
 
-body {
+/* .welcome-image-dog {
+  clip-path: polygon(
+    85% 20%,
+    65% 17%,
+    41% 0%,
+    20% 2%,
+    13% 13%,
+    14% 30%,
+    0% 64%,
+    3% 78%,
+    11% 83%,
+    27% 87%,
+    48% 96%,
+    72% 98%,
+    84% 96%,
+    90% 80%,
+    89% 56%,
+    96% 44%,
+    100% 31%,
+    96% 22%
+  );
+} */
+
+/* body {
   grid-template-areas:
     "header"
     "welcome"
@@ -15,12 +38,12 @@ body {
     "article2"
     "video"
     "footer";
-}
+} */
 
 .welcome-container {
-  grid-area: welcome;
+  /* grid-area: welcome; */
   grid-template-areas:
-    "welcome-image welcome-article"
+    "welcome-image-dog welcome-article"
     "space call-to-action";
 }
 
