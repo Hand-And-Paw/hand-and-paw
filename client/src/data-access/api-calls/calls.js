@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
+
 import { state } from "../state/state.js";
 
 export const performFetch = async (path) => {
-  const URL = `http://localhost:8080/api/${path}`;
+  const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
@@ -63,7 +64,7 @@ export const performPostFormData = async (path, body) => {
 };
 
 export const performDelete = async (path) => {
-  const URL = `http://localhost:8080/api/${path}`;
+  const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
