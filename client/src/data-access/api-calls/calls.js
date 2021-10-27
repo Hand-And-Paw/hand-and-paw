@@ -3,7 +3,6 @@
 import { state } from "../state/state.js";
 
 export const performFetch = async (path) => {
-  console.log(state);
   const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
@@ -44,7 +43,9 @@ export const performPostJson = async (path, body) => {
   return data;
 };
 
-export const performPostFormData = async (path, newBody) => {
+
+export const performPostFormData = async (path, body) => {
+
   const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
@@ -54,7 +55,9 @@ export const performPostFormData = async (path, newBody) => {
       "Content-Type": "multipart/form-data",
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
-    body: newBody,
+
+    body: JSON.stringify(body),
+
   });
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);

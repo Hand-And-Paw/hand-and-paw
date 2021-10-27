@@ -1,4 +1,6 @@
+
 import { performPostJson } from "../api-calls/calls.js";
+
 
 /**
  * - @params  Object received as multiform/data includes (name, password, repeatPassword, email).
@@ -6,5 +8,7 @@ import { performPostJson } from "../api-calls/calls.js";
  */
 
 export const registerUser = async (newUser = {}) => {
+
   return performPostJson(`users/register`, newUser);
+
 };
