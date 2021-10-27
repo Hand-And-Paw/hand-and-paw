@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import { state } from "../state/state.js";
+import state from "../state/state.js";
 
 export const performFetch = async (path) => {
   const URL = `${window.location.origin}/api/${path}`;
@@ -43,9 +43,7 @@ export const performPostJson = async (path, body) => {
   return data;
 };
 
-
 export const performPostFormData = async (path, body) => {
-
   const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
@@ -57,7 +55,6 @@ export const performPostFormData = async (path, body) => {
     },
 
     body: JSON.stringify(body),
-
   });
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);

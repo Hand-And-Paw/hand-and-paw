@@ -1,7 +1,9 @@
 import callForm from "../../handlers/call-form.js";
+import state from "../../../data-access/state/state.js";
 
 export const navbar = () => {
   const navbarEl = document.createElement("navbar");
+  navbarEl.id = "main-navbar";
   // logo
   const logo = document.createElement("div");
   logo.className = "logo";
@@ -13,7 +15,7 @@ export const navbar = () => {
   const ul = document.createElement("ul");
   ul.className = "menu";
   // visitor or logged in user
-  const isLoggedIn = false;
+  const isLoggedIn = state.isLoggedIn;
 
   if (isLoggedIn) {
     ul.innerHTML = `
