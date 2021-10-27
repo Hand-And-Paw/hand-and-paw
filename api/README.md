@@ -91,10 +91,13 @@ Creates a new user.
 - **return:**
 
   ```js
-    {
-      "_id": "616ed72339ecbbf9b4c1c0b5",
-      "name": "laura",
-      "email": "lau@hyf.com"
+  {
+    "message": "You're successfully registered",
+    "user": {
+        "_id": "61793c6e62491604ca3ca72d",
+        "name": "laura",
+        "email": "lau2212@hyf.com"
+    }
   }
   ```
 

@@ -1,8 +1,7 @@
 export const registerForm = () => {
   const form = document.createElement("form");
-  form.action = "/users/register";
-  form.method = "POST";
-  form.enctype = "multipart/form-data";
+  form.id = "register-form";
+  form.action = "#";
   form.innerHTML = `
   <h1> Register an account. </h1>
   <label for="name"> Name:</label><br />
@@ -23,9 +22,8 @@ export const registerForm = () => {
       autocomplete="new-password" 
       required
     /></br>
-    <button class="button submit-form-button">Register</button>
+    <button id="submit-register-form" class="submit-btn">Register</button>
   `;
 
-  form.addEventListener("click", () => console.log("working listener"));
   return form;
 };

@@ -4,6 +4,11 @@ const animalRoute = express.Router();
 const animalController = require("../../controllers/animals");
 const uploadAnimalPictures = require("../../middleware/multer-upload-animal-pictures");
 const upload = require("../../middleware/multer-upload-one-animal-picture");
+const tokenChecker = require("../../middleware/token-login");
+
+animalRoute.use((req, res, next) => {
+  tokenChecker(req, res, next);
+});
 
 animalRoute.post(
   "/register",

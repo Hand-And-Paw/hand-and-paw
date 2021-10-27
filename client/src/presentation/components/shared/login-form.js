@@ -3,6 +3,7 @@ import loginFormHandler from "../../handlers/login-form-handler.js";
 export const loginForm = () => {
   const form = document.createElement("form");
   form.id = "login-form";
+  form.action = "#";
   form.innerHTML = `
   <h1> Log in </h1>
   <label for="email">Email</label><br />
@@ -16,8 +17,8 @@ export const loginForm = () => {
       required
     />
     <br />
-    <button class="link-button open-register-form">Create an account!</button><br>
-    <button class="button submit-form-button">Log In</button>
+    <button class="open-register-form">Create an account</button>
+    <button id="login-submit-btn" class="submit-btn">Log In</button>
   `;
 
   form.addEventListener("click", loginFormHandler);
