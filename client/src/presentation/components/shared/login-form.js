@@ -5,14 +5,15 @@ export const loginForm = () => {
   form.id = "login-form";
   form.action = "#";
   form.innerHTML = `
-  <h1> Please, log in. </h1>
-  <label for="email">Email:</label><br />
-    <input type="email" name="email" autocomplete="email"  required/><br />
-    <label for="password">Password:</label><br />
+  <h1> Log in </h1>
+  <label for="email">Email</label><br />
+    <input type="email" name="email" placeholder="Enter your e-mail" autocomplete="email"  required/><br />
+    <label for="password">Password</label><br />
     <input
       type="password"
       name="password"
       autocomplete="current-password"
+      placeholder ="Enter your password"
       required
     />
     <br />

@@ -1,0 +1,15 @@
+
+.button {
+  all:unset;
+  font-size: 1rem;
+  font-weight:500;
+  padding: 0.3rem;
+  border-bottom: 5px;
+  border-radius: var(--borderRadius);
+  padding: 0.6em 1.2em;
+  box-shadow: var(--shadow)
+}
+
+.button:hover{
+  cursor:pointer;
+}

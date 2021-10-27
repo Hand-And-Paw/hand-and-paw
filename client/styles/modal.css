@@ -21,9 +21,11 @@ span{
 
 .modal {
   position: relative;
-  background-color: #fff;
-  max-width: 40%;
-  padding: 3rem;
+  background-color: var(--secondary1);
+  border-radius: var(--borderRadius);
+  padding: 6rem 2rem;
+  width: 40%;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,9 +33,12 @@ span{
 }
 
 .modal-content {
-  max-width: 90%;
+  width: 80%;
+  margin: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
 }
+
