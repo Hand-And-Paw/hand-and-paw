@@ -1,5 +1,6 @@
 @import url("./tilted-images.css");
 @import url("./root.css");
+@import url("./navbar.css");
 @import url("./button.css");
 @import url("./call-to-action-buttons.css");
 @import url("./article.css");
@@ -20,6 +21,7 @@
     "welcome-image welcome-shift"
      ;
    
+
 
 
 

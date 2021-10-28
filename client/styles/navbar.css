@@ -1,0 +1,51 @@
+@import url(root.css);
+
+navbar {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: "logo menu account";
+  padding: 2rem;
+  background-color: var(--primary1);
+}
+
+.logo {
+  grid-area: logo;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.menu {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+}
+
+#account-menu {
+  all: unset;
+  grid-area: account;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.menu button {
+  all: unset;
+  cursor: pointer;
+}
+
+li {
+  display: inline-block;
+  position: relative;
+}
+
+li:hover::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary2);
+}

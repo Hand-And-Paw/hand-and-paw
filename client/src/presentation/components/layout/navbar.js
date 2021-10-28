@@ -22,8 +22,15 @@ export const navbar = () => {
     <li> <a href = ".src/presentation/components/pages/add-animal.html"> Register an animal</li>
     <li> <a href =  "./src/presentation/components/pages/find-shelter.html"> Find a shelter</a></li>
     <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
-    <li> <button id="log-out"> Log out </button></li>
+    <li> <div id="account-menu"><button id="log-out"> Log out </button></div></li>
     `;
+    const accountMenu = document.createElement("div");
+    accountMenu.id = "account-menu";
+    const button = document.createElement("button");
+    button.innerText = "Account settings";
+    accountMenu.appendChild(button);
+    navbarEl.appendChild(accountMenu);
+
     navbarEl.addEventListener("click", () =>
       console.log("drop down menu handler")
     );
@@ -33,10 +40,18 @@ export const navbar = () => {
   <li> <button id="register-animal-btn"> Register animal</button></li>
   <li> <a href =  "./src/presentation/components/pages/find-shelter.html"> Find a shelter</a></li>
   <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
-  <li> <button id="log-in"> Log In/Sign Up</button></li>
   `;
+    const accountMenu = document.createElement("div");
+    accountMenu.id = "account-menu";
+    const button = document.createElement("button");
+    button.id = "account-menu";
+    button.innerText = "Log in/Sign up";
+    accountMenu.appendChild(button);
+    navbarEl.appendChild(accountMenu);
+
     navbarEl.addEventListener("click", callForm);
   }
   navbarEl.appendChild(ul);
+
   return navbarEl;
 };
