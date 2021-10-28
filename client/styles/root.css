@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-@import url("./dropdown.css");
 
-:root  {
+:root {
   --primary1: #fcc521;
   --primary2: #793093;
   --primaryHover1: #e9af01;
@@ -23,18 +22,13 @@
   padding: 0;
 }
 
-.container {
-  padding: 3rem;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
 .main {
   width: 100%;
   margin: auto;
-}
-
-.container {
-  padding: 4rem;
-  margin-bottom: 10px;
 }
 
 .grid-image-article {

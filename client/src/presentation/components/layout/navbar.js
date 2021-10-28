@@ -1,5 +1,7 @@
 import callForm from "../../handlers/call-form.js";
 import dropDownHandler from "../../handlers/dropdown-handler.js";
+import logOut from "../../handlers/logout-handler.js";
+
 export const navbar = () => {
   const navbarEl = document.createElement("navbar");
   navbarEl.id = "top-navbar";
@@ -14,8 +16,7 @@ export const navbar = () => {
   const ul = document.createElement("ul");
   ul.className = "pages-menu";
   // visitor or logged in user
-  // const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const isLoggedIn = true;
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
 
   if (isLoggedIn) {
     ul.innerHTML = `
@@ -25,26 +26,37 @@ export const navbar = () => {
     <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
     
     `;
+    //dropdown profile menu
     const accountMenu = document.createElement("div");
     accountMenu.id = "account-menu";
-    const logOut = document.createElement("button");
-    logOut.innerText = "Log out";
-    logOut.id = "log out";
-    accountMenu.appendChild(logOut);
+    //log out btn
+    const logOutBtn = document.createElement("button");
+    logOutBtn.innerText = "Log out";
+    logOutBtn.id = "log-out";
+    accountMenu.appendChild(logOutBtn);
+    //profile menu
+    //avatar
     const profileMenu = document.createElement("div");
-    profileMenu.className = "dropdown";
-    accountMenu.appendChild(profileMenu);
-    const openMenu = document.createElement("button");
-    openMenu.innerText = "Menu";
-    openMenu.id = "open-dropdown";
-    const dropDownContent = document.createElement("div");
-    dropDownContent.className = "dropdown-menu";
-    dropDownContent.innerText = "I dropped!";
-    profileMenu.appendChild(dropDownContent);
-    profileMenu.appendChild(openMenu);
-    navbarEl.appendChild(accountMenu);
+    profileMenu.className = "avatar";
+    const avatar = document.createElement("img");
+    avatar.src = "#";
+    avatar.id = "open-dropdown";
+    profileMenu.appendChild(avatar);
+    //dropdown
+    //dropdown menu content
+    const dropDownMenu = document.createElement("div");
+    dropDownMenu.className = "dropdown-content";
+    dropDownMenu.innerHTML = `
+    <a href="./src/presentation/components/pages/favorites.html">Favorites</a><br>
+    <a href="./src/presentation/components/pages/my-animals.html">My animals</a><br>
+    <a href="./src/presentation/components/pages/edit-user-profile.html">Edit profile</a><br>
+    `;
 
+    profileMenu.appendChild(dropDownMenu);
+    accountMenu.appendChild(profileMenu);
+    navbarEl.appendChild(accountMenu);
     navbarEl.addEventListener("click", dropDownHandler);
+    navbarEl.addEventListener("click", logOut);
   } else {
     ul.innerHTML = `
   <li> <a href = "./src/presentation/components/pages/find-animal.html">Find an animal</a></li>

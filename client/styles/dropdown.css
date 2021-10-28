@@ -1,18 +1,14 @@
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
+.dropdown-content {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
   position: absolute;
-  left: 0;
-  top: calc(100% + 0.25rem);
-  background-color: white;
-  padding: 1rem;
-  box-shadow: var(--shadow);
+  right: 10px;
+  padding: 2rem;
+  margin-top: 1rem;
   opacity: 0;
-  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
-
-.active > .dropdown-menu {
+.active {
   opacity: 1;
 }
