@@ -20,8 +20,8 @@
     "welcome-image welcome-shift"
     "welcome-image welcome-shift"
      ;
-   
-} */
+   } */
+
 navbar
 {
     background-color:transparent;
@@ -40,47 +40,40 @@ navbar
      /* Needed to position the navbar */
      position: relative;
 }
-.welcome-container {
 
+.welcome-container {
   grid-template-areas:
     "welcome-image-dog welcome-article"
     "space call-to-action";
-
 }
 
-.welcome-article{
-justify-content: flex-start;
-display: flex;
-
-display: grid;
-grid-template-rows:auto ;
-
-
+.welcome-article {
+  justify-content: flex-start;
+  display: flex;
+  display: grid;
+  grid-template-rows: auto;
 }
-.welcome-image{
-
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-  .welcome-image-dog{
-    position: relative;
-      top: 10px;
-      left: 10px;
-    
-  }
+.welcome-image {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.welcome-image-dog {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
 
 .call-to-action {
   grid-area: call-to-action;
   justify-content: start;
-
 }
-.grid-call-to-action{
-    display: grid;
-    grid-template-columns: 40% 40% 20%;
-    grid-column-gap: 10px;
-justify-content: center;
-    grid-template-areas:call-to-action1 call-to-action2 .;
+.grid-call-to-action {
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+  grid-column-gap: 10px;
+  justify-content: center;
+  grid-template-areas: call-to-action1 call-to-action2 .;
 }
 /* .call-to-action1 {
     grid-area: button1;
