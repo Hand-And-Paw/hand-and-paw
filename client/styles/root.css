@@ -35,10 +35,15 @@ body {
 
 .container {
   padding: 4rem;
+  margin-bottom: 10px;
 }
 
 .grid-image-article {
   display: grid;
   gap: 30px;
   grid-template-columns: 1fr 1fr;
+
 }
+
+
+

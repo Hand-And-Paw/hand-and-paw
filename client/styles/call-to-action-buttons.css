@@ -1,7 +1,9 @@
 
 .call-to-action1 {
   background-color: var(--primary1);
-  color: var(--mainText)
+  color: var(--mainText);
+  width:fit-content;
+
   }
   
   .call-to-action1:hover {
@@ -11,6 +13,7 @@
   .call-to-action2 {
     background-color: var(--primary2);
     color:#fff;
+    width:fit-content;
     }
   
   .call-to-action2:hover {
