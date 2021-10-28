@@ -26,9 +26,6 @@ body {
 
 }
 
-.container {
-  padding: 3rem;
-}
 
 a {
   all: unset;
@@ -45,8 +42,8 @@ a {
 }
 
 .container {
-  padding: 4rem;
-  margin-bottom: 10px;
+ 
+
 }
 
 .grid-image-article {
