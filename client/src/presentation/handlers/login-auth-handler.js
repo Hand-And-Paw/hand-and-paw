@@ -19,6 +19,9 @@ export const loginAuthHandler = async (event) => {
     state.userId = userLog.user.userId;
     state.password = undefined;
     state.isLoggedIn = true;
+    localStorage.setItem("token", state.token);
+    localStorage.setItem("userId", state.userId);
+    localStorage.setItem("isLoggedIn", state.isLoggedIn);
     const header = document.getElementById("menu");
     const navbarEl = document.getElementById("main-navbar");
     header.removeChild(navbarEl);
