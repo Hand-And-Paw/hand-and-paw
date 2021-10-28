@@ -21,11 +21,25 @@
     "welcome-image welcome-shift"
      ;
    
-
-
-
-
 } */
+navbar
+{
+    background-color:transparent;
+}
+.header-navbar-wrapper{
+     /* The image used */
+     background-image: url("../assets/images/ui/home/figma-images/welcome-bg.png");
+
+     min-height: 600px;
+   
+     /* Center and scale the image nicely */
+     background-position: left;
+     background-repeat: no-repeat;
+     background-size: 600px;
+     
+     /* Needed to position the navbar */
+     position: relative;
+}
 .welcome-container {
 
   grid-template-areas:
