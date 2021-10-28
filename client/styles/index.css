@@ -1,3 +1,4 @@
+@import url("./tilted-images.css");
 @import url("./root.css");
 @import url("./navbar.css");
 @import url("./button.css");
@@ -6,3 +7,37 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
+
+
+.welcome-container {
+  /* grid-area: welcome; */
+  grid-template-areas:
+    "welcome-image-dog welcome-article"
+    "space call-to-action";
+}
+
+.call-to-action {
+  grid-area: call-to-action;
+  justify-content: start;
+}
+
+.adoption-article {
+  background-color: var(--secondary2);
+  grid-area: article1;
+  grid-template-areas:
+    "article card-images"
+    "call-to-action space";
+}
+
+.help-article {
+  grid-area: article2;
+  grid-template-areas:
+    "card-images article"
+    "space call-to-action";
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

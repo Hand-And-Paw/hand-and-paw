@@ -1,21 +1,17 @@
-.article{
+.article {
   margin: auto;
-  padding: 2rem;
-  font-size:1.2rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  }
+}
 
-.article.h1 {
-  all:unset;
-  font-size:2rem;
+h1 {
+  font-size: 2rem;
   font-weight: 700;
-  } 
+  margin-bottom: 2rem;
+}
 
-.article.h2{
-  font-size:1.6rem;
+h2 {
+  font-size: 1.6rem;
   font-weight: 600;
-  }
-
-  p{
-  margin: 1em 0;
-  }
+  margin-bottom: 2rem;
+}
