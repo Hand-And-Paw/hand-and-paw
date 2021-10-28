@@ -8,19 +8,73 @@
 @import url("./form.css");
 @import url("./link-button.css");
 
+/* .welcome-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 50px);
 
+
+    grid-template-areas: "welcome-image space"
+    "welcome-image welcome-shift"
+    "welcome-image welcome-shift"
+    "welcome-image welcome-shift"
+    "welcome-image welcome-shift"
+     ;
+   
+
+
+
+
+} */
 .welcome-container {
-  /* grid-area: welcome; */
+
   grid-template-areas:
     "welcome-image-dog welcome-article"
     "space call-to-action";
+
 }
+
+.welcome-article{
+justify-content: flex-start;
+display: flex;
+
+display: grid;
+grid-template-rows:auto ;
+
+
+}
+.welcome-image{
+
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .welcome-image-dog{
+    position: relative;
+      top: 10px;
+      left: 10px;
+    
+  }
 
 .call-to-action {
   grid-area: call-to-action;
   justify-content: start;
-}
 
+}
+.grid-call-to-action{
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    grid-column-gap: 10px;
+justify-content: center;
+    grid-template-areas:call-to-action1 call-to-action2 .;
+}
+/* .call-to-action1 {
+    grid-area: button1;
+  
+}
+.call-to-action2 {
+    grid-area: button2;
+} */
 .adoption-article {
   background-color: var(--secondary2);
   grid-area: article1;
@@ -28,7 +82,6 @@
     "article card-images"
     "call-to-action space";
 }
-
 .help-article {
   grid-area: article2;
   grid-template-areas:

@@ -7,6 +7,9 @@ const logOut = () => {
   state.token = undefined;
   state.userId = undefined;
   state.isLoggedIn = false;
+  localStorage.removeItem("token");
+  localStorage.removeItem("userId");
+  localStorage.removeItem("isLoggedIn");
   const header = document.getElementById("menu");
   const navbarEl = document.getElementById("main-navbar");
   header.removeChild(navbarEl);

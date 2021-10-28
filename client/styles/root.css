@@ -46,6 +46,7 @@ a {
 
 .container {
   padding: 4rem;
+  margin-bottom: 10px;
 }
 
 .grid-image-article {
@@ -54,3 +55,6 @@ a {
   grid-template-columns: 1fr 1fr;
 
 }
+
+
+

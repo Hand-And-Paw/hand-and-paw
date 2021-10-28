@@ -19,7 +19,7 @@ const loginFormHandler = (event) => {
     loginAuthHandler(event);
 
     // closeModal in 1 second
-    setTimeout(closeModal, 1500);
+    setTimeout(closeModal, 800);
   }
 };
 
