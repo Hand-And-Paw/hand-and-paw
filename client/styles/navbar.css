@@ -1,27 +1,40 @@
 @import url(root.css);
+#menu a,
+button {
+  all: unset;
+  cursor: pointer;
+}
 
-navbar {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-areas: "logo menu account";
+#menu {
+  font-size: 1.125rem;
+  font-weight: 500;
   padding: 2rem;
   background-color: var(--primary1);
 }
 
-.logo {
+#top-navbar {
+  /* align-items: baseline; */
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: "logo menu account";
+  gap: 60px;
+  align-items: center;
+}
+
+#menu .logo {
   grid-area: logo;
   display: flex;
   justify-content: space-around;
   cursor: pointer;
 }
 
-.menu {
+#menu .pages-menu {
   grid-area: menu;
   display: flex;
   justify-content: space-between;
 }
 
-#account-menu {
+#menu #account-menu {
   all: unset;
   grid-area: account;
   display: flex;
@@ -29,23 +42,24 @@ navbar {
   cursor: pointer;
 }
 
-.menu button {
+#menu button {
+  background-color: tomato;
   all: unset;
   cursor: pointer;
 }
 
-li {
+#menu li {
   display: inline-block;
   position: relative;
 }
 
-li:hover::after {
+#menu li:hover::after {
   content: "";
   position: absolute;
   display: block;
   width: 100%;
   height: 2px;
-  bottom: -5px;
+  bottom: -20px;
   left: 0;
   background-color: var(--primary2);
 }
