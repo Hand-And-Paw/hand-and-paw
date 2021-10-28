@@ -4,7 +4,7 @@ const path = require("path");
 
 const storageImage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "./client/public/animal-uploads/");
+    cb(null, "./client/assets/images/animal-uploads/");
   },
   filename: (req, file, cb) => {
     // eslint-disable-next-line prefer-template

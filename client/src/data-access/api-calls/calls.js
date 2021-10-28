@@ -2,6 +2,8 @@
 
 import state from "../state/state.js";
 
+state.token = window.localStorage.getItem("token");
+
 export const performFetch = async (path) => {
   const URL = `${window.location.origin}/api/${path}`;
 
