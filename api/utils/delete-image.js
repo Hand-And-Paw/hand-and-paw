@@ -8,7 +8,8 @@ const deleteImageAsync = async (fileName, imageFolder) => {
       "..",
       "..",
       "client",
-      "public",
+      "assets",
+      "images",
       `${imageFolder}`,
       `${fileName}`
     ),
@@ -29,7 +30,8 @@ const deleteImageSync = (fileName, imageFolder) => {
       "..",
       "..",
       "client",
-      "public",
+      "assets",
+      "images",
       `${imageFolder}`,
       `${fileName}`
     ),

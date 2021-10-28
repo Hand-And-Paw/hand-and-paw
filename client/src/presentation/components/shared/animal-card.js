@@ -1,4 +1,4 @@
-import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
+// import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
 
 export const animalCard = (animal) => {
   const { type, breed, gender, character, dateBirth, pictures, location } =
@@ -10,7 +10,8 @@ export const animalCard = (animal) => {
   const photo = document.createElement("div");
   photo.className = "card-photo";
   const img = document.createElement("img");
-  img.src = `../../../../public/animal-uploads/${getAvatarHandler(pictures)}`;
+  console.log(pictures[0].picture.data);
+  img.src = `data:${pictures[0].picture.contentType};base64,[${pictures[0].picture.data}]`;
   photo.appendChild(img);
   // create info div
   const info = document.createElement("div");
