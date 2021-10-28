@@ -5,10 +5,9 @@ button {
   cursor: pointer;
 }
 
-#menu {
+navbar {
   font-size: 1.125rem;
   font-weight: 500;
-  padding: 2rem;
   background-color: var(--primary1);
 }
 
