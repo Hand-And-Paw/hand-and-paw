@@ -22,19 +22,18 @@
   padding: 0;
 }
 
-.container {
-  padding: 3rem;
+
+body {
+  font-family: "Poppins", sans-serif;
+
 }
+
 
 .main {
   width: 100%;
   margin: auto;
 }
 
-.container {
-  padding: 4rem;
-  margin-bottom: 10px;
-}
 
 .grid-image-article {
   display: grid;

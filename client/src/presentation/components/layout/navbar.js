@@ -1,4 +1,5 @@
 import callForm from "../../handlers/call-form.js";
+import logOut from "../../handlers/logout-handler.js";
 
 export const navbar = () => {
   const navbarEl = document.createElement("navbar");
@@ -15,7 +16,7 @@ export const navbar = () => {
   ul.className = "pages-menu";
   // visitor or logged in user
   const isLoggedIn = localStorage.getItem("isLoggedIn");
-
+  // const isLoggedIn = true;
   if (isLoggedIn) {
     ul.innerHTML = `
     <li> <a href = "./src/presentation/components/pages/find-animal.html"> Find an animal</a></li>
@@ -31,9 +32,10 @@ export const navbar = () => {
     accountMenu.appendChild(button);
     navbarEl.appendChild(accountMenu);
 
-    navbarEl.addEventListener("click", () =>
-      console.log("drop down menu handler")
-    );
+    navbarEl.addEventListener("click", logOut);
+    // navbarEl.addEventListener("click", () =>
+    //   console.log("drop down menu handler")
+    // );
   } else {
     ul.innerHTML = `
   <li> <a href = "./src/presentation/components/pages/find-animal.html">Find an animal</a></li>

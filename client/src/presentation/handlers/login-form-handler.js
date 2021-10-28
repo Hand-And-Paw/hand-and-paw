@@ -2,6 +2,7 @@ import { registerForm } from "../components/shared/register-form.js";
 import { registerUserFormHandler } from "./register-user-form-handler-.js";
 import closeModal from "./close-modal.js";
 import { loginAuthHandler } from "./login-auth-handler.js";
+import logOut from "./logout-handler.js";
 
 const loginFormHandler = (event) => {
   if (event.target.className === "open-register-form") {
