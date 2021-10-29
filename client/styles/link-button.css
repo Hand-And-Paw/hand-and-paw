@@ -1,7 +1,7 @@
-.link-button{
-  all:unset;
+.link-button {
+  all: unset;
   color: var(--linkBtn);
 }
-.link-button:hover{
-  cursor:pointer
+.link-button:hover {
+  cursor: pointer;
 }
