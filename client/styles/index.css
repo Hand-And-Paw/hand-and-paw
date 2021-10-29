@@ -72,7 +72,7 @@ navbar {
   grid-template-columns: 40% 40% 20%;
   grid-column-gap: 10px;
   justify-content: center;
-  grid-template-areas: call-to-action1 call-to-action2 .;
+  grid-template-areas: call-to-action1 call-to-action2;
 }
 /* .call-to-action1 {
     grid-area: button1;

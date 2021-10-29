@@ -5,7 +5,7 @@ import state from "../state/state.js";
 state.token = window.localStorage.getItem("token");
 
 export const performFetch = async (path) => {
-  const URL = `http://localhost:8080/api/${path}`;
+  const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
@@ -26,7 +26,7 @@ export const performFetch = async (path) => {
 };
 
 export const performPostJson = async (path, body) => {
-  const URL = `http://localhost:8080/api/${path}`;
+  const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
