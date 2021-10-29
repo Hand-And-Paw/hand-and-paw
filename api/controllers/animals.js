@@ -83,7 +83,6 @@ const animalsController = {
     try {
       const { body } = req;
       const { userId } = body;
-      console.log(userId);
       if ([...userId].length !== 24) {
         throw new Error(`invalid id`);
       }
@@ -112,7 +111,7 @@ const animalsController = {
           );
         }
       }
-      res.status(400).json({ message: error.message, stack: error.stack });
+      res.status(400).json({ message: error.message });
     }
   },
   updateOnePictureAnimal: async (req, res) => {
@@ -127,7 +126,7 @@ const animalsController = {
       const updatePicture = await animalManager.updateOnePicture(
         animalId,
         pictureId,
-        req.file.filename
+        req.file
       );
       if (
         updatePicture.acknowledged === true &&

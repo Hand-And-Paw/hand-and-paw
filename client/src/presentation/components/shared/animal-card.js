@@ -1,4 +1,5 @@
-// import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
+import { base64StringToBlob } from "blob-util";
+import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
 
 export const animalCard = (animal) => {
   const { type, breed, gender, character, dateBirth, pictures, location } =
@@ -10,8 +11,15 @@ export const animalCard = (animal) => {
   const photo = document.createElement("div");
   photo.className = "card-photo";
   const img = document.createElement("img");
-  console.log(pictures[0].picture.data);
-  img.src = `data:${pictures[0].picture.contentType};base64,[${pictures[0].picture.data}]`;
+  const principalPicture = getAvatarHandler(pictures);
+
+  const blob = base64StringToBlob(
+    principalPicture.picture.data,
+    principalPicture.picture.contentType
+  );
+
+  const url = URL.createObjectURL(blob);
+  img.src = url;
   photo.appendChild(img);
   // create info div
   const info = document.createElement("div");
@@ -25,7 +33,7 @@ export const animalCard = (animal) => {
   Date of Birth: <span> ${dateBirth} </span><br>
   Location: <span> ${location}</span> <br>
   `;
-  // append divs
+  // append div
   card.appendChild(photo);
   card.appendChild(info);
   return card;
