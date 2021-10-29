@@ -22,18 +22,14 @@
   padding: 0;
 }
 
-
 body {
   font-family: "Poppins", sans-serif;
-
 }
-
 
 .main {
   width: 100%;
   margin: auto;
 }
-
 
 .grid-image-article {
   display: grid;
