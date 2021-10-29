@@ -47,7 +47,7 @@ const animalsSchema = new mongoose.Schema({
   },
   pictures: [
     {
-      picture: { type: String, default: "" },
+      picture: { data: String, contentType: String },
       isPrincipal: { type: String, default: false },
       fieldname: String,
     },

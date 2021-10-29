@@ -6,16 +6,18 @@ const uploadAnimalPictures = require("../../middleware/multer-upload-animal-pict
 const upload = require("../../middleware/multer-upload-one-animal-picture");
 const tokenChecker = require("../../middleware/token-login");
 
+// all animals
+animalRoute.get("/", animalController.getAllAnimals);
+
 animalRoute.use((req, res, next) => {
   tokenChecker(req, res, next);
 });
-
 animalRoute.post(
   "/register",
   uploadAnimalPictures,
   animalController.postAnimal
 );
-animalRoute.get("/", animalController.getAllAnimals);
+
 // get one animal
 animalRoute.get("/:id", animalController.getAnimal);
 // update existing pictures and data

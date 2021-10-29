@@ -1,33 +1,45 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-underscore-dangle */
 const { ObjectID } = require("mongoose").mongo;
-
+const compressSharp = require("../utils/sharp-animals");
 const deleteImage = require("../utils/delete-image");
 const databaseAccess = require("../data-access/animals");
 
 const animalsManager = {
   createAnimal: async (newAnimal, pictures) => {
-    for (const picture in pictures) {
+    const picturesValues = Object.values(pictures);
+    for await (const picture of picturesValues) {
+      const imageCompressed = await compressSharp(picture[0].path);
+
       newAnimal.pictures.push({
-        picture: pictures[picture][0].filename,
-        fieldname: pictures[picture][0].fieldname,
+        picture: {
+          data: imageCompressed.toString("base64"),
+          contentType: picture[0].mimetype,
+        },
+        fieldname: picture[0].fieldname,
       });
+      deleteImage.deleteImageSync(picture[0].filename, "animal-uploads");
     }
     return databaseAccess.create(newAnimal);
   },
-  // eslint-disable-next-line consistent-return
+
   updateAnimal: async (newData, pictures, animalId) => {
     if (pictures) {
       const animal = await databaseAccess.read(newData.id);
+      const picturesValues = Object.values(pictures);
 
-      if (animal[0].pictures.length !== 0) {
-        // add new pictures
+      if (picturesValues.length !== 0) {
         const newAnimalPictures = [];
-        for (const picture in pictures) {
+        for await (const picture of picturesValues) {
+          const imageCompressed = await compressSharp(picture[0].path);
           newAnimalPictures.push({
-            filename: pictures[picture][0].filename,
-            fieldname: pictures[picture][0].fieldname,
+            picture: {
+              data: imageCompressed.toString("base64"),
+              contentType: picture[0].mimetype,
+            },
+            fieldname: picture[0].fieldname,
           });
+          deleteImage.deleteImageSync(picture[0].filename, "animal-uploads");
         }
         await databaseAccess.updateAnimalPictures(
           animal[0].pictures,
@@ -58,20 +70,34 @@ const animalsManager = {
     return animal;
   },
   getAllAnimals: async () => {
-    return databaseAccess.all();
+    const animals = await databaseAccess.all();
+    return animals;
   },
-  updateOnePicture: async (animalId, pictureId, filename) => {
+  updateOnePicture: async (animalId, pictureId, newPicture) => {
     const findAnimal = await databaseAccess.read(animalId);
     if (findAnimal.length === 0) {
       throw Error(`Cannot find animal, id doesn't exist`);
     }
 
+    const imageCompressed = await compressSharp(newPicture.path);
+    const pictureResized = {
+      picture: {
+        data: imageCompressed.toString("base64"),
+        contentType: newPicture.mimetype,
+      },
+      fieldname: newPicture.fieldname,
+    };
+    deleteImage.deleteImageSync(newPicture.filename, "animal-uploads");
+
     let updated;
 
-    for (const element of findAnimal[0].pictures) {
+    for await (const element of findAnimal[0].pictures) {
       if (ObjectID(pictureId).equals(element._id)) {
-        deleteImage.deleteImageSync(element.picture, "animal-uploads");
-        updated = databaseAccess.updateOneAnimalPicture(pictureId, filename);
+        updated = await databaseAccess.updateOneAnimalPicture(
+          animalId,
+          pictureId,
+          pictureResized
+        );
       }
     }
     return updated;
@@ -104,17 +130,26 @@ const animalsManager = {
     if (findAnimal.length === 0) {
       throw Error(`Cannot find animal, id doesn't exist`);
     }
+    const picturesValues = Object.values(pictures);
     const objectToUpload = [];
 
-    for (const picture in pictures) {
+    for await (const picture of picturesValues) {
+      const imageCompressed = await compressSharp(picture[0].path);
       objectToUpload.push({
-        filename: pictures[picture][0].filename,
-        fieldname: pictures[picture][0].fieldname,
+        picture: {
+          data: imageCompressed.toString("base64"),
+          contentType: picture[0].mimetype,
+        },
+        fieldname: picture[0].fieldname,
       });
+      deleteImage.deleteImageSync(picture[0].filename, "animal-uploads");
     }
+    const numberOfPictures = findAnimal[0].pictures.length;
+
     const uploadPictures = await databaseAccess.uploadPictures(
       animalId,
-      objectToUpload
+      objectToUpload,
+      numberOfPictures
     );
     return uploadPictures;
   },

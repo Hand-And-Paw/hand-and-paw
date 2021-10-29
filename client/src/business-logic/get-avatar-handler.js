@@ -4,14 +4,10 @@
  */
 
 const getAvatarHandler = (array) => {
-  let mainPicture;
-  if (array.length === 0) {
-    mainPicture = null;
-  } else {
-    mainPicture = array
-      .map((item) => (item.isPrincipal ? item.picture : null))
-      .filter((item) => item)[0];
-  }
+  const mainPicture = array.find(
+    (item) => JSON.parse(item.isPrincipal) === true
+  );
+
   return mainPicture;
 };
 
