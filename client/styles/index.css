@@ -8,19 +8,9 @@
 @import url("./form.css");
 @import url("./link-button.css");
 
-/* .welcome-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 50px);
-
-
-    grid-template-areas: "welcome-image space"
-    "welcome-image welcome-shift"
-    "welcome-image welcome-shift"
-    "welcome-image welcome-shift"
-    "welcome-image welcome-shift"
-     ;
-   } */
+.welcome-container {
+  padding: 0 10rem;
+}
 
 navbar {
   background-color: transparent !important;
