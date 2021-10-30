@@ -5,15 +5,7 @@ import logOut from "../../handlers/logout-handler.js";
 export const navbar = () => {
   const navbarEl = document.createElement("navbar");
   navbarEl.id = "top-navbar";
-  const logo = document.createElement("div");
-  logo.className = "logo";
-  const anchor = document.createElement("a");
-  anchor.href = "./index.html";
-  const img = document.createElement("img");
-  img.src = "./assets/images/ui/home/figma-images/Logo.png";
-  anchor.appendChild(img);
-  logo.appendChild(anchor);
-  navbarEl.appendChild(logo);
+
   // menu
   const ul = document.createElement("ul");
   ul.className = "pages-menu";
@@ -25,6 +17,15 @@ export const navbar = () => {
       window.location.href === `${window.location.origin}/` ||
       window.location.href === `${window.location.origin}/index.html`
     ) {
+      const logo = document.createElement("div");
+      logo.className = "logo";
+      const anchor = document.createElement("a");
+      anchor.href = "./index.html";
+      const img = document.createElement("img");
+      img.src = "./assets/images/ui/home/figma-images/Logo.png";
+      anchor.appendChild(img);
+      logo.appendChild(anchor);
+      navbarEl.appendChild(logo);
       ul.innerHTML = `
       <li> <a href = "./src/presentation/components/pages/find-animal.html"> Find an animal</a></li>
       <li> <a href = "./src/presentation/components/pages/add-animal.html"> Register an animal</li>
@@ -70,7 +71,7 @@ export const navbar = () => {
       const anchor = document.createElement("a");
       anchor.href = "../../../../index.html";
       const img = document.createElement("img");
-      img.src = "./assets/images/ui/home/figma-images/Logo.png";
+      img.src = "../../../../assets/images/ui/home/figma-images/Logo.png";
       anchor.appendChild(img);
       logo.appendChild(anchor);
       navbarEl.appendChild(logo);
