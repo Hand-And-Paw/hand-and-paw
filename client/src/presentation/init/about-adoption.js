@@ -28,9 +28,6 @@ for (i = 0; i < faq.length; i++) {
   });
 }
 
-
-
-
 question.forEach(element => {
   element.addEventListener("click", faqListHandler);
   console.log();
