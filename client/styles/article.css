@@ -23,3 +23,7 @@ p{
   margin-bottom: 2rem;
 }
 
+hr{
+  margin-top: 15px;
+  border: 2px solid var(--primary2);
+}
