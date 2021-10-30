@@ -5,6 +5,7 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
+@import url("./faq.css");
 
 .about-adoption.grid-image-article {
   grid-template-rows: auto;
