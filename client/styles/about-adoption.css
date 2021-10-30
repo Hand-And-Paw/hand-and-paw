@@ -5,6 +5,7 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
+@import url("./faq.css");
 
 .about-adoption.grid-image-article {
   grid-template-rows: auto;
@@ -27,3 +28,45 @@
   text-align: center;
   background-color: var(--secondary2);
 }
+.faq{
+  background-color: #fff;
+}
+.section-header{
+  text-align: center;
+  border-bottom: #777;
+  padding: 20px 60px;
+  display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+
+.question{
+  background-color: var(--secondary2);
+  padding: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+ 
+}
+.faq-list li{
+  list-style: none;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+.nested-list li{
+  padding: 20px;
+  margin: 0px;
+  
+}
+.nested-list p{
+  font-size: 0.9rem;
+  padding: 20px;
+  margin: 0px;
+}
+
+
+
+
+
