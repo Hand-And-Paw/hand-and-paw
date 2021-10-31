@@ -2,6 +2,8 @@
 const deleteAvatar = require("../utils/delete-image");
 const databaseAccess = require("../data-access/users");
 const animalManager = require("./animals");
+const deleteImage = require("../utils/delete-image");
+const compressSharp = require("../utils/sharp-avatar");
 
 const userSubscriptionManager = {
   createUser: async (newUser) => {
@@ -15,11 +17,13 @@ const userSubscriptionManager = {
   // eslint-disable-next-line consistent-return
   updateUser: async (newData, avatar) => {
     if (avatar) {
-      const user = await databaseAccess.read(newData.id);
-      if (user[0].avatar)
-        deleteAvatar.deleteImageSync(user[0].avatar, "avatar-uploads");
-
-      const updateUser = await databaseAccess.update(newData, avatar);
+      const imageCompressed = await compressSharp(avatar.path);
+      const pictureResized = {
+        data: imageCompressed.toString("base64"),
+        contentType: avatar.mimetype,
+      };
+      deleteImage.deleteImageSync(avatar.filename, "avatar-uploads");
+      const updateUser = await databaseAccess.update(newData, pictureResized);
       return updateUser;
     }
     const updateUser = await databaseAccess.update(newData);

@@ -43,7 +43,8 @@ const userSchema = new mongoose.Schema({
     type: String,
   },
   avatar: {
-    type: String,
+    data: String,
+    contentType: String,
   },
   favorites: [String],
   publicAccess: {

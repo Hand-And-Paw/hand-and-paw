@@ -1,7 +1,8 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable prefer-const */
 /* eslint-disable no-underscore-dangle */
 
 const Animal = require("../models/animal");
-const deleteImage = require("../utils/delete-image");
 
 const databaseAccess = {
   create: async (animalObj) => {
@@ -68,13 +69,14 @@ const databaseAccess = {
   updateAnimalPictures: async (previousPictures, newPictures, animalId) => {
     newPictures.forEach(async (newPicture) => {
       previousPictures.forEach(async (prevPicture) => {
+        console.log(newPicture.fieldname === prevPicture.fieldname);
         if (newPicture.fieldname === prevPicture.fieldname) {
-          deleteImage.deleteImageSync(prevPicture.picture, "animal-uploads");
           await Animal.updateOne(
             { $and: [{ _id: animalId }, { "pictures._id": prevPicture._id }] },
             {
               $set: {
-                "pictures.$.picture": `${newPicture.filename}`,
+                "pictures.$.picture.data": `${newPicture.picture.data}`,
+                "pictures.$.picture.contentType": `${newPicture.picture.contentType}`,
               },
             }
           );
@@ -82,10 +84,15 @@ const databaseAccess = {
       });
     });
   },
-  updateOneAnimalPicture: async (pictureId, filename) => {
+  updateOneAnimalPicture: async (animalId, pictureId, newPicture) => {
     const update = await Animal.updateOne(
-      { "pictures._id": pictureId },
-      { $set: { "pictures.$.picture": `${filename}` } }
+      { $and: [{ _id: animalId }, { "pictures._id": pictureId }] },
+      {
+        $set: {
+          "pictures.$.picture.data": `${newPicture.picture.data}`,
+          "pictures.$.picture.contentType": `${newPicture.picture.contentType}`,
+        },
+      }
     );
     return update;
   },
@@ -102,16 +109,20 @@ const databaseAccess = {
     );
     return deletePicture;
   },
-  uploadPictures: async (animalId, pictures) => {
+  uploadPictures: async (animalId, pictures, numberOfPictures) => {
     let uploadPictures;
     pictures.forEach(async (picture) => {
+      let newNumberFieldname = ++numberOfPictures;
       uploadPictures = await Animal.updateOne(
         { _id: animalId },
         {
           $push: {
             pictures: {
-              picture: picture.filename,
-              fieldname: picture.fieldname,
+              picture: {
+                data: picture.picture.data,
+                contentType: picture.picture.contentType,
+              },
+              fieldname: `picture${newNumberFieldname}`,
             },
           },
         }

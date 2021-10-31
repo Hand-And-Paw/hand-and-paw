@@ -126,7 +126,7 @@ const animalsController = {
       const updatePicture = await animalManager.updateOnePicture(
         animalId,
         pictureId,
-        req.file.filename
+        req.file
       );
       if (
         updatePicture.acknowledged === true &&
