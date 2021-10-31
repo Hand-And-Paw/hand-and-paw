@@ -1,5 +1,5 @@
-import { base64StringToBlob } from "blob-util";
 import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
+import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
 export const animalCard = (animal) => {
   const { type, breed, gender, character, dateBirth, pictures, location } =
@@ -13,11 +13,10 @@ export const animalCard = (animal) => {
   const img = document.createElement("img");
   const principalPicture = getAvatarHandler(pictures);
 
-  const blob = base64StringToBlob(
+  const blob = b64toBlob(
     principalPicture.picture.data,
     principalPicture.picture.contentType
   );
-
   const url = URL.createObjectURL(blob);
   img.src = url;
   photo.appendChild(img);

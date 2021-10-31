@@ -5,15 +5,7 @@ import logOut from "../../handlers/logout-handler.js";
 export const navbar = () => {
   const navbarEl = document.createElement("navbar");
   navbarEl.id = "top-navbar";
-  const logo = document.createElement("div");
-  logo.className = "logo";
-  const anchor = document.createElement("a");
-  anchor.href = "./index.html";
-  const img = document.createElement("img");
-  img.src = "./assets/images/ui/home/figma-images/Logo.png";
-  anchor.appendChild(img);
-  logo.appendChild(anchor);
-  navbarEl.appendChild(logo);
+
   // menu
   const ul = document.createElement("ul");
   ul.className = "pages-menu";
@@ -25,6 +17,15 @@ export const navbar = () => {
       window.location.href === `${window.location.origin}/` ||
       window.location.href === `${window.location.origin}/index.html`
     ) {
+      const logo = document.createElement("div");
+      logo.className = "logo";
+      const anchor = document.createElement("a");
+      anchor.href = "./index.html";
+      const img = document.createElement("img");
+      img.src = "./assets/images/ui/home/figma-images/Logo.png";
+      anchor.appendChild(img);
+      logo.appendChild(anchor);
+      navbarEl.appendChild(logo);
       ul.innerHTML = `
       <li> <a href = "./src/presentation/components/pages/find-animal.html"> Find an animal</a></li>
       <li> <a href = "./src/presentation/components/pages/add-animal.html"> Register an animal</li>
@@ -62,7 +63,7 @@ export const navbar = () => {
       accountMenu.appendChild(profileMenu);
       navbarEl.appendChild(accountMenu);
       navbarEl.addEventListener("click", dropDownHandler);
-      navbarEl.addEventListener("click", logOut);
+      logOutBtn.addEventListener("click", logOut);
     } else {
       // logo
       const logo = document.createElement("div");
@@ -70,7 +71,7 @@ export const navbar = () => {
       const anchor = document.createElement("a");
       anchor.href = "../../../../index.html";
       const img = document.createElement("img");
-      img.src = "./assets/images/ui/home/figma-images/Logo.png";
+      img.src = "../../../../assets/images/ui/home/figma-images/Logo.png";
       anchor.appendChild(img);
       logo.appendChild(anchor);
       navbarEl.appendChild(logo);
@@ -113,22 +114,54 @@ export const navbar = () => {
       navbarEl.addEventListener("click", dropDownHandler);
       navbarEl.addEventListener("click", logOut);
     }
-  } else {
-    ul.innerHTML = `
+  }
+  if (!isLoggedIn) {
+    if (
+      window.location.href === `${window.location.origin}/` ||
+      window.location.href === `${window.location.origin}/index.html`
+    ) {
+      const logo = document.createElement("div");
+      logo.className = "logo";
+      const anchor = document.createElement("a");
+      anchor.href = "./index.html";
+      const img = document.createElement("img");
+      img.src = "./assets/images/ui/home/figma-images/Logo.png";
+      anchor.appendChild(img);
+      logo.appendChild(anchor);
+      navbarEl.appendChild(logo);
+      ul.innerHTML = `
   <li> <a href = "./src/presentation/components/pages/find-animal.html">Find an animal</a></li>
   <li> <button id="register-animal-btn"> Register an animal</button></li>
   <li> <a href =  "./src/presentation/components/pages/find-shelter.html"> Find a shelter</a></li>
   <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
   `;
-    const accountMenu = document.createElement("div");
-    accountMenu.id = "account-menu";
-    const button = document.createElement("button");
-    button.id = "account-menu";
-    button.innerText = "Log in/Sign up";
-    accountMenu.appendChild(button);
-    navbarEl.appendChild(accountMenu);
+      const accountMenu = document.createElement("div");
+      accountMenu.id = "account-menu";
+      const button = document.createElement("button");
+      button.id = "account-menu";
+      button.innerText = "Log in/Sign up";
+      accountMenu.appendChild(button);
+      navbarEl.appendChild(accountMenu);
 
-    navbarEl.addEventListener("click", callForm);
+      navbarEl.addEventListener("click", callForm);
+    } else {
+      const logo = document.createElement("div");
+      logo.className = "logo";
+      const anchor = document.createElement("a");
+      anchor.href = "./index.html";
+      const img = document.createElement("img");
+      img.src = "../../../../assets/images/ui/home/figma-images/Logo.png";
+      anchor.appendChild(img);
+      logo.appendChild(anchor);
+      navbarEl.appendChild(logo);
+      ul.innerHTML = `
+      <li> <a href = "./find-animal.html"> Find an animal</a></li>
+      <li> <a href = "./add-animal.html"> Register an animal</li>
+      <li> <a href = "./find-shelter.html"> Find a shelter</a></li>
+      <li> <a href = "./about-adoption.html"> About adoption</a></li>
+      
+      `;
+    }
   }
   navbarEl.appendChild(ul);
 

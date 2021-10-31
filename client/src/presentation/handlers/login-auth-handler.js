@@ -2,6 +2,7 @@
 import state from "../../data-access/state/state.js";
 import { loginUser } from "../../data-access/login/login.js";
 import { navbar } from "../components/layout/navbar.js";
+import { loginForm } from "../components/shared/login-form.js";
 
 export const loginAuthHandler = async (event) => {
   event.preventDefault();
@@ -22,10 +23,11 @@ export const loginAuthHandler = async (event) => {
     localStorage.setItem("token", state.token);
     localStorage.setItem("userId", state.userId);
     localStorage.setItem("isLoggedIn", state.isLoggedIn);
+    loginForm.innerHTML = `<h1>${userLog.message}</h1>`;
     const header = document.getElementById("menu");
-    const navbarEl = document.getElementById("main-navbar");
+    const navbarEl = document.getElementById("top-navbar");
     header.removeChild(navbarEl);
-    header.appendChild(navbar());
+    header.prepend(navbar());
   }
   form.innerHTML = userLog.message;
 };
