@@ -1,22 +1,23 @@
-span{
+.close-modal {
   cursor: pointer;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
 }
 
-.modal-background{
+.modal-background {
   position: fixed;
-  width:100%;
-  height:100vh;
-  top:0;
-  left:0;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
   background-color: rgba(255, 255, 255, 0.3);
-  display:flex;
+  display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   visibility: visible;
   backdrop-filter: blur(5px);
+  z-index: 100;
 }
 
 .modal {
@@ -41,4 +42,3 @@ span{
   align-items: center;
   text-align: center;
 }
-

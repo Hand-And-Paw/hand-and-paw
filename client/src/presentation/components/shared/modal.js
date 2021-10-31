@@ -7,6 +7,7 @@ const createModal = (content) => {
   modal.className = "modal";
   const close = document.createElement("span");
   close.innerText = "X";
+  close.className = "close-modal";
   const modalContent = document.createElement("div");
   modalContent.className = "modal-content";
   modalContent.appendChild(content);
