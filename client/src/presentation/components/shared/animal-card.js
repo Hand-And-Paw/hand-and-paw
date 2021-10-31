@@ -17,7 +17,6 @@ export const animalCard = (animal) => {
     principalPicture.picture.data,
     principalPicture.picture.contentType
   );
-  console.log(blob);
   const url = URL.createObjectURL(blob);
   img.src = url;
   photo.appendChild(img);
