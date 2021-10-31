@@ -2,11 +2,13 @@ import callForm from "../../handlers/call-form.js";
 import dropDownHandler from "../../handlers/dropdown-handler.js";
 import logOut from "../../handlers/logout-handler.js";
 
-export const navbar = () => {
-  debugger;
+export const navbar = (id) => {
   const navbarEl = document.createElement("navbar");
-  navbarEl.id = "top-navbar";
+  navbarEl.id = id;
 
+  //logo
+  const logo = document.createElement("div");
+  logo.className = "logo";
   // menu
   const ul = document.createElement("ul");
   ul.className = "pages-menu";
@@ -68,8 +70,7 @@ export const navbar = () => {
       logOutBtn.addEventListener("click", logOut);
     } else {
       // logo
-      const logo = document.createElement("div");
-      logo.className = "logo";
+
       const anchor = document.createElement("a");
       anchor.href = "../../../../index.html";
       const img = document.createElement("img");
@@ -140,7 +141,7 @@ export const navbar = () => {
       const accountMenu = document.createElement("div");
       accountMenu.id = "account-menu";
       const button = document.createElement("button");
-      button.id = "account-menu";
+      button.id = "account-menu-btn";
       button.innerText = "Log in/Sign up";
       accountMenu.appendChild(button);
       navbarEl.appendChild(accountMenu);
@@ -165,7 +166,7 @@ export const navbar = () => {
       const accountMenu = document.createElement("div");
       accountMenu.id = "account-menu";
       const button = document.createElement("button");
-      button.id = "account-menu";
+      button.id = "account-menu-btn";
       button.innerText = "Log in/Sign up";
       accountMenu.appendChild(button);
       navbarEl.appendChild(accountMenu);

@@ -1,30 +1,31 @@
 import { navbar } from "./navbar.js";
 
-const footer = (mainMenu) => {
+const footer = (menuId) => {
   //main container
   const container = document.createElement("div");
   container.className = "container";
   //navbar menu
-  const navigation = document.createElement("div");
-  navigation.className = "footer-navigation";
-  navigation.appendChild(navbar());
-  container.appendChild(navigation);
+  container.appendChild(navbar(menuId));
   //about
-  const about = document.createElement("div");
+  const about = document.createElement("p");
   about.className = "footer-about-project";
   about.innerText = `Created by students of HackYourFuture Belgium`;
-  const button = document.createElement("button");
-  button.className = "contact-us";
-  button.innerText = "Contact us";
-  button.addEventListener("click", () => console.log("call contact us form"));
-  about.appendChild(button);
   container.appendChild(about);
+
+  //contact us
+  const contactButton = document.createElement("button");
+  contactButton.id = "contact-us";
+  contactButton.className = "contact-button";
+  contactButton.innerText = "Contact us";
+  contactButton.addEventListener("click", () =>
+    console.log("call contact us form")
+  );
+  container.appendChild(contactButton);
+
   //copyright
-  const copyright = document.createElement("div");
   const p = document.createElement("p");
   p.id = "copyrigt";
-  p.innerHTML = `All rights reserved © 2021`;
-  copyright.appendChild(p);
+  p.innerHTML = `© 2021`;
   container.appendChild(p);
   //to the top
   const goUp = document.createElement("div");
@@ -37,4 +38,5 @@ const footer = (mainMenu) => {
   container.appendChild(goUp);
   return container;
 };
+
 export default footer;
