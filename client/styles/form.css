@@ -1,4 +1,4 @@
-#login-form {
+.modal-form {
   box-sizing: border-box;
   display: block;
   justify-content: center;
@@ -8,7 +8,7 @@
   min-width: 250px;
   width: 100%;
 }
-#login-form label {
+.modal-form label {
   float: left;
   margin-left: 1rem;
 }
