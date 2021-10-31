@@ -1,4 +1,8 @@
+import { navbar } from "../components/layout/navbar.js";
+import footer from "../components/layout/footer.js";
+
 const buildPage = () => {
-  console.log("Hello! This is animal profile page JS file.");
+  document.getElementById("menu").appendChild(navbar());
+  document.querySelector("footer").appendChild(footer());
 };
 buildPage();

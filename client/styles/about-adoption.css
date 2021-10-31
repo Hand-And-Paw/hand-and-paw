@@ -4,4 +4,26 @@
 @import url("./article.css");
 @import url("./modal.css");
 @import url("./form.css");
-@import url('./link-button.css')
+@import url("./link-button.css");
+
+.about-adoption.grid-image-article {
+  grid-template-rows: auto;
+  grid-template-areas: "adoption-article adoption-image";
+}
+.adoption-image {
+  padding: 4em;
+}
+.adoption-image img {
+  max-width: 100%;
+}
+
+.stories-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+}
+
+.happy-stories {
+  text-align: center;
+  background-color: var(--secondary2);
+}

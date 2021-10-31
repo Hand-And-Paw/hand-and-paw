@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 
-import { state } from "../state/state.js";
+import state from "../state/state.js";
+
+state.token = window.localStorage.getItem("token");
 
 export const performFetch = async (path) => {
   const URL = `${window.location.origin}/api/${path}`;
@@ -53,6 +55,7 @@ export const performPostFormData = async (path, body) => {
       "Content-Type": "multipart/form-data",
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
+
     body: JSON.stringify(body),
   });
   if (!response.ok) {

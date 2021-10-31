@@ -60,10 +60,9 @@ const userRegister = {
           `Cannot update email, the email: ${foundEmail[0].email}, already exists`
         );
       }
-
       // if there is an image uploaded
       if (req.file !== undefined) {
-        await userManager.updateUser(newData, req.file.filename);
+        await userManager.updateUser(newData, req.file);
         const userUpdated = await userManager.getUser(id);
         userUpdated[0].password = undefined;
         res.status(200).send(userUpdated);
@@ -81,7 +80,7 @@ const userRegister = {
           "avatar-uploads"
         );
       }
-      res.status(401).json({ message: error.message });
+      res.status(401).json({ message: error.message, stack: error.stack });
     }
   },
   deleteUser: async (req, res) => {
@@ -121,7 +120,9 @@ const userRegister = {
       };
       const newRegister = await userManager.createUser(newUser);
 
-      res.status(201).json(newRegister);
+      res
+        .status(200)
+        .json({ message: "You're successfully registered", user: newRegister });
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
