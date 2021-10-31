@@ -22,3 +22,8 @@ p{
   font-weight: 400;
   margin-bottom: 2rem;
 }
+
+hr{
+  margin-top: 15px;
+  border: 2px solid var(--primary2);
+}
