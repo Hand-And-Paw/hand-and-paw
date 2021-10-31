@@ -17,7 +17,6 @@
 }
 
 * {
-  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -25,6 +24,26 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.188rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.438rem;
 }
 
 .main {
