@@ -17,8 +17,11 @@ export const loginForm = () => {
       required
     />
     <br />
-    <button class="open-register-form">Create an account</button>
-    <button id="login-submit-btn" class="submit-btn">Log In</button>
+    
+    <button id="open-register-form" class="link-button">Create an account</button><br>
+    
+    <button id="login-submit-btn" class="button form-button">Submit</button>
+    
   `;
 
   form.addEventListener("click", loginFormHandler);
