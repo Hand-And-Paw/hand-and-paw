@@ -15,7 +15,8 @@ export const loginAuthHandler = async (event) => {
   state.email = userObj.email;
   state.password = userObj.password;
   const userLog = await loginUser();
-  if (userLog.user.token) {
+
+  if (userLog?.user?.token) {
     state.token = userLog.user.token;
     state.userId = userLog.user.userId;
     state.password = undefined;

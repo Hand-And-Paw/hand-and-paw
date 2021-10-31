@@ -3,6 +3,7 @@ import dropDownHandler from "../../handlers/dropdown-handler.js";
 import logOut from "../../handlers/logout-handler.js";
 
 export const navbar = () => {
+  debugger;
   const navbarEl = document.createElement("navbar");
   navbarEl.id = "top-navbar";
 
@@ -15,7 +16,8 @@ export const navbar = () => {
   if (isLoggedIn) {
     if (
       window.location.href === `${window.location.origin}/` ||
-      window.location.href === `${window.location.origin}/index.html`
+      window.location.href === `${window.location.origin}/index.html` ||
+      window.location.href === `${window.location.origin}`
     ) {
       const logo = document.createElement("div");
       logo.className = "logo";
@@ -142,13 +144,12 @@ export const navbar = () => {
       button.innerText = "Log in/Sign up";
       accountMenu.appendChild(button);
       navbarEl.appendChild(accountMenu);
-
       navbarEl.addEventListener("click", callForm);
     } else {
       const logo = document.createElement("div");
       logo.className = "logo";
       const anchor = document.createElement("a");
-      anchor.href = "./index.html";
+      anchor.href = "../../../../index.html";
       const img = document.createElement("img");
       img.src = "../../../../assets/images/ui/home/figma-images/Logo.png";
       anchor.appendChild(img);
@@ -161,6 +162,14 @@ export const navbar = () => {
       <li> <a href = "./about-adoption.html"> About adoption</a></li>
       
       `;
+      const accountMenu = document.createElement("div");
+      accountMenu.id = "account-menu";
+      const button = document.createElement("button");
+      button.id = "account-menu";
+      button.innerText = "Log in/Sign up";
+      accountMenu.appendChild(button);
+      navbarEl.appendChild(accountMenu);
+      navbarEl.addEventListener("click", callForm);
     }
   }
   navbarEl.appendChild(ul);
