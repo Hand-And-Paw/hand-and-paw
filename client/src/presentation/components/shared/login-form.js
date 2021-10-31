@@ -18,7 +18,7 @@ export const loginForm = () => {
     />
     <br />
     <button class="open-register-form">Create an account</button>
-    <button id="button login-submit-btn submit-form button" class="submit-btn">Log In</button>
+    <button id="login-submit-btn" class="submit-btn">Log In</button>
   `;
 
   form.addEventListener("click", loginFormHandler);

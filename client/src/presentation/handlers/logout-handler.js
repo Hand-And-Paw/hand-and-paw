@@ -12,7 +12,7 @@ const logOut = (event) => {
     localStorage.removeItem("userId");
     localStorage.removeItem("isLoggedIn");
     const header = document.getElementById("menu");
-    const navbarEl = document.getElementById("main-navbar");
+    const navbarEl = document.getElementById("top-navbar");
     header.removeChild(navbarEl);
     header.appendChild(navbar());
   }
