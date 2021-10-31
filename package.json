@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "NODE_ENV=production PORT=3000 STATIC_DIR=client DATA_DIR=data DB_PATH=mongodb://localhost/handAndPaw node ./api/index.js",
+    "start:windows": "SET NODE_ENV=development & nodemon ./api/index.js",
     "dev:api": "nodemon api/index.js",
     "dev:client": "vite ./client",
     "document:client": "node ./dev-scripts/document client",
