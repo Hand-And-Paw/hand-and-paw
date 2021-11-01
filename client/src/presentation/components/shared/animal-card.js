@@ -2,15 +2,16 @@ import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
 import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
 export const animalCard = (animal) => {
-  const { type, breed, gender, character, dateBirth, pictures, location } =
+  const { type, breed, gender, character, dateBirth, pictures, location, _id } =
     animal;
   // create card
   const card = document.createElement("div");
   card.className = "animal-card";
+  card.setAttribute("data-id", `${_id}`);
   // create photo div
   const photo = document.createElement("div");
   photo.className = "card-photo";
-  console.log(pictures.length);
+
   if (pictures.length !== 0) {
     const img = document.createElement("img");
     const principalPicture = getAvatarHandler(pictures);
