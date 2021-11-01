@@ -67,9 +67,28 @@ const databaseAccess = {
     return animals;
   },
   updateAnimalPictures: async (previousPictures, newPictures, animalId) => {
+    let numberOfPictures = 0
+    if (previousPictures.length === 0) {
+      newPictures.forEach(async (picture) => {
+        let newNumberFieldname = ++numberOfPictures;
+       await Animal.updateOne(
+          { _id: animalId },
+          {
+            $push: {
+              pictures: {
+                picture: {
+                  data: picture.picture.data,
+                  contentType: picture.picture.contentType,
+                },
+                fieldname: `picture${newNumberFieldname}`,
+              },
+            },
+          }
+        );
+      });
+    }
     newPictures.forEach(async (newPicture) => {
       previousPictures.forEach(async (prevPicture) => {
-        console.log(newPicture.fieldname === prevPicture.fieldname);
         if (newPicture.fieldname === prevPicture.fieldname) {
           await Animal.updateOne(
             { $and: [{ _id: animalId }, { "pictures._id": prevPicture._id }] },
