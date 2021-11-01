@@ -3,7 +3,7 @@ import {
   checkLength,
   checkPasswordMatch,
   checkRequired,
-} from "../../business-logic/validation.js";
+} from "../../business-logic/form-validation.js";
 
 export const registerFormValidation = () => {
   const username = document.getElementById("name");
