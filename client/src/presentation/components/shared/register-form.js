@@ -1,4 +1,5 @@
-import { registerFormValidation } from "../../../business-logic/register-form-validation.js";
+import { registerFormValidation } from "../../handlers/register-form-validation.js";
+import { registerUserFormHandler } from "../../handlers/register-user-form-handler-.js";
 
 export const registerForm = () => {
   const form = document.createElement("form");
@@ -39,8 +40,11 @@ export const registerForm = () => {
     /></br>
     <small>Error message</small>
   </div>
-    <button id="submit-register-form" class="button form-button">Register</button>
+    <button type="submit" id="submit-register-form" class="button form-button">Register</button>
   `;
-  form.addEventListener("mouseover", registerFormValidation);
+  form.addEventListener("keyup", registerFormValidation);
+  form.addEventListener("submit", registerFormValidation);
+  form.addEventListener("submit", registerUserFormHandler);
+
   return form;
 };

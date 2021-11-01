@@ -1,4 +1,4 @@
-// import { registerUser } from "../../data-access/user-access/register-user.js";
+import { registerUser } from "../../data-access/user-access/register-user.js";
 
 export const registerUserFormHandler = async () => {
   // event.preventDefault();
@@ -8,7 +8,8 @@ export const registerUserFormHandler = async () => {
   for (const key of formData.keys()) {
     userObj[key] = formData.get(key);
   }
-  // const post = await registerUser(userObj);
+  const post = await registerUser(userObj);
+  return post;
 
   // form.innerHTML = `<h1> ${post.message} </h1>`;
   // form.innerHTML = `Registered`;
