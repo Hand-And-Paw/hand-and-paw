@@ -52,18 +52,11 @@ const databaseAccess = {
 
   read: async (id = "") => {
     const animal = await Animal.find({ _id: id });
-
-    if (animal.length === 0) {
-      throw Error(`Cannot find animal, id doesn't exist`);
-    }
     return animal;
   },
 
   all: async () => {
     let animals = await Animal.find();
-    if (animals.length === 0) {
-      animals = `the are not animals in Animal collection`;
-    }
     return animals;
   },
   updateAnimalPictures: async (previousPictures, newPictures, animalId) => {
