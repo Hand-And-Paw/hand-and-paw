@@ -10,6 +10,7 @@ export const animalCard = (animal) => {
   // create photo div
   const photo = document.createElement("div");
   photo.className = "card-photo";
+  console.log(pictures.length);
   if (pictures.length !== 0) {
     const img = document.createElement("img");
     const principalPicture = getAvatarHandler(pictures);
