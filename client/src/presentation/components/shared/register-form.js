@@ -1,3 +1,5 @@
+import { registerFormValidation } from "../../../business-logic/register-form-validation.js";
+
 export const registerForm = () => {
   const form = document.createElement("form");
   form.className = "modal-form";
@@ -13,7 +15,7 @@ export const registerForm = () => {
   <div class="form-control">
     <label for="email">Email:</label><br />
     <input type="email" id="email" name="email" autocomplete="email" required /><br />
-    <small>Error message </small>
+    <small> Error message </small>
   </div>
   <div class="form-control">
     <label for="password">Password:</label><br />
@@ -39,6 +41,6 @@ export const registerForm = () => {
   </div>
     <button id="submit-register-form" class="button form-button">Register</button>
   `;
-  form.addEventListener("submit", console.log("whoah"));
+  form.addEventListener("mouseover", registerFormValidation);
   return form;
 };
