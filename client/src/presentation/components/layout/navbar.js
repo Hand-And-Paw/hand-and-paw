@@ -2,178 +2,103 @@ import callForm from "../../handlers/call-form.js";
 import dropDownHandler from "../../handlers/dropdown-handler.js";
 import logOut from "../../handlers/logout-handler.js";
 
-export const navbar = (id) => {
-  const navbarEl = document.createElement("navbar");
-  navbarEl.id = id;
-
-  //logo
-  const logo = document.createElement("div");
-  logo.className = "logo";
-  // menu
-  const ul = document.createElement("ul");
-  ul.className = "pages-menu";
-  // visitor or logged in user
+export const navbar = () => {
+  // Is the user logged in
   const isLoggedIn = localStorage.getItem("isLoggedIn");
 
+  //////////////////////////////////
+  // Create the navbar
+  //////////////////////////////////
+  const navbarEl = document.createElement("navbar");
+  navbarEl.id = "top-navbar";
+
+  // Add the logo
+  const logo = createLogo();
+  navbarEl.appendChild(logo);
+
+  // Add the mainmenu
+  const mainMenu = createMainMenu();
+  navbarEl.appendChild(mainMenu);
+
+  // Add additional login/logout/signup
   if (isLoggedIn) {
-    if (
-      window.location.href === `${window.location.origin}/` ||
-      window.location.href === `${window.location.origin}/index.html` ||
-      window.location.href === `${window.location.origin}`
-    ) {
-      const logo = document.createElement("div");
-      logo.className = "logo";
-      const anchor = document.createElement("a");
-      anchor.href = "./index.html";
-      const img = document.createElement("img");
-      img.src = "./assets/images/ui/home/figma-images/Logo.png";
-      anchor.appendChild(img);
-      logo.appendChild(anchor);
-      navbarEl.appendChild(logo);
-      ul.innerHTML = `
-      <li> <a href = "./src/presentation/components/pages/find-animal.html"> Find an animal</a></li>
-      <li> <a href = "./src/presentation/components/pages/add-animal.html"> Register an animal</li>
-      <li> <a href = "./src/presentation/components/pages/find-shelter.html"> Find a shelter</a></li>
-      <li> <a href = "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
-      
-      `;
-      // dropdown profile menu
-      const accountMenu = document.createElement("div");
-      accountMenu.id = "account-menu";
-      // log out btn
-      const logOutBtn = document.createElement("button");
-      logOutBtn.innerText = "Log out";
-      logOutBtn.id = "log-out";
-      accountMenu.appendChild(logOutBtn);
-      // profile menu
-      // avatar
-      const profileMenu = document.createElement("div");
-      profileMenu.className = "avatar";
-      const avatar = document.createElement("img");
-      avatar.src = "#";
-      avatar.id = "open-dropdown";
-      profileMenu.appendChild(avatar);
-      // dropdown
-      // dropdown menu content
-      const dropDownMenu = document.createElement("div");
-      dropDownMenu.className = "dropdown-content";
-      dropDownMenu.innerHTML = `
-      <a href="./src/presentation/components/pages/favorites.html">Favorites</a><br>
-      <a href="./src/presentation/components/pages/my-animals.html">My animals</a><br>
-      <a href="./src/presentation/components/pages/edit-user-profile.html">Edit profile</a><br>
-      `;
-
-      profileMenu.appendChild(dropDownMenu);
-      accountMenu.appendChild(profileMenu);
-      navbarEl.appendChild(accountMenu);
-      navbarEl.addEventListener("click", dropDownHandler);
-      logOutBtn.addEventListener("click", logOut);
-    } else {
-      // logo
-
-      const anchor = document.createElement("a");
-      anchor.href = "../../../../index.html";
-      const img = document.createElement("img");
-      img.src = "../../../../assets/images/ui/home/figma-images/Logo.png";
-      anchor.appendChild(img);
-      logo.appendChild(anchor);
-      navbarEl.appendChild(logo);
-      ul.innerHTML = `
-          <li> <a href = "./find-animal.html"> Find an animal</a></li>
-          <li> <a href = "./add-animal.html"> Register an animal</li>
-          <li> <a href = "./find-shelter.html"> Find a shelter</a></li>
-          <li> <a href = "./about-adoption.html"> About adoption</a></li>
-          
-          `;
-      // dropdown profile menu
-      const accountMenu = document.createElement("div");
-      accountMenu.id = "account-menu";
-      // log out btn
-      const logOutBtn = document.createElement("button");
-      logOutBtn.innerText = "Log out";
-      logOutBtn.id = "log-out";
-      accountMenu.appendChild(logOutBtn);
-      // profile menu
-      // avatar
-      const profileMenu = document.createElement("div");
-      profileMenu.className = "avatar";
-      const avatar = document.createElement("img");
-      avatar.src = "#";
-      avatar.id = "open-dropdown";
-      profileMenu.appendChild(avatar);
-      // dropdown
-      // dropdown menu content
-      const dropDownMenu = document.createElement("div");
-      dropDownMenu.className = "dropdown-content";
-      dropDownMenu.innerHTML = `
-          <a href="./src/presentation/components/pages/favorites.html">Favorites</a><br>
-          <a href="./src/presentation/components/pages/my-animals.html">My animals</a><br>
-          <a href="./src/presentation/components/pages/edit-user-profile.html">Edit profile</a><br>
-          `;
-
-      profileMenu.appendChild(dropDownMenu);
-      accountMenu.appendChild(profileMenu);
-      navbarEl.appendChild(accountMenu);
-      navbarEl.addEventListener("click", dropDownHandler);
-      navbarEl.addEventListener("click", logOut);
-    }
+    const logoutMenu = createLogoutMenu();
+    const profileDropDownMenu = createProfileDropDownMenu();
+    logoutMenu.appendChild(profileDropDownMenu);
+    navbarEl.appendChild(logoutMenu);
+  } else {
+    const loginSignupMenu = createLoginSignupMenu();
+    navbarEl.appendChild(loginSignupMenu);
   }
-  if (!isLoggedIn) {
-    if (
-      window.location.href === `${window.location.origin}/` ||
-      window.location.href === `${window.location.origin}/index.html`
-    ) {
-      const logo = document.createElement("div");
-      logo.className = "logo";
-      const anchor = document.createElement("a");
-      anchor.href = "./index.html";
-      const img = document.createElement("img");
-      img.src = "./assets/images/ui/home/figma-images/Logo.png";
-      anchor.appendChild(img);
-      logo.appendChild(anchor);
-      navbarEl.appendChild(logo);
-      ul.innerHTML = `
-  <li> <a href = "./src/presentation/components/pages/find-animal.html">Find an animal</a></li>
-  <li> <button id="register-animal-btn"> Register an animal</button></li>
-  <li> <a href =  "./src/presentation/components/pages/find-shelter.html"> Find a shelter</a></li>
-  <li> <a href =  "./src/presentation/components/pages/about-adoption.html"> About adoption</a></li>
-  `;
-      const accountMenu = document.createElement("div");
-      accountMenu.id = "account-menu";
-      const button = document.createElement("button");
-      button.id = "account-menu-btn";
-      button.innerText = "Log in/Sign up";
-      accountMenu.appendChild(button);
-      navbarEl.appendChild(accountMenu);
-      navbarEl.addEventListener("click", callForm);
-    } else {
-      const logo = document.createElement("div");
-      logo.className = "logo";
-      const anchor = document.createElement("a");
-      anchor.href = "../../../../index.html";
-      const img = document.createElement("img");
-      img.src = "../../../../assets/images/ui/home/figma-images/Logo.png";
-      anchor.appendChild(img);
-      logo.appendChild(anchor);
-      navbarEl.appendChild(logo);
-      ul.innerHTML = `
-      <li> <a href = "./find-animal.html"> Find an animal</a></li>
-      <li> <a href = "./add-animal.html"> Register an animal</li>
-      <li> <a href = "./find-shelter.html"> Find a shelter</a></li>
-      <li> <a href = "./about-adoption.html"> About adoption</a></li>
-      
-      `;
-      const accountMenu = document.createElement("div");
-      accountMenu.id = "account-menu";
-      const button = document.createElement("button");
-      button.id = "account-menu-btn";
-      button.innerText = "Log in/Sign up";
-      accountMenu.appendChild(button);
-      navbarEl.appendChild(accountMenu);
-      navbarEl.addEventListener("click", callForm);
-    }
-  }
-  navbarEl.appendChild(ul);
 
   return navbarEl;
+};
+
+const createLogo = () => {
+  const logo = document.createElement("div");
+  logo.className = "logo";
+  const anchor = document.createElement("a");
+  anchor.href = "/index.html";
+  const img = document.createElement("img");
+  img.src = "/assets/images/ui/home/figma-images/Logo.png";
+  anchor.appendChild(img);
+  logo.appendChild(anchor);
+  return logo;
+};
+
+const createMainMenu = () => {
+  const mainMenu = document.createElement("ul");
+  mainMenu.className = "pages-menu";
+  mainMenu.innerHTML = `
+        <li> <a href = "/src/presentation/components/pages/find-animal.html">Find an animal</a></li>
+        <li> <a href = "/src/presentation/components/pages/add-animal.html">Register an animal</li>
+        <li> <a href = "/src/presentation/components/pages/find-shelter.html">Find a shelter</a></li>
+        <li> <a href = "/src/presentation/components/pages/about-adoption.html">About adoption</a></li>
+      `;
+  return mainMenu;
+};
+
+const createLoginSignupMenu = () => {
+  const loginSignupMenu = document.createElement("div");
+  loginSignupMenu.className = "account-menu";
+  const button = document.createElement("button");
+  button.id = "account-menu";
+  button.innerText = "Log in / Sign up";
+  loginSignupMenu.appendChild(button);
+  loginSignupMenu.addEventListener("click", callForm);
+  return loginSignupMenu;
+};
+
+const createLogoutMenu = () => {
+  const logoutMenu = document.createElement("div");
+  logoutMenu.className = "account-menu";
+  logoutMenu.id = "account-menu";
+  // log out btn
+  const logOutBtn = document.createElement("button");
+  logOutBtn.innerText = "Log out";
+  logOutBtn.id = "log-out";
+  logoutMenu.appendChild(logOutBtn);
+  // avatar
+  const avatar = document.createElement("div");
+  avatar.className = "avatar";
+  const avatarImage = document.createElement("img");
+  avatarImage.src = "#";
+  avatarImage.id = "open-dropdown";
+  avatar.appendChild(avatarImage);
+  logoutMenu.appendChild(avatar);
+  // handle click events
+  logOutBtn.addEventListener("click", logOut);
+  avatar.addEventListener("click", dropDownHandler);
+  return logoutMenu;
+};
+
+const createProfileDropDownMenu = () => {
+  const profileMenu = document.createElement("div");
+  profileMenu.className = "dropdown-content";
+  profileMenu.innerHTML = `
+      <a href="/src/presentation/components/pages/favorites.html">Favorites</a><br>
+      <a href="/src/presentation/components/pages/my-animals.html">My animals</a><br>
+      <a href="/src/presentation/components/pages/edit-user-profile.html">Edit profile</a><br>
+      `;
+  return profileMenu;
 };

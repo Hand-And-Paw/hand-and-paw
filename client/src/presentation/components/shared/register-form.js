@@ -1,5 +1,6 @@
 export const registerForm = () => {
   const form = document.createElement("form");
+  form.className = "modal-form";
   form.id = "register-form";
   form.action = "#";
   form.innerHTML = `
@@ -22,7 +23,7 @@ export const registerForm = () => {
       autocomplete="new-password" 
       required
     /></br>
-    <button id="submit-register-form" class="submit-btn">Register</button>
+    <button id="submit-register-form" class="button form-button">Register</button>
   `;
 
   return form;
