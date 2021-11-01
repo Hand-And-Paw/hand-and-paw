@@ -4,7 +4,7 @@ import closeModal from "./close-modal.js";
 import { loginAuthHandler } from "./login-auth-handler.js";
 
 const loginFormHandler = (event) => {
-  if (event.target.className === "open-register-form") {
+  if (event.target.id === "open-register-form") {
     // hide login
     const modalContent = document.querySelector(".modal-content");
     const loginForm = document.getElementById("login-form");

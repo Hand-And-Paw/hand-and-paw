@@ -3,7 +3,6 @@ import dropDownHandler from "../../handlers/dropdown-handler.js";
 import logOut from "../../handlers/logout-handler.js";
 
 export const navbar = () => {
-  debugger;
   const navbarEl = document.createElement("navbar");
   navbarEl.id = "top-navbar";
 
