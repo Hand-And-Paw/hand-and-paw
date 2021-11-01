@@ -10,18 +10,22 @@ export const animalCard = (animal) => {
   // create photo div
   const photo = document.createElement("div");
   photo.className = "card-photo";
-  const img = document.createElement("img");
-  const principalPicture = getAvatarHandler(pictures);
+  if (pictures.length !== 0) {
+    const img = document.createElement("img");
+    const principalPicture = getAvatarHandler(pictures);
 
-  const blob = b64toBlob(
-    principalPicture.picture.data,
-    principalPicture.picture.contentType
-  );
+    const blob = b64toBlob(
+      principalPicture.picture.data,
+      principalPicture.picture.contentType
+    );
 
-  const url = URL.createObjectURL(blob);
+    const url = URL.createObjectURL(blob);
 
-  img.src = url;
-  photo.appendChild(img);
+    img.src = url;
+    photo.appendChild(img);
+  } else {
+    photo.innerText = "No photo, yet";
+  }
   // create info div
   const info = document.createElement("div");
   info.className = "card-info";

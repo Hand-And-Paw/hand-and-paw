@@ -27,10 +27,12 @@ const footer = (menuId) => {
   p.id = "copyrigt";
   p.innerHTML = `© 2021`;
   container.appendChild(p);
+
   //to the top
   const goUp = document.createElement("div");
   const upBtn = document.createElement("button");
   upBtn.id = "goUp";
+
   //insert icon
   upBtn.innerText = "GO UP icon";
   upBtn.addEventListener("click", () => console.log("go up handler"));
