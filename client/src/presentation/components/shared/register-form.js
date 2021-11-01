@@ -5,26 +5,40 @@ export const registerForm = () => {
   form.action = "#";
   form.innerHTML = `
   <h1> Register an account. </h1>
-  <label for="name"> Name:</label><br />
-    <input type="name" name="name" required/><br />
-  <label for="email">Email:</label><br />
-    <input type="email" name="email" autocomplete="email" required /><br />
+  <div class="form-control">
+    <label for="name"> Name:</label><br />
+    <input type="name" id="name" name="name" required/><br />
+    <small> Error message </small>
+  </div>
+  <div class="form-control">
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" autocomplete="email" required /><br />
+    <small>Error message </small>
+  </div>
+  <div class="form-control">
     <label for="password">Password:</label><br />
     <input
       type="password"
+      id="password"
       name="password"
       autocomplete="new-password" required
     />
     <br />
+    <small>Error message.</small>
+  </div>
+  <div class="form-control">
     <label for="repeat-password">Repeat password:</label><br />
     <input
       type="password"
+      id="repeat-password"
       name="repeatPassword"
       autocomplete="new-password" 
       required
     /></br>
+    <small>Error message</small>
+  </div>
     <button id="submit-register-form" class="button form-button">Register</button>
   `;
-
+  form.addEventListener("submit", console.log("whoah"));
   return form;
 };

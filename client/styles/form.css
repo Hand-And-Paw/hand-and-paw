@@ -27,3 +27,11 @@ input {
   color: var(--primary2);
   margin-top: 1rem;
 }
+
+/* error message */
+.modal-form small {
+}
+
+.error {
+  border: 2px solid var(--error);
+}
