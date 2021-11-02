@@ -1,42 +1,30 @@
-import { navbar } from "./navbar.js";
+import githubRepo from "./github-link.js";
+import createLogo from "./logo.js";
+import createMainMenu from "./main-menu.js";
+import contactUsButton from "./contact-us-button.js";
+import goToTopButton from "./to-the-top.js";
 
-const footer = (menuId) => {
-  //main container
-  const container = document.createElement("div");
-  container.className = "container";
-  //navbar menu
-  container.appendChild(navbar(menuId));
-  //about
+const footer = () => {
+  // create footer content
+  const footerContent = document.createElement("div");
+  footerContent.className = "footer-content";
+  // logo
+  footerContent.appendChild(createLogo());
+  // main menu
+  footerContent.appendChild(createMainMenu());
+  // created by
   const about = document.createElement("p");
   about.className = "footer-about-project";
-  about.innerText = `Created by students of HackYourFuture Belgium`;
-  container.appendChild(about);
-
+  about.innerHTML = `Created by students of HackYourFuture Belgium<br>
+  <a href="www.hackyourfuture.be"> hackyourfuture.be</a>`;
+  footerContent.appendChild(about);
+  // github repo link
+  footerContent.appendChild(githubRepo());
   //contact us
-  const contactButton = document.createElement("button");
-  contactButton.id = "contact-us";
-  contactButton.className = "contact-button";
-  contactButton.innerText = "Contact us";
-  contactButton.addEventListener("click", () =>
-    console.log("call contact us form")
-  );
-  container.appendChild(contactButton);
-
-  //copyright
-  const p = document.createElement("p");
-  p.id = "copyrigt";
-  p.innerHTML = `© 2021`;
-  container.appendChild(p);
+  footerContent.appendChild(contactUsButton());
   //to the top
-  const goUp = document.createElement("div");
-  const upBtn = document.createElement("button");
-  upBtn.id = "goUp";
-  //insert icon
-  upBtn.innerText = "GO UP icon";
-  upBtn.addEventListener("click", () => console.log("go up handler"));
-  goUp.appendChild(upBtn);
-  container.appendChild(goUp);
-  return container;
+  footerContent.appendChild(goToTopButton());
+  return footerContent;
 };
 
 export default footer;
