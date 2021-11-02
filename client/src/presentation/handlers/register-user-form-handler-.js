@@ -9,6 +9,8 @@ export const registerUserFormHandler = async () => {
     userObj[key] = formData.get(key);
   }
   const post = await registerUser(userObj);
+  return post;
 
-  form.innerHTML = `<h1> ${post.message} </h1>`;
+  // form.innerHTML = `<h1> ${post.message} </h1>`;
+  // form.innerHTML = `Registered`;
 };
