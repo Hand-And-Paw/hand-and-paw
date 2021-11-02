@@ -7,6 +7,7 @@ const hashCreator = require("../utils/hash");
 const databaseAccess = require("../data-access/users");
 const animalManager = require("../business-logic/animals");
 const deleteAvatar = require("../utils/delete-image");
+const CustomError = require("../utils/custom-error");
 
 const userRegister = {
   getAllUsers: async (req, res) => {
@@ -21,12 +22,12 @@ const userRegister = {
     try {
       const { id } = req.params;
       if ([...id].length !== 24) {
-        throw new Error(`invalid id`);
+        throw new CustomError(`invalid id`, "ValidationError", "VE001");
       }
       const user = await userManager.getUser(id);
       res.status(200).send(user);
     } catch (error) {
-      res.status(401).json({ message: error.message });
+      res.status(401).json({ message: `${error.name} ${error.message}` });
     }
   },
   updateUser: async (req, res) => {
@@ -34,10 +35,10 @@ const userRegister = {
       const { id } = req.params;
       const newData = req.body;
       if ([...id].length !== 24 || [...newData.id].length !== 24) {
-        throw new Error(`invalid id`);
+        throw new CustomError(`invalid id`, "ValidationError", "VE001");
       }
       if (newData.id !== id) {
-        throw Error("Cannot change user ID after creation!");
+        throw new CustomError("Cannot change user ID after creation!", "VE002");
       }
       // check old password before update the newOne
       if (newData.newPassword && newData.oldPassword) {
@@ -45,19 +46,24 @@ const userRegister = {
         const newPassword = hashCreator(req.body.newPassword);
         const oldPassword = hashCreator(req.body.oldPassword);
         if (user[0].password !== oldPassword) {
-          throw Error("Old password incorrect!");
+          if (newData.id !== id) {
+            throw new CustomError("Old password incorrect!", "VE003");
+          }
         } else {
           newData.password = newPassword;
         }
       }
+
+      console.log(newData.email);
       // check if user update the email
       if (newData.email !== newData.repeatEmail) {
-        throw Error("Emails do not match!");
+        throw new CustomError("Emails do not match!", "VE004");
       }
       const foundEmail = await databaseAccess.findUserByEmail(newData.email);
       if (foundEmail.length !== 0) {
-        throw new Error(
-          `Cannot update email, the email: ${foundEmail[0].email}, already exists`
+        throw new CustomError(
+          `Cannot update email, the email: ${foundEmail[0].email}, already exists`,
+          "VE005"
         );
       }
       // if there is an image uploaded
@@ -80,7 +86,7 @@ const userRegister = {
           "avatar-uploads"
         );
       }
-      res.status(401).json({ message: error.message, stack: error.stack });
+      res.status(401).json({ message: `${error.name} ${error.message}` });
     }
   },
   deleteUser: async (req, res) => {
@@ -104,13 +110,14 @@ const userRegister = {
       const repeatUserPassword = hashCreator(req.body.repeatPassword);
       // check passwords
       if (userPassword !== repeatUserPassword) {
-        throw Error("passwords are not equal!");
+        throw new CustomError(`passwords are not equal!`, "VE006");
       }
       // check if email exist
       const dbUser = await databaseAccess.findUserByEmail(userEmail);
       if (dbUser.length !== 0) {
-        throw new Error(
-          `Cannot create user with the email: ${dbUser[0].email}, already exists`
+        throw new CustomError(
+          `Cannot create user with the email: ${dbUser[0].email}, already exists`,
+          "VE006"
         );
       }
       const newUser = {
@@ -124,7 +131,7 @@ const userRegister = {
         .status(200)
         .json({ message: "You're successfully registered", user: newRegister });
     } catch (error) {
-      res.status(400).json({ message: error.message });
+      res.status(400).json({ message: `${error.name} ${error.message}` });
     }
   },
   deletePublishedAnimal: async (req, res) => {
@@ -137,11 +144,17 @@ const userRegister = {
 
       const user = await userManager.getUser(userId);
       if (user.length === 0) {
-        throw new Error(`Cannot delete animal user doesn't exist`);
+        throw new CustomError(
+          `Cannot delete animal user doesn't exist`,
+          "VE007"
+        );
       }
       const animal = await animalManager.getAnimal(animalId);
       if (animal.length === 0) {
-        throw new Error(`Cannot delete animal, animal doesn't exist`);
+        throw new CustomError(
+          `Cannot delete animal user doesn't exist`,
+          "VE007"
+        );
       }
 
       const updateUser = await userManager.deletePublishedAnimal(
@@ -154,7 +167,7 @@ const userRegister = {
         });
       }
     } catch (error) {
-      res.status(400).json({ message: error.message });
+      res.status(400).json({ message: `${error.name} ${error.message}` });
     }
   },
 };
