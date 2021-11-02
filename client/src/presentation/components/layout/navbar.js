@@ -35,3 +35,4 @@ export const navbar = () => {
 
   return navbarEl;
 };
+

@@ -1,40 +1,30 @@
-import { navbar } from "./navbar.js";
+import githubRepo from "./github-link.js";
+import createLogo from "./logo.js";
+import createMainMenu from "./main-menu.js";
+import contactUsButton from "./contact-us-button.js";
+import goToTopButton from "./to-the-top.js";
 
-const footer = (mainMenu) => {
-  //main container
-  const container = document.createElement("div");
-  container.className = "container";
-  //navbar menu
-  const navigation = document.createElement("div");
-  navigation.className = "footer-navigation";
-  navigation.appendChild(navbar());
-  container.appendChild(navigation);
-  //about
-  const about = document.createElement("div");
+const footer = () => {
+  // create footer content
+  const footerContent = document.createElement("div");
+  footerContent.className = "footer-content";
+  // logo
+  footerContent.appendChild(createLogo());
+  // main menu
+  footerContent.appendChild(createMainMenu());
+  // created by
+  const about = document.createElement("p");
   about.className = "footer-about-project";
-  about.innerText = `Created by students of HackYourFuture Belgium`;
-  const button = document.createElement("button");
-  button.className = "contact-us";
-  button.innerText = "Contact us";
-  button.addEventListener("click", () => console.log("call contact us form"));
-  about.appendChild(button);
-  container.appendChild(about);
-  //copyright
-  const copyright = document.createElement("div");
-  const p = document.createElement("p");
-  p.id = "copyrigt";
-  p.innerHTML = `All rights reserved © 2021`;
-  copyright.appendChild(p);
-  container.appendChild(p);
+  about.innerHTML = `Created by students of HackYourFuture Belgium<br>
+  <a href="www.hackyourfuture.be"> hackyourfuture.be</a>`;
+  footerContent.appendChild(about);
+  // github repo link
+  footerContent.appendChild(githubRepo());
+  //contact us
+  footerContent.appendChild(contactUsButton());
   //to the top
-  const goUp = document.createElement("div");
-  const upBtn = document.createElement("button");
-  upBtn.id = "goUp";
-  //insert icon
-  upBtn.innerText = "GO UP icon";
-  upBtn.addEventListener("click", () => console.log("go up handler"));
-  goUp.appendChild(upBtn);
-  container.appendChild(goUp);
-  return container;
+  footerContent.appendChild(goToTopButton());
+  return footerContent;
 };
+
 export default footer;
