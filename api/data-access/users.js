@@ -82,17 +82,11 @@ const databaseAccess = {
 
   read: async (id = "") => {
     const user = await Users.find({ _id: id });
-    if (user.length === 0) {
-      throw Error(`Cannot find user, id doesn't exist`);
-    }
     return user;
   },
 
   all: async () => {
     let users = await Users.find();
-    if (users.length === 0) {
-      users = `there are not users in users collection`;
-    }
     return users;
   },
   updateUserPublication: async (animalId, userId) => {
