@@ -47,16 +47,14 @@ export const performPostJson = async (path, body) => {
 
 export const performPostFormData = async (path, body) => {
   const URL = `${window.location.origin}/api/${path}`;
-
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
     method: "POST",
     headers: {
-      "Content-Type": "multipart/form-data",
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
 
-    body: JSON.stringify(body),
+    body: body,
   });
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);
