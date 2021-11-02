@@ -1,7 +1,7 @@
 import createProfileDropDownMenu from "./profile-dropdown-menu.js";
 import createLogoutMenu from "./logout-menu.js";
 import createLoginSignupMenu from "./login-signup-menu.js";
-import createMainMenu from "./main-menu.js";
+import mainMenuComponent from "./main-menu-component.js";
 import createLogo from "./logo.js";
 
 export const navbar = () => {
@@ -19,8 +19,7 @@ export const navbar = () => {
   navbarEl.appendChild(logo);
 
   // Add the main menu
-  const mainMenu = createMainMenu();
-  navbarEl.appendChild(mainMenu);
+  navbarEl.appendChild(mainMenuComponent());
 
   // Add additional login/logout/signup
   if (isLoggedIn) {
