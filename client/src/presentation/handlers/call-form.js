@@ -7,7 +7,7 @@ const callForm = (event) => {
   if (!document.body.contains(modal)) {
     if (
       event.target.id === "register-animal-btn" ||
-      event.target.id === "account-menu"
+      event.target.id === "account-menu-btn"
     ) {
       document
         .querySelector("body")
