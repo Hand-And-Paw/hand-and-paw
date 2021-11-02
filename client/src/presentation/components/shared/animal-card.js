@@ -7,7 +7,7 @@ export const animalCard = (animal) => {
   // create card
   const card = document.createElement("div");
   card.className = "animal-card";
-  card.setAttribute("data-id", `${_id}`);
+  card.id = _id;
   // create photo div
   const photo = document.createElement("div");
   photo.className = "card-photo";
