@@ -31,6 +31,8 @@ During the lecture the endpoints of the messages repo should be implemented in o
     - [Delete Picture](#delete-picture)
     - [Update Picture](#update-picture)
     - [Update Principal picture](#update-principal-picture)
+  - [Errors convention](#errors-convention)
+    - [Validation errors:](#validation-errors)
 
 ## Getting Started
 
@@ -818,6 +820,24 @@ Updates the principal picture of the animal
     message: `picture, with the id: '61751428e9e34386a8e8cf02' updated successfully`;
   }
   ```
+
+> [Back to index routes](#index)
+
+---
+
+## Errors convention
+
+### Validation errors:
+
+start with the letter `VE`, followed by the number error, each number is an different error, detailed as follows:
+
+- **VE001:** The length of the `id` is not equal to 20 characters.
+- **VE002:** Bad entry `Id`, the `id `send in the form is different than the `id` that is set as parameter.
+- **VE003:** The password supplied by the user is not the same than the ine that is stored in the server.
+- **VE004:** The` email` and `repeat email` field do not match.
+- **VE005** Cannot update email, the user supply an email that is already stored in the database.
+- **VE006** Cannot register new user, the user supply an email that is already stored in the database.
+- - **VE007** cannot delete animal because the `id` supplied do not match with the animal or do not exist .
 
 > [Back to index routes](#index)
 
