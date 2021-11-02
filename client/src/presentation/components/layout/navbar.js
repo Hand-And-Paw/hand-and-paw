@@ -10,8 +10,8 @@ export const navbar = () => {
   // Create the navbar
   //////////////////////////////////
   const navbarEl = document.createElement("navbar");
-  navbarEl.id = "top-navbar";  
-  
+  navbarEl.id = "top-navbar";
+
   // Add the logo
   const logo = createLogo();
   navbarEl.appendChild(logo);
@@ -21,7 +21,7 @@ export const navbar = () => {
   navbarEl.appendChild(mainMenu);
 
   // Add additional login/logout/signup
-  if( isLoggedIn ) {
+  if (isLoggedIn) {
     const logoutMenu = createLogoutMenu();
     const profileDropDownMenu = createProfileDropDownMenu();
     logoutMenu.appendChild(profileDropDownMenu);
@@ -32,7 +32,7 @@ export const navbar = () => {
   }
 
   return navbarEl;
-}
+};
 
 const createLogo = () => {
   const logo = document.createElement("div");
@@ -44,7 +44,7 @@ const createLogo = () => {
   anchor.appendChild(img);
   logo.appendChild(anchor);
   return logo;
-}
+};
 
 const createMainMenu = () => {
   const mainMenu = document.createElement("ul");
@@ -56,7 +56,7 @@ const createMainMenu = () => {
         <li> <a href = "/src/presentation/components/pages/about-adoption.html">About adoption</a></li>
       `;
   return mainMenu;
-}
+};
 
 const createLoginSignupMenu = () => {
   const loginSignupMenu = document.createElement("div");
@@ -64,10 +64,11 @@ const createLoginSignupMenu = () => {
   const button = document.createElement("button");
   button.id = "account-menu";
   button.innerText = "Log in / Sign up";
+
   loginSignupMenu.appendChild(button);
   loginSignupMenu.addEventListener("click", callForm);
   return loginSignupMenu;
-}
+};
 
 const createLogoutMenu = () => {
   const logoutMenu = document.createElement("div");
@@ -90,15 +91,16 @@ const createLogoutMenu = () => {
   logOutBtn.addEventListener("click", logOut);
   avatar.addEventListener("click", dropDownHandler);
   return logoutMenu;
-}
+};
 
 const createProfileDropDownMenu = () => {
-      const profileMenu = document.createElement("div");
-      profileMenu.className = "dropdown-content";
-      profileMenu.innerHTML = `
+  const profileMenu = document.createElement("div");
+  profileMenu.className = "dropdown-content";
+  profileMenu.innerHTML = `
       <a href="/src/presentation/components/pages/favorites.html">Favorites</a><br>
       <a href="/src/presentation/components/pages/my-animals.html">My animals</a><br>
       <a href="/src/presentation/components/pages/edit-user-profile.html">Edit profile</a><br>
+      <i class="client/assets/icons/akar-icons_heart.svg"></i>
       `;
   return profileMenu;
-}
+};
