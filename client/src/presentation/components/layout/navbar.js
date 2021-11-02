@@ -100,7 +100,6 @@ const createProfileDropDownMenu = () => {
       <a href="/src/presentation/components/pages/favorites.html">Favorites</a><br>
       <a href="/src/presentation/components/pages/my-animals.html">My animals</a><br>
       <a href="/src/presentation/components/pages/edit-user-profile.html">Edit profile</a><br>
-      <i class="client/assets/icons/akar-icons_heart.svg"></i>
       `;
   return profileMenu;
 };
