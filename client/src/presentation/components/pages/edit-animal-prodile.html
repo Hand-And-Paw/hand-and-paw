@@ -4,184 +4,60 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../../../styles/about-adoption.css">
-  <title>About adoption</title>
+  <link rel="stylesheet" href="../../../../styles/edit-animal-profile.css">
+  <title>Edit Animal Profile</title>
 </head>
 <body>
   <header id="top" class="main-navbar">
     <div id="menu" class="container"></div>
   </header>
   <div class="main">
-    <section class="about-adoption">
+    <section class="page-intro">
       <div class="container">
-        <div class="article">
-          <h2>About adoption</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum dignissimos illum tenetur, mollitia perferendis ipsa molestiae saepe, eum, veritatis commodi dicta officia. Laboriosam iste quam error quibusdam esse eos tempore, dolor, officiis quod doloremque quas quisquam expedita, repellat tenetur. Perferendis laborum architecto tenetur, sit libero in ut ea dignissimos! Illo explicabo aliquam libero distinctio fugit ab quas perferendis maxime eum consequatur, vero recusandae voluptatibus quo eos magnam non dolores animi repellendus consequuntur nam quam cupiditate sit. Maiores libero ipsa provident rem enim ipsum non fugit cumque magnam similique nemo minima incidunt dolorum, rerum quos eaque repudiandae dolorem recusandae eveniet?</p>
-        </div>
-        <div class="call-to-action"><a href="#" class="button call-to-action2">Find an animal</a></div>
+        <article>
+          <h2>Edit the profile</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga soluta dolores quae! Animi provident recusandae quis quas, fugiat aut facere natus magnam incidunt culpa numquam iure eius obcaecati nam minus?</p>
+        </article>
       </div>
     </section>
-    <section class="happy-stories">
-      <div class="container">
-        <h2>Our happy stories.</h2>
-        <div class="story">
-          <div class="story-photo">
-            <img src="#" alt="Young woman kisses a kitten.">
-          </div>
-          <div class="story">
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minima, aliquam consequuntur nulla, blanditiis praesentium dicta hic voluptas reprehenderit id libero labore, eos est quaerat magnam cupiditate. Excepturi corrupti obcaecati quibusdam illum, accusantium eos quo. Quidem pariatur eum sed tempore?</p>
-          </div>
+    <class="animal-info-form">
+      <form action="#" id="register-animal-form">
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        <label for="type">Type</label>
+        <input type="text" name="type">
+        <label for="breed">Breed</label>
+        <input type="text" name="breed">
+        <!-- dropdown gender? -->
+        <label for="gender">Gender</label>
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <label for="character">Character</label>
+        <input type="text" name="character">
+        <!-- birth of date -->
+        <label for="birth-date">Date of birth</label>
+        <input type="date" name="dateBirth">
+        <label for="location">Location</label>
+        <input type="text" name="location">
+        <label for="Phone">Phone</label>
+        <input type="number" name="phone">
+        <label for="Website">Website</label>
+        <input type="text" name="website" ><br>
+        <label for="about" ></label>
+        <textarea  name="describeAnimal" cols="30" rows="20"></textarea>
+        <!-- if this is a form, how to attach listener? -->
+        <div class="upload-images">
+          <input type="file" id="img" name="picture1" accept="image/*">
+          <div class="preview">Image preview</div>
         </div>
-        <div class="story">
-          <div class="story-photo">
-            <img src="#" alt="Man holds a dog on his hands.">
-          </div>
-          <div class="story">
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minima, aliquam consequuntur nulla, blanditiis praesentium dicta hic voluptas reprehenderit id libero labore, eos est quaerat magnam cupiditate. Excepturi corrupti obcaecati quibusdam illum, accusantium eos quo. Quidem pariatur eum sed tempore?</p>
-          </div>
-        </div>
-        <div class="story">
-          <div class="story-photo">
-            <img src="#" alt="A woman looks on a cat in her hands.">
-          </div>
-          <div class="story">
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minima, aliquam consequuntur nulla, blanditiis praesentium dicta hic voluptas reprehenderit id libero labore, eos est quaerat magnam cupiditate. Excepturi corrupti obcaecati quibusdam illum, accusantium eos quo. Quidem pariatur eum sed tempore?</p>
-          </div>
-        </div>
-      </div>
-        </section>
-    <section class="faq">
-      <div class="container">
-        <h2>Frequently asked questions.</h2>
-        <ul class="faq-list">
-          <li>
-            <div class="question">Where can I adopt a pet in Belgium?</div>
-            <div class="answer">
-              <p> You can use <a href="#link to search shelter"> shelter search</a> or <a href="#pet search"> pet search </a> on our website.
-              <p>
-              You can adopt laboratory animal(it is not only rats, but cats, dogs(often beagles), chikens, fish and etc) for free. In Belgium you can contact <a href="https://www.jodipro.be/contact/"> vzw Jodipro </a>
-              or ask for more information from Adoption Commission of UZ Ghent - adoptiedgk@ugent.be.
-              </p>
-              <p>You can symbolically adopt a wild animal in <a href="https://www.dezonnegloed.be/nl/help-mee/adopteer-een-dier"> Zonnegloed vzw sanctuary.</a> The animal will still live in the Sanctuary, but you will be getting updates about it.</p></p>
-            </div>
-          </li>
-          <li>
-            <div class="question">Which animals can I have as a pet in Belgium?</div>
-            <div class="answer">
-              <ul class="sub-list">
-                <li>Cats and Dogs.</li>
-                <li>Other mammals.</br>
-                    <a href="https://www.huisdierinfo.be/positieve-lijst-zoogdieren">Mammals allowed in Flemish region.</a> </br>
-                    <a href="https://leefmilieu.brussels/sites/default/files/user_files/doc_web_lijst_zoogdieren_nl.pdf">Mammals allowed in Brussels region.</a> </br>
-                    <a href="http://bienetreanimal.wallonie.be/files/documents/AGW-liste-mammiferes-pouvant-etre-detenus.pdf?_x_tr_sl=nl&_x_tr_tl=en&_x_tr_hl=nl&_x_tr_pto=nui&_x_tr_sch=http">Mammals allowed in Wallonia region.</a>
-                </li>
-                <li>Birds, except for invasive or protected species. To be sure, you can contact <a href="https://vogelbescherming.be/">this organization.</a></li>
-                <li>Reptiles(lizards, snakes, turtles).</br> 
-                    <a href="https://www.huisdierinfo.be/sites/default/files/atoms/files/Lijst%20reptielen%20Bijlage%20BVR%2022.03.2019.pdf">Reptiles allowed in Flemish region.</a> </br> 
-                    <a href="https://leefmilieu.brussels/sites/default/files/user_files/doc_web_lijst_reptielen_nl.pdf">Reptiles allowed in Brussels region.</a> 
-                    <a href="http://bienetreanimal.wallonie.be/files/reptiles-tortues/Liste-des-reptiles-autorises-avec-ou-sans-condition.pdf?_x_tr_sl=nl&_x_tr_tl=en&_x_tr_hl=nl&_x_tr_pto=nui&_x_tr_sch=http"> Reptiles allowed in Wallonia region.</a>
-                    <p>If the animal is not in the list, but is given for adoption you can consult with local Police wether it would be legal to get this animal.</li></p>
-                <li>Invertebraes</li>
-              </ul>
-            </div>
-          </li>
-
-          <li>
-            <div class="question">What are legal obligations for a pet owner in Belgium?</div>
-            <div class="answer">
-              <h4>Dogs</h4>
-                <ul class="sub-list">
-                  <li>All dogs must be microchipped and registered before the age of 8 weeks. Th seller must transfer the chip in the name of new owner via www.dogid.be. </li>
-                  <li>Puppy must stay with the mother for minimum 8 weeks.</li>
-                  <li>If puppy comes from abroad, it must be vaccinated against rabies.</li>
-                </ul>
-              <h4>Cats</h4>
-                <ul class="sub-list">
-                  <li>All cats must be microchipped and registered before the age of 12 weeks. Th seller must transfer the chip in the name of new owner via www.catid.be. </li>
-                  <li> All cats(exception for catteries) must be neutered before they are sold or adopted before 5 months old.</li>
-                </ul>
-            </div>
-          </li>
-          <li>
-            <div class="question">Am I ready for a pet? </div>
-            <div class="answer">
-              <h4>Ask yourself these questions:</h4>
-                <ul class="sub-list">
-                  <li>does you rent <span>contract allow</span> you to have pets and which?</li>
-                  <li>do you have enough <span>space and time?</span></li>
-                  <li>how much money are you ready to <span>spend monthly</span> on a pet</li>
-                  <li>who will take care of the pet every day?</li>
-                  <li>who will take care of the pet during vacations? or can you afford pet hotel?</li>
-                  <li>does everyone in my family want an animal?</li>
-                  <li>am I or someone in my family allergic to...</li>
-                  <li>how old and how big should my pet be?</li>
-                  <li>will other pets accept a new friend?</li>
-                </ul>
-            </div>
-          </li>
-          <li>
-            <div class="question">Dogs are the cutest animals on Earth. What should I take in consideration if I want a dog?</div>
-            <div class="answer">
-              <h4>Ask yourself these questions:</h4>
-                <ul class="sub-list">
-                  <li> do I have space and time to play on <span> daily basis</span>, ideally outside for the dog?</li>
-                  <li>Do I have enough enough space inside the house?</li>
-                  <li>Am I ready t walk with the dog even if it is raining or cold?</li>
-                  <li>Am I ready to clean the dog poo?(some dogs can get pot training, but you still will have to deal with it especially outside)</li>
-                  <li>A dog may cost you 700-1300 per year + unforeseen spending for medical care. Am I financially ready for that?</li>
-                  <li>Am I ready to take care of a dog for next 10-20 years?</li>
-                  <li>Do I have a solution for dog care if I go on vacations without my dog?</li>
-                  <li>Do my family members share your passion for dogs?</li>
-                  <li>Do I or them have pet allergies?</li>
-                  <li>Am I ready for happy but very dirty dog?</li>
-                  <li>Am I ready that dog may break things?</li>
-                  <li>Does the dog I visually like has character I like and ready to deal with?</li>
-                </ul>
-                <p>
-                  If you are not answering yes to all those questions, it doesn't mean you can't have a dog. How dog behaves and what it needs varies. It depends on it's breed, upbringing, it's mental and health condition.
-                  Care takers in the shelters will be glad to answer your questions and tell you all they know about taking care of dogs in general and will share what they know about the dog you like in their shelter. In some shelters you can become a volunteer,take dog for some time or get familiar with dog you like by walking with it.
-                </p>
-            </div>
-          </li>
-          <li>
-            <div class="question">Cats are the cutest animals on Earth. What should I take in consideration if I want a dog?</div>
-            <div class="answer">
-              <h4>Ask yourself these questions:</h4>
-                <ul class="sub-list"></ul>
-                  <li>Will I still love it if it doesn't like to cuddle, lie on my lap and as not much interest in me?</li>
-                  <li>Am I ready for mices and birds it may bring home?</li>
-                  <li>Am I ready to take care of a cat for next 15-20 years?</li>
-                  <li>Do I have a solution for cat care if I go on vacations without my cat?</li>
-                  <li>Do my family members share your passion for cats?</li>
-                  <li>Do I or them have pet allergies? 
-                  <li>A cat will cost you minimum 400 euro per year + unforeseen spending for medical care. Am I financially ready for that?</li>
-                  <li>Do I have space for litter box abd scratching posts in the house?</li>
-                  <li>Am I ready to give my cat freedom to go where she wants when I am not at home or it needs to be limited? How is it possible?</li>
-                  </ul>
-                  <p>Cat's are a bit more tricky than dogs, but there is still room for choice. Cats have different characters like any other animals and if you are looking for specific personality, care taker in a shelter will advise you about their cats. Shelters often seek for temporary family for their cats and kittens - this may help you to find your best friend.</p>
-              </div>
-          </li>
-          <li>
-            <div class="question">Where can I learn more about animal adoption in my region?</div>
-            <div class="answer">
-              <h4>Useful websites</h4>
-                <ul class="sub-list">
-                  <li><a href="https://www.gaia.be/en"> GAIA</a>, or Global Action in the Interest of Animals, unites defenders of animal welfare and advocates for animal rights in Belgium. We believe animals should be treated with respect and deserve a decent life. We work towards building a human–animal relationship of humanity and justice.(English version available)</li>
-                  <li><a href="https://www.huisdierinfo.be/adopteren-en-verkoop"> Huisdiereninfo</a> is an official website of Flemish region where you can find detailed information about almost everything connected with having an animal.(available only in Dutch) </li>
-                  <li><a href="https://leefmilieu.brussels/themas/dierenwelzijn"> Leefmilleu </a> is an official website of Brussels region where you can find information about environment and energy. Given link leads you on the page about animals wellbeing.(French, Dutch versions)</li>
-                  <li><a href="http://bienetreanimal.wallonie.be/home/actualites.html"> Bienetreanimal</a> is an official website of Wallonia region where  you can find information about animals wellbeing. </li>
-                  <li><a href="https://www.health.belgium.be/en/animals-and-plants"> Health.Belgium </a> has information about many subjects, including having animals, travelling with animals, forbidden spices and etc.(English version)</li>
-                </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
+        <button  type="submit" class="button">Submit</button>
+      </form>
+   
     </section>
   </div>
   <footer></footer>
-  <script type="module" src="../../init/about-adoption.js"></script>
+  <script type="module" src="../../init/edit-animal-profile.js"></script>
 </body>
 </html>
