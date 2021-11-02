@@ -1,3 +1,4 @@
+/* eslint-disable no-return-await */
 /* eslint-disable no-underscore-dangle */
 const databaseAccess = require("../data-access/users");
 const animalManager = require("./animals");
