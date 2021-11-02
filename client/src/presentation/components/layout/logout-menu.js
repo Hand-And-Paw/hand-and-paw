@@ -14,7 +14,7 @@ const createLogoutMenu = () => {
   const avatar = document.createElement("div");
   avatar.className = "avatar";
   const avatarImage = document.createElement("img");
-  avatarImage.src = "#";
+  avatarImage.src = "/assets/icons/header_codicon_account.svg";
   avatarImage.id = "open-dropdown";
   avatar.appendChild(avatarImage);
   logoutMenu.appendChild(avatar);
