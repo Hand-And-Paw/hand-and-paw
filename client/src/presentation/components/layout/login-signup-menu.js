@@ -12,9 +12,8 @@ const createLoginSignupMenu = () => {
   avatarImage.src = "/assets/icons/header_codicon_account.svg";
   avatar.appendChild(avatarImage);
   loginSignupMenu.appendChild(button);
-
+  loginSignupMenu.appendChild(avatar);
   loginSignupMenu.addEventListener("click", callLoginForm);
-  
 
   return loginSignupMenu;
 };

@@ -13,9 +13,10 @@ const createLogoutMenu = () => {
   // avatar
   const avatar = document.createElement("div");
   avatar.className = "avatar";
+  avatar.id = "open-dropdown";
   const avatarImage = document.createElement("img");
   avatarImage.src = "/assets/icons/header_codicon_account.svg";
-  avatarImage.id = "open-dropdown";
+  avatarImage.id = "profile-picture";
   avatar.appendChild(avatarImage);
   logoutMenu.appendChild(avatar);
   // handle click events
