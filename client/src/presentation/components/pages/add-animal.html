@@ -21,15 +21,13 @@
       </div>
     </section>
     <class="animal-info-form">
-      <form action="">
+      <form action="#" id="register-animal-form">
         <label for="name">Name</label>
         <input type="text" name="name">
         <label for="type">Type</label>
         <input type="text" name="type">
         <label for="breed">Breed</label>
         <input type="text" name="breed">
-        <label for="age">Age</label>
-        <input type="text" name="age">
         <!-- dropdown gender? -->
         <label for="gender">Gender</label>
         <select name="gender">
@@ -47,15 +45,16 @@
         <input type="number" name="phone">
         <label for="Website">Website</label>
         <input type="text" name="website" ><br>
-        <label for="about" name="about" ></label>
-        <textarea name="about" cols="30" rows="20"></textarea>
+        <label for="about" ></label>
+        <textarea  name="describeAnimal" cols="30" rows="20"></textarea>
         <!-- if this is a form, how to attach listener? -->
         <div class="upload-images">
-          <input type="file" id="img" name="img" accept="image/*">
+          <input type="file" id="img" name="picture1" accept="image/*">
           <div class="preview">Image preview</div>
         </div>
+        <button  type="submit" class="button">Submit</button>
       </form>
-      <button class="button">Submit</button>
+   
     </section>
   </div>
   <footer></footer>
