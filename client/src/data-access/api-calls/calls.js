@@ -45,7 +45,7 @@ export const performPostJson = async (path, body) => {
   return data;
 };
 
-export const performPostFormData = async (path, body) => {
+export const performPostFormData = async (path, formDataBody) => {
   const URL = `${window.location.origin}/api/${path}`;
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
@@ -53,8 +53,7 @@ export const performPostFormData = async (path, body) => {
     headers: {
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
-
-    body: body,
+    body: formDataBody,
   });
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);
@@ -85,17 +84,16 @@ export const performDelete = async (path) => {
   return data;
 };
 
-export const performUpdate = async (path, body) => {
+export const performUpdate = async (path, formDataBody) => {
   const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
     method: "PUT",
     headers: {
-      "Content-Type": "multipart/form-data",
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
-    body: JSON.stringify(body),
+    body: formDataBody,
   });
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);
@@ -105,17 +103,16 @@ export const performUpdate = async (path, body) => {
   return data;
 };
 
-export const performSpecificUpdate = async (path, body) => {
+export const performSpecificUpdate = async (path, formDataBody) => {
   const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
     method: "PATCH",
     headers: {
-      "Content-Type": "multipart/form-data",
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
-    body: JSON.stringify(body),
+    body: formDataBody,
   });
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);
@@ -125,17 +122,16 @@ export const performSpecificUpdate = async (path, body) => {
   return data;
 };
 
-export const performSpecificUpdateJson = async (path, body) => {
+export const performSpecificUpdateJson = async (path, formDataBody) => {
   const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
     method: "PATCH",
     headers: {
-      "Content-Type": "application/json",
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
-    body: JSON.stringify(body),
+    body: formDataBody,
   });
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);
