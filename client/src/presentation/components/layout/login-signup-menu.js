@@ -1,4 +1,5 @@
-import callLoginForm from "../../handlers/call-login-form.js";
+import openModal from "../../handlers/call-login-form.js";
+import { loginForm } from "../shared/login-form.js";
 
 const createLoginSignupMenu = () => {
   const loginSignupMenu = document.createElement("div");
@@ -13,7 +14,9 @@ const createLoginSignupMenu = () => {
   avatar.appendChild(avatarImage);
   loginSignupMenu.appendChild(button);
   loginSignupMenu.appendChild(avatar);
-  loginSignupMenu.addEventListener("click", callLoginForm);
+  loginSignupMenu.addEventListener("click", () => {
+    openModal(loginForm("modal-form"));
+  });
 
   return loginSignupMenu;
 };
