@@ -1,14 +1,16 @@
-import callForm from "../../handlers/call-form.js";
-import dropDownHandler from "../../handlers/dropdown-handler.js";
-import logOut from "../../handlers/logout-handler.js";
+import createProfileDropDownMenu from "./profile-dropdown-menu.js";
+import createLogoutMenu from "./logout-menu.js";
+import createLoginSignupMenu from "./login-signup-menu.js";
+import mainMenuComponent from "./main-menu-component.js";
+import createLogo from "./logo.js";
 
 export const navbar = () => {
   // Is the user logged in
   const isLoggedIn = localStorage.getItem("isLoggedIn");
 
-  //////////////////////////////////
+  /// ///////////////////////////////
   // Create the navbar
-  //////////////////////////////////
+  /// ///////////////////////////////
   const navbarEl = document.createElement("navbar");
   navbarEl.id = "top-navbar";
 
@@ -16,9 +18,8 @@ export const navbar = () => {
   const logo = createLogo();
   navbarEl.appendChild(logo);
 
-  // Add the mainmenu
-  const mainMenu = createMainMenu();
-  navbarEl.appendChild(mainMenu);
+  // Add the main menu
+  navbarEl.appendChild(mainMenuComponent());
 
   // Add additional login/logout/signup
   if (isLoggedIn) {
@@ -33,6 +34,7 @@ export const navbar = () => {
 
   return navbarEl;
 };
+<<<<<<< HEAD
 
 const createLogo = () => {
   const logo = document.createElement("div");
@@ -117,3 +119,5 @@ const createProfileDropDownMenu = () => {
       `;
   return profileMenu;
 };
+=======
+>>>>>>> 68d8dcdbc0b9aec50867fa3933336e8e5a5616fd

@@ -21,15 +21,13 @@
       </div>
     </section>
     <class="animal-info-form">
-      <form action="">
+      <form action="#" id="register-animal-form">
         <label for="name">Name</label>
-        <input type="text" name="name">
+        <input type="text" name="name" required>
         <label for="type">Type</label>
-        <input type="text" name="type">
+        <input type="text" name="type" required>
         <label for="breed">Breed</label>
-        <input type="text" name="breed">
-        <label for="age">Age</label>
-        <input type="text" name="age">
+        <input type="text" name="breed" required>
         <!-- dropdown gender? -->
         <label for="gender">Gender</label>
         <select name="gender">
@@ -37,25 +35,26 @@
           <option value="female">Female</option>
         </select>
         <label for="character">Character</label>
-        <input type="text" name="character">
+        <input type="text" name="character" required>
         <!-- birth of date -->
         <label for="birth-date">Date of birth</label>
-        <input type="date" name="dateBirth">
+        <input type="date" name="dateBirth" required>
         <label for="location">Location</label>
-        <input type="text" name="location">
+        <input type="text" name="location"required>
         <label for="Phone">Phone</label>
-        <input type="number" name="phone">
+        <input type="number" name="phone" required>
         <label for="Website">Website</label>
         <input type="text" name="website" ><br>
-        <label for="about" name="about" ></label>
-        <textarea name="about" cols="30" rows="20"></textarea>
+        <label for="about" ></label>
+        <textarea  name="describeAnimal" cols="30" rows="20" required></textarea>
         <!-- if this is a form, how to attach listener? -->
         <div class="upload-images">
-          <input type="file" id="img" name="img" accept="image/*">
+          <input type="file" id="img" name="picture1" accept="image/*" required>
           <div class="preview">Image preview</div>
         </div>
+        <button  type="submit" class="button">Submit</button>
       </form>
-      <button class="button">Submit</button>
+   
     </section>
   </div>
   <footer></footer>

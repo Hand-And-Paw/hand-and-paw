@@ -17,12 +17,10 @@
           <article>
             <h1>Find your perfect companion.</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At fugit,
-              possimus voluptatem maiores, tempora eius molestias aspernatur
-              praesentium, ex reiciendis iure reprehenderit ad recusandae
-              maxime! Illo atque, eius corrupti culpa sapiente error cum
-              eligendi deserunt ut ipsam iste, unde magnam non quidem a maxime.
-              Omnis quod ipsam iure ea eius?
+              Each animal has their own personality. It may take some time to
+              find a perfect match, but it totally worth. Don't rush to make a
+              choice. <br />
+              Click on the animal if you would like to read more about it.
             </p>
           </article>
         </div>
@@ -30,7 +28,45 @@
       <section class="animal-search-menu">
         <div class="container">
           <form>
-            <div class="dropdown-menu"></div>
+            <div class="dropdown-menu">
+              <form action="#" id="search-animal-form">
+                <select name="type">
+                  <option value="type-types">All animals</option>
+
+                  <!-- add options from DB -->
+                </select>
+                <select name="breed">
+                  <option value="all-breeds">All breeds</option>
+                  <!-- add options from DB -->
+                </select>
+
+                <select name="age">
+                  <option value="all-ages">All ages</option>
+                  <!-- add options from DB -->
+                </select>
+
+                <select name="gender">
+                  <option value="all-genders">All genders</option>
+                  <!-- add options from DB -->
+                </select>
+
+                <select name="character">
+                  <option value="all-characters">All characters</option>
+                  <!-- add options from DB -->
+                </select>
+                <select name="province">
+                  <option value="all-provinces">All provinces</option>
+                  <!-- add options from DB -->
+                </select>
+                <button
+                  type="submit"
+                  id="submit-animal-search-form"
+                  class="button regular-button"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
           </form>
         </div>
       </section>

@@ -1,5 +1,5 @@
+/* eslint-disable no-return-await */
 /* eslint-disable no-underscore-dangle */
-const deleteAvatar = require("../utils/delete-image");
 const databaseAccess = require("../data-access/users");
 const animalManager = require("./animals");
 const deleteImage = require("../utils/delete-image");
@@ -31,8 +31,11 @@ const userSubscriptionManager = {
   },
   removeUser: async (userId) => {
     const user = await databaseAccess.read(userId);
-    if (user[0].avatar) {
-      deleteAvatar.deleteImageAsync(user[0].avatar, "avatar-uploads");
+    console.log(user[0].registeredAnimals.length !== 0);
+    if (user[0].registeredAnimals.length !== 0) {
+      [...user[0].registeredAnimals].forEach(
+        async (animalId) => await animalManager.removeAnimal(animalId)
+      );
     }
     const removeUser = await databaseAccess.remove(userId);
     return removeUser;
