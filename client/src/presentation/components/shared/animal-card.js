@@ -11,15 +11,10 @@ export const animalCard = (animal) => {
   const photo = document.createElement("div");
   photo.className = "card-photo";
   const img = document.createElement("img");
-  const principalPicture = getAnimalPrincipalPicture(pictures);
-
-  const blob = b64toBlob(
-    principalPicture.picture.data,
-    principalPicture.picture.contentType
-  );
-
+  // looks for principal picture
+  const picture = getAnimalPrincipalPicture(pictures);
+  const blob = b64toBlob(picture.picture.data, picture.picture.contentType);
   const url = URL.createObjectURL(blob);
-
   img.src = url;
   photo.appendChild(img);
   // create info div

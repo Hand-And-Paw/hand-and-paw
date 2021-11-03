@@ -6,11 +6,6 @@ export const registerAnimalFormHandler = async (event) => {
   const formData = new FormData(form);
 
   formData.append("userId", window.localStorage.getItem("userId"));
-  // const userObj = {};
-  for (const key of formData.keys()) {
-    console.log(key, "-->", formData.get(key));
-  }
-  await registerAnimal(formData);
 
-  // form.innerHTML = `<h1> ${post.message} </h1>`;
+  await registerAnimal(formData);
 };
