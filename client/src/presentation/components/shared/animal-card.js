@@ -1,4 +1,4 @@
-import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
+import getAnimalPrincipalPicture from "../../../business-logic/get-animal-principal-picture.js";
 import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
 export const animalCard = (animal) => {
@@ -11,7 +11,7 @@ export const animalCard = (animal) => {
   const photo = document.createElement("div");
   photo.className = "card-photo";
   const img = document.createElement("img");
-  const principalPicture = getAvatarHandler(pictures);
+  const principalPicture = getAnimalPrincipalPicture(pictures);
 
   const blob = b64toBlob(
     principalPicture.picture.data,
