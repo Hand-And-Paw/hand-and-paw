@@ -9,7 +9,7 @@ const showAnimalProfile = async (e) => {
   const main = document.querySelector(".main");
   main.innerHTML = "";
   main.appendChild(backToSearchResults());
-  main.appendChild(animalCard(animal[0]));
+  main.appendChild(animalCard(animal[0], "animal-profile"));
   main.appendChild(contactShelter());
   const animalStory = document.createElement("div");
   animalStory.className = "animal-story";
