@@ -1,0 +1,20 @@
+.search-result-card {
+  background-color: var(--secondary1);
+  border-radius: var(--borderRadius);
+  height: fit-content;
+  display: grid;
+  grid-template-areas: "card-photo" "card-info";
+}
+
+.search-result-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}
+
+.search-result-card .card-info {
+  padding: 1rem 3rem;
+  display: block;
+  text-align: center;
+}
