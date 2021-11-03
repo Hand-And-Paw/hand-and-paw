@@ -20,9 +20,9 @@ const footer = () => {
   footerContent.appendChild(about);
   // github repo link
   footerContent.appendChild(githubRepo());
-  //contact us
+  // contact us
   footerContent.appendChild(contactUsButton());
-  //to the top
+  // to the top
   footerContent.appendChild(goToTopButton());
   return footerContent;
 };

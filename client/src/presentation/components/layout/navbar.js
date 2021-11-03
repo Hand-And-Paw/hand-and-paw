@@ -8,9 +8,9 @@ export const navbar = () => {
   // Is the user logged in
   const isLoggedIn = localStorage.getItem("isLoggedIn");
 
-  //////////////////////////////////
+  /// ///////////////////////////////
   // Create the navbar
-  //////////////////////////////////
+  /// ///////////////////////////////
   const navbarEl = document.createElement("navbar");
   navbarEl.id = "top-navbar";
 
