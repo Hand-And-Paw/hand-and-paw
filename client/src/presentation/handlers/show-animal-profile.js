@@ -3,8 +3,8 @@ import { animalCard } from "../components/shared/animal-card.js";
 import contactShelter from "../components/layout/contact-shelter-button.js";
 import backToSearchResults from "../components/layout/back-to-results-button.js";
 
-const showAnimalProfile = async (e) => {
-  const animalId = e.target.closest(".animal-card").id;
+const showAnimalProfile = async (e, id) => {
+  const animalId = !id ? e.target.closest(".animal-card").id : id;
   const animal = await getAnimal(animalId);
   const main = document.querySelector(".main");
   main.innerHTML = "";
