@@ -1,12 +1,13 @@
 import getAnimalPrincipalPicture from "../../../business-logic/get-animal-principal-picture.js";
 import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
-export const animalCard = (animal) => {
+export const animalCard = (animal, className) => {
   const { type, breed, gender, character, dateBirth, pictures, location } =
     animal;
   // create card
   const card = document.createElement("div");
   card.className = "animal-card";
+  card.classList.add = className;
   // create photo div
   const photo = document.createElement("div");
   photo.className = "card-photo";

@@ -5,7 +5,7 @@ const animalSearchResults = (array) => {
   container.className = "container";
   if (array.length !== 0) {
     array.forEach((animal) => {
-      container.appendChild(animalCard(animal));
+      container.appendChild(animalCard(animal, "search-result-cards"));
     });
   } else {
     container.innerText =
