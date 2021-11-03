@@ -1,8 +1,8 @@
 import githubRepo from "./github-link.js";
 import createLogo from "./logo.js";
-import createMainMenu from "./main-menu.js";
 import contactUsButton from "./contact-us-button.js";
 import goToTopButton from "./to-the-top.js";
+import mainMenuComponent from "./main-menu-component.js";
 
 const footer = () => {
   // create footer content
@@ -11,7 +11,7 @@ const footer = () => {
   // logo
   footerContent.appendChild(createLogo());
   // main menu
-  footerContent.appendChild(createMainMenu());
+  footerContent.appendChild(mainMenuComponent({"className":'my-specific-footer-class-comes-here'}));
   // created by
   const about = document.createElement("p");
   about.className = "footer-about-project";

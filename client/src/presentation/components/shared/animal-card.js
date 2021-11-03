@@ -1,4 +1,4 @@
-import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
+import getAnimalPrincipalPicture from "../../../business-logic/get-animal-principal-picture.js";
 import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
 export const animalCard = (animal) => {
