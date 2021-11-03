@@ -1,9 +1,7 @@
 @import url("./root.css");
-<<<<<<< HEAD
 @import url("./animal-card.css");
 @import url("./button.css");
 @import url("./link-button.css");
-=======
 @import url("./search-result-card.css");
 
 .animal-search-results .container {
@@ -12,4 +10,3 @@
   gap: 30px;
   justify-content: center;
 }
->>>>>>> b11fc21f751666561a2c715fa677be14aa0108a8
