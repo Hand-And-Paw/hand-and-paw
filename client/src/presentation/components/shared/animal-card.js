@@ -7,7 +7,7 @@ export const animalCard = (animal, className) => {
   // create card
   const card = document.createElement("div");
   card.className = "animal-card";
-  card.classList.add = className;
+  card.classList.add(className);
   // create photo div
   const photo = document.createElement("div");
   photo.className = "card-photo";
