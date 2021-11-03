@@ -2,32 +2,21 @@ import getAnimalPrincipalPicture from "../../../business-logic/get-animal-princi
 import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
 export const animalCard = (animal) => {
-  const { type, breed, gender, character, dateBirth, pictures, location, _id } =
+  const { type, breed, gender, character, dateBirth, pictures, location } =
     animal;
   // create card
   const card = document.createElement("div");
   card.className = "animal-card";
-  card.id = _id;
   // create photo div
   const photo = document.createElement("div");
   photo.className = "card-photo";
-
-  if (pictures.length !== 0) {
-    const img = document.createElement("img");
-    const principalPicture = getAvatarHandler(pictures);
-
-    const blob = b64toBlob(
-      principalPicture.picture.data,
-      principalPicture.picture.contentType
-    );
-
-    const url = URL.createObjectURL(blob);
-
-    img.src = url;
-    photo.appendChild(img);
-  } else {
-    photo.innerText = "No photo, yet";
-  }
+  const img = document.createElement("img");
+  // looks for principal picture
+  const picture = getAnimalPrincipalPicture(pictures);
+  const blob = b64toBlob(picture.picture.data, picture.picture.contentType);
+  const url = URL.createObjectURL(blob);
+  img.src = url;
+  photo.appendChild(img);
   // create info div
   const info = document.createElement("div");
   info.className = "card-info";

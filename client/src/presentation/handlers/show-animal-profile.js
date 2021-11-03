@@ -1,8 +1,7 @@
 import { getAnimal } from "../../data-access/animal-access/get-animal.js";
 import { animalCard } from "../components/shared/animal-card.js";
-//
 
-const selectAnimal = async (e) => {
+const showAnimalProfile = async (e) => {
   const animalId = e.target.closest(".animal-card").id;
   const animal = await getAnimal(animalId);
   const main = document.querySelector(".main");
@@ -13,4 +12,4 @@ const selectAnimal = async (e) => {
   main.appendChild(animalStory);
 };
 
-export default selectAnimal;
+export default showAnimalProfile;
