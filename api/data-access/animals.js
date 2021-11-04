@@ -151,9 +151,13 @@ const databaseAccess = {
     return update;
   },
   filterAnimals: async (filterObj) => {
-    console.log(filterObj);
+    if (filterObj.age && filterObj.age > 10) {
+      filterObj.age = { $gt: 10 };
+      console.log("inside-->", filterObj);
+      const animals = await Animal.find(filterObj);
+      return animals;
+    }
     const animals = await Animal.find(filterObj);
-    console.log(animals);
     return animals;
   },
 };

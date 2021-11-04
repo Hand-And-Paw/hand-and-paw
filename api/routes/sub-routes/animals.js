@@ -9,11 +9,7 @@ const tokenChecker = require("../../middleware/token-login");
 // all animals
 animalRoute.get("/", animalController.getAllAnimals);
 // filter animals
-animalRoute.get(
-  "/filter-animals",
-  uploadAnimalPictures,
-  animalController.filterAnimals
-);
+animalRoute.post("/filter-animals", animalController.filterAnimals);
 // get one animal
 animalRoute.get("/:id", animalController.getAnimal);
 
