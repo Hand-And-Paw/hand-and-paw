@@ -1,20 +1,33 @@
 import { getAnimal } from "../../data-access/animal-access/get-animal.js";
-import { animalCard } from "../components/shared/animal-card.js";
 import contactShelter from "../components/layout/contact-shelter-button.js";
 import backToSearchResults from "../components/layout/back-to-results-button.js";
+import animalPhoto from "../components/shared/animal-photo.js";
+import animalInfo from "../components/shared/animal-info.js";
+import aboutAnimal from "../components/shared/animal-story.js";
 
 const showAnimalProfile = async (e) => {
+  // select animal
   const animalId = e.target.closest(".animal-card").id;
   const animal = await getAnimal(animalId);
+  // create animal profile
+  // clean page content
   const main = document.querySelector(".main");
   main.innerHTML = "";
-  main.appendChild(backToSearchResults());
-  main.appendChild(animalCard(animal[0], "animal-profile"));
-  main.appendChild(contactShelter());
-  const animalStory = document.createElement("div");
-  animalStory.className = "animal-story";
-  animalStory.innerText = animal[0].describeAnimal;
-  main.appendChild(animalStory);
+  // build profile
+  const animalProfile = document.createElement("div");
+  animalProfile.className = "animal-profile";
+  // back to search results
+  animalProfile.appendChild(backToSearchResults());
+  // add photo
+  animalProfile.appendChild(animalPhoto(animal[0], "animal-photo"));
+  // add basic info
+  animalProfile.appendChild(animalInfo(animal[0], "animal-info"));
+  // contact shelter btn
+  animalProfile.appendChild(contactShelter());
+  // add animal story
+  animalProfile.appendChild(aboutAnimal(animal[0], "animal-story"));
+  // append components to the page
+  main.appendChild(animalProfile);
 };
 
 export default showAnimalProfile;
