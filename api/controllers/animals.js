@@ -24,7 +24,7 @@ const animalsController = {
       const animal = await animalManager.getAnimal(id);
       res.status(200).send(animal);
     } catch (error) {
-      res.status(401).json({ error: error.message, stack: error.stack });
+      res.status(401).json({ error: error.message });
     }
   },
   updateAnimal: async (req, res) => {
@@ -219,8 +219,7 @@ const animalsController = {
   filterAnimals: async (req, res) => {
     try {
       const filterOptions = req.body;
-      console.log(filterOptions);
-      const filteredAnimals = animalManager.filterAnimals(filterOptions);
+      const filteredAnimals = await animalManager.filterAnimals(filterOptions);
       res.status(200).send(filteredAnimals);
     } catch (error) {
       res.status(400).json({ error: error.message, stack: error.stack });
