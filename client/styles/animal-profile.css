@@ -6,15 +6,18 @@
 @import url("./link-button.css");
 
 .animal-photo {
-  width: 586px;
-  height: 409px;
+  width: 100%;
   object-fit: cover;
 }
 
 .animal-info,
 .animal-story {
   background-color: var(--secondary1);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  padding: 3em;
 }
 
-.animal-story {
+.animal-story h3 {
+  margin-bottom: 1.2em;
 }
