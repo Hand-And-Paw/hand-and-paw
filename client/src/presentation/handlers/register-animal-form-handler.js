@@ -1,6 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import { registerAnimal } from "../../data-access/animal-access/register-animal.js";
 import createModal from "../components/shared/modal.js";
-import closeModal from "./close-modal.js";
 
 export const registerAnimalFormHandler = async (event) => {
   event.preventDefault();
@@ -10,7 +10,7 @@ export const registerAnimalFormHandler = async (event) => {
   formData.append("userId", window.localStorage.getItem("userId"));
 
   const post = await registerAnimal(formData);
-  if (post) {
+  if (post._id) {
     const divEl = document.createElement("div");
     const title = document.createElement("h1");
     title.innerText = "Animal registered successfully";
@@ -22,7 +22,6 @@ export const registerAnimalFormHandler = async (event) => {
     document
       .querySelector("body")
       .insertAdjacentElement("beforeend", createModal(divEl));
-    setTimeout(closeModal, 3000);
     form.reset();
   }
 };

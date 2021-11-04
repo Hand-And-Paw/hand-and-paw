@@ -31,7 +31,6 @@ const userSubscriptionManager = {
   },
   removeUser: async (userId) => {
     const user = await databaseAccess.read(userId);
-    console.log(user[0].registeredAnimals.length !== 0);
     if (user[0].registeredAnimals.length !== 0) {
       [...user[0].registeredAnimals].forEach(
         async (animalId) => await animalManager.removeAnimal(animalId)

@@ -25,11 +25,15 @@ const animalsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  dateBirth: {
-    type: Date,
+  age: {
+    type: Number,
     required: true,
   },
   location: {
+    type: String,
+    required: true,
+  },
+  province: {
     type: String,
     required: true,
   },

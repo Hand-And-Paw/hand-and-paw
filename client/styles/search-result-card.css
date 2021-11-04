@@ -13,8 +13,24 @@
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
 }
 
+.search-result-card .card-photo {
+  height: 334px;
+}
+
 .search-result-card .card-info {
-  padding: 1rem 3rem;
+  padding: 3rem 3rem;
   display: block;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.search-result-card .card-info span {
+  font-size: 1.325rem;
+  margin-left: 0.4em;
+  color: var(--mainText);
+}
+
+.animal-name {
   text-align: center;
+  color: var(--primary2);
 }
