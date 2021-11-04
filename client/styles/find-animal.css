@@ -3,6 +3,7 @@
 @import url("./button.css");
 @import url("./link-button.css");
 @import url("./search-result-card.css");
+@import url("./animal-profile.css");
 
 .animal-search-results .container {
   display: grid;
