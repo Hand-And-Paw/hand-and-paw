@@ -27,16 +27,20 @@
       </section>
       <section class="animal-search-menu">
         <div class="container">
-          <div class="dropdown-menu">
-            <form action="#" id="search-animal-form">
-              <select name="type">
-                <option value="all">All animals</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="bird">Bird</option>
-                <option value="rabbit">Rabbit</option>
-                <option value="hamster">Hamster</option>
-
+          <div class="filter-control">
+            <button id="remove-filters" class="button link-button">
+              Remove filers
+            </button>
+          </div>
+            <div class="search-dropdown-menu">
+              <form action="#" id="search-animal-form">
+                <select name="type">
+                  <option value="all">All animals</option>
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="bird">Bird</option>
+                  <option value="rabbit">Rabbit</option>
+                  <option value="hamster">Hamster</option>
                 <!-- add options from DB -->
               </select>
               <select name="breed">
@@ -100,6 +104,7 @@
             </form>
           </div>
         </div>
+
       </section>
       <section class="animal-search-results" id="animals-list"></section>
     </div>
