@@ -6,7 +6,7 @@
 
 .animal-search-results .container {
   display: grid;
-  grid-template-columns: repeat(3, 25%);
-  gap: 30px;
+  grid-template-columns: repeat(4, 25%);
+  gap: 24px;
   justify-content: center;
 }
