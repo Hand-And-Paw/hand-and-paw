@@ -3,6 +3,7 @@ import state from "../../data-access/state/state.js";
 import { loginUser } from "../../data-access/login/login.js";
 import { navbar } from "../components/layout/navbar.js";
 import { loginForm } from "../components/shared/login-form.js";
+import closeModal from "./close-modal.js";
 
 export const loginAuthHandler = async (event) => {
   event.preventDefault();
@@ -50,6 +51,12 @@ export const loginAuthHandler = async (event) => {
     const navbarEl = document.getElementById("top-navbar");
     header.removeChild(navbarEl);
     header.prepend(navbar());
+    if (true) {
+      console.log("very nice");
+      setTimeout(closeModal, 1500);
+    } else {
+      console.log("nono");
+    }
   }
-  form.innerHTML = userLog.message;
+  // form.innerHTML = userLog.message;
 };
