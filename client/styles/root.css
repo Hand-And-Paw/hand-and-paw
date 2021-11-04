@@ -9,6 +9,7 @@
   --primaryHover2: #63197d;
   --secondary1: #fdf1ff;
   --secondary2: #f3f3f3;
+  --secundary3: #FFF8DC;
   --mainText: #0b040e;
   --secondaryBtn1: #fffade;
   --secondaryBtn2: #f5d7ff;
@@ -29,6 +30,9 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 h1 {
