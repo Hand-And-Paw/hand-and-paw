@@ -2,7 +2,6 @@
 /* eslint-disable no-underscore-dangle */
 
 const animalManager = require("../business-logic/animals");
-// const animalDbAccess = require("../data-access/publish-animal");
 const userDbAccess = require("../data-access/users");
 const deleteImage = require("../utils/delete-image");
 
