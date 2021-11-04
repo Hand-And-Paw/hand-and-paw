@@ -2,8 +2,7 @@ import getAnimalPrincipalPicture from "../../../business-logic/get-animal-princi
 import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
 export const animalCard = (animal, className) => {
-  const { type, breed, gender, character, dateBirth, pictures, location } =
-    animal;
+  const { type, breed, gender, character, age, pictures, location } = animal;
   // create card
   const card = document.createElement("div");
   card.className = "animal-card";
@@ -27,7 +26,7 @@ export const animalCard = (animal, className) => {
   Breed: <span> ${breed} </span> <br>
   Gender: <span> ${gender}</span><br>
   Character: <span>${character}</span><br>
-  Date of Birth: <span> ${dateBirth} </span><br>
+  Age: <span> ${age} </span><br>
   Location: <span> ${location}</span> <br>
   `;
   // append div

@@ -150,7 +150,12 @@ const databaseAccess = {
     );
     return update;
   },
-  filterAnimals: async (filterObj) => {},
+  filterAnimals: async (filterObj) => {
+    console.log(filterObj);
+    const animals = await Animal.find(filterObj);
+    console.log(animals);
+    return animals;
+  },
 };
 
 module.exports = databaseAccess;

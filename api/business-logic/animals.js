@@ -172,7 +172,8 @@ const animalsManager = {
     return updatePicture;
   },
   filterAnimals: async (filterObj) => {
-    return databaseAccess.filterAnimals(filterObj);
+    const animals = await databaseAccess.filterAnimals(filterObj);
+    return animals;
   },
 };
 
