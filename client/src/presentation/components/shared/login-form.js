@@ -9,6 +9,7 @@ export const loginForm = (className) => {
   form.innerHTML = `
   <h1> Log in </h1>
   <div class="form-control">
+  <small> Incorrect login or password.</small>
     <label for="email">Email</label><br />
     <input type="email" name="email" placeholder="Enter your e-mail" autocomplete="email"  required/><br />
   </div>
