@@ -9,6 +9,7 @@ const showAnimalProfile = async (e) => {
   // select animal
   const animalId = e.target.closest(".animal-card").id;
   const animal = await getAnimal(animalId);
+  console.log(animal);
   // create animal profile
   // clean page content
   const main = document.querySelector(".main");

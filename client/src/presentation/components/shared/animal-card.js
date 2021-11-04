@@ -1,9 +1,11 @@
 import animalPhoto from "./animal-photo.js";
 import animalInfo from "./animal-info.js";
 
-export const animalCard = (animal, className) => {
+export const animalCard = (animal, className, id) => {
   // create card
+  const { _id } = animal;
   const card = document.createElement("div");
+  card.id = _id;
   card.className = "animal-card";
   card.classList.add(className);
   // create photo div

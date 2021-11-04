@@ -5,6 +5,16 @@
 @import url("./form.css");
 @import url("./link-button.css");
 
-.main {
-  display: grid;
+.animal-photo {
+  width: 586px;
+  height: 409px;
+  object-fit: cover;
+}
+
+.animal-info,
+.animal-story {
+  background-color: var(--secondary1);
+}
+
+.animal-story {
 }
