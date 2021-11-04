@@ -23,7 +23,7 @@ const buildPage = async () => {
   const submitSearch = document.getElementById("submit-animal-search-form");
   submitSearch.addEventListener("click", filterAnimalsHandler);
 
-  const removeFilters = document.getElementById("submit-animal-search-form");
+  const removeFilters = document.getElementById("remove-filters");
   removeFilters.addEventListener("click", removeFilterFindAnimal);
 };
 buildPage();
