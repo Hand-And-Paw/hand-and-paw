@@ -1,8 +1,9 @@
 import loginFormHandler from "../../handlers/login-form-handler.js";
 
-export const loginForm = () => {
+export const loginForm = (className) => {
   const form = document.createElement("form");
-  form.className = "modal-form";
+  // form.className = "modal-form";
+  form.className = className;
   form.id = "login-form";
   form.action = "#";
   form.innerHTML = `
