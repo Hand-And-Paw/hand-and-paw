@@ -70,5 +70,14 @@ h4 {
 }
 
 .container {
+  justify-content: center;
   padding: 4rem 10rem;
+}
+
+.form-button {
+  /* background-color: var(--secondaryBtn2);
+  color: var(--primary2);
+  padding: 3rem 0;
+  width: fit-content; */
+  background-color: darkturquoise;
 }

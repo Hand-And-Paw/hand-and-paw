@@ -33,11 +33,6 @@
   outline: 0;
 }
 
-.form-button {
-  background-color: var(--secondaryBtn2);
-  color: var(--primary2);
-}
-
 /* error message */
 .form-control.success input {
   border: 2px solid var(--successColor);
