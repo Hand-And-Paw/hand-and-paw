@@ -6,7 +6,7 @@ const mainMenuComponent = (props) => {
   mainMenu.className = className;
   mainMenu.innerHTML = `
         <div><a href = "/src/presentation/components/pages/find-animal.html">Find an animal</a></div>
-        <div><a href = "/src/presentation/components/pages/add-animal.html">Register an animal</div>
+        <div><a href = "/src/presentation/components/pages/add-animal.html">Register an animal</a></div>
         <div><a href = "/src/presentation/components/pages/find-shelter.html">Find a shelter</a></div>
         <div><a href = "/src/presentation/components/pages/about-adoption.html">About adoption</a></div>
       `;
