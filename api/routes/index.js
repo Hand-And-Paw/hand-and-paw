@@ -3,14 +3,14 @@ const express = require("express");
 const routes = express.Router();
 
 // require routes files
-const userRegister = require("./sub-routes/user-register");
+const usersRoutes = require("./sub-routes/users");
 const login = require("./sub-routes/login");
-const publishAnimal = require("./sub-routes/publish-animal");
+const animalsRoutes = require("./sub-routes/animals");
 
 // use them with this router
-routes.use("/user-register", userRegister);
+routes.use("/users", usersRoutes);
 routes.use("/login", login);
-routes.use("/publish-animal", publishAnimal);
+routes.use("/animals", animalsRoutes);
 
 // export the routes
 module.exports = routes;

@@ -1,0 +1,14 @@
+.dropdown-content {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: absolute;
+  right: 10px;
+  padding: 2rem;
+  margin-top: 1rem;
+  opacity: 0;
+}
+.active {
+  opacity: 1;
+}

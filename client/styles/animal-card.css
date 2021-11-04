@@ -1,0 +1,11 @@
+.animal-card {
+  display: block;
+  background-color: var(--secondary1);
+  z-index: 0;
+  margin: 2rem;
+  max-width: 20%;
+}
+
+.animal-card img {
+  width: 100%;
+}

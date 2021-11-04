@@ -26,7 +26,7 @@ const animalsSchema = new mongoose.Schema({
     required: true,
   },
   dateBirth: {
-    type: String,
+    type: Date,
     required: true,
   },
   location: {
@@ -39,14 +39,19 @@ const animalsSchema = new mongoose.Schema({
   },
   webSite: {
     type: String,
-    required: true,
   },
   describeAnimal: {
     type: String,
     required: true,
   },
-  pictures: [String],
-  publishDate: {
+  pictures: [
+    {
+      picture: { data: String, contentType: String },
+      isPrincipal: { type: String, default: false },
+      fieldname: String,
+    },
+  ],
+  registerDate: {
     type: Date,
     required: true,
     default: Date.now,
