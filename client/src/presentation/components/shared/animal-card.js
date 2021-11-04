@@ -22,7 +22,7 @@ export const animalCard = (animal, className) => {
   const info = document.createElement("div");
   info.className = "card-info";
   info.innerHTML = `
-  Name: <span> ${animal.name} </span> <br>
+  <div class="animal-name"> <h3>${animal.name}</h3> </div> <br>
   Type: <span> ${type} </span> <br>
   Breed: <span> ${breed} </span> <br>
   Gender: <span> ${gender}</span><br>
