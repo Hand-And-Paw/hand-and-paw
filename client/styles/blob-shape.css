@@ -1,0 +1,11 @@
+.blob {
+  position: relative;
+  background-size: 100%;
+  -webkit-clip-path: url(#my-clip-path);
+  clip-path: url(#my-clip-path);
+}
+.svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
