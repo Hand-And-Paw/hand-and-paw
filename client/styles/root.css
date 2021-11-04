@@ -60,6 +60,11 @@ h4 {
   grid-template-columns: 1fr 1fr;
 }
 
+.menu {
+  background-color: var(--primary1);
+  padding: 0 10rem 0 10rem;
+}
+
 .container {
   padding: 4rem 10rem;
 }

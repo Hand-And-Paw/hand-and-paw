@@ -11,7 +11,7 @@ const footer = () => {
   // logo
   footerContent.appendChild(createLogo());
   // main menu
-  footerContent.appendChild(mainMenuComponent({"className":'my-specific-footer-class-comes-here'}));
+  footerContent.appendChild(mainMenuComponent({"className":'footer-pages-menu'}));
   // created by
   const about = document.createElement("p");
   about.className = "footer-about-project";

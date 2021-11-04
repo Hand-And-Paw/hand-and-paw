@@ -21,20 +21,21 @@ navbar {
   align-items: center;
 }
 
-#menu .logo {
+#top-navbar .logo {
+  padding-top: 5px;
   grid-area: logo;
   display: flex;
   justify-content: space-around;
   cursor: pointer;
 }
 
-#menu .pages-menu {
+#top-navbar .pages-menu {
   grid-area: menu;
   display: flex;
   justify-content: space-between;
 }
 
-#menu #account-menu {
+#top-navbar .account-menu {
   all: unset;
   grid-area: account;
   display: flex;
@@ -42,7 +43,11 @@ navbar {
   cursor: pointer;
 }
 
-#menu button {
+#top-navbar .account-menu > .avatar{
+  margin-left: 10px;
+}
+
+#top-navbar button {
   background-color: tomato;
   all: unset;
   cursor: pointer;
