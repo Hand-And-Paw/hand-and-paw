@@ -4,7 +4,6 @@
   height: fit-content;
   display: grid;
   grid-template-areas: "card-photo" "card-info";
-  margin: 1.5rem;
 }
 
 .search-result-card img {
