@@ -4,6 +4,7 @@ import { navbar } from "../components/layout/navbar.js";
 import footer from "../components/layout/footer.js";
 import showAnimalProfile from "../handlers/show-animal-profile.js";
 import { filterAnimalsHandler } from "../handlers/filter-animals-handler.js";
+import removeFilterFindAnimal from "../handlers/remove-filters-find-animal-handler.js";
 
 const buildPage = async () => {
   document.getElementById("menu").appendChild(navbar());
@@ -21,5 +22,8 @@ const buildPage = async () => {
 
   const submitSearch = document.getElementById("submit-animal-search-form");
   submitSearch.addEventListener("click", filterAnimalsHandler);
+
+  const removeFilters = document.getElementById("submit-animal-search-form");
+  removeFilters.addEventListener("click", removeFilterFindAnimal);
 };
 buildPage();
