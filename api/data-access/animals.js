@@ -26,8 +26,9 @@ const databaseAccess = {
           breed: newData.breed,
           gender: newData.gender,
           character: newData.character,
-          dateBirth: newData.dateBirth,
+          age: newData.age,
           location: newData.location,
+          province: newData.province,
           phone: newData.phone,
           webSite: newData.website,
           describeAnimal: newData.describeAnimal,
@@ -60,11 +61,11 @@ const databaseAccess = {
     return animals;
   },
   updateAnimalPictures: async (previousPictures, newPictures, animalId) => {
-    let numberOfPictures = 0
+    let numberOfPictures = 0;
     if (previousPictures.length === 0) {
       newPictures.forEach(async (picture) => {
         let newNumberFieldname = ++numberOfPictures;
-       await Animal.updateOne(
+        await Animal.updateOne(
           { _id: animalId },
           {
             $push: {
@@ -148,6 +149,12 @@ const databaseAccess = {
       { $set: { "pictures.$.isPrincipal": `${isPrincipal}` } }
     );
     return update;
+  },
+  filterAnimals: async (filterObj) => {
+    console.log(filterObj);
+    const animals = await Animal.find(filterObj);
+    console.log(animals);
+    return animals;
   },
 };
 
