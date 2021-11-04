@@ -3,10 +3,20 @@
 @import url("./button.css");
 @import url("./link-button.css");
 @import url("./search-result-card.css");
+@import url("./article.css");
+@import url("./search-menu.css");
+
+.container {
+  text-align: center;
+}
+
+.animal-search-menu .container {
+  display: flex;
+  flex-direction: column;
+}
 
 .animal-search-results .container {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  gap: 24px;
   justify-content: center;
 }
