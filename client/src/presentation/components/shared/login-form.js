@@ -8,15 +8,18 @@ export const loginForm = (className) => {
   form.action = "#";
   form.innerHTML = `
   <h1> Log in </h1>
+  <p class="error" id="login-error"> Incorrect login or password. </p>
   <div class="form-control">
-    <label for="email">Email</label><br />
-    <input type="email" name="email" placeholder="Enter your e-mail" autocomplete="email"  required/><br />
+     <label for="email">Email</label><br />
+    <input type="email" id="email" name="email" placeholder="Enter your e-mail" autocomplete="email"  required/><br />
+
   </div>
   <div class="form-control">
     <label for="password">Password</label><br />
     <input
       type="password"
       name="password"
+      id="password"
       autocomplete="current-password"
       placeholder ="Enter your password"
       required
