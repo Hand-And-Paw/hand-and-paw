@@ -16,28 +16,6 @@ export const loginAuthHandler = async (event) => {
   state.email = userObj.email;
   state.password = userObj.password;
   const userLog = await loginUser();
-
-  //   if (userLog?.user?.token) {
-  //     state.token = userLog.user.token;
-  //     state.userId = userLog.user.userId;
-  //     state.password = undefined;
-  //     state.isLoggedIn = true;
-  //     localStorage.setItem("token", state.token);
-  //     localStorage.setItem("userId", state.userId);
-  //     localStorage.setItem("isLoggedIn", state.isLoggedIn);
-  //     loginForm.innerHTML = `<h1>${userLog.message}</h1>`;
-  //     const header = document.getElementById("menu");
-  //     const navbarEl = document.getElementById("top-navbar");
-  //     header.removeChild(navbarEl);
-  //     header.prepend(navbar());
-  //     if (userLog) {
-  //       return;
-  //     } else {
-  //       document.querySelector(".form-control").className(".form-control error");
-  //       }
-  //   }
-  // };
-
   if (userLog?.user?.token) {
     state.token = userLog.user.token;
     state.userId = userLog.user.userId;
@@ -51,11 +29,9 @@ export const loginAuthHandler = async (event) => {
     const navbarEl = document.getElementById("top-navbar");
     header.removeChild(navbarEl);
     header.prepend(navbar());
-    console.log("very nice");
     setTimeout(closeModal, 1000);
     return;
   }
   //write the code here
   console.log("nono");
 };
-// setTimeout(closeModal, 1500);
