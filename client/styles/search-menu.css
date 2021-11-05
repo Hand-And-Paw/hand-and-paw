@@ -1,7 +1,5 @@
-.search-dropdown-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+#submit-animal-search-form {
+  grid-area: b;
 }
 
 #search-animal-form select {

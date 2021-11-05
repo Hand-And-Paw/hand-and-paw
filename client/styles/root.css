@@ -9,7 +9,7 @@
   --primaryHover2: #63197d;
   --secondary1: #fdf1ff;
   --secondary2: #f3f3f3;
-  --secundary3: #FFF8DC;
+  --secundary3: #fff8dc;
   --mainText: #0b040e;
   --secondaryBtn1: #fffade;
   --secondaryBtn2: #f5d7ff;
@@ -71,7 +71,12 @@ h4 {
 
 .container {
   justify-content: center;
-  padding: 4rem 10rem;
+  padding: 1rem;
+  margin: 3rem auto;
+}
+
+.intro {
+  width: 50%;
 }
 
 .form-button {
