@@ -3,6 +3,8 @@ import state from "../../data-access/state/state.js";
 import { loginUser } from "../../data-access/login/login.js";
 import { navbar } from "../components/layout/navbar.js";
 import { loginForm } from "../components/shared/login-form.js";
+import closeModal from "./close-modal.js";
+import { showError } from "../../business-logic/form-validation.js";
 
 export const loginAuthHandler = async (event) => {
   event.preventDefault();
@@ -15,7 +17,6 @@ export const loginAuthHandler = async (event) => {
   state.email = userObj.email;
   state.password = userObj.password;
   const userLog = await loginUser();
-
   if (userLog?.user?.token) {
     state.token = userLog.user.token;
     state.userId = userLog.user.userId;
@@ -29,6 +30,8 @@ export const loginAuthHandler = async (event) => {
     const navbarEl = document.getElementById("top-navbar");
     header.removeChild(navbarEl);
     header.prepend(navbar());
+    setTimeout(closeModal, 1000);
+    return;
   }
-  form.innerHTML = userLog.message;
+  document.getElementById("login-error").className = "error show-error";
 };

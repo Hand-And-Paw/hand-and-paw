@@ -17,9 +17,6 @@ const loginFormHandler = (event) => {
   if (event.target.id === "login-submit-btn") {
     // submitting login password
     loginAuthHandler(event);
-
-    // closeModal in 1 second
-    setTimeout(closeModal, 1500);
   }
 };
 
