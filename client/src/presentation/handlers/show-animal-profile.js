@@ -5,11 +5,9 @@ import animalPhoto from "../components/shared/animal-photo.js";
 import animalInfo from "../components/shared/animal-info.js";
 import aboutAnimal from "../components/shared/animal-story.js";
 
-const showAnimalProfile = async (e) => {
-  // select animal
-  const animalId = e.target.closest(".animal-card").id;
+const showAnimalProfile = async (e, id) => {
+  const animalId = !id ? e.target.closest(".animal-card").id : id;
   const animal = await getAnimal(animalId);
-  console.log(animal);
   // create animal profile
   // clean page content
   const main = document.querySelector(".main");

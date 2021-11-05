@@ -33,7 +33,7 @@
             </button>
           </div>
           <div class="search-dropdown-menu">
-            <form action="#" id="search-animal-form">
+            <form action="#" id="search-animal-form" class="input-select">
               <select name="type">
                 <option value="all">All animals</option>
                 <option value="dog">Dog</option>
@@ -43,10 +43,10 @@
                 <option value="hamster">Hamster</option>
                 <!-- add options from DB -->
               </select>
-              <select name="breed">
-                <option value="all">All breeds</option>
-                <!-- add options from DB -->
-              </select>
+              <!-- <select name="breed"> -->
+              <input type="text" name="breed" placeholder="Breed" />
+              <!-- add options from DB -->
+              <!-- </select> -->
 
               <select name="age">
                 <option value="all">All ages</option>
