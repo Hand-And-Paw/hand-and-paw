@@ -29,3 +29,8 @@
   grid-area: button;
   justify-self: center;
 }
+
+/* .search-dropdown-menu select,
+input {
+  margin: 1rem;
+} */
