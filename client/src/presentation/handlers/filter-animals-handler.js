@@ -14,14 +14,8 @@ export const filterAnimalsHandler = async (event) => {
     }
     parametersObj[key] = formData.get(key);
   }
-
   const filter = await filterAnimals(parametersObj);
-
-  if (filter.length !== 0) {
-    const animalList = document.getElementById("animals-list");
-    animalList.innerHTML = "";
-
-    animalList.appendChild(animalSearchResults(filter));
-    form.reset();
-  }
+  const animalList = document.getElementById("animals-list");
+  animalList.innerHTML = "";
+  animalList.appendChild(animalSearchResults(filter));
 };
