@@ -27,11 +27,11 @@
       </section>
       <section class="animal-search-menu">
         <div class="container">
-          <div class="filter-control">
-            <button id="remove-filters" class="button link-button">
-              Remove filers
-            </button>
-          </div>
+          <!-- <div class="filter-control"> -->
+          <button id="remove-filters" class="button link-button">
+            Remove filers
+          </button>
+          <!-- </div> -->
           <div class="search-dropdown-menu">
             <form action="#" id="search-animal-form" class="input-select">
               <select name="type">
@@ -44,7 +44,7 @@
                 <!-- add options from DB -->
               </select>
               <!-- <select name="breed"> -->
-              <input type="text" name="breed" placeholder="Breed" />
+              <input type="text" name="breed" placeholder="All breeds" />
               <!-- add options from DB -->
               <!-- </select> -->
 
@@ -94,15 +94,16 @@
                 <option value="Wallon-Brabant">Wallon-Brabant</option>
                 <!-- add options from DB -->
               </select>
-              <button
-                type="submit"
-                id="submit-animal-search-form"
-                class="button regular-button"
-              >
-                Search
-              </button>
             </form>
           </div>
+          <button
+            type="submit"
+            id="submit-animal-search-form"
+            class="button regular-button"
+            form="search-animal-form"
+          >
+            Apply
+          </button>
         </div>
       </section>
       <section class="animal-search-results" id="animals-list"></section>

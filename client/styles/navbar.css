@@ -10,6 +10,7 @@ navbar {
   font-size: 1.125rem;
   font-weight: 500;
   background-color: var(--primary1);
+  margin-bottom: 4rem;
 }
 
 #top-navbar {
@@ -43,7 +44,7 @@ navbar {
   cursor: pointer;
 }
 
-#top-navbar .account-menu > .avatar{
+#top-navbar .account-menu > .avatar {
   margin-left: 10px;
 }
 

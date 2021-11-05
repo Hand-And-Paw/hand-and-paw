@@ -2,7 +2,7 @@ import { animalCard } from "./animal-card.js";
 
 const animalSearchResults = (array) => {
   const container = document.createElement("div");
-  container.className = "container";
+  container.className = "container search-results";
   if (array.length !== 0) {
     array.forEach((animal) => {
       container.appendChild(animalCard(animal, "search-result-card"));

@@ -54,6 +54,11 @@ textarea {
   visibility: hidden;
 }
 
-.form-control.error small {
+.error {
+  color: var(--errorColor);
+  visibility: hidden;
+}
+.form-control.error small,
+.error.show-error {
   visibility: visible;
 }
