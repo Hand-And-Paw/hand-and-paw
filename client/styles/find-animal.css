@@ -3,21 +3,29 @@
 @import url("./link-button.css");
 @import url("./search-result-card.css");
 @import url("./article.css");
-@import url("./search-menu.css");
 @import url("./animal-profile.css");
-
-.container {
-  text-align: center;
-}
+@import url("./input-select.css");
+@import url("./regular-button.css");
 
 .animal-search-menu .container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    ". . remove-filters"
+    "search-menu search-menu search-menu"
+    ". button .";
 }
 
-.animal-search-results .container {
-  display: grid;
-  grid-template-columns: repeat(4, 25%);
-  justify-content: center;
-  gap: 30px;
+#remove-filters {
+  grid-area: remove-filters;
+  justify-self: right;
+}
+.search-dropdown-menu {
+  grid-area: search-menu;
+}
+
+#submit-animal-search-form {
+  grid-area: button;
+  justify-self: center;
 }

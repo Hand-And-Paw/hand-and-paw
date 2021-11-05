@@ -1,3 +1,14 @@
+.animal-search-results {
+  margin-top: 3rem;
+}
+
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  justify-content: center;
+  gap: 50px;
+}
+
 .search-result-card {
   background-color: var(--secondary1);
   border-radius: var(--borderRadius);

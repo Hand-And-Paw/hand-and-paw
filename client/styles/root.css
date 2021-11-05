@@ -11,8 +11,7 @@
   --secondary2: #f3f3f3;
   --secundary3: #fff8dc;
   --mainText: #0b040e;
-  --secondaryBtn1: #fffade;
-  --secondaryBtn2: #f5d7ff;
+  --regularBtn: #f5d7ff;
   --linkBtn: #006def;
   --shadow: 0px 4px 6px rgba(121, 48, 147, 0.25);
   --borderRadius: 30px;
@@ -71,23 +70,11 @@ h4 {
 
 .container {
   justify-content: center;
-<<<<<<< HEAD
-  padding: 1rem;
-  margin: 3rem auto;
+  padding: 1rem 12rem;
+  margin: 0 auto 1rem auto;
 }
 
-.intro {
-  width: 50%;
-=======
-  padding: 4rem 10rem;
+.page-intro .container {
+  width: 60%;
   text-align: center;
->>>>>>> 78cd637795a36b33534c97bdb110106f68e2d4e4
-}
-
-.form-button {
-  /* background-color: var(--secondaryBtn2);
-  color: var(--primary2);
-  padding: 3rem 0;
-  width: fit-content; */
-  background-color: darkturquoise;
 }
