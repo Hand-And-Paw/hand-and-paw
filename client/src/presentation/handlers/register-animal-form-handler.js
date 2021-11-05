@@ -1,9 +1,10 @@
+/* eslint-disable prefer-arrow/prefer-arrow-functions */
 /* eslint-disable no-underscore-dangle */
 import { registerAnimal } from "../../data-access/animal-access/register-animal.js";
 import createModal from "../components/shared/modal.js";
-import closeModal from "./close-modal.js";
 import state from "../../data-access/state/state.js";
 import showAnimalProfile from "./show-animal-profile.js";
+import closeModal from "./close-modal.js";
 
 export const registerAnimalFormHandler = async (event) => {
   event.preventDefault();
@@ -19,18 +20,28 @@ export const registerAnimalFormHandler = async (event) => {
     const title = document.createElement("h1");
     title.innerText = "Animal registered successfully";
     const anchor = document.createElement("a");
+    anchor.id = "go-to-your-animal-card";
     anchor.href = "#";
     anchor.innerHTML = "go to your animal card";
-    anchor.addEventListener("click", (e) =>
-      showAnimalProfile(e, state.animalId)
-    );
+    anchor.addEventListener("click", (e) => {
+      // eslint-disable-next-line no-use-before-define
+      goToAnimalProfile(e, state.animalId);
+    });
     // delete back to search result option
     divEl.appendChild(title);
     divEl.appendChild(anchor);
     document
       .querySelector("body")
       .insertAdjacentElement("beforeend", createModal(divEl));
-    setTimeout(closeModal, 4000);
-    form.reset();
   }
 };
+
+async function goToAnimalProfile(e, animalId) {
+  const modal = document.querySelector(".modal-background");
+  if (document.body.contains(modal)) {
+    closeModal();
+  }
+  await showAnimalProfile(e, animalId);
+  const button = document.getElementById("to-search-results");
+  button.remove();
+}
