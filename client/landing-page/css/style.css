@@ -606,6 +606,7 @@ body {
   margin-right: 50px;
   margin-bottom: 25px;
   position: relative;
+  cursor: pointer;
 }
 
 .burger_line {
@@ -636,7 +637,7 @@ body {
 .wrapper-intro {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0px ;
   display: grid;
   grid-template-columns: 340px 600px auto;
   grid-template-rows: 150px 200px 200px;
@@ -927,7 +928,7 @@ body {
     margin-bottom: 0;
   }
   .header_link {
-    font-size: 42px;
+    font-size: 32px;
     line-height: 48px;
   }
   .header_nav-close {
@@ -1033,7 +1034,7 @@ body {
     margin-bottom: 0;
   }
   .header_link {
-    font-size: 42px;
+    font-size: 32px;
     line-height: 48px;
   }
   .header_nav-close {

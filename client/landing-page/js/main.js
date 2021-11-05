@@ -14,6 +14,11 @@
 (function () {
   const burgerItem = document.querySelector(".burger");
   const menu = document.querySelector(".header_nav");
+  const menuItems = document.querySelectorAll(".header_item");
+  menuItems.forEach(menuItem => {
+    menuItem.addEventListener('click', () => menu.classList.remove("header_nav_active"));
+  });
+  
   const menuCloseItem = document.querySelector(".header_nav-close");
   burgerItem.addEventListener("click", () => {
     menu.classList.add("header_nav_active");
