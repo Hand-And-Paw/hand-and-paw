@@ -4,7 +4,7 @@
   justify-content: space-evenly;
 }
 
-#search-animal-form select {
+#search-animal-form select, input {
   border-radius: 5px;
   background-color: #fff;
   font-size: 1.125rem;
@@ -13,7 +13,7 @@
   width: 175px;
 }
 
-#search-animal-form select:focus {
+#search-animal-form select:focus, input:focus{
   outline: none;
   border: 1px solid var(--primary2);
 }
