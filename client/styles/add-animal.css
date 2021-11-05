@@ -1,0 +1,48 @@
+@import url("./root.css");
+@import url("./button.css");
+@import url("./article.css");
+@import url("./modal.css");
+@import url("./form.css");
+@import url("./link-button.css");
+@import url("./search-menu.css");
+@import url("./call-to-action-buttons.css");
+@import url("./input-select.css");
+
+#register-animal-form {
+  margin: 2% 1% 0 1%;
+  display: grid;
+  grid-template-columns: 22% 22% 22% 22%;
+  grid-column-gap: 4%;
+  grid-template-rows: repeat(4, 1fr);
+  grid-row-gap: 10px;
+  grid-template-areas:
+    "group1 group2 group3 group4"
+    "group5 group6 group7 group8"
+    "group9 . . . "
+    "group10 group10 group10 group10 "
+    "upload-images . . .";
+}
+.group10 {
+  grid-area: group10;
+}
+.upload-images {
+  /* display: grid;
+    grid-template-columns: 32% 32% 32%;
+    grid-column-gap: 2%;
+    grid-template-rows: repeat(2 1fr);
+    grid-row-gap: 10px;
+    grid-template-areas: "images . ."
+                         ". button ."; */
+  grid-area: "upload-images";
+}
+#register-animal-form button {
+  grid-area: button;
+  width: fit-content;
+  height: 30px;
+}
+
+.input-select input,
+select {
+  width: 300px;
+  /* height: 30px; */
+}

@@ -71,12 +71,17 @@ h4 {
 
 .container {
   justify-content: center;
+<<<<<<< HEAD
   padding: 1rem;
   margin: 3rem auto;
 }
 
 .intro {
   width: 50%;
+=======
+  padding: 4rem 10rem;
+  text-align: center;
+>>>>>>> 78cd637795a36b33534c97bdb110106f68e2d4e4
 }
 
 .form-button {
