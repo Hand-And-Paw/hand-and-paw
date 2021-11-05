@@ -66,4 +66,10 @@ const checkPasswordMatch = (input1, input2) => {
 const getFieldName = (input) => {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 };
-export { checkEmail, checkLength, checkPasswordMatch, checkRequired };
+export {
+  checkEmail,
+  checkLength,
+  checkPasswordMatch,
+  checkRequired,
+  showError,
+};

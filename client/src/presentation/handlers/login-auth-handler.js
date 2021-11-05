@@ -4,6 +4,7 @@ import { loginUser } from "../../data-access/login/login.js";
 import { navbar } from "../components/layout/navbar.js";
 import { loginForm } from "../components/shared/login-form.js";
 import closeModal from "./close-modal.js";
+import { showError } from "../../business-logic/form-validation.js";
 
 export const loginAuthHandler = async (event) => {
   event.preventDefault();
@@ -32,6 +33,5 @@ export const loginAuthHandler = async (event) => {
     setTimeout(closeModal, 1000);
     return;
   }
-  //write the code here
-  console.log("nono");
+  document.getElementById("login-error").className = "error show-error";
 };

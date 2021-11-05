@@ -42,7 +42,7 @@ export const registerForm = () => {
   </div>
     <button type="submit" id="submit-register-form" class="button form-button">Register</button>
   `;
-  form.addEventListener("keyup", registerFormValidation);
+  form.addEventListener("change", registerFormValidation);
   form.addEventListener("submit", registerFormValidation);
   form.addEventListener("submit", registerUserFormHandler);
 
