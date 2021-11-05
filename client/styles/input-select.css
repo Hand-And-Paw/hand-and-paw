@@ -36,18 +36,18 @@ textarea:focus {
 .input-select select,
 input,
 textarea {
-  all: unset;
+  /* all: unset; */
   border-radius: 5px;
   border: 2px solid var(--mainText);
   background-color: #fff;
   font-size: 1.125rem;
   padding: 1em 2rem 1em 1em;
   color: var(--mainText);
-  width: 175px;
+  width: 300px;
 }
 
 .input-select textarea {
-  width: 90%;
+  width: 100%;
   height: 200px;
 }
 
