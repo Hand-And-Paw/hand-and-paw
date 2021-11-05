@@ -20,7 +20,8 @@
   position: relative;
 }
 
-.form-control input {
+.form-control input,
+textarea {
   display: block;
   border-radius: var(--borderRadius);
   border: 2px solid var(--primary2);
@@ -29,16 +30,19 @@
   padding: 0.6em 1em;
 }
 
-.form-control input {
+.form-control input,
+textarea {
   outline: 0;
 }
 
 /* error message */
-.form-control.success input {
+.form-control.success input,
+textarea {
   border: 2px solid var(--successColor);
 }
 
-.form-control.error input {
+.form-control.error input,
+textarea {
   border: 2px solid var(--errorColor);
 }
 

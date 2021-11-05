@@ -1,32 +1,32 @@
-const contactForm = (className) => {
+const contactForm = (title, id) => {
   const form = document.createElement("form");
-  form.className = className;
-  form.id = "login-form";
+  form.className = "modal-form";
+  form.id = id;
   form.action = "#";
   form.innerHTML = `
-  <h1> Log in </h1>
+  <h1>${title}</h1>
   <div class="form-control">
-    <label for="email">Email</label><br />
-    <input type="email" name="email" placeholder="Enter your e-mail" autocomplete="email"  required/><br />
+    <label for="name">Name</label><br />
+    <input type="name" name="name"/><br />
+    <small> Error message </small>
   </div>
   <div class="form-control">
-    <label for="password">Password</label><br />
-    <input
-      type="password"
-      name="password"
-      autocomplete="current-password"
-      placeholder ="Enter your password"
-      required
-    />
-    <br />
-  <div>
-    <button id="open-register-form" class="link-button">Create an account</button><br>
-    
-    <button id="login-submit-btn" class="button form-button">Submit</button>
-    
-  `;
-
-  form.addEventListener("click", (e) => console.log("send"));
+    <label for="phone-number">Phone number</label><br />
+    <input type="number" name="phone-number" /><br />
+    <small> Error message </small>
+  </div>
+  <div class="form-control">
+    <label for="email">Email</label><br />
+    <input type="email" name="email" autocomplete="email"  required/><br />
+    <small> Error message </small>
+  </div>
+  <div class="form-control">
+    <label for="Message">Message</label><br />
+    <textarea rows="14" cols="60" required> </textarea>
+    <small> Error message </small>
+  </div>
+  <button id = "send-${id}-form" class="button form-button">Send</button>
+   `;
   return form;
 };
 
