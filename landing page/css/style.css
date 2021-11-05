@@ -1106,8 +1106,9 @@ body {
     margin-top: 50px;
   }
 
-  .footer_item {
-    padding: 5px;
+  .footer_list {
+    display: inline-flex;
+    flex-direction: column;
   }
 }
 
