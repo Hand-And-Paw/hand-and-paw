@@ -1,0 +1,27 @@
+.search-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#search-animal-form select {
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 1.125rem;
+  padding: 1em 2rem 1em 1em;
+  color: var(--mainText);
+  width: 175px;
+}
+
+#search-animal-form select:focus {
+  outline: none;
+  border: 1px solid var(--primary2);
+}
+
+.search-dropdown-menu .form-button {
+  width: fit-content;
+  align-self: center;
+  background-color: var(--secondaryBtn2);
+  color: var(--primary2);
+  padding: 0.7em 3em;
+}

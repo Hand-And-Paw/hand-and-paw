@@ -23,7 +23,7 @@ navbar {
   min-height: 600px;
 
   /* Center and scale the image nicely */
-  background-position: left;
+  background-position: left top;
   background-repeat: no-repeat;
   background-size: 600px;
 

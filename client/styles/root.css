@@ -9,6 +9,7 @@
   --primaryHover2: #63197d;
   --secondary1: #fdf1ff;
   --secondary2: #f3f3f3;
+  --secundary3: #FFF8DC;
   --mainText: #0b040e;
   --secondaryBtn1: #fffade;
   --secondaryBtn2: #f5d7ff;
@@ -29,6 +30,9 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 h1 {
@@ -60,6 +64,20 @@ h4 {
   grid-template-columns: 1fr 1fr;
 }
 
+.menu {
+  background-color: var(--primary1);
+  padding: 0 10rem 0 10rem;
+}
+
 .container {
+  justify-content: center;
   padding: 4rem 10rem;
+}
+
+.form-button {
+  /* background-color: var(--secondaryBtn2);
+  color: var(--primary2);
+  padding: 3rem 0;
+  width: fit-content; */
+  background-color: darkturquoise;
 }
