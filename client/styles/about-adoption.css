@@ -41,13 +41,20 @@
   flex-direction: column;
 }
 
+.question img {
+  padding-right: 10px;
+  height: 12px;
+}
+
 .question {
   background-color: var(--secondary2);
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 15px;
   margin-top: 15px;
   border-radius: 8px;
+  text-align: left;
 }
+
 .faq-list li {
   list-style: none;
   box-shadow: var(--shadow);
@@ -57,11 +64,13 @@
 .nested-list li {
   padding: 20px;
   margin: 0px;
+  text-align: left;
 }
 .nested-list p {
   font-size: 0.9rem;
   padding: 20px;
   margin: 0px;
+  text-align: left;
 }
 
 .story-photo {
