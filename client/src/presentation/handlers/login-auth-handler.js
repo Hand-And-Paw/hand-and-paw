@@ -51,12 +51,11 @@ export const loginAuthHandler = async (event) => {
     const navbarEl = document.getElementById("top-navbar");
     header.removeChild(navbarEl);
     header.prepend(navbar());
-    if (true) {
-      console.log("very nice");
-      setTimeout(closeModal, 1500);
-    } else {
-      console.log("nono");
-    }
+    console.log("very nice");
+    setTimeout(closeModal, 1000);
+    return;
   }
-  // form.innerHTML = userLog.message;
+  //write the code here
+  console.log("nono");
 };
+// setTimeout(closeModal, 1500);
