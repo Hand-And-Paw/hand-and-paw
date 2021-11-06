@@ -11,7 +11,7 @@ export const loginForm = (className) => {
   <p class="error" id="login-error"> Incorrect login or password. </p>
   <div class="form-control">
      <label for="email">Email</label><br />
-    <input type="email" id="email" name="email" placeholder="Enter your e-mail" autocomplete="email"  required/><br />
+    <input type="email" id="email" name="email" placeholder="Enter your e-mail" autocomplete="email" required/><br />
     <img src = "/assets/icons/login-email-avatar.svg">
   </div>
   <div class="form-control">
