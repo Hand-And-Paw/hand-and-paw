@@ -3,6 +3,9 @@
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  height: 15px;
+  width: 15px;
+  margin: 15px;
 }
 
 .modal-background {
