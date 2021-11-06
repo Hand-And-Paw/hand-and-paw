@@ -12,7 +12,7 @@ export const loginForm = (className) => {
   <div class="form-control">
      <label for="email">Email</label><br />
     <input type="email" id="email" name="email" placeholder="Enter your e-mail" autocomplete="email"  required/><br />
-
+    <img src = "/assets/icons/login-email-avatar.svg">
   </div>
   <div class="form-control">
     <label for="password">Password</label><br />
@@ -25,6 +25,7 @@ export const loginForm = (className) => {
       required
     />
     <br />
+    <img src = "/assets/icons/login-password-lock.svg">
   <div>
     <button id="open-register-form" class="link-button">Create an account</button><br>
     
