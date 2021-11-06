@@ -12,7 +12,7 @@ const createProfileDropDownMenu = () => {
 </div>
 <div>
   <a href="/src/presentation/components/pages/edit-user-profile.html">Edit profile</a><br>
-  <img src="/assets/icons/dropdown menu/dropdownmenu_codicon_account.svg" alt="Animal"> 
+  <img src="/assets/icons/dropdown menu/dropdownmenu_codicon_account.svg" alt="Avatar"> 
 </div>
 `;
 
