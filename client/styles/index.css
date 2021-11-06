@@ -38,6 +38,11 @@ navbar {
     "space call-to-action";
 }
 
+hr {
+  margin-top: 15px;
+  border: 2px solid var(--primary2);
+}
+
 .welcome-article {
   justify-content: flex-start;
   display: flex;
@@ -52,7 +57,7 @@ navbar {
 .welcome-image-dog {
   position: relative;
   top: 10px;
-  left: 10px; 
+  left: 10px;
 }
 
 .call-to-action {

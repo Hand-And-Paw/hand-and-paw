@@ -14,8 +14,9 @@ export const registerAnimalFormHandler = async (event) => {
   formData.append("userId", window.localStorage.getItem("userId"));
 
   const post = await registerAnimal(formData);
-  state.animalId = post._id;
-  if (post) {
+
+  if (post._id) {
+    state.animalId = post._id;
     const divEl = document.createElement("div");
     const title = document.createElement("h1");
     title.innerText = "Animal registered successfully";
@@ -33,7 +34,17 @@ export const registerAnimalFormHandler = async (event) => {
     document
       .querySelector("body")
       .insertAdjacentElement("beforeend", createModal(divEl));
+    return;
   }
+
+  const divEl = document.createElement("div");
+  const title = document.createElement("h1");
+  title.innerText = "An error has occurred, try again later";
+  // delete back to search result option
+  divEl.appendChild(title);
+  document
+    .querySelector("body")
+    .insertAdjacentElement("beforeend", createModal(divEl));
 };
 
 async function goToAnimalProfile(e, animalId) {

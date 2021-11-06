@@ -22,9 +22,9 @@
     "group10 group10 group10 group10 "
     "upload-images . . .";
 }
-.group10 {
+/* .group10 {
   grid-area: group10;
-}
+} */
 .upload-images {
   /* display: grid;
     grid-template-columns: 32% 32% 32%;

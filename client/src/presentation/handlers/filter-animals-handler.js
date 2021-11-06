@@ -1,3 +1,4 @@
+/* eslint-disable no-continue */
 import { filterAnimals } from "../../data-access/animal-access/filter-animals.js";
 import animalSearchResults from "../components/shared/animal-search-results.js";
 
@@ -8,8 +9,11 @@ export const filterAnimalsHandler = async (event) => {
 
   const parametersObj = {};
   for (const key of formData.keys()) {
+    if (key === "breed" && formData.get(key) === "") {
+      continue;
+    }
+
     if (formData.get(key) === "all") {
-      // eslint-disable-next-line no-continue
       continue;
     }
     parametersObj[key] = formData.get(key);

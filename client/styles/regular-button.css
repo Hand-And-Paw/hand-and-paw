@@ -1,0 +1,6 @@
+.regular-button {
+  color: var(--primary2);
+  background-color: var(--regularBtn);
+  padding: 1em 5em;
+  margin: 1rem auto 1rem auto;
+}
