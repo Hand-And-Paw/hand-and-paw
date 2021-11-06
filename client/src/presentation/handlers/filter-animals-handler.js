@@ -3,7 +3,6 @@ import { filterAnimals } from "../../data-access/animal-access/filter-animals.js
 import animalSearchResults from "../components/shared/animal-search-results.js";
 
 export const filterAnimalsHandler = async (event) => {
-  debugger;
   event.preventDefault();
   const form = document.getElementById("search-animal-form");
   const formData = new FormData(form);
