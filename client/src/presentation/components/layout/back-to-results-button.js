@@ -1,4 +1,4 @@
-const backToSearchResults = () => {
+const backToSearchResults = (handler) => {
   const button = document.createElement("button");
   button.id = "to-search-results";
   const img = document.createElement("img");
@@ -7,9 +7,7 @@ const backToSearchResults = () => {
   button.innerText = "Back to search results";
   button.className = "button";
   button.classList.add("link-button");
-  button.addEventListener("click", () =>
-    console.log("working back to search results listener")
-  );
+  button.addEventListener("click", handler);
   return button;
 };
 

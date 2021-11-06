@@ -1,5 +1,6 @@
 import animalPhoto from "./animal-photo.js";
 import animalInfo from "./animal-info.js";
+import showAnimalProfile from "../../handlers/show-animal-profile.js";
 
 export const animalCard = (animal, className, id) => {
   // create card
@@ -12,5 +13,6 @@ export const animalCard = (animal, className, id) => {
   card.appendChild(animalPhoto(animal, "card-photo"));
   // create info div
   card.appendChild(animalInfo(animal, "card-info"));
+  card.addEventListener("click", showAnimalProfile);
   return card;
 };
