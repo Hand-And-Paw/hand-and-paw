@@ -716,6 +716,7 @@ body {
 .about_pic > img {
   width: 100%;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .about_wrap {
