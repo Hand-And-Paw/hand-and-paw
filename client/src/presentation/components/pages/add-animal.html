@@ -1,120 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../../styles/add-animal.css" />
+    <title>Register animal</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../../../../styles/add-animal.css" />
-  <title>Register animal</title>
-</head>
-
-<body>
-  <header id="top" class="main-navbar">
-    <div id="menu" class="menu"></div>
-  </header>
-  <div class="main">
-    <section class="page-intro">
-      <div class="container">
-        <article>
-          <h2>Register an animal</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            soluta dolores quae! Animi provident recusandae quis quas, fugiat
-            aut facere natus magnam incidunt culpa numquam iure eius obcaecati
-            nam minus?
-          </p>
-        </article>
-      </div>
-    </section>
-    <section class="animal-info-form">
-      <div class="container">
-        <form action="#" id="register-animal-form" class="input-select">
-          <div class="group1">
-            <label for="name">Name*</label>
-            <input type="text" name="name" required />
-          </div>
-          <div class="group2">
-            <label for="type">Type*</label>
-            <input type="text" name="type" required />
-          </div>
-          <div class="group3">
-            <label for="breed">Breed*</label>
-            <input type="text" name="breed" required />
-          </div>
-          <div class="group4">
-            <!-- dropdown gender? -->
-            <label for="gender">Gender*</label>
-            <select name="gender">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-          <div class="group5">
-            <label for="character">Character*</label>
-            <select name="character">
-              <option value="all">All characters</option>
-              <option value="happy">Happy</option>
-              <option value="sympathetic">Sympathetic</option>
-              <option value="angry">Angry</option>
-              <option value="jealousy">Jealousy</option>
-              <option value="fear">Fear</option>
-            </select>
-          </div>
-          <div class="group6">
-            <!-- birth of date -->
-            <label for="age">Age</label>
-            <input type="number" name="age" required />
-          </div>
-          <div class="group7">
-            <label for="location">Location</label>
-            <input type="text" name="location" required>
-          </div>
-          <div class="group7">
-            <label for="province">Province</label>
-            <select name="province">
-              <option value="brussels">Brussels</option>
-              <option value="antwerp">Antwerp</option>
-              <option value="east-flanders">East-Flanders</option>
-              <option value="flemish-Brabant">Flemish Brabant</option>
-              <option value="limburg">Limburg</option>
-              <option value="west-flanders">West-Flanders</option>
-              <option value="hainaut">Hainaut</option>
-              <option value="liege">Liege</option>
-              <option value="luxembourg">luxembourg</option>
-              <option value="namur">Namur</option>
-              <option value="Wallon-Brabant">Wallon-Brabant</option>
-              <!-- add options from DB -->
-            </select>
-          </div>
-          <div class="group8">
-            <label for="Phone">Phone</label>
-            <input type="number" name="phone" required />
-          </div>
-          <div class="group9">
-            <label for="Website">Website</label>
-            <input type="text" name="website" /><br />
-          </div>
-          <div class="group10">
-            <label for="about">Describe your animal</label>
-            <textarea name="describeAnimal" required></textarea>
-          </div>
-
-        </form>
-        <div class="upload-images">
-          <label for="about">Upload pictures</label>
-          <input class="link-button" type="file" id="img" name="picture1" accept="image/*" required />
-          <div class="preview">Image preview</div>
-          <button type="submit" form="register-animal-form" class="button call-to-action1">
-            Register an animal
-          </button>
+  <body>
+    <header id="top" class="main-navbar">
+      <div id="menu" class="menu"></div>
+    </header>
+    <div class="main">
+      <section class="page-intro">
+        <div class="container">
+          <article>
+            <h2>Register an animal</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+              soluta dolores quae! Animi provident recusandae quis quas, fugiat
+              aut facere natus magnam incidunt culpa numquam iure eius obcaecati
+              nam minus?
+            </p>
+          </article>
         </div>
-      </div>
-      <!-- if this is a form, how to attach listener? -->
-    </section>
-  </div>
-  <footer class="footer"></footer>
-  <script type="module" src="../../init/add-animal.js"></script>
-</body>
-
+      </section>
+      <section class="animal-info-form">
+        <div class="container">
+          <form action="#" id="register-animal-form" class="input-select">
+            <div class="group1">
+              <label for="name">Name*</label>
+              <input type="text" name="name" required />
+            </div>
+            <div class="group2">
+              <select name="type">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="hamster">Hamster</option>
+                <option value="horse">Horse</option>
+                <option value="donkey">Donkey</option>
+                <option value="mule">Mule</option>
+                <option value="sheep">Sheep</option>
+                <option value="rat">Rat</option>
+                <option value="other">Other</option>
+                <!-- add options from DB -->
+              </select>
+            </div>
+            <div class="group3">
+              <label for="breed">Breed*</label>
+              <input type="text" name="breed" required />
+            </div>
+            <div class="group4">
+              <!-- dropdown gender? -->
+              <label for="gender">Gender*</label>
+              <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="group5">
+              <label for="character">Character*</label>
+              <select name="character">
+                <option value="all">All characters</option>
+                <option value="happy">Happy</option>
+                <option value="sympathetic">Sympathetic</option>
+                <option value="angry">Angry</option>
+                <option value="jealousy">Jealousy</option>
+                <option value="fear">Fear</option>
+              </select>
+            </div>
+            <div class="group6">
+              <!-- birth of date -->
+              <label for="age">Age</label>
+              <input
+                type="number"
+                name="age"
+                placeholder="animal years"
+                required
+              />
+            </div>
+            <div class="group7">
+              <label for="location">Address</label>
+              <input type="text" name="location" required />
+            </div>
+            <div class="group7">
+              <label for="province">Province</label>
+              <select name="province">
+                <option value="brussels">Brussels</option>
+                <option value="antwerp">Antwerp</option>
+                <option value="east-flanders">East-Flanders</option>
+                <option value="flemish-Brabant">Flemish Brabant</option>
+                <option value="limburg">Limburg</option>
+                <option value="west-flanders">West-Flanders</option>
+                <option value="hainaut">Hainaut</option>
+                <option value="liege">Liege</option>
+                <option value="luxembourg">luxembourg</option>
+                <option value="namur">Namur</option>
+                <option value="Wallon-Brabant">Wallon-Brabant</option>
+                <!-- add options from DB -->
+              </select>
+            </div>
+            <div class="group8">
+              <label for="Phone">Phone</label>
+              <input type="number" name="phone" required />
+            </div>
+            <div class="group9">
+              <label for="Website">Website</label>
+              <input type="text" name="website" /><br />
+            </div>
+            <div class="group10">
+              <label for="about">Describe your animal</label>
+              <textarea name="describeAnimal" required></textarea>
+            </div>
+            <div class="upload-images">
+              <label for="about">Upload pictures</label>
+              <input
+                class="link-button"
+                type="file"
+                id="img"
+                name="picture1"
+                accept="image/*"
+                required
+              />
+              <div class="preview">Image preview</div>
+              <button type="submit" class="button call-to-action1">
+                Register an animal
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- if this is a form, how to attach listener? -->
+      </section>
+    </div>
+    <footer class="footer"></footer>
+    <script type="module" src="../../init/add-animal.js"></script>
+  </body>
 </html>
