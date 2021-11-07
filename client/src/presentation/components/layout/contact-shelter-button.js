@@ -9,8 +9,7 @@ const contactShelter = () => {
   const button = document.createElement("button");
   button.id = "contact-shelter";
   button.innerText = "Get in touch";
-  button.className = "form-button";
-  button.classList.add("button");
+  button.className = "button regular-button";
   button.addEventListener("click", () => {
     openModal(contactForm("Get in touch", "contact-shelter"));
   });
