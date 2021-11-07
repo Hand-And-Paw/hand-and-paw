@@ -1,0 +1,36 @@
+@import url("./root.css");
+@import url("./button.css");
+@import url("./link-button.css");
+@import url("./search-result-card.css");
+@import url("./article.css");
+@import url("./animal-profile.css");
+@import url("./input-select.css");
+@import url("./regular-button.css");
+
+.animal-search-menu .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    ". . remove-filters"
+    "search-menu search-menu search-menu"
+    ". button .";
+}
+
+#remove-filters {
+  grid-area: remove-filters;
+  justify-self: right;
+}
+.search-dropdown-menu {
+  grid-area: search-menu;
+}
+
+#submit-animal-search-form {
+  grid-area: button;
+  justify-self: center;
+}
+
+/* .search-dropdown-menu select,
+input {
+  margin: 1rem;
+} */

@@ -25,11 +25,15 @@ const animalsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  dateBirth: {
-    type: String,
+  age: {
+    type: Number,
     required: true,
   },
   location: {
+    type: String,
+    required: true,
+  },
+  province: {
     type: String,
     required: true,
   },
@@ -39,7 +43,6 @@ const animalsSchema = new mongoose.Schema({
   },
   webSite: {
     type: String,
-    required: true,
   },
   describeAnimal: {
     type: String,
@@ -47,12 +50,12 @@ const animalsSchema = new mongoose.Schema({
   },
   pictures: [
     {
-      picture: { type: String, default: "" },
+      picture: { data: String, contentType: String },
       isPrincipal: { type: String, default: false },
       fieldname: String,
     },
   ],
-  publishDate: {
+  registerDate: {
     type: Date,
     required: true,
     default: Date.now,

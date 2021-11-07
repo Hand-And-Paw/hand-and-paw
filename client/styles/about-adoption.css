@@ -1,0 +1,88 @@
+@import url("./root.css");
+@import url("./button.css");
+@import url("./call-to-action-buttons.css");
+@import url("./article.css");
+@import url("./modal.css");
+@import url("./form.css");
+@import url("./link-button.css");
+@import url("./faq.css");
+@import url("./blob-shape.css");
+
+.about-adoption.grid-image-article {
+  grid-template-rows: auto;
+  grid-template-areas: "adoption-article adoption-image";
+}
+.adoption-image {
+  padding: 4em;
+}
+.adoption-image img {
+  max-width: 100%;
+}
+
+.stories-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+}
+
+.happy-stories {
+  text-align: center;
+  background-color: var(--secondary2);
+}
+.faq {
+  background-color: #fff;
+}
+.section-header {
+  text-align: center;
+  border-bottom: #777;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.question img {
+  padding-right: 10px;
+  height: 12px;
+}
+
+.question {
+  background-color: var(--secondary2);
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.faq-list li {
+  list-style: none;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+.nested-list li {
+  padding: 20px;
+  margin: 0px;
+  text-align: left;
+}
+.nested-list p {
+  font-size: 0.9rem;
+  padding: 20px;
+  margin: 0px;
+  text-align: left;
+}
+
+.story-photo {
+  width: 336px;
+  height: 313px;
+}
+
+.story.one .story-photo img,
+.story.two .story-photo img {
+  width: 100%;
+}
+
+.story.three .story-photo img {
+  height: 100%;
+}

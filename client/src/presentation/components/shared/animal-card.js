@@ -1,31 +1,18 @@
-import getAvatarHandler from "../../../business-logic/get-avatar-handler.js";
+import animalPhoto from "./animal-photo.js";
+import animalInfo from "./animal-info.js";
+import showAnimalProfile from "../../handlers/show-animal-profile.js";
 
-export const animalCard = (animal) => {
-  const { type, breed, gender, character, dateBirth, pictures, location } =
-    animal;
+export const animalCard = (animal, className, id) => {
   // create card
+  const { _id } = animal;
   const card = document.createElement("div");
+  card.id = _id;
   card.className = "animal-card";
+  card.classList.add(className);
   // create photo div
-  const photo = document.createElement("div");
-  photo.className = "card-photo";
-  const img = document.createElement("img");
-  img.src = `../../../../public/animal-uploads/${getAvatarHandler(pictures)}`;
-  photo.appendChild(img);
+  card.appendChild(animalPhoto(animal, "card-photo"));
   // create info div
-  const info = document.createElement("div");
-  info.className = "card-info";
-  info.innerHTML = `
-  Name: <span> ${animal.name} </span> <br>
-  Type: <span> ${type} </span> <br>
-  Breed: <span> ${breed} </span> <br>
-  Gender: <span> ${gender}</span><br>
-  Character: <span>${character}</span><br>
-  Date of Birth: <span> ${dateBirth} </span><br>
-  Location: <span> ${location}</span> <br>
-  `;
-  // append divs
-  card.appendChild(photo);
-  card.appendChild(info);
+  card.appendChild(animalInfo(animal, "card-info"));
+  card.addEventListener("click", showAnimalProfile);
   return card;
 };

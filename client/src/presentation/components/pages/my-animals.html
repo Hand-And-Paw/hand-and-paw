@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../../../styles/my-animals.css" />
-    <title>Favorites</title>
+    <link rel="stylesheet" href="../../../../styles/favorites.css" />
+    <title>My animals</title>
   </head>
   <body>
-    <header id="top" class="main-header"></header>
+    <header id="top" class="main-navbar">
+      <div id="menu" class="menu"></div>
+    </header>
     <div class="main">
       <section class="page-intro">
         <div class="container">
           <article>
-            <h1>Added animals.</h1>
+            <h1>My animals</h1>
             <p>
               Here you find animals you have registered for adoption. //IN the
               top right corner of animal card you can click [this icon] to edit
@@ -22,17 +24,16 @@
           </article>
         </div>
       </section>
-      <section class="added-animals-sort-menu">
+      <section class="my-animals-sort-menu">
         <div class="container">
           <form>
             <div class="dropdown-menu"></div>
           </form>
         </div>
       </section>
-      <section class="favorites-sort-results"></section>
+      <section class="my-animals-sort-results"></section>
     </div>
-    <div class="pagination"></div>
-    <footer></footer>
+    <footer class="footer"></footer>
     <script type="module" src="../../init/my-animals.js"></script>
   </body>
 </html>

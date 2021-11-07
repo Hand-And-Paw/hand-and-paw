@@ -1,0 +1,71 @@
+@import url("./dropdown.css");
+
+#menu a,
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+navbar {
+  font-size: 1.125rem;
+  font-weight: 500;
+  background-color: var(--primary1);
+  margin-bottom: 2rem;
+}
+
+#top-navbar {
+  /* align-items: baseline; */
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: "logo menu account";
+  gap: 60px;
+  align-items: center;
+}
+
+#top-navbar .logo {
+  padding-top: 5px;
+  grid-area: logo;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+#top-navbar .pages-menu {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+}
+
+#top-navbar .account-menu {
+  all: unset;
+  grid-area: account;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+#top-navbar .account-menu > .avatar {
+  margin-left: 10px;
+}
+
+#top-navbar button {
+  background-color: tomato;
+  all: unset;
+  cursor: pointer;
+}
+
+#menu li {
+  display: inline-block;
+  position: relative;
+}
+
+#menu li:hover::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -20px;
+  left: 0;
+  background-color: var(--primary2);
+}
