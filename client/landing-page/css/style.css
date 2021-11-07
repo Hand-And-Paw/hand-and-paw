@@ -329,8 +329,7 @@ body {
 .team_cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-  /*   grid-template-columns: repeat(6, 1fr);
- */
+  /*grid-template-columns: repeat(6, 1fr);*/
   grid-gap: 10px;
 }
 
@@ -444,52 +443,6 @@ body {
 /* Footer styles end */
 
 /* Responsive start */
-/* @media screen and (max-width: 575px) {
-  .header {
-    width: 100%;
-    padding: 0 15px;
-  }
-  .main {
-    width: 100%;
-    padding: 0 15px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .header {
-    width: 540px
-  }
-  .main {
-    width: 540px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .header {
-    width: 720px
-  }
-	.main {
-		width: 720px;
-	}
-}
-
-@media screen and (max-width: 1199px) {
-  .header {
-    width: 960px
-  }
-	.main {
-		width: 960px;
-	}
-
-
-  @media screen and (max-width: 1200px) {
-    .header {
-      width: 1140px
-    }
-    .main {
-      width: 1140px;
-    }
-  } */
 
 @media screen and (max-width: 960px) {
   .header_burger {
@@ -805,14 +758,10 @@ body {
 @media screen and (max-width: 660px) {
   .intro_pic {
     grid-column-start: 1;
-    /* grid-column-end: end; */
     grid-row-start: 1;
     grid-row-end: 2;
     display: flex;
     justify-content: end;
-    /* margin-left: 250px; */
-    /* margin-right: auto;
-    padding: 50px; */
     margin-top: 140px;
     margin-left: 80px;
   }
