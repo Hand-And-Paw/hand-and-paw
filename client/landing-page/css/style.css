@@ -246,6 +246,7 @@ body {
   grid-column-start: 1;
   grid-row-start: 3;
   padding: 15px;
+  margin-bottom: 100px;
 }
 
 .intro_go-to-app .btn {
@@ -328,8 +329,7 @@ body {
 .team_cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-  /*   grid-template-columns: repeat(6, 1fr);
- */
+  /*grid-template-columns: repeat(6, 1fr);*/
   grid-gap: 10px;
 }
 
@@ -443,52 +443,6 @@ body {
 /* Footer styles end */
 
 /* Responsive start */
-/* @media screen and (max-width: 575px) {
-  .header {
-    width: 100%;
-    padding: 0 15px;
-  }
-  .main {
-    width: 100%;
-    padding: 0 15px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .header {
-    width: 540px
-  }
-  .main {
-    width: 540px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .header {
-    width: 720px
-  }
-	.main {
-		width: 720px;
-	}
-}
-
-@media screen and (max-width: 1199px) {
-  .header {
-    width: 960px
-  }
-	.main {
-		width: 960px;
-	}
-
-
-  @media screen and (max-width: 1200px) {
-    .header {
-      width: 1140px
-    }
-    .main {
-      width: 1140px;
-    }
-  } */
 
 @media screen and (max-width: 960px) {
   .header_burger {
@@ -798,6 +752,66 @@ body {
   .footer_list {
     display: inline-flex;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .intro_pic {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: end;
+    margin-top: 140px;
+    margin-left: 80px;
+  }
+  .intro_title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    max-width: 500px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    color: #1e0b25;
+    padding: 15px;
+    margin-top: 450px;
+  }
+  .intro_subtitle {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    max-width: 500px;
+    color: #1e0b25;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 30px;
+    padding: 15px;
+    margin-top: 280px;
+  }
+
+  .intro_go-to-app {
+    grid-column-start: 1;
+    grid-row-start: end;
+    padding: 15px;
+    margin-top: 140px;
+  }
+
+  .intro_go-to-app .btn {
+    padding: 18px 40px 18px 40px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff8dc;
+    background: #793093;
+    border: 0;
+    border-radius: 60px;
+  }
+
+  .btn:hover,
+  .btn:focus,
+  .btn:active {
+    background: #370049;
   }
 }
 
