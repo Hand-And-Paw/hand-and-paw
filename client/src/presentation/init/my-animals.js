@@ -2,7 +2,7 @@ import animalSearchResults from "../components/shared/animal-search-results.js";
 import { fetchAnimals } from "../../data-access/animal-access/fetch-animals.js";
 
 const buildPage = async () => {
-  // fetch favorite animals
+  // fetch added animals
   const array = await fetchAnimals();
   document
     .querySelector(".favorites-sort-results")
