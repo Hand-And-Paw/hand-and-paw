@@ -1,21 +1,21 @@
 import { filterAnimalsHandler } from "../../handlers/filter-animals-handler.js";
 import removeFilterFindAnimal from "../../handlers/remove-filters-find-animal-handler.js";
 
-//animal search section
+// animal search section
 const searchMenu = () => {
   const searchSection = document.createElement("section");
   searchSection.className = "animal-search-menu";
-  //inner container
+  // inner container
   const searchContainer = document.createElement("div");
   searchContainer.className = "container";
-  //remove filters
+  // remove filters
   const removeFiltersBtn = document.createElement("button");
   removeFiltersBtn.id = "remove-filters";
   removeFiltersBtn.className = "button link-button";
   removeFiltersBtn.innerText = "Remove filers";
   removeFiltersBtn.addEventListener("click", removeFilterFindAnimal);
   searchContainer.appendChild(removeFiltersBtn);
-  //search menu
+  // search menu
   const searchDropDownMenu = document.createElement("div");
   searchDropDownMenu.className = "search-dropdown-menu";
   searchDropDownMenu.innerHTML = `
@@ -96,7 +96,7 @@ const searchMenu = () => {
   submitBtn.innerHTML = " Apply";
   submitBtn.addEventListener("click", filterAnimalsHandler);
   searchContainer.appendChild(submitBtn);
-  //section appends container
+  // section appends container
   searchSection.appendChild(searchContainer);
   return searchSection;
 };

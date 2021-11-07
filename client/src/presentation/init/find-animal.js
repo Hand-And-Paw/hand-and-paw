@@ -12,7 +12,7 @@ const buildPage = async () => {
   const main = document.getElementById("main-container");
   main.appendChild(findYourPerfectCompanionComponent());
   main.appendChild(searchMenu());
-  main.appendChild(searchResults());
+  main.appendChild(searchResults("animal-search-results"));
   const array = await getAnimals();
   document
     .getElementById("animals-list")

@@ -1,7 +1,7 @@
-const searchResults = () => {
+const searchResults = (className) => {
   const animalSearchResultsSection = document.createElement("section");
   animalSearchResultsSection.id = "animals-list";
-  animalSearchResultsSection.className = "animal-search-results";
+  animalSearchResultsSection.className = className;
   //section appends container
   return animalSearchResultsSection;
 };
