@@ -20,6 +20,14 @@
   position: relative;
 }
 
+.form-control img {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+}
+
 .form-control input,
 textarea {
   display: block;
