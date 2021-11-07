@@ -1,14 +1,14 @@
 .input-select select,
 input,
 textarea {
-  /* all: unset; */
+  all: unset;
   border-radius: 5px;
   border: 2px solid var(--mainText);
   background-color: #fff;
   font-size: 1.125rem;
   padding: 0.7em 1.8rem 0.7em 0.7em;
   color: var(--mainText);
-  width: 90%;
+  width: 160px;
   margin: 0 0.6rem 0 0.6rem;
 }
 
