@@ -6,11 +6,47 @@
 @import url("./link-button.css");
 @import url("./search-menu.css");
 
+.animal-profile-page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 90px;
+  row-gap: 30px;
+  grid-template-areas:
+    "b . . ."
+    "p p i i "
+    ". . . c"
+    "s s s s";
+}
 
+.animal-profile-page #to-search-results {
+  grid-area: b;
+}
 
-.animal-photo {
-  width: 100%;
+.animal-profile-page .animal-photo {
+  grid-area: p;
+}
+.animal-profile-page .animal-photo img {
   object-fit: cover;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  /* height: 400px; */
+  width: 100%;
+  max-height: 400px;
+
+  object-fit: cover;
+  justify-self: center;
+}
+.animal-profile-page .animal-info {
+  grid-area: i;
+  line-height: 180%;
+}
+
+.animal-profile-page #contact-shelter {
+  grid-area: c;
+}
+
+.animal-profile-page .animal-story {
+  grid-area: s;
 }
 
 .animal-info,
@@ -23,4 +59,10 @@
 
 .animal-story h3 {
   margin-bottom: 1.2em;
+}
+
+.animal-profile-page .animal-info span {
+  font-size: 1.325rem;
+  margin-left: 0.4em;
+  color: var(--mainText);
 }

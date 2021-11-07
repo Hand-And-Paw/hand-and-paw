@@ -14,7 +14,7 @@ const showAnimalProfile = async (e, id) => {
   main.innerHTML = "";
   // build profile
   const animalProfile = document.createElement("div");
-  animalProfile.className = "animal-profile";
+  animalProfile.className = "animal-profile-page container";
   // back to search results
   animalProfile.appendChild(backToSearchResults());
   // add photo
