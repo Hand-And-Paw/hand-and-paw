@@ -13,26 +13,28 @@
   display: grid;
   grid-template-columns: 22% 22% 22% 22%;
   grid-column-gap: 4%;
-  grid-template-rows: repeat(4, 1fr);
-  grid-row-gap: 10px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-row-gap: 5px;
   grid-template-areas:
     "group1 group2 group3 group4"
     "group5 group6 group7 group8"
-    "group9 . . . "
-    "group10 group10 group10 group10 "
-    "upload-images . . .";
+    "group9 group9 group9 group9"
+    "group10 group10 group10 group10"
+    "upload-images . . ."
+    ;
 }
-/* .group10 {
+.group10 {
   grid-area: group10;
-} */
+}
 .upload-images {
-  /* display: grid;
-    grid-template-columns: 32% 32% 32%;
-    grid-column-gap: 2%;
-    grid-template-rows: repeat(2 1fr);
-    grid-row-gap: 10px;
-    grid-template-areas: "images . ."
-                         ". button ."; */
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-column-gap: 2%;
+  grid-template-rows: repeat(2 1fr);
+  grid-row-gap: 30px;
+  grid-template-areas:
+    "images . ."
+    ". button .";
   grid-area: "upload-images";
 }
 #register-animal-form button {
@@ -41,8 +43,3 @@
   height: 30px;
 }
 
-.input-select input,
-select {
-  width: 300px;
-  /* height: 30px; */
-}
