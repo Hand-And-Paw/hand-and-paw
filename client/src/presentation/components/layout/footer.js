@@ -9,7 +9,11 @@ const footer = () => {
   const footerContent = document.createElement("div");
   footerContent.className = "footer-content";
   //// logo
-  footerContent.appendChild(createLogo());
+  footerContent.appendChild(
+    createLogo({
+      imageSource: "/assets/images/ui/logo-footer.svg",
+    })
+  );
   //// main menu
   footerContent.appendChild(mainMenuComponent());
   //// about
