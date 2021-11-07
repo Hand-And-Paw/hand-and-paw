@@ -5,6 +5,7 @@ const state = {
   animalId: "",
   token: "",
   isLoggedIn: false,
+  filterParameters: {},
 };
 
 export default state;

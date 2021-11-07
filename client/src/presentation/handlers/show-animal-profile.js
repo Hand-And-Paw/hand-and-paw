@@ -4,6 +4,7 @@ import backToSearchResults from "../components/layout/back-to-results-button.js"
 import animalPhoto from "../components/shared/animal-photo.js";
 import animalInfo from "../components/shared/animal-info.js";
 import aboutAnimal from "../components/shared/animal-story.js";
+import { backToSearchResultsHandler } from "./back-to-search-results-handler.js";
 
 const showAnimalProfile = async (e, id) => {
   const animalId = !id ? e.target.closest(".animal-card").id : id;
@@ -16,7 +17,7 @@ const showAnimalProfile = async (e, id) => {
   const animalProfile = document.createElement("div");
   animalProfile.className = "animal-profile-page container";
   // back to search results
-  animalProfile.appendChild(backToSearchResults());
+  animalProfile.appendChild(backToSearchResults(backToSearchResultsHandler));
   // add photo
   animalProfile.appendChild(animalPhoto(animal[0], "animal-photo"));
   // add basic info
