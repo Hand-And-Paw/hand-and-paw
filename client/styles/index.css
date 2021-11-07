@@ -78,8 +78,10 @@ hr {
 .call-to-action2 {
     grid-area: button2;
 } */
-.adoption-article {
+.adoption-is-important {
   background-color: var(--secondary2);
+}
+.adoption-article {
   grid-area: article1;
   grid-template-areas:
     "article card-images"

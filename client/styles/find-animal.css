@@ -10,7 +10,6 @@
 .animal-search-menu .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     ". . remove-filters"
     "search-menu search-menu search-menu"
@@ -30,7 +29,13 @@
   justify-self: center;
 }
 
-/* .search-dropdown-menu select,
+#search-animal-form select,
 input {
-  margin: 1rem;
-} */
+  width: 200px;
+}
+#search-animal-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1.5rem;
+}
