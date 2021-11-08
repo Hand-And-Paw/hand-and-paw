@@ -27,7 +27,7 @@ const contactForm = (title, formId, sendId, handler) => {
 </div>
   <div class="form-control">
     <label for="Message">Message</label><br />
-    <textarea rows="14" cols="60" required> </textarea>
+    <textarea name="message" rows="14" cols="60" required> </textarea>
     <small> Error message </small>
   </div>
    `;

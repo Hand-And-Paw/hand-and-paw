@@ -5,6 +5,6 @@ import { performPostJson } from "../api-calls/calls.js";
  * - @returns an array with one element object that is the user registered.
  */
 
-export const sendEmail = async (newEmail = {}) => {
+export const contactUsPostEmail = async (newEmail = {}) => {
   return performPostJson(`emails/contact-us`, newEmail);
 };
