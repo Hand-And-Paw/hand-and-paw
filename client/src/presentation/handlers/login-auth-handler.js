@@ -24,7 +24,6 @@ export const loginAuthHandler = async (event) => {
     localStorage.setItem("token", state.token);
     localStorage.setItem("userId", state.userId);
     localStorage.setItem("isLoggedIn", state.isLoggedIn);
-    console.log()
     form.innerHTML = `<p>${userLog.message}</p>`;
     const header = document.getElementById("menu");
     const navbarEl = document.getElementById("top-navbar");

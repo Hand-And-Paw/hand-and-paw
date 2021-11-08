@@ -11,7 +11,8 @@ export const registerUserFormHandler = async () => {
   }
   const post = await registerUser(userObj);
   if( post?.user?._id ) {
-   setTimeout(closeModal, 500);
+   form.innerHTML = `<p>${post.message}</p>`;
+   setTimeout(closeModal, 1500);
   }
   return post;
 };
