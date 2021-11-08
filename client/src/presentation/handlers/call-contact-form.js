@@ -1,6 +1,14 @@
 import openModal from "./call-login-form.js";
-import { contactUsForm } from "../components/shared/contact-us-form.js";
+import contactForm from "../components/layout/contact-form.js";
+import { contactUsPostHandler } from "./contact-us-post.js";
 
 export const callContactForm = () => {
-  openModal(contactUsForm());
+  openModal(
+    contactForm(
+      "Contact Us",
+      "contact-us-form",
+      "send-contact-message",
+      contactUsPostHandler
+    )
+  );
 };

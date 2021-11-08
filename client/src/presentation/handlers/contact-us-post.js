@@ -12,7 +12,7 @@ export const contactUsPostHandler = async (event) => {
   const userObj = {};
   for (const key of formData.keys()) {
     if (!formData.get(key)) {
-      _("status").innerHTML = "message not sent, please fill all the fields";
+      _("status").innerHTML = "Message not sent, please fill all the fields";
       _("send-contact-message").disabled = false;
       return;
     }
@@ -25,7 +25,7 @@ export const contactUsPostHandler = async (event) => {
       "contact-us-form"
     ).innerHTML = `<h2>Thanks ${userObj.name}, your message has been sent.</h2>`;
   } else {
-    _("status").innerHTML = "message is not sent try again later";
+    _("status").innerHTML = "An error has ocurred try again later";
     _("send-contact-message").disabled = false;
   }
 };
