@@ -1,28 +1,31 @@
+import { sendEmail } from "../../data-access/emails/send-contact-us.js";
+
 const _ = (id) => {
   return document.getElementById(id);
 };
-export const contactUsPostHandler = (event) => {
-  debugger;
+export const contactUsPostHandler = async (event) => {
   event.preventDefault();
+  const form = _("contact-us-form");
   _("send-contact-message").disabled = true;
   _("status").innerHTML = "please wait ...";
-  const formData = new FormData();
-  formData.append("name", _("name").value);
-  formData.append("email", _("email").value);
-  formData.append("message", _("message").value);
-  const ajax = new XMLHttpRequest();
-  ajax.open("POST", `/contact.php`);
-  ajax.onreadystatechange = () => {
-    if (ajax.readyState === 4 && ajax.status === 200) {
-      if (ajax.responseText === "success") {
-        _("my_form").innerHTML = `<h2>Thanks ${
-          _("n").value
-        }, your message has been sent.</h2>`;
-      } else {
-        _("status").innerHTML = ajax.responseText;
-        _("send-contact-message").disabled = false;
-      }
+  const formData = new FormData(form);
+  const userObj = {};
+  for (const key of formData.keys()) {
+    if (!formData.get(key)) {
+      _("status").innerHTML = "message not sent, please fill all the fields";
+      _("send-contact-message").disabled = false;
+      return;
     }
-  };
-  ajax.send(formData);
+    userObj[key] = formData.get(key);
+  }
+
+  const postEmail = await sendEmail(userObj);
+  if (postEmail.success) {
+    _(
+      "contact-us-form"
+    ).innerHTML = `<h2>Thanks ${userObj.name}, your message has been sent.</h2>`;
+  } else {
+    _("status").innerHTML = "message is not sent try again later";
+    _("send-contact-message").disabled = false;
+  }
 };

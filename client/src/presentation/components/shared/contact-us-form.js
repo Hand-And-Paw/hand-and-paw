@@ -2,14 +2,19 @@
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { contactUsPostHandler } from "../../handlers/contact-us-post.js";
 
-export const contactUsForm = () => {
+export const contactUsForm = (className = "") => {
   const form = document.createElement("form");
   form.id = "contact-us-form";
+  form.className = className;
   form.action = "contact-us.php";
-  form.appendChild(inputForm("text", "name", "full name", true));
-  form.appendChild(inputForm("text", "email", "person@example.com", true));
+  form.appendChild(inputForm("text", "name", "name", "full name", true));
+  form.appendChild(inputForm("phone", "phone", "phone", "0471123456", true));
   form.appendChild(
-    inputForm("textarea", "message", "enter your message", true)
+    inputForm("text", "email", "email", "person@example.com", true)
+  );
+  form.appendChild(inputForm("text", "subject", "subject", "subject", true));
+  form.appendChild(
+    inputForm("textarea", "message", "message", "enter your message", true)
   );
   const divEl = document.createElement("div");
   const button = document.createElement("button");
@@ -25,17 +30,20 @@ export const contactUsForm = () => {
   return form;
 };
 
-function inputForm(type, id, text, boolean) {
+function inputForm(type, id, name, text, boolean) {
   const div = document.createElement("div");
   const input = document.createElement("input");
   input.type = type;
   input.id = id;
+  input.name = name;
   input.placeholder = text;
-  input.required = boolean;
+  if (boolean) {
+    input.setAttribute("required", "");
+  }
   const label = document.createElement("label");
-  label.id = id;
-  label.innerHTML = id;
+  label.setAttribute("for", id);
+  label.innerHTML = name;
   div.appendChild(label);
   div.appendChild(input);
-  return input;
+  return div;
 }
