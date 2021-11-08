@@ -7,15 +7,15 @@ export const registerForm = () => {
   form.id = "register-form";
   form.action = "#";
   form.innerHTML = `
-  <h1> Register an account. </h1>
+  <h1>Register account</h1>
   <div class="form-control">
     <label for="name"> Name:</label><br />
-    <input type="name" id="name" name="name" required/><br />
+    <input type="name" id="name" name="name"/><br />
     <small> Error message </small>
   </div>
   <div class="form-control">
     <label for="email">Email:</label><br />
-    <input type="email" id="email" name="email" autocomplete="email" required /><br />
+    <input type="email" id="email" name="email" /><br />
     <small> Error message </small>
   </div>
   <div class="form-control">
@@ -24,7 +24,7 @@ export const registerForm = () => {
       type="password"
       id="password"
       name="password"
-      autocomplete="new-password" required
+      autocomplete="new-password"
     />
     <br />
     <small>Error message.</small>
@@ -36,15 +36,19 @@ export const registerForm = () => {
       id="repeat-password"
       name="repeatPassword"
       autocomplete="new-password" 
-      required
     /></br>
     <small>Error message</small>
   </div>
-    <button type="submit" id="submit-register-form" class="button form-button">Register</button>
+    <button id="submit-register-form" type="sumbit" class="button form-button">Register</button>
   `;
-  form.addEventListener("change", registerFormValidation);
-  form.addEventListener("submit", registerFormValidation);
-  form.addEventListener("submit", registerUserFormHandler);
+  //form.addEventListener("change", registerFormValidation);
+  form.addEventListener("submit", registerHandler, false);
 
   return form;
 };
+
+const registerHandler = (event) => {
+   if( registerFormValidation(event) ) {
+      registerUserFormHandler(event);
+   }
+}

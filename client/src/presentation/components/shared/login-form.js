@@ -1,4 +1,5 @@
-import loginFormHandler from "../../handlers/login-form-handler.js";
+import { registerUserHandler } from "../../handlers/login-form-handler.js";
+import { loginAuthHandler } from "../../handlers/login-auth-handler.js";
 
 export const loginForm = (className) => {
   const form = document.createElement("form");
@@ -8,7 +9,7 @@ export const loginForm = (className) => {
   form.action = "#";
   form.innerHTML = `
   <h1> Log in </h1>
-  <p class="error" id="login-error"> Incorrect login or password. </p>
+  <p class="error-message" id="login-error"> Incorrect login or password. </p>
   <div class="form-control">
      <label for="email">Email</label><br />
     <input type="email" id="email" name="email" placeholder="Enter your e-mail" autocomplete="email" required/><br />
@@ -33,6 +34,9 @@ export const loginForm = (className) => {
     
   `;
 
-  form.addEventListener("click", loginFormHandler);
+  const registerButton = form.querySelector('#open-register-form');
+  registerButton.addEventListener("click", registerUserHandler);
+  const loginButton = form.querySelector('#login-submit-btn');
+  loginButton.addEventListener("click", loginAuthHandler);
   return form;
 };
