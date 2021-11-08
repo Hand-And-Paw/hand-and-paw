@@ -1,4 +1,8 @@
+form {
+   font-size: 1.125rem;
+}
 .modal-form {
+  font-size: 1.125rem;
   box-sizing: border-box;
   display: block;
   justify-content: center;
@@ -62,11 +66,12 @@ textarea {
   visibility: hidden;
 }
 
-.error {
-  color: var(--errorColor);
-  visibility: hidden;
-}
 .form-control.error small,
 .error.show-error {
-  visibility: visible;
+   color: var(--errorColor);
+   visibility: visible;
+}
+
+.error-message {
+   visibility: hidden;
 }

@@ -1,6 +1,8 @@
 import { registerUser } from "../../data-access/user-access/register-user.js";
+import closeModal from "./close-modal.js";
 
 export const registerUserFormHandler = async () => {
+   event.preventDefault();
   const form = document.getElementById("register-form");
   const formData = new FormData(form);
   const userObj = {};
@@ -8,5 +10,9 @@ export const registerUserFormHandler = async () => {
     userObj[key] = formData.get(key);
   }
   const post = await registerUser(userObj);
+  if( post?.user?._id ) {
+   form.innerHTML = `<p>${post.message}</p>`;
+   setTimeout(closeModal, 1500);
+  }
   return post;
 };
