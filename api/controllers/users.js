@@ -27,7 +27,7 @@ const userRegister = {
       const user = await userManager.getUser(id);
       res.status(200).send(user);
     } catch (error) {
-      res.status(401).json({ message: `${error.name} ${error.message}` });
+      res.status(401).json({ message: `${error.code} ${error.message}` });
     }
   },
   updateUser: async (req, res) => {
@@ -50,7 +50,11 @@ const userRegister = {
         }
         if (user[0].password !== oldPassword) {
           if (newData.id !== id) {
-            throw new CustomError("Current password incorrect!", "VE003");
+            throw new CustomError(
+              "Current password incorrect!",
+              "ValidationError",
+              "VE003"
+            );
           }
         } else {
           newData.password = newPassword;
@@ -66,6 +70,7 @@ const userRegister = {
       if (foundEmail.length !== 0) {
         throw new CustomError(
           `Cannot update email, the email: ${foundEmail[0].email}, already exists`,
+          "ValidationError",
           "VE005"
         );
       }
@@ -113,7 +118,11 @@ const userRegister = {
       const repeatUserPassword = hashCreator(req.body.repeatPassword);
       // check passwords
       if (userPassword !== repeatUserPassword) {
-        throw new CustomError(`passwords are not equal!`, "VE006");
+        throw new CustomError(
+          `passwords are not equal!`,
+          "ValidationError",
+          "VE006"
+        );
       }
       // check if email exist
       const dbUser = await databaseAccess.findUserByEmail(userEmail);
@@ -134,7 +143,7 @@ const userRegister = {
         .status(200)
         .json({ message: "You're successfully registered", user: newRegister });
     } catch (error) {
-      res.status(400).json({ message: `${error.name} ${error.message}` });
+      res.status(400).json({ message: `${error.code} ${error.message}` });
     }
   },
   deletePublishedAnimal: async (req, res) => {
@@ -149,6 +158,7 @@ const userRegister = {
       if (user.length === 0) {
         throw new CustomError(
           `Cannot delete animal user doesn't exist`,
+          "ValidationError",
           "VE007"
         );
       }
@@ -173,6 +183,7 @@ const userRegister = {
       if (animal.length === 0) {
         throw new CustomError(
           `Cannot delete animal user doesn't exist`,
+          "ValidationError",
           "VE007"
         );
       }
@@ -187,7 +198,7 @@ const userRegister = {
         });
       }
     } catch (error) {
-      res.status(400).json({ message: `${error.name} ${error.message}` });
+      res.status(400).json({ message: `${error.code} ${error.message}` });
     }
   },
   addFavorite: async (req, res) => {
