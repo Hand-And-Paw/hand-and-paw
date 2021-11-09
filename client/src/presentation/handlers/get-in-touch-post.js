@@ -11,6 +11,7 @@ export const contactGiverPostHandler = async (event) => {
   _("status").innerHTML = "please wait ...";
   const formData = new FormData(form);
   formData.append("id", state.userId);
+  formData.append("animalId", state.animalId);
 
   const userObj = {};
   for (const key of formData.keys()) {
