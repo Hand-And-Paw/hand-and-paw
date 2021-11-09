@@ -12,6 +12,7 @@ const showAnimalProfile = async (e, id) => {
   const animalId = !id ? e.target.closest(".animal-card").id : id;
   const animal = await getAnimal(animalId);
   state.userId = animal[0].userId;
+  state.animalId = animal[0]._id;
   // create animal profile
   // clean page content
   const main = document.querySelector(".main");
