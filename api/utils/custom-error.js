@@ -7,9 +7,10 @@ class Error {
 }
 
 class CustomError extends Error {
-  constructor(message, code) {
-    super(message); // (1)
-    this.name = `(${code}):`; // (2)
+  constructor(message, type, code) {
+    super(message);
+    this.name = `${type}:`;
+    this.code = `${code}:`;
   }
 }
 
