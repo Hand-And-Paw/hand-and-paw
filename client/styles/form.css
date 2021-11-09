@@ -1,5 +1,5 @@
 form {
-   font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 .modal-form {
   font-size: 1.125rem;
@@ -40,6 +40,7 @@ textarea {
   width: 100%;
   font-size: 1.125rem;
   padding: 0.6em 1em;
+  margin: 0 !important;
 }
 
 .form-control input,
@@ -68,10 +69,10 @@ textarea {
 
 .form-control.error small,
 .error.show-error {
-   color: var(--errorColor);
-   visibility: visible;
+  color: var(--errorColor);
+  visibility: visible;
 }
 
 .error-message {
-   visibility: hidden;
+  visibility: hidden;
 }
