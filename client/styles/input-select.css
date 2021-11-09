@@ -1,6 +1,5 @@
 .input-select select,
-input,
-textarea {
+input {
   border-radius: 5px;
   border: 2px solid var(--mainText);
   background-color: #fff;
