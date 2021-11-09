@@ -28,20 +28,21 @@
       </section>
       <section class="animal-info-form">
         <div class="container">
-          <form action="#" id="register-animal-form" class="input-select">
-            <div class="group1">
+          <form action="#" id="register-animal-form" >
+             <div class="input-select">
+            <div>
               <label for="name">Name*</label>
               <input type="text" name="name" required />
             </div>
-            <div class="group2">
+            <div>
               <label for="type">Type*</label>
               <input type="text" name="type" required />
             </div>
-            <div class="group3">
+            <div>
               <label for="breed">Breed*</label>
               <input type="text" name="breed" required />
             </div>
-            <div class="group4">
+            <div>
               <!-- dropdown gender? -->
               <label for="gender">Gender*</label>
               <select name="gender">
@@ -49,7 +50,7 @@
                 <option value="female">Female</option>
               </select>
             </div>
-            <div class="group5">
+            <div>
               <label for="character">Character*</label>
               <select name="character">
                 <option value="all">All characters</option>
@@ -60,16 +61,15 @@
                 <option value="fear">Fear</option>
               </select>
             </div>
-            <div class="group6">
-              <!-- birth of date -->
-              <label for="age">Age</label>
+            <div>
+              <label for="age">Age*</label>
               <input type="number" name="age" required />
             </div>
-            <div class="group7">
-              <label for="location">Location</label>
+            <div>
+              <label for="location">Location*</label>
               <input type="text" name="location" required />
             </div>
-            <div class="group7">
+            <div>
               <label for="province">Province</label>
               <select name="province">
                 <option value="brussels">Brussels</option>
@@ -86,21 +86,22 @@
                 <!-- add options from DB -->
               </select>
             </div>
-            <div class="group8">
-              <label for="Phone">Phone</label>
+            <div>
+              <label for="Phone">Phone*</label>
               <input type="number" name="phone" required />
             </div>
-            <div class="group9">
+            <div>
               <label for="Website">Website</label>
               <input type="text" name="website" /><br />
             </div>
-            <div class="group10">
-              <label for="about">Describe your animal</label>
-              <textarea name="describeAnimal" required></textarea>
-            </div>
+         </div>
+         <div class="animal-description">
+            <label for="about">Describe your animal*</label>
+            <textarea name="describeAnimal" required></textarea>
+          </div>
           </form>
-          <div class="upload-images">
-            <label for="about">Upload pictures</label>
+            <div class="upload-images">
+            <label for="about">Upload picture</label>
             <input
               class="link-button"
               form="register-animal-form"
@@ -110,11 +111,12 @@
               accept="image/*"
               required
             />
-            <div class="preview">Image preview</div>
-            <button
+            <img id="animal-preview" class="preview"></img>
+            <button 
               type="submit"
               form="register-animal-form"
               class="button call-to-action1"
+              
             >
               Register an animal
             </button>
