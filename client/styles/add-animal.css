@@ -20,8 +20,7 @@
     "group5 group6 group7 group8"
     "group9 group9 group9 group9"
     "group10 group10 group10 group10"
-    "upload-images . . ."
-    ;
+    "upload-images . . .";
 }
 .group10 {
   grid-area: group10;
@@ -42,4 +41,3 @@
   width: fit-content;
   height: 30px;
 }
-
