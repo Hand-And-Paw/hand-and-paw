@@ -69,3 +69,48 @@ navbar {
   left: 0;
   background-color: var(--primary2);
 }
+
+/* Responsive design start */
+
+.header_burger {
+  /* display: none; */
+  width: 40px;
+  height: 28px;
+  margin-right: 15px;
+  margin-bottom: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.burger_line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #1e0b25;
+  position: absolute;
+  left: 0;
+}
+
+.burger_line_first {
+  top: 0;
+}
+
+.burger_line_second {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger_line_third {
+  bottom: 0;
+}
+
+/* Media start */
+@media screen and(max-width: 767px) {
+  .header_burger {
+    display: block;
+  }
+}
+
+/* Media end */
+
+/* Responsive design end */

@@ -1,7 +1,6 @@
 const createLogo = (props) => {
   // Init properties
-  let imageSource =
-    props?.imageSource || "/assets/images/ui/home/figma-images/Logo.png";
+  let imageSource = props?.imageSource || "/assets/images/ui/logo-header.svg";
 
   const logo = document.createElement("div");
   logo.className = "logo";
