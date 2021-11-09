@@ -27,11 +27,7 @@ const userRegister = {
       const user = await userManager.getUser(id);
       res.status(200).send(user);
     } catch (error) {
-<<<<<<< HEAD
       res.status(401).json({ message: `${error.code} ${error.message}` });
-=======
-      res.status(401).json({ message: `${error.name} ${error.message}` });
->>>>>>> 4028d63f031d44cdf44a55f1afae026c9b33299e
     }
   },
   updateUser: async (req, res) => {
@@ -51,15 +47,11 @@ const userRegister = {
         const oldPassword = hashCreator(req.body.oldPassword);
         if (user[0].password !== oldPassword) {
           if (newData.id !== id) {
-<<<<<<< HEAD
             throw new CustomError(
               "Old password incorrect!",
               "ValidationError",
               "VE003"
             );
-=======
-            throw new CustomError("Old password incorrect!", "VE003");
->>>>>>> 4028d63f031d44cdf44a55f1afae026c9b33299e
           }
         } else {
           newData.password = newPassword;
@@ -75,10 +67,7 @@ const userRegister = {
       if (foundEmail.length !== 0) {
         throw new CustomError(
           `Cannot update email, the email: ${foundEmail[0].email}, already exists`,
-<<<<<<< HEAD
           "ValidationError",
-=======
->>>>>>> 4028d63f031d44cdf44a55f1afae026c9b33299e
           "VE005"
         );
       }
@@ -102,11 +91,7 @@ const userRegister = {
           "avatar-uploads"
         );
       }
-<<<<<<< HEAD
       res.status(401).json({ message: `${error.code} ${error.message}` });
-=======
-      res.status(401).json({ message: `${error.name} ${error.message}` });
->>>>>>> 4028d63f031d44cdf44a55f1afae026c9b33299e
     }
   },
   deleteUser: async (req, res) => {
@@ -130,15 +115,11 @@ const userRegister = {
       const repeatUserPassword = hashCreator(req.body.repeatPassword);
       // check passwords
       if (userPassword !== repeatUserPassword) {
-<<<<<<< HEAD
         throw new CustomError(
           `passwords are not equal!`,
           "ValidationError",
           "VE006"
         );
-=======
-        throw new CustomError(`passwords are not equal!`, "VE006");
->>>>>>> 4028d63f031d44cdf44a55f1afae026c9b33299e
       }
       // check if email exist
       const dbUser = await databaseAccess.findUserByEmail(userEmail);
