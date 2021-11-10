@@ -20,21 +20,7 @@ const searchMenu = () => {
   searchDropDownMenu.className = "search-dropdown-menu";
   searchDropDownMenu.innerHTML = `
   <form action="#" id="search-animal-form" class="input-select">
-  <select name="type">
-    <option value="all">All animals</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="bird">Bird</option>
-    <option value="rabbit">Rabbit</option>
-    <option value="hamster">Hamster</option>
-    <option value="horse">Horse</option>
-    <option value="donkey">Donkey</option>
-    <option value="mule">Mule</option>
-    <option value="sheep">Sheep</option>
-    <option value="rat">Rat</option>
-    <option value="other">Other</option>
-    <!-- add options from DB -->
-  </select>
+  <input type="text" name="type" placeholder="All animals" />
   <!-- <select name="breed"> -->
   <input type="text" name="breed" placeholder="All breeds" />
   <!-- add options from DB -->

@@ -1,7 +1,6 @@
 import { animalCard } from "./animal-card.js";
 
 const animalSearchResults = (array) => {
-  console.log(array);
   const container = document.createElement("div");
   container.className = "container search-results";
   if (array.length !== 0) {

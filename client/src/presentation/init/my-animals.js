@@ -6,9 +6,9 @@ import getAddedAnimals from "../../business-logic/get-added-animals.js";
 const buildPage = async () => {
   document.getElementById("menu").appendChild(navbar());
   document.querySelector("footer").appendChild(footer());
-  const a = await getAddedAnimals();
+  const addedAnimals = await getAddedAnimals();
   document
     .querySelector(".my-animals-sort-results")
-    .appendChild(animalSearchResults(a));
+    .appendChild(animalSearchResults(addedAnimals));
 };
 buildPage();
