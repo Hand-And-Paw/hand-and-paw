@@ -51,8 +51,10 @@
   color: var(--primary2);
 }
 
-.delete-animal {
+.owner-menu {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 20px;
   right: 10px;
   z-index: 10;
