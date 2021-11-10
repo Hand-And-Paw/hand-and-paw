@@ -2,7 +2,7 @@ import { updateAnimal } from "../../../../api/data-access/animals.js";
 import createModal from "../components/shared/modal.js";
 import closeModal from "./close-modal.js";
 
-export const updateAnimalFormHandler = async (event) => {
+export const editAnimalProfileHandler = async (event) => {
   const form = document.getElementById("register-animal-form");
   const animalId = event.target.closest(".animal-card").id;
   event.preventDefault();

@@ -9,7 +9,6 @@
   --primaryHover2: #63197d;
   --secondary1: #fdf1ff;
   --secondary2: #f3f3f3;
-  --secundary3: #fff8dc;
   --mainText: #0b040e;
   --regularBtn: #f5d7ff;
   --linkBtn: #006def;
@@ -80,12 +79,12 @@ h4 {
 }
 
 .page-intro article {
-   max-width: 800px;
-   margin: auto;
-   text-align: center;
-   padding: 1rem 1rem;
- }
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 1rem 1rem;
+}
 
- .call-to-action {
+.call-to-action {
   padding: 2em 0;
 }

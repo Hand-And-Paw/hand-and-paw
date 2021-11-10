@@ -1,6 +1,12 @@
 import getAnimalPrincipalPicture from "../../../business-logic/get-animal-principal-picture.js";
 import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
+/**
+ * @param {object} animal object with information about 1 animal
+ * @param {string} className photo div class name
+ * @returns div with animal's photo
+ */
+
 const animalPhoto = (animal, className) => {
   const { pictures } = animal;
   const photo = document.createElement("div");
