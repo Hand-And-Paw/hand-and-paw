@@ -38,6 +38,7 @@
 .register-animal-image-upload {
    cursor: pointer;
    color: var(--linkBtn);
+   margin-right: 32px;
 }
 
 .upload-images {
@@ -57,6 +58,7 @@
    height: 200px;
    width:auto;
    object-fit: contain;
+   border-radius: 32px;
 }
 
 #register-animal-form button {
