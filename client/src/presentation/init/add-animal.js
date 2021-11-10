@@ -11,7 +11,6 @@ const fileDataURL = file => new Promise((resolve,reject) => {
 
 export const showAnimalImage = (event) => {
    const file = event.srcElement.files[0];
-   console.log("@@@@@@",file)
    fileDataURL( file)
     .then( data => (document.getElementById("animal-preview").src = data))
     .catch(err => console.log(err));
@@ -22,7 +21,7 @@ const buildPage = () => {
   document.querySelector("footer").appendChild(footer());
   const form = document.getElementById("register-animal-form");
   form.addEventListener("submit", registerAnimalFormHandler);
-  const imgInput = document.getElementById("img");
+  const imgInput = document.getElementById("animal-image");
   imgInput.addEventListener("change", showAnimalImage);
 };
 buildPage();
