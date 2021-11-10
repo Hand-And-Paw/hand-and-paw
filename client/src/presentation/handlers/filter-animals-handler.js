@@ -21,11 +21,11 @@ export const filterAnimalsHandler = async (event) => {
       continue;
     }
     if (key === "type") {
-      parametersObj[key] = formData.get(key).toLowerCase();
+      parametersObj[key] = formData.get(key).toLowerCase().trim();
       continue;
     }
     if (key === "breed") {
-      parametersObj[key] = formData.get(key).toLowerCase();
+      parametersObj[key] = formData.get(key).toLowerCase().trim();
       continue;
     }
 
