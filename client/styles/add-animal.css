@@ -9,60 +9,58 @@
 @import url("./input-select.css");
 
 #register-animal-form .input-select {
-   margin: 0;
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   grid-column-gap: 32px;
-   grid-row-gap: 16px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 32px;
+  grid-row-gap: 16px;
 }
 
 .animal-description {
-   margin: 16px 0 16px 0;
+  margin: 16px 0 16px 0;
 }
 
 .animal-description textarea {
-   height: 200px;
-   border-radius: 5px;
-   ;
+  height: 200px;
+  border-radius: 5px;
 }
 
 .register-animal-button {
-   display: block;
-   margin: auto;
+  display: block;
+  margin: auto;
 }
 
 .register-animal-image-button {
-   display: none;   
+  display: none;
 }
 
 .register-animal-image-upload {
-   cursor: pointer;
-   color: var(--linkBtn);
-   margin-right: 32px;
+  cursor: pointer;
+  color: var(--linkBtn);
+  margin-right: 32px;
 }
 
 .upload-images {
-   display: flex;
-   margin-bottom: 16px;
+  display: flex;
+  margin-bottom: 16px;
 }
 
 .upload-images > div {
-   display: flex;
-   align-items: center;
-   height: 200px;
-   margin-top: auto;
-   margin-bottom: auto;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .animal-preview {
-   height: 200px;
-   width:auto;
-   object-fit: contain;
-   border-radius: 32px;
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 32px;
 }
 
 #register-animal-form button {
-   width: fit-content;
-   height: 30px;
+  width: fit-content;
+  height: 30px;
 }
-
