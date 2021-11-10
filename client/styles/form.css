@@ -76,3 +76,20 @@ textarea {
 .error-message {
   visibility: hidden;
 }
+.referred-animal {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.subject-animal {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+.subject-animal img {
+  width: 100%;
+  object-fit: cover;
+  clip-path: circle(40%);
+}

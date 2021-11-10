@@ -1,7 +1,7 @@
 import animalPhoto from "./animal-photo.js";
 import animalInfo from "./animal-info.js";
 import showAnimalProfile from "../../handlers/show-animal-profile.js";
-import deleteAnimalBtn from "../layout/delete-animal-button.js";
+import ownerControlMenu from "./owner-control-menu.js";
 
 /**
  * @param {object} animal object with information about 1 animal
@@ -22,13 +22,13 @@ export const animalCard = (animal, className) => {
   // create info div
   card.appendChild(animalInfo(animal, "card-info"));
   card.addEventListener("click", showAnimalProfile);
-  //buttons
-  // card buttons condition
+  //buttons: fave, edit, delete
   const currentUser = localStorage.getItem("userId");
   const animalGiver = userId;
   if (currentUser === animalGiver) {
-    card.appendChild(deleteAnimalBtn());
-    // append edit animal
+    card.appendChild(ownerControlMenu("search-card-menu"));
   }
+  // else -attach favorites icon
+
   return card;
 };

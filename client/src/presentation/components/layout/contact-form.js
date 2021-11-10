@@ -33,7 +33,7 @@ const contactForm = (title, formId, handler) => {
 </div>
   <div class="form-control">
     <label for="Message">Message</label><br />
-    <textarea name="message" rows="14" cols="60" required> </textarea>
+    <textarea name="message" rows="10" cols="60" required> </textarea>
     <small> Error message </small>
   </div>
    `;
