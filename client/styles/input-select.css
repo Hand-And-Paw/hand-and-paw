@@ -1,3 +1,7 @@
+.input-select {
+  gap:16px;
+}
+
 .input-select select,
 input {
   border-radius: 5px;
