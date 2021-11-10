@@ -14,10 +14,21 @@ export const filterAnimalsHandler = async (event) => {
     if (key === "breed" && formData.get(key) === "") {
       continue;
     }
-
+    if (key === "type" && formData.get(key) === "") {
+      continue;
+    }
     if (formData.get(key) === "all") {
       continue;
     }
+    if (key === "type") {
+      parametersObj[key] = formData.get(key).toLowerCase();
+      continue;
+    }
+    if (key === "breed") {
+      parametersObj[key] = formData.get(key).toLowerCase();
+      continue;
+    }
+
     parametersObj[key] = formData.get(key);
   }
   if (Object.keys(parametersObj).length === 0) {

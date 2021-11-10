@@ -30,6 +30,8 @@ const animalsController = {
     try {
       const { id } = req.params;
       const newData = req.body;
+      newData.type = newData.type.toLowerCase();
+      newData.breed = newData.breed.toLowerCase();
       // check user id
       if ([...newData.userId].length !== 24) {
         throw new Error(`invalid id`);
@@ -85,6 +87,8 @@ const animalsController = {
       if ([...userId].length !== 24) {
         throw new Error(`invalid id`);
       }
+      body.type = body.type.toLowerCase();
+      body.breed = body.breed.toLowerCase();
       // check if subscriber exists
       const subscriber = await userDbAccess.read(userId);
       if (subscriber.length === 0) {
