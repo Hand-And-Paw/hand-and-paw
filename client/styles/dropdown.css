@@ -4,11 +4,22 @@
   flex-direction: column;
   width: fit-content;
   position: absolute;
-  right: 10px;
-  padding: 2rem;
-  margin-top: 1rem;
+  top: 75px;
+  right: 25px;
+  padding: 1.5rem;
   opacity: 0;
 }
 .active {
   opacity: 1;
+}
+
+.profile-menu-item {
+   margin-bottom: 24px;;
+}
+
+.profile-menu-image  {
+   display: inline-block;
+   vertical-align: bottom;
+   margin-right: 8px;
+
 }
