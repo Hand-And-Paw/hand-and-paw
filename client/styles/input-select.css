@@ -1,3 +1,7 @@
+.input-select {
+  gap:16px;
+}
+
 .input-select select,
 input {
   border-radius: 5px;
@@ -6,8 +10,7 @@ input {
   font-size: 1.125rem;
   padding: 0.7em 1.8rem 0.7em 0.7em;
   color: var(--mainText);
-  width: 90%;
-  margin: 0 0.6rem 0 0.6rem;
+  width: 100%;
 }
 
 .input-select textarea {

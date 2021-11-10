@@ -75,11 +75,17 @@ h4 {
 }
 
 .page-intro .container {
-  width: 60%;
   text-align: center;
   padding: 1rem 1rem;
 }
 
-.call-to-action {
+.page-intro article {
+   max-width: 800px;
+   margin: auto;
+   text-align: center;
+   padding: 1rem 1rem;
+ }
+
+ .call-to-action {
   padding: 2em 0;
 }
