@@ -1,6 +1,7 @@
 footer {
   background-color: var(--primary2);
   height: 300px;
+  color: #fff !important;
 }
 
 .footer-content {
@@ -15,14 +16,13 @@ footer {
 .footer-content * {
   color: var(--secundary3);
   text-decoration: none;
-  
 }
 
-.footer-content .pages-menu > div  {
+.footer-content .pages-menu > div {
   margin-bottom: 10px;
 }
 
-.footer-content .footer-about-project > p  {
+.footer-content .footer-about-project > p {
   margin-bottom: 10px;
 }
 
@@ -38,7 +38,5 @@ footer {
 }
 
 .footer-content .contact .github-icon {
-  height:32px;
+  height: 32px;
 }
-
-
