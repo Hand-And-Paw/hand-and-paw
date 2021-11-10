@@ -122,7 +122,7 @@ export const performSpecificUpdate = async (path, formDataBody) => {
   return data;
 };
 
-export const performSpecificUpdateJson = async (path, formDataBody) => {
+export const performSpecificUpdateJson = async (path, body) => {
   const URL = `${window.location.origin}/api/${path}`;
 
   const encodedURL = encodeURI(URL);
@@ -132,7 +132,7 @@ export const performSpecificUpdateJson = async (path, formDataBody) => {
       "Content-Type": "application/json",
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
-    body: formDataBody,
+    body: JSON.stringify(body),
   });
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);
