@@ -12,7 +12,7 @@ const searchMenu = () => {
   const removeFiltersBtn = document.createElement("button");
   removeFiltersBtn.id = "remove-filters";
   removeFiltersBtn.className = "button link-button";
-  removeFiltersBtn.innerText = "Remove filers";
+  removeFiltersBtn.innerText = "Remove filters";
   removeFiltersBtn.addEventListener("click", removeFilterFindAnimal);
   searchContainer.appendChild(removeFiltersBtn);
   // search menu
