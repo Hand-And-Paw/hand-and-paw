@@ -1,16 +1,14 @@
-/**
- * @param {string} title form header
- * @param {string} formId form id, gives same id with "-submit" to the form button
- * @returns contact form: name, phone, email, subject, message with submit button
- */
+import { getAnimal } from "../../../data-access/animal-access/get-animal.js";
+import animalPhoto from "../shared/animal-photo.js";
+import state from "../../../data-access/state/state.js";
 
-const contactForm = (title, formId, handler) => {
+const contactShelterForm = async (title, formId, handler) => {
   const form = document.createElement("form");
   form.className = "modal-form";
   form.id = formId;
   form.action = "#";
   form.innerHTML = `
-  <h1>${title}</h1>
+  <h1 id="form-title">${title}</h1>
   <div class="form-control">
     <label for="name">Name</label><br />
     <input type="name" name="name"/><br />
@@ -26,11 +24,6 @@ const contactForm = (title, formId, handler) => {
     <input type="email" name="email" autocomplete="email"  required/><br />
     <small> Error message </small>
   </div>
-  <div class="form-control">
-  <label for="subject">Subject</label><br />
-  <input type="text" name="subject" /><br />
-  <small> Error message </small>
-</div>
   <div class="form-control">
     <label for="Message">Message</label><br />
     <textarea name="message" rows="14" cols="60" required> </textarea>
@@ -51,7 +44,16 @@ const contactForm = (title, formId, handler) => {
   divEl.appendChild(br);
   divEl.appendChild(span);
   form.appendChild(divEl);
+  const referredAnimal = document.createElement("div");
+  referredAnimal.className = "referred-animal";
+  const animal = await getAnimal(state.animalId);
+  referredAnimal.appendChild(animalPhoto(animal[0], "subject-animal"));
+  const animalName = document.createElement("h3");
+  animalName.innerText = animal[0].name;
+  referredAnimal.appendChild(animalName);
+  form.firstElementChild.after(referredAnimal);
+
   return form;
 };
 
-export default contactForm;
+export default contactShelterForm;

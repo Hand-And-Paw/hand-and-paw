@@ -2,6 +2,12 @@ import animalPhoto from "./animal-photo.js";
 import animalInfo from "./animal-info.js";
 import showAnimalProfile from "../../handlers/show-animal-profile.js";
 
+/**
+ * @param {object} animal object with information about 1 animal
+ * @param {string} className card class name
+ * @returns div with animal picture and info, has id equal to animal id
+ */
+
 export const animalCard = (animal, className) => {
   // create card
   const { _id } = animal;
