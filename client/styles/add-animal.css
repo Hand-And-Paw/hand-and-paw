@@ -8,38 +8,59 @@
 @import url("./call-to-action-buttons.css");
 @import url("./input-select.css");
 
-#register-animal-form {
-  margin: 2% 1% 0 1%;
-  display: grid;
-  grid-template-columns: 22% 22% 22% 22%;
-  grid-column-gap: 4%;
-  grid-template-rows: repeat(5, 1fr);
-  grid-row-gap: 5px;
-  grid-template-areas:
-    "group1 group2 group3 group4"
-    "group5 group6 group7 group8"
-    "group9 group9 group9 group9"
-    "group10 group10 group10 group10"
-    "upload-images . . ."
-    ;
+#register-animal-form .input-select {
+   margin: 0;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   grid-column-gap: 32px;
+   grid-row-gap: 16px;
 }
-.group10 {
-  grid-area: group10;
+
+.animal-description {
+   margin: 16px 0 16px 0;
 }
+
+.animal-description textarea {
+   height: 200px;
+   border-radius: 5px;
+   ;
+}
+
+.register-animal-button {
+   display: block;
+   margin: auto;
+}
+
+.register-animal-image-button {
+   display: none;   
+}
+
+.register-animal-image-upload {
+   cursor: pointer;
+   color: var(--linkBtn);
+}
+
 .upload-images {
-  display: grid;
-  grid-template-columns: 32% 32% 32%;
-  grid-column-gap: 2%;
-  grid-template-rows: repeat(2 1fr);
-  grid-row-gap: 30px;
-  grid-template-areas:
-    "images . ."
-    ". button .";
-  grid-area: "upload-images";
+   display: flex;
+   margin-bottom: 16px;
 }
+
+.upload-images > div {
+   display: flex;
+   align-items: center;
+   height: 200px;
+   margin-top: auto;
+   margin-bottom: auto;
+}
+
+.animal-preview {
+   height: 200px;
+   width:auto;
+   object-fit: contain;
+}
+
 #register-animal-form button {
-  grid-area: button;
-  width: fit-content;
-  height: 30px;
+   width: fit-content;
+   height: 30px;
 }
 
