@@ -1,6 +1,7 @@
 import { animalCard } from "./animal-card.js";
+import noAnimalsFound from "./no-animals-found-message.js";
 
-const animalSearchResults = (array) => {
+const animalSearchResults = (array, searchResultPlaceholder) => {
   const container = document.createElement("div");
   container.className = "container search-results";
   if (array.length !== 0) {
@@ -8,8 +9,7 @@ const animalSearchResults = (array) => {
       container.appendChild(animalCard(animal, "search-result-card"));
     });
   } else {
-    container.innerText =
-      "Sorry, there are no matches for your request today. Try to change your request or come back tomorrow!";
+    container.appendChild(noAnimalsFound(searchResultPlaceholder));
   }
   return container;
 };
