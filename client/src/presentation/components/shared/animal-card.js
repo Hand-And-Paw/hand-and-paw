@@ -2,7 +2,7 @@ import animalPhoto from "./animal-photo.js";
 import animalInfo from "./animal-info.js";
 import showAnimalProfile from "../../handlers/show-animal-profile.js";
 
-export const animalCard = (animal, className, id) => {
+export const animalCard = (animal, className) => {
   // create card
   const { _id } = animal;
   const card = document.createElement("div");

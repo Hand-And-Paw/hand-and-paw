@@ -43,7 +43,7 @@ const loginController = {
       const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
 
       res.status(200).json({
-        message: `Welcome '${user.userName}'`,
+        message: `Welcome ${user.userName}`,
         user: {
           userId: userRegistered[0].id,
           userName: userRegistered[0].name,
