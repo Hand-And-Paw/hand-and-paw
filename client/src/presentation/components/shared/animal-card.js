@@ -3,7 +3,7 @@ import animalInfo from "./animal-info.js";
 import showAnimalProfile from "../../handlers/show-animal-profile.js";
 import deleteAnimalBtn from "../layout/delete-animal-button.js";
 
-export const animalCard = (animal, className, id) => {
+export const animalCard = (animal, className) => {
   // create card
   console.log(animal);
   const { _id, userId } = animal;
