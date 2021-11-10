@@ -1,4 +1,4 @@
-import { performSpecificUpdate } from "../api-calls/calls.js";
+import { performSpecificUpdateJson } from "../api-calls/calls.js";
 
 /**
  *
@@ -8,7 +8,7 @@ import { performSpecificUpdate } from "../api-calls/calls.js";
  */
 
 const deleteAnimalRegistration = async (userId = "", stateAnimalId = "") => {
-  return performSpecificUpdate(`users/delete-animal/${userId}`, {
+  return performSpecificUpdateJson(`users/delete-animal/${userId}`, {
     animalId: stateAnimalId,
   });
 };

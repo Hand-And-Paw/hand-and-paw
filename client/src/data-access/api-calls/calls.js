@@ -129,6 +129,7 @@ export const performSpecificUpdateJson = async (path, formDataBody) => {
   const response = await fetch(encodedURL, {
     method: "PATCH",
     headers: {
+      "Content-Type": "application/json",
       Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
     body: formDataBody,

@@ -3,6 +3,7 @@ import deleteAnimalRegistration from "../../data-access/user-access/delete-anima
 // import getAddedAnimals from "../../business-logic/get-added-animals.js";
 
 const deleteAnimalHandler = async (e) => {
+  debugger;
   // get current user id
   const currentUser = localStorage.getItem("userId");
   // delete animal
