@@ -80,12 +80,20 @@ h4 {
 }
 
 .page-intro article {
-   max-width: 800px;
-   margin: auto;
-   text-align: center;
-   padding: 1rem 1rem;
- }
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 1rem 1rem;
+}
 
- .call-to-action {
+.call-to-action {
   padding: 2em 0;
+}
+
+/* Responsive design start */
+
+@media screen and (max-width: 990px) {
+  .main {
+    display: block;
+  }
 }

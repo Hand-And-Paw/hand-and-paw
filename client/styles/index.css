@@ -99,3 +99,12 @@ hr {
   justify-content: center;
   align-content: center;
 }
+
+/* Responsive design start */
+
+@media screen and (max-width: 990px) {
+  .welcome-container {
+    display: block;
+    margin-bottom: 100px;
+  }
+
