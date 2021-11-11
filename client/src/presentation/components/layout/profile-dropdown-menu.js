@@ -1,8 +1,8 @@
 const createProfileDropDownMenu = () => {
-   const profileMenu = document.createElement("div");
-   profileMenu.id = "navbar-dropdown";
-   profileMenu.className = "dropdown-content";
-   profileMenu.innerHTML = `
+  const profileMenu = document.createElement("div");
+  profileMenu.id = "navbar-dropdown";
+  profileMenu.className = "dropdown-content";
+  profileMenu.innerHTML = `
    <div id="show-favorites" class="profile-menu-item">
       <img class="profile-menu-image" src="/assets/icons/dropdown menu/akar-icons_heart.svg" alt="Favorites"> 
       <a href="/src/presentation/components/pages/favorites.html">Favorites</a>
@@ -17,7 +17,7 @@ const createProfileDropDownMenu = () => {
    </div>
 `;
 
-   return profileMenu;
+  return profileMenu;
 };
 
 export default createProfileDropDownMenu;
