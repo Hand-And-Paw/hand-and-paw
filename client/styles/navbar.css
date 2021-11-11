@@ -49,7 +49,6 @@ navbar {
 }
 
 #top-navbar button {
-  background-color: tomato;
   all: unset;
   cursor: pointer;
 }

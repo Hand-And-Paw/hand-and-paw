@@ -108,13 +108,12 @@ li {
   height: 100%;
 }
 
-a {
-  all: unset;
+.faq-list a {
   color: var(--primary2);
   font-weight: 500;
 }
 
-a:hover {
+.faq-list a:hover {
   cursor: pointer;
   border-bottom: 3px solid var(--primary2);
 }

@@ -12,8 +12,14 @@
 
 .welcome-container {
   padding: 0 10rem;
+  grid-template-areas:
+    "welcome-image-dog welcome-article"
+    "space call-to-action";
 }
-
+.welcome-container.call-to-action {
+  display: flex;
+  justify-content: space-evenly;
+}
 navbar {
   background-color: transparent !important;
 }
@@ -30,12 +36,7 @@ navbar {
 
   /* Needed to position the navbar */
   position: relative;
-}
-
-.welcome-container {
-  grid-template-areas:
-    "welcome-image-dog welcome-article"
-    "space call-to-action";
+  margin-bottom: 3rem;
 }
 
 hr {
@@ -62,22 +63,9 @@ hr {
 
 .call-to-action {
   grid-area: call-to-action;
-  justify-content: start;
+  float: left;
 }
-.grid-call-to-action {
-  display: grid;
-  grid-template-columns: 40% 40% 20%;
-  grid-column-gap: 10px;
-  justify-content: center;
-  grid-template-areas: call-to-action1 call-to-action2;
-}
-/* .call-to-action1 {
-    grid-area: button1;
-  
-}
-.call-to-action2 {
-    grid-area: button2;
-} */
+
 .adoption-is-important {
   background-color: var(--secondary2);
 }

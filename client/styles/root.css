@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("./navbar.css");
 @import url("./footer.css");
+@import url("./regular-button.css");
 @import url("./animal-card-icons.css");
 
 :root {
@@ -89,4 +90,9 @@ h4 {
 
 .call-to-action {
   padding: 2em 0;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
 }
