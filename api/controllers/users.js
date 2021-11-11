@@ -97,7 +97,6 @@ const userRegister = {
   },
   postUser: async (req, res) => {
     try {
-      console.log(req.body);
       const username = req.body.name;
       const userEmail = req.body.email;
 

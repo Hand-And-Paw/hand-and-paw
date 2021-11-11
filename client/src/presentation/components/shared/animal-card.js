@@ -11,7 +11,6 @@ import ownerControlMenu from "./owner-control-menu.js";
 
 export const animalCard = (animal, className) => {
   // create card
-  console.log(animal);
   const { _id, userId } = animal;
   const card = document.createElement("div");
   card.id = _id;
@@ -22,7 +21,7 @@ export const animalCard = (animal, className) => {
   // create info div
   card.appendChild(animalInfo(animal, "card-info"));
   card.addEventListener("click", showAnimalProfile);
-  //buttons: fave, edit, delete
+  // buttons: fave, edit, delete
   const currentUser = localStorage.getItem("userId");
   const animalGiver = userId;
   if (currentUser === animalGiver) {

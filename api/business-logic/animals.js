@@ -1,3 +1,4 @@
+/* eslint-disable no-continue */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-underscore-dangle */
 const { ObjectID } = require("mongoose").mongo;
@@ -24,6 +25,14 @@ const animalsManager = {
   },
 
   updateAnimal: async (newData, pictures, animalId) => {
+    // avoid empty strings and default values
+    const objectWithValues = {};
+    for (const [key, value] of Object.entries(newData)) {
+      if (value === "" || value === "all") {
+        continue;
+      }
+      objectWithValues[key] = value;
+    }
     if (pictures) {
       const animal = await databaseAccess.read(newData.id);
       const picturesValues = Object.values(pictures);
@@ -46,11 +55,11 @@ const animalsManager = {
           newAnimalPictures,
           animalId
         );
-        const updateAnimal = await databaseAccess.update(newData);
+        const updateAnimal = await databaseAccess.update(objectWithValues);
         return updateAnimal;
       }
     }
-    const updateAnimal = await databaseAccess.update(newData);
+    const updateAnimal = await databaseAccess.update(objectWithValues);
     return updateAnimal;
   },
   removeAnimal: async (animalId) => {

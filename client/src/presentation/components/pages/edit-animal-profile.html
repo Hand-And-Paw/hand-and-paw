@@ -28,24 +28,25 @@
       </section>
       <section class="animal-info-form">
         <div class="container">
-          <form action="#" id="register-animal-form">
+          <form action="#" id="update-animal-form">
             <div class="input-select">
               <div>
                 <label for="name">Name*</label>
-                <input type="text" name="name" required />
+                <input type="text" name="name"  />
               </div>
               <div>
                 <label for="type">Type*</label>
-                <input type="text" name="type" required />
+                <input type="text" name="type"  />
               </div>
               <div>
                 <label for="breed">Breed*</label>
-                <input type="text" name="breed" required />
+                <input type="text" name="breed" />
               </div>
               <div>
                 <!-- dropdown gender? -->
                 <label for="gender">Gender*</label>
                 <select name="gender">
+                  <option value="all">Select gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
@@ -63,15 +64,16 @@
               </div>
               <div>
                 <label for="age">Age*</label>
-                <input type="number" name="age" required />
+                <input type="number" name="age"  />
               </div>
               <div>
                 <label for="location">Location*</label>
-                <input type="text" name="location" required />
+                <input type="text" name="location"  />
               </div>
               <div>
                 <label for="province">Province</label>
                 <select name="province">
+                  <option value="all">Select province</option>
                   <option value="brussels">Brussels</option>
                   <option value="antwerp">Antwerp</option>
                   <option value="east-flanders">East-Flanders</option>
@@ -88,7 +90,7 @@
               </div>
               <div>
                 <label for="Phone">Phone*</label>
-                <input type="number" name="phone" required />
+                <input type="number" name="phone"  />
               </div>
               <div>
                 <label for="Website">Website</label>
@@ -97,21 +99,21 @@
             </div>
             <div class="animal-description">
               <label for="about">Describe your animal*</label>
-              <textarea name="describeAnimal" required></textarea>
+              <textarea name="describeAnimal" ></textarea>
             </div>
           </form>
           <div class="upload-images">
             <div>
-              <label for="animal-image" class="register-animal-image-upload">Upload Image</label>
-              <input class="link-button register-animal-image-button" form="register-animal-form" type="file" id="animal-image"
+              <label for="animal-image" class="update-animal-image-upload">Upload Image</label>
+              <input class="link-button update-animal-image-button" form="update-animal-form" type="file" id="animal-image"
                 name="picture1" accept="image/*"/>
             </div>
             <div>
               <img id="animal-preview" class="animal-preview"></img>
             </div>
           </div>
-          <button type="submit" form="register-animal-form" class="button register-animal-button call-to-action1">Register
-            an animal</button>
+          <button type="submit" form="update-animal-form" class="button update-animal-button call-to-action1">Update
+            my animal</button>
         </div>
       </section>
     </div>

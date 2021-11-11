@@ -28,10 +28,15 @@ const animalsController = {
   },
   updateAnimal: async (req, res) => {
     try {
+      console.log(req.body);
       const { id } = req.params;
       const newData = req.body;
-      newData.type = newData.type.toLowerCase();
-      newData.breed = newData.breed.toLowerCase();
+      if (newData.type) {
+        newData.type = newData.type.toLowerCase();
+      }
+      if (newData.breed) {
+        newData.breed = newData.breed.toLowerCase();
+      }
       // check user id
       if ([...newData.userId].length !== 24) {
         throw new Error(`invalid id`);
