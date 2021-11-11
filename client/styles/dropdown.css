@@ -4,10 +4,9 @@
   flex-direction: column;
   width: fit-content;
   position: absolute;
-  top: 4.2em;
-  right: 5em;
-  padding: 2rem;
-  margin-top: 1rem;
+  top: 75px;
+  right: 25px;
+  padding: 1.5rem;
   opacity: 0;
   box-shadow: var(--shadow);
 }
@@ -15,11 +14,11 @@
   opacity: 1;
 }
 
-.dropdown-menu-item {
+.profile-menu-item {
+  margin-bottom: 24px;
   position: relative;
-  margin-bottom: 0.8em;
 }
-.dropdown-menu-item:hover:after {
+.profile-menu-item:hover:after {
   content: "";
   position: absolute;
   display: block;
@@ -28,4 +27,10 @@
   bottom: -3px;
   left: 0;
   background-color: var(--primary2);
+
+.profile-menu-image {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 8px;
+  color:red;
 }
