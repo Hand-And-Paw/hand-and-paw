@@ -118,3 +118,15 @@ a:hover {
   cursor: pointer;
   border-bottom: 3px solid var(--primary2);
 }
+
+/* Responsive design start */
+
+@media screen and (max-width: 990px) {
+  .stories-container {
+    display: block;
+  }
+
+  .happy-stories {
+    width: 100%;
+  }
+}

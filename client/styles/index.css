@@ -99,3 +99,26 @@ hr {
   justify-content: center;
   align-content: center;
 }
+
+/* Responsive design start */
+
+@media screen and (max-width: 990px) {
+  .welcome-container {
+    display: block;
+  }
+  .adoption-article {
+    display: block;
+  }
+
+  .header-navbar-wrapper {
+    min-height: initial;
+  }
+
+  .adoption-is-important {
+    display: block;
+  }
+
+  .grid-image-article {
+    display: initial;
+  }
+}

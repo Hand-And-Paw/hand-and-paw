@@ -3,7 +3,7 @@
 @import url("./footer.css");
 @import url("./animal-card-icons.css");
 
-:root  {
+:root {
   --primary1: #fcc521;
   --primary2: #793093;
   --primaryHover1: #e9af01;
@@ -31,7 +31,8 @@ body {
   font-weight: 400;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: fit-content;
+  /* height: 100vh; */
 }
 
 h1 {
