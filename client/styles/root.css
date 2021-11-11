@@ -90,3 +90,8 @@ h4 {
 .call-to-action {
   padding: 2em 0;
 }
+
+a:link,
+a:visited {
+  text-decoration: none;
+}

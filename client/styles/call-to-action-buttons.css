@@ -1,18 +1,17 @@
 .call-to-action1 {
-  background-color: var(--primary1) !important;
-  color: var(--mainText) !important ;
+  background-color: var(--primary1);
+  color: var(--mainText);
 }
 
 .call-to-action1:hover {
-  background-color: var(--primaryHover1) !important;
+  background-color: var(--primaryHover1);
 }
 
 .call-to-action2 {
-  background-color: var(--primary2) !important;
-  color: #fff !important ;
-  margin: auto !important;
+  background-color: var(--primary2);
+  color: #fff;
 }
 
 .call-to-action2:hover {
-  background-color: var(--primaryHover2) !important;
+  background-color: var(--primaryHover2);
 }
