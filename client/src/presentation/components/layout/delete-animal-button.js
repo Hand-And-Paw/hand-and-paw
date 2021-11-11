@@ -2,7 +2,7 @@ import deleteAnimalHandler from "../../handlers/delete-animal-handler.js";
 
 const deleteAnimalBtn = () => {
   const deleteAnimalButton = document.createElement("img");
-  deleteAnimalButton.src = "/assets/icons/cross.svg";
+  deleteAnimalButton.src = "/assets/icons/cross_white.svg";
   deleteAnimalButton.id = "delete-animal";
   deleteAnimalButton.className = "delete-animal";
   deleteAnimalButton.addEventListener("click", deleteAnimalHandler);
