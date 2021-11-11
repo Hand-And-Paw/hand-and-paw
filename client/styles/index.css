@@ -105,6 +105,20 @@ hr {
 @media screen and (max-width: 990px) {
   .welcome-container {
     display: block;
-    margin-bottom: 100px;
+  }
+  .adoption-article {
+    display: block;
   }
 
+  .header-navbar-wrapper {
+    min-height: initial;
+  }
+
+  .adoption-is-important {
+    display: block;
+  }
+
+  .grid-image-article {
+    display: initial;
+  }
+}
