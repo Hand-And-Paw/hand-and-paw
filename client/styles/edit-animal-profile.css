@@ -6,10 +6,8 @@
 @import url("./link-button.css");
 @import url("./call-to-action-buttons.css");
 @import url("./input-select.css");
-@import url("./animal-profile.css");
-@import url("./regular-button.css");
 
-#register-animal-form .input-select {
+#update-animal-form .input-select {
   margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -26,16 +24,16 @@
   border-radius: 5px;
 }
 
-.register-animal-button {
+.update-animal-button {
   display: block;
   margin: auto;
 }
 
-.register-animal-image-button {
+.update-animal-image-button {
   display: none;
 }
 
-.register-animal-image-upload {
+.update-animal-image-upload {
   cursor: pointer;
   color: var(--linkBtn);
   margin-right: 32px;
@@ -61,7 +59,7 @@
   border-radius: 32px;
 }
 
-#register-animal-form button {
+#update-animal-form button {
   width: fit-content;
   height: 30px;
 }

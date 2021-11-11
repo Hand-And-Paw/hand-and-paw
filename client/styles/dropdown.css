@@ -4,9 +4,10 @@
   flex-direction: column;
   width: fit-content;
   position: absolute;
-  top: 75px;
-  right: 25px;
-  padding: 1.5rem;
+  right: 10px;
+  padding: 20px;
+  margin-top: 45px;
+  margin-right: 25px;
   opacity: 0;
   box-shadow: var(--shadow);
 }
