@@ -1,7 +1,6 @@
 .call-to-action1 {
   background-color: var(--primary1) !important;
   color: var(--mainText) !important ;
-  margin: auto;
 }
 
 .call-to-action1:hover {
