@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("./navbar.css");
 @import url("./footer.css");
+@import url("./animal-card-icons.css");
 
-:root {
+:root  {
   --primary1: #fcc521;
   --primary2: #793093;
   --primaryHover1: #e9af01;
   --primaryHover2: #63197d;
   --secondary1: #fdf1ff;
   --secondary2: #f3f3f3;
-  --secundary3: #fff8dc;
   --mainText: #0b040e;
   --regularBtn: #f5d7ff;
   --linkBtn: #006def;
