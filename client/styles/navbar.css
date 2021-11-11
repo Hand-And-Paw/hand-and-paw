@@ -49,17 +49,16 @@ navbar {
 }
 
 #top-navbar button {
-  background-color: tomato;
   all: unset;
   cursor: pointer;
 }
 
-#menu li {
+#menu .pages-menu a {
   display: inline-block;
   position: relative;
 }
 
-#menu li:hover::after {
+#menu .pages-menu a:hover::after {
   content: "";
   position: absolute;
   display: block;

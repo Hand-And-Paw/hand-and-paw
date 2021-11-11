@@ -63,21 +63,9 @@ hr {
 .call-to-action {
   grid-area: call-to-action;
   justify-content: start;
+  display: flex;
 }
-.grid-call-to-action {
-  display: grid;
-  grid-template-columns: 40% 40% 20%;
-  grid-column-gap: 10px;
-  justify-content: center;
-  grid-template-areas: call-to-action1 call-to-action2;
-}
-/* .call-to-action1 {
-    grid-area: button1;
-  
-}
-.call-to-action2 {
-    grid-area: button2;
-} */
+
 .adoption-is-important {
   background-color: var(--secondary2);
 }

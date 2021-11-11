@@ -1,19 +1,19 @@
 .call-to-action1 {
-  background-color: var(--primary1);
-  color: var(--mainText);
-  width: fit-content;
+  background-color: var(--primary1) !important;
+  color: var(--mainText) !important ;
+  margin: auto;
 }
 
 .call-to-action1:hover {
-  background-color: var(--primaryHover1);
+  background-color: var(--primaryHover1) !important;
 }
 
 .call-to-action2 {
-  background-color: var(--primary2);
-  color: #fff;
-  width: fit-content;
+  background-color: var(--primary2) !important;
+  color: #fff !important ;
+  margin: auto !important;
 }
 
 .call-to-action2:hover {
-  background-color: var(--primaryHover2);
+  background-color: var(--primaryHover2) !important;
 }

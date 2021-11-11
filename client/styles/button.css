@@ -2,12 +2,14 @@
   all: unset;
   font-size: 1rem;
   font-weight: 500;
-  padding: 0.3rem;
   border-bottom: 5px;
   border-radius: var(--borderRadius);
-  padding: 0.6em 1.2em;
+  padding: 0.9em 2.7em;
   box-shadow: var(--shadow);
-  margin: 1rem 1rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .button:hover {
