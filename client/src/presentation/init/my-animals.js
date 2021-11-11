@@ -1,24 +1,15 @@
-<<<<<<< HEAD
 import animalSearchResults from "../components/shared/animal-search-results.js";
-import { fetchAnimals } from "../../data-access/animal-access/fetch-animals.js";
 import { navbar } from "../components/layout/navbar.js";
 import footer from "../components/layout/footer.js";
+import getAddedAnimals from "../../business-logic/get-added-animals.js";
 
 const buildPage = async () => {
+  const message = "You haven't added animals for adoption, yet.";
   document.getElementById("menu").appendChild(navbar());
   document.querySelector("footer").appendChild(footer());
-  // fetch added animals
-  const array = await fetchAnimals();
+  const addedAnimals = await getAddedAnimals();
   document
-    .querySelector(".favorites-sort-results")
-    .appendChild(animalSearchResults(array));
-=======
-import { navbar } from "../components/layout/navbar.js";
-import footer from "../components/layout/footer.js";
-
-const buildPage = () => {
-  document.getElementById("menu").appendChild(navbar());
-  document.querySelector("footer").appendChild(footer());
->>>>>>> 5bc53304f4f766497bc15f7fdf4c2145573c5258
+    .querySelector(".my-animals-sort-results")
+    .appendChild(animalSearchResults(addedAnimals, message));
 };
 buildPage();

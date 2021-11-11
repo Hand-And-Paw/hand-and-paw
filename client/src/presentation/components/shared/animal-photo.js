@@ -1,6 +1,12 @@
 import getAnimalPrincipalPicture from "../../../business-logic/get-animal-principal-picture.js";
 import { b64toBlob } from "../../../business-logic/base-to-blob.js";
 
+/**
+ * @param {object} animal object with information about 1 animal
+ * @param {string} className photo div class name
+ * @returns div with animal's photo
+ */
+
 const animalPhoto = (animal, className) => {
   const { pictures } = animal;
   const photo = document.createElement("div");
@@ -8,9 +14,18 @@ const animalPhoto = (animal, className) => {
   const img = document.createElement("img");
   // looks for principal picture
   const picture = getAnimalPrincipalPicture(pictures);
-  const blob = b64toBlob(picture.picture.data, picture.picture.contentType);
-  const url = URL.createObjectURL(blob);
-  img.src = url;
+  if (picture) {
+    const blob = b64toBlob(picture.picture.data, picture.picture.contentType);
+    const url = URL.createObjectURL(blob);
+    img.src = url;
+    photo.appendChild(img);
+  } else {
+    img.src =
+      "../../../../assets//images/ui/animal-card/raw-images/default-no-image-1.png";
+    photo.appendChild(img);
+    return photo;
+  }
+
   photo.appendChild(img);
   return photo;
 };

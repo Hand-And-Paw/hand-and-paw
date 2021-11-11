@@ -139,6 +139,23 @@ const userRegister = {
       if (user.length === 0) {
         throw new Error(`Cannot delete animal user doesn't exist`);
       }
+
+      if (user[0].registeredAnimals.length === 0) {
+        throw new Error(
+          `Cannot delete animal, the user do not have registered Animals`
+        );
+      }
+
+      const matchAnimal = user[0].registeredAnimals.some(
+        (element) => element === animalId
+      );
+
+      if (!matchAnimal) {
+        throw new Error(
+          `The animal was not registered by user with the id: ${userId}`
+        );
+      }
+
       const animal = await animalManager.getAnimal(animalId);
       if (animal.length === 0) {
         throw new Error(`Cannot delete animal, animal doesn't exist`);

@@ -7,9 +7,17 @@
   grid-template-columns: repeat(4, 25%);
   justify-content: center;
   gap: 50px;
+  text-align: center;
+}
+
+.no-animals-found {
+  grid-column: 2 / span 2;
+  font-size: 1.6rem;
+  margin-bottom: 3em;
 }
 
 .search-result-card {
+  position: relative;
   background-color: var(--secondary1);
   border-radius: var(--borderRadius);
   height: fit-content;
@@ -21,7 +29,7 @@
   cursor: pointer;
 }
 
-.search-result-card img {
+.search-result-card .card-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;

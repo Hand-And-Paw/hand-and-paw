@@ -1,34 +1,26 @@
 import { filterAnimalsHandler } from "../../handlers/filter-animals-handler.js";
 import removeFilterFindAnimal from "../../handlers/remove-filters-find-animal-handler.js";
 
-export const animalSearchMenuComponent = () => {
-  const section = document.createElement("section");
-  section.className = "animal-search-menu";
-  const container = document.createElement("div");
-  container.className = "container";
+// animal search section
+const searchMenu = () => {
+  const searchSection = document.createElement("section");
+  searchSection.className = "animal-search-menu";
+  // inner container
+  const searchContainer = document.createElement("div");
+  searchContainer.className = "container";
+  // remove filters
   const removeFiltersBtn = document.createElement("button");
   removeFiltersBtn.id = "remove-filters";
   removeFiltersBtn.className = "button link-button";
-  removeFiltersBtn.innerHTML = "Remove filers";
-  container.appendChild(removeFiltersBtn);
+  removeFiltersBtn.innerText = "Remove filters";
+  removeFiltersBtn.addEventListener("click", removeFilterFindAnimal);
+  searchContainer.appendChild(removeFiltersBtn);
+  // search menu
   const searchDropDownMenu = document.createElement("div");
   searchDropDownMenu.className = "search-dropdown-menu";
-  searchDropDownMenu.innerHTML = `<form action="#" id="search-animal-form" class="input-select">
-  <select name="type">
-    <option value="all">All animals</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="bird">Bird</option>
-    <option value="rabbit">Rabbit</option>
-    <option value="hamster">Hamster</option>
-    <option value="horse">Horse</option>
-    <option value="donkey">Donkey</option>
-    <option value="mule">Mule</option>
-    <option value="sheep">Sheep</option>
-    <option value="rat">Rat</option>
-    <option value="other">Other</option>
-    <!-- add options from DB -->
-  </select>
+  searchDropDownMenu.innerHTML = `
+  <form action="#" id="search-animal-form" class="input-select">
+  <input type="text" name="type" placeholder="All animals" />
   <!-- <select name="breed"> -->
   <input type="text" name="breed" placeholder="All breeds" />
   <!-- add options from DB -->
@@ -81,23 +73,18 @@ export const animalSearchMenuComponent = () => {
     <!-- add options from DB -->
   </select>
 </form>`;
-  container.appendChild(searchDropDownMenu);
-
+  searchContainer.appendChild(searchDropDownMenu);
+  // submit button
   const submitBtn = document.createElement("button");
   submitBtn.type = "submit";
   submitBtn.id = "submit-animal-search-form";
   submitBtn.className = "button regular-button";
   submitBtn.innerHTML = " Apply";
-
-  const animalSearchResultsSection = document.createElement("section");
-  animalSearchResultsSection.id = "animals-list";
-  animalSearchResultsSection.className = "animal-search-results";
-  section.appendChild(container);
-  section.appendChild(animalSearchResultsSection);
-
   submitBtn.addEventListener("click", filterAnimalsHandler);
-  container.appendChild(submitBtn);
-  removeFiltersBtn.addEventListener("click", removeFilterFindAnimal);
-
-  return section;
+  searchContainer.appendChild(submitBtn);
+  // section appends container
+  searchSection.appendChild(searchContainer);
+  return searchSection;
 };
+
+export default searchMenu;

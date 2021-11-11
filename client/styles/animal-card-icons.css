@@ -1,0 +1,20 @@
+.owner-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 20px;
+  right: 10px;
+  z-index: 10;
+}
+
+.delete-animal,
+.edit-animal {
+  margin: 0.6rem;
+  transition: transform 0.2s;
+}
+
+.delete-animal:hover,
+.edit-animal:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}

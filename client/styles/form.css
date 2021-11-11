@@ -1,4 +1,8 @@
+form {
+  font-size: 1.125rem;
+}
 .modal-form {
+  font-size: 1.125rem;
   box-sizing: border-box;
   display: block;
   justify-content: center;
@@ -36,21 +40,22 @@ textarea {
   width: 100%;
   font-size: 1.125rem;
   padding: 0.6em 1em;
+  margin: 0 !important;
 }
 
 .form-control input,
-textarea {
+.form-control textarea {
   outline: 0;
 }
 
 /* error message */
 .form-control.success input,
-textarea {
+.form-control.success textarea {
   border: 2px solid var(--successColor);
 }
 
 .form-control.error input,
-textarea {
+.form-control.error textarea {
   border: 2px solid var(--errorColor);
 }
 
@@ -62,11 +67,29 @@ textarea {
   visibility: hidden;
 }
 
-.error {
-  color: var(--errorColor);
-  visibility: hidden;
-}
 .form-control.error small,
 .error.show-error {
+  color: var(--errorColor);
   visibility: visible;
+}
+
+.error-message {
+  visibility: hidden;
+}
+.referred-animal {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.subject-animal {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+.subject-animal img {
+  width: 100%;
+  object-fit: cover;
+  clip-path: circle(40%);
 }
