@@ -27,10 +27,9 @@
   bottom: -3px;
   left: 0;
   background-color: var(--primary2);
-
+}
 .profile-menu-image {
   display: inline-block;
   vertical-align: bottom;
   margin-right: 8px;
-  color:red;
 }
