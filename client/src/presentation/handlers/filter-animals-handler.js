@@ -6,6 +6,9 @@ import { getAnimals } from "../../data-access/animal-access/get-animals.js";
 
 export const filterAnimalsHandler = async (event) => {
   event.preventDefault();
+  const noAnimalsMessage =
+    "Sorry, there are no matches for your request today. Try to change your request or come back tomorrow!";
+
   const form = document.getElementById("search-animal-form");
   const formData = new FormData(form);
 
@@ -42,5 +45,5 @@ export const filterAnimalsHandler = async (event) => {
   const filter = await filterAnimals(parametersObj);
   const animalList = document.getElementById("animals-list");
   animalList.innerHTML = "";
-  animalList.appendChild(animalSearchResults(filter));
+  animalList.appendChild(animalSearchResults(filter, noAnimalsMessage));
 };
