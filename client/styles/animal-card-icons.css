@@ -1,4 +1,4 @@
-.owner-menu {
+.search-card-menu {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -7,14 +7,16 @@
   z-index: 10;
 }
 
-.delete-animal,
-.edit-animal {
+#delete-animal,
+#edit-animal,
+#favorite-animal {
   margin: 0.6rem;
   transition: transform 0.2s;
 }
 
-.delete-animal:hover,
-.edit-animal:hover {
+#delete-animal:hover,
+#edit-animal:hover,
+#favorite-animal:hover {
   transform: scale(1.5);
   cursor: pointer;
 }
