@@ -27,8 +27,8 @@ const buildPage = () => {
     });
   }
 
-  question.forEach((element) => {
-    element.addEventListener("click", faqListHandler);
-  });
+  // question.forEach((element) => {
+  //   element.addEventListener("click", faqListHandler);
+  // });
 };
 buildPage();
