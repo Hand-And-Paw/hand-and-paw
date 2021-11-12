@@ -1,7 +1,6 @@
 import { updateUser } from "../../data-access/user-access/update-user.js";
 
 export const updateUserHandler = async () => {
-  debugger;
   const form = document.querySelector("#edit-user-profile");
   const formData = new FormData(form);
   const userId = window.localStorage.getItem("userId");

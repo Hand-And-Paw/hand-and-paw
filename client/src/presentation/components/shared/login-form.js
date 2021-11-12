@@ -9,7 +9,7 @@ export const loginForm = (className) => {
   form.action = "#";
   form.innerHTML = `
   <h1> Log in </h1>
-  <p class="error-message" id="login-error"> Incorrect login or password. </p>
+  <p class="error-message" id="login-error"> Incorrect email or password. </p>
   <div class="form-control">
      <label for="email">Email</label><br />
     <input type="email" id="email" name="email" placeholder="Enter your e-mail" autocomplete="email" required/><br />
