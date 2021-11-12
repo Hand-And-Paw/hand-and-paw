@@ -19,9 +19,12 @@ form {
   left: 1rem;
   display: block;
 }
-
+#form-title {
+  color: var(--primary2);
+}
 .form-control {
   position: relative;
+  padding: 0 0.6rem;
 }
 
 .form-control img {
@@ -40,12 +43,17 @@ textarea {
   width: 100%;
   font-size: 1.125rem;
   padding: 0.6em 1em;
-  margin: 0 !important;
+  margin: auto;
 }
 
 .form-control input,
 .form-control textarea {
   outline: 0;
+}
+
+.form-control textarea {
+  height: 200px;
+  margin-bottom: 1rem;
 }
 
 /* error message */
