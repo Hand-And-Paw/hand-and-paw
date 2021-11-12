@@ -71,6 +71,7 @@ h4 {
 }
 
 .container {
+  align-content: center;
   justify-content: center;
   padding: 1rem 12rem;
   margin: 0 auto 1rem auto;
