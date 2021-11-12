@@ -39,19 +39,30 @@ body {
 h1 {
   font-size: 2.75rem;
   font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 2.188rem;
   font-weight: 600;
+  /* padding-top: 2.5rem; */
+  color: var(--primary2);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 h3 {
   font-size: 1.75rem;
+  /* padding-top: 1.5rem; */
+  color: var(--primary2);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 h4 {
   font-size: 1.438rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .main {
@@ -79,7 +90,7 @@ h4 {
 
 .page-intro .container {
   text-align: center;
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
 
 .page-intro article {
