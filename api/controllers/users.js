@@ -44,8 +44,11 @@ const userRegister = {
         const user = await userManager.getUser(id);
         const newPassword = hashCreator(req.body.newPassword);
         const oldPassword = hashCreator(req.body.oldPassword);
+        if (newPassword === oldPassword) {
+          throw Error("New password and current password are the same");
+        }
         if (user[0].password !== oldPassword) {
-          throw Error("Old password incorrect!");
+          throw Error("Current password incorrect!");
         } else {
           newData.password = newPassword;
         }
@@ -80,7 +83,7 @@ const userRegister = {
           "avatar-uploads"
         );
       }
-      res.status(401).json({ message: error.message, stack: error.stack });
+      res.status(401).json({ message: error.message });
     }
   },
   deleteUser: async (req, res) => {
