@@ -7,35 +7,25 @@
 @import url("./input-select.css");
 @import url("./regular-button.css");
 
-.animal-search-menu .container {
+.animal-search-menu .input-select {
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-    ". . remove-filters"
-    "search-menu search-menu search-menu"
-    ". button .";
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-column-gap: 30px;
+  grid-row-gap: 16px;
+  margin: 2rem 0;
 }
 
-#remove-filters {
-  grid-area: remove-filters;
-  justify-self: right;
-}
-.search-dropdown-menu {
-  grid-area: search-menu;
+.animal-search-menu .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #submit-animal-search-form {
-  grid-area: button;
-  justify-self: center;
+  display: block;
+  margin: auto;
 }
-
-#search-animal-form select,
-input {
-  width: 200px;
-}
-#search-animal-form {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 1.5rem;
+#remove-filters {
+  float: right;
 }
