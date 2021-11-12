@@ -73,6 +73,7 @@ h4 {
 }
 
 .container {
+  align-content: center;
   justify-content: center;
   width: 80%;
   padding: 1rem;

@@ -17,6 +17,7 @@
   display: flex;
   align-content: flex-end;
   justify-content: flex-end;
+  padding-left: 4em;
 }
 .adoption-image img {
   max-width: 520px;
@@ -107,24 +108,13 @@ li {
   height: 100%;
 }
 
-.faq-list a {
+a {
+  all: unset;
   color: var(--primary2);
   font-weight: 500;
 }
 
-.faq-list a:hover {
+a:hover {
   cursor: pointer;
   border-bottom: 3px solid var(--primary2);
-}
-
-/* Responsive design start */
-
-@media screen and (max-width: 990px) {
-  .stories-container {
-    display: block;
-  }
-
-  .happy-stories {
-    width: 100%;
-  }
 }
