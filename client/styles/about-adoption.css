@@ -9,11 +9,6 @@
 @import url("./blob-shape.css");
 
 /* section 1about adoption  */
-.about-adoption.grid-image-article {
-  background-color: #fff;
-  grid-template-areas: "adoption-article adoption-image";
-}
-
 .adoption-image {
   display: flex;
   align-content: flex-end;
@@ -32,28 +27,27 @@
 }
 /* section 2 stories */
 .stories-container {
-  margin: 0;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 360px));
   grid-column-gap: 32px;
   grid-row-gap: 16px;
+  text-align: center;
 }
 .happy-stories {
-  margin-top: 3rem;
-  text-align: center;
   background-color: var(--secondary2);
-}
-.story {
-  margin: 1.5rem;
 }
 .story-photo {
   max-width: 300px;
   max-height: 285px;
+  min-width: 300px;
   height: 100%;
   margin: auto;
   margin-bottom: 1.5rem;
 }
-
+.story-text {
+  padding: 1.5rem;
+}
 .story.one .story-photo img,
 .story.two .story-photo img {
   width: 100%;
@@ -120,4 +114,14 @@ a {
 a:hover {
   cursor: pointer;
   border-bottom: 3px solid var(--primary2);
+}
+/* Responsive design start */
+@media screen and (max-width: 990px) {
+  .stories-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
 }

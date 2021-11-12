@@ -3,6 +3,7 @@
 .article {
   margin: auto;
   font-weight: 400;
+  text-align: left;
 }
 /* 
 h1 {

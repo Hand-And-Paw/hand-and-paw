@@ -48,7 +48,6 @@ h2 {
   font-weight: 600;
   /* padding-top: 2.5rem; */
   color: var(--primary2);
-  margin-top: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -56,7 +55,6 @@ h3 {
   font-size: 1.75rem;
   /* padding-top: 1.5rem; */
   color: var(--primary2);
-  margin-top: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -100,7 +98,6 @@ h4 {
   max-width: 800px;
   margin: auto;
   text-align: center;
-  /* padding: 1rem 1rem; */
 }
 
 .call-to-action {
@@ -110,4 +107,9 @@ h4 {
 a:link,
 a:visited {
   text-decoration: none;
+}
+
+.section-header {
+  text-align: center;
+  padding-top: 2.5rem;
 }
