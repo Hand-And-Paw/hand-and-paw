@@ -5,10 +5,32 @@
   width: fit-content;
   position: absolute;
   right: 10px;
-  padding: 2rem;
-  margin-top: 1rem;
+  padding: 20px;
+  margin-top: 45px;
+  margin-right: 25px;
   opacity: 0;
+  box-shadow: var(--shadow);
 }
 .active {
   opacity: 1;
+}
+
+.profile-menu-item {
+  margin-bottom: 24px;
+  position: relative;
+}
+.profile-menu-item:hover:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--primary2);
+}
+.profile-menu-image {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 8px;
 }

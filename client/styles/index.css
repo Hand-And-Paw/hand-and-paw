@@ -8,86 +8,128 @@
 @import url("./form.css");
 @import url("./link-button.css");
 @import url("./about-adoption.css");
+@import url("./animal-profile.css");
 
+/* top article + navbar section */
 .welcome-container {
+  justify-content: center;
   padding: 0 10rem;
+  grid-template-areas:
+    "welcome-image-dog welcome-article"
+    "space call-to-action";
+}
+.welcome-container .call-to-action {
+  width: 70%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 navbar {
   background-color: transparent !important;
 }
+
 .header-navbar-wrapper {
   /* The image used */
   background-image: url("../assets/images/ui/home/figma-images/welcome-bg.png");
-
   min-height: 600px;
-
-  /* Center and scale the image nicely */
-  background-position: left;
+  /* Center and scale the image */
+  background-position: left top;
   background-repeat: no-repeat;
   background-size: 600px;
-
-  /* Needed to position the navbar */
+  /* position the navbar */
   position: relative;
+  margin-bottom: 3rem;
 }
 
-.welcome-container {
-  grid-template-areas:
-    "welcome-image-dog welcome-article"
-    "space call-to-action";
+hr {
+  margin-top: 15px;
+  border: 2px solid var(--primary2);
 }
-
+/* 
 .welcome-article {
-  justify-content: flex-start;
-  display: flex;
+  background-color: cadetblue;
   display: grid;
   grid-template-rows: auto;
-}
+} */
 .welcome-image {
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
   position: relative;
   top: 0;
   left: 0;
 }
 .welcome-image-dog {
+  margin: 0.6rem;
   position: relative;
   top: 10px;
-  left: 10px; 
+  left: 10px;
 }
 
 .call-to-action {
   grid-area: call-to-action;
-  justify-content: start;
+  float: left;
 }
-.grid-call-to-action {
-  display: grid;
-  grid-template-columns: 40% 40% 20%;
-  grid-column-gap: 10px;
-  justify-content: center;
-  grid-template-areas: call-to-action1 call-to-action2;
-}
-/* .call-to-action1 {
-    grid-area: button1;
-  
-}
-.call-to-action2 {
-    grid-area: button2;
-} */
-.adoption-article {
+/* 1 section why adoption is important */
+.adoption-is-important {
   background-color: var(--secondary2);
-  grid-area: article1;
-  grid-template-areas:
-    "article card-images"
-    "call-to-action space";
-}
-.help-article {
-  grid-area: article2;
-  grid-template-areas:
-    "card-images article"
-    "space call-to-action";
 }
 
+.adoption-article {
+  padding-top: 4rem;
+  grid-area: article1;
+  grid-template-areas:
+    "article image"
+    "call-to-action image";
+}
+
+.adoption-is-important .article-image {
+  grid-area: image;
+}
+/* 2 section when lonely animal needs help */
+.help-article {
+  padding-top: 4rem;
+  grid-area: article2;
+  grid-template-areas:
+    "image article"
+    "image call-to-action";
+}
+
+.help-article .article-image {
+  grid-area: image;
+}
+/* 2 section video */
 .video {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+/* Responsive design start */
+
+@media screen and (max-width: 990px) {
+  .welcome-container {
+    display: block;
+  }
+  .adoption-article {
+    display: block;
+  }
+  .welcome-image-dog {
+    max-width: 100%;
+  }
+  .header-navbar-wrapper {
+    min-height: initial;
+  }
+
+  .adoption-is-important {
+    display: block;
+  }
+
+  .grid-image-article {
+    display: initial;
+  }
+  .call-to-action {
+    flex-direction: column;
+  }
 }

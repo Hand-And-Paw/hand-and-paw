@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 .article {
   margin: auto;
-  font-size: 1.125rem;
   font-weight: 400;
+  text-align: left;
 }
-
+/* 
 h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -16,14 +16,8 @@ h2 {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 2rem;
-}
-p{
+} */
+p {
   font-size: 1.3rem;
   font-weight: 400;
-  margin-bottom: 2rem;
-}
-
-hr{
-  margin-top: 15px;
-  border: 2px solid var(--primary2);
 }

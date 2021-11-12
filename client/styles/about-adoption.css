@@ -5,25 +5,123 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
+@import url("./faq.css");
+@import url("./blob-shape.css");
 
-.about-adoption.grid-image-article {
-  grid-template-rows: auto;
-  grid-template-areas: "adoption-article adoption-image";
-}
+/* section 1about adoption  */
 .adoption-image {
-  padding: 4em;
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding-left: 4em;
 }
 .adoption-image img {
-  max-width: 100%;
+  max-width: 520px;
+  max-height: 459px;
+  object-fit: cover;
+  border-radius: 5px;
+  z-index: 1;
+  border: 35px solid var(--secondary1);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow);
 }
-
+/* section 2 stories */
 .stories-container {
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 360px));
+  grid-column-gap: 32px;
+  grid-row-gap: 16px;
+  text-align: center;
+}
+.happy-stories {
+  background-color: var(--secondary2);
+}
+.story-photo {
+  max-width: 300px;
+  max-height: 285px;
+  min-width: 300px;
+  height: 100%;
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+.story-text {
+  padding: 1.5rem;
+}
+.story.one .story-photo img,
+.story.two .story-photo img {
+  width: 100%;
 }
 
-.happy-stories {
+.story.three .story-photo img {
+  height: 30vh;
+}
+
+/* FAQ */
+.answer {
+  padding: 1rem;
+}
+li {
+  list-style: none;
+}
+.faq {
   text-align: center;
+  background-color: #fff;
+}
+
+.faq-list {
+  list-style: none;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+.nested-list li {
+  padding: 0.5em;
+  margin: 0px;
+  text-align: left;
+}
+.nested-list p {
+  padding: 0.5em;
+  font-size: 1rem;
+  margin: 0px;
+  text-align: left;
+}
+.nested-nested-list {
+  list-style-type: circle;
+  padding-left: 1.2em;
+}
+
+.question img {
+  padding-right: 10px;
+  height: 12px;
+}
+
+.question {
   background-color: var(--secondary2);
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+a {
+  all: unset;
+  color: var(--primary2);
+  font-weight: 500;
+}
+
+a:hover {
+  cursor: pointer;
+  border-bottom: 3px solid var(--primary2);
+}
+/* Responsive design start */
+@media screen and (max-width: 990px) {
+  .stories-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
 }

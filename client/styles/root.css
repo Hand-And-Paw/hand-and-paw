@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("./navbar.css");
-/* @import url("./footer.css"); */
+@import url("./footer.css");
+@import url("./regular-button.css");
+@import url("./animal-card-icons.css");
+
 :root {
   --primary1: #fcc521;
   --primary2: #793093;
@@ -9,15 +12,15 @@
   --secondary1: #fdf1ff;
   --secondary2: #f3f3f3;
   --mainText: #0b040e;
-  --secondaryBtn: #fffade;
-  --submitBtn: #efc1ff;
+  --regularBtn: #f5d7ff;
   --linkBtn: #006def;
   --shadow: 0px 4px 6px rgba(121, 48, 147, 0.25);
   --borderRadius: 30px;
+  --successColor: #2ecc71;
+  --errorColor: #e74c3c;
 }
 
 * {
-  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -25,6 +28,40 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  /* font-size: 1.125rem; */
+  font-size: 1.125rem;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  /* height: 100vh; */
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2.188rem;
+  font-weight: 600;
+  /* padding-top: 2.5rem; */
+  color: var(--primary2);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  /* padding-top: 1.5rem; */
+  color: var(--primary2);
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-size: 1.438rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .main {
@@ -34,10 +71,45 @@ body {
 
 .grid-image-article {
   display: grid;
-  gap: 30px;
+  column-gap: 3rem;
+  /* gap: 30px; */
   grid-template-columns: 1fr 1fr;
 }
 
+.menu {
+  background-color: var(--primary1);
+  padding: 0 10rem 0 10rem;
+}
+
 .container {
-  padding: 4rem 10rem;
+  align-content: center;
+  justify-content: center;
+  width: 80%;
+  padding: 1rem;
+  margin: 0 auto 1rem auto;
+}
+
+.page-intro .container {
+  text-align: center;
+  padding: 1rem;
+}
+
+.page-intro article {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.call-to-action {
+  padding: 2em 0;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.section-header {
+  text-align: center;
+  padding-top: 2.5rem;
 }

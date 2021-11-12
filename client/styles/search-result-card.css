@@ -1,0 +1,73 @@
+.animal-search-results {
+  margin-top: 3rem;
+}
+
+.search-results {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-column-gap: 2.4rem;
+  grid-row-gap: 16px;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.no-animals-found {
+  grid-column: 2 / span 2;
+  font-size: 1.6rem;
+  margin-bottom: 3em;
+}
+
+.search-result-card {
+  position: relative;
+  background-color: var(--secondary1);
+  border-radius: var(--borderRadius);
+  height: fit-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "card-photo" "card-info";
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.search-result-card .card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}
+
+.search-result-card .card-photo {
+  height: 334px;
+}
+
+.search-result-card .card-info {
+  padding: 3rem 3rem;
+  display: block;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.search-result-card .card-info span {
+  font-size: 1.325rem;
+  margin-left: 0.4em;
+  color: var(--mainText);
+}
+
+.animal-name {
+  text-align: center;
+  color: var(--primary2);
+}
+
+/* Responsive design start */
+
+@media only screen and (max-width: 1100px) {
+  .search-results {
+    grid-column-gap: 1rem;
+  }
+  .animal-card {
+    max-width: 350px;
+    justify-self: center;
+  }
+}

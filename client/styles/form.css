@@ -1,44 +1,95 @@
-form{
+form {
+  font-size: 1.125rem;
+}
+.modal-form {
+  font-size: 1.125rem;
+  box-sizing: border-box;
   display: block;
-  text-align: center;
+  justify-content: center;
+  align-content: center;
   color: var(--mainText);
   width: 470px;
   min-width: 250px;
-  width:100%;
-  }
-
-
-form h1{
-  margin-bottom: 3rem;
+  width: 100%;
 }
 
-input{
+.modal-form label {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  display: block;
+}
+
+.form-control {
+  position: relative;
+}
+
+.form-control img {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.form-control input,
+textarea {
+  display: block;
   border-radius: var(--borderRadius);
   border: 2px solid var(--primary2);
-  padding: 0.5em 1em;
-  font-size: 1.2rem;
-  width:100%;
-  margin-top: 0.2rem;
-  margin-bottom: 2rem;
-  }
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 0.6em 1em;
+  margin: 0 !important;
+}
 
-  .submit-form-button{
-    
-    font-size: 1.2rem;
-    background-color: var(--submitButton);
-    color: var(--primary2);
-    /* background-color: tomato; */
-    margin-top: 1rem;
-    /* width:100%; */
-   }
+.form-control input,
+.form-control textarea {
+  outline: 0;
+}
 
+/* error message */
+.form-control.success input,
+.form-control.success textarea {
+  border: 2px solid var(--successColor);
+}
 
-   /* .submit-form-button{
-    border-radius: var(--borderRadius);
-    border: 2px solid var(--primary2);
-    padding: 0.5em 1em;
-    font-size: 1.2rem;
-    width:100%;
-    margin-top: 0.2rem;
-    margin-bottom: 2rem;
-    } */
+.form-control.error input,
+.form-control.error textarea {
+  border: 2px solid var(--errorColor);
+}
+
+.form-control small {
+  color: var(--errorColor);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small,
+.error.show-error {
+  color: var(--errorColor);
+  visibility: visible;
+}
+
+.error-message {
+  visibility: hidden;
+}
+.referred-animal {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.subject-animal {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+.subject-animal img {
+  width: 100%;
+  object-fit: cover;
+  clip-path: circle(40%);
+}

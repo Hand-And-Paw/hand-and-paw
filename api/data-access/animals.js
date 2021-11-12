@@ -26,8 +26,9 @@ const databaseAccess = {
           breed: newData.breed,
           gender: newData.gender,
           character: newData.character,
-          dateBirth: newData.dateBirth,
+          age: newData.age,
           location: newData.location,
+          province: newData.province,
           phone: newData.phone,
           webSite: newData.website,
           describeAnimal: newData.describeAnimal,
@@ -52,24 +53,36 @@ const databaseAccess = {
 
   read: async (id = "") => {
     const animal = await Animal.find({ _id: id });
-
-    if (animal.length === 0) {
-      throw Error(`Cannot find animal, id doesn't exist`);
-    }
     return animal;
   },
 
   all: async () => {
     let animals = await Animal.find();
-    if (animals.length === 0) {
-      animals = `the are not animals in Animal collection`;
-    }
     return animals;
   },
   updateAnimalPictures: async (previousPictures, newPictures, animalId) => {
+    let numberOfPictures = 0;
+    if (previousPictures.length === 0) {
+      newPictures.forEach(async (picture) => {
+        let newNumberFieldname = ++numberOfPictures;
+        await Animal.updateOne(
+          { _id: animalId },
+          {
+            $push: {
+              pictures: {
+                picture: {
+                  data: picture.picture.data,
+                  contentType: picture.picture.contentType,
+                },
+                fieldname: `picture${newNumberFieldname}`,
+              },
+            },
+          }
+        );
+      });
+    }
     newPictures.forEach(async (newPicture) => {
       previousPictures.forEach(async (prevPicture) => {
-        console.log(newPicture.fieldname === prevPicture.fieldname);
         if (newPicture.fieldname === prevPicture.fieldname) {
           await Animal.updateOne(
             { $and: [{ _id: animalId }, { "pictures._id": prevPicture._id }] },
@@ -136,6 +149,15 @@ const databaseAccess = {
       { $set: { "pictures.$.isPrincipal": `${isPrincipal}` } }
     );
     return update;
+  },
+  filterAnimals: async (filterObj) => {
+    if (filterObj.age && filterObj.age > 10) {
+      filterObj.age = { $gt: 10 };
+      const animals = await Animal.find(filterObj);
+      return animals;
+    }
+    const animals = await Animal.find(filterObj);
+    return animals;
   },
 };
 

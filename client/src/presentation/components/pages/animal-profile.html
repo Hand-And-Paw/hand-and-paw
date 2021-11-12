@@ -9,7 +9,7 @@
   </head>
   <body>
     <header id="top" class="main-navbar">
-      <div id="menu" class="container"></div>
+      <div id="menu" class="menu"></div>
     </header>
     <div class="main">
       <div class="navigate">
@@ -24,7 +24,7 @@
             <div class="image-gallery"></div>
             <div class="animal-info"></div>
             <div class="contact">
-              <button class="button email-shelter-btn">Get in touch</button>
+              <button class="button">Get in touch</button>
             </div>
           </div>
         </div>
@@ -48,35 +48,8 @@
         </div>
       </section>
     </div>
-    <div class="modal-bg">
-      <div class="modal">
-        <!-- can be icon to close -->
-        <span class="close-modal">X</span>
-        <div class="modal-content">
-          <form>
-            <!-- placeholders instead of labels? -->
-            <h1>Send an e-mail to the shelter.</h1>
-            <label for="name">Name:</label>
-            <input type="text" name="name" /> <br />
-            <label for="phone">Contact phone number:</label>
-            <input type="number" name="phone-number" /><br />
-            <label for="email">Email:</label>
-            <input type="email" name="email" autocomplete="email" /><br />
-            <label for="message">Message:</label>
-            <textarea
-              class="contact-shelter-text"
-              name="contact-shelter"
-              rows="20"
-              cols="30"
-            ></textarea
-            ><br />
 
-            <button class="send-btn">Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <footer></footer>
+    <footer class="footer" ></footer>
     <script type="module" src="../../init/animal-profile.js"></script>
   </body>
 </html>

@@ -12,13 +12,18 @@
     <div class="header-navbar-wrapper">
       <header id="top" class="main-navbar welcome-container">
         <div id="menu"></div>
+        <!-- Responsive design start -->
+        <div class="pages-menu-close">
+          <span class="pages-menu-close-line"></span>
+          <span class="pages-menu-close-line"></span>
+        </div>
+
+        <!-- Responsive design end -->
       </header>
+      <!-- joined navbar + welcome section -->
       <section class="welcome">
         <div class="welcome-container grid-image-article">
           <div class="welcome-image">
-            <!-- link to the photo -->
-            <!-- <img class="welcome-image-bg" src="./assets/images/ui/home/figma-images/welcome-bg.png"
-          alt="yellow background for adopt-me dog"> -->
             <img
               class="welcome-image-dog"
               src="./assets/images/ui/home/figma-images/welcom-img.png"
@@ -27,8 +32,9 @@
           </div>
           <div class="welcome-shift">
             <div class="article welcome-article">
-              <h1>Welcome!
-                <hr>
+              <h1>
+                Welcome!
+                <hr />
               </h1>
               <br />
               <p>
@@ -53,20 +59,13 @@
                 >Register an animal</a
               >
             </div>
-
-            <!-- <div class="checks">
-        <ul>
-          <li>Adopt an animal</li>
-          <li>Find a home for a lonely animal</li>
-          <li>Make this world better</li>
-        </ul>
-      </div> -->
           </div>
         </div>
-        <!-- It won't fit with "animal" instead of "pet". Check designs when doing!-->
       </section>
     </div>
+    <!-- the rest -->
     <div class="main">
+      <!-- first section -->
       <section class="adoption-is-important">
         <div class="container adoption-article grid-image-article">
           <div class="article">
@@ -94,46 +93,53 @@
               >Find an animal</a
             >
           </div>
+          <!-- article image start -->
+          <div class="article-image">
+            <div class="image card-images">
+              <div class="image1">
+                <img
+                  class="image-rotate-left"
+                  src="./assets/images/ui/home/raw-images/why1.jpg"
+                  alt="A man holding a puppy."
+                />
+                <div class="image-background bgr-rotate-left"></div>
+              </div>
 
-          <div class="image card-images">
-            <div class="image1">
-              <img
-                class="image-rotate-left"
-                src="./assets/images/ui/home/raw-images/why-man.jpg"
-                alt="A man holding a puppy."
-              />
-              <div class="image-background bgr-rotate-left"></div>
-            </div>
-
-            <div class="image2">
-              <img
-                class="image-rotate-right"
-                src="./assets/images/ui/home/raw-images/why-girl.jpg"
-                alt="A woman hugging a dog."
-              />
-              <div class="image-background bgr-rotate-right"></div>
+              <div class="image2">
+                <img
+                  class="image-rotate-right"
+                  src="./assets/images/ui/home/raw-images/why2.jpg"
+                  alt="A woman hugging a dog."
+                />
+                <div class="image-background bgr-rotate-right"></div>
+              </div>
             </div>
           </div>
+          <!-- tilted images end -->
         </div>
       </section>
+      <!-- first section end -->
+      <!-- second section start -->
       <section class="lonely-animals-need-help">
         <div class="container help-article grid-image-article">
-          <div class="image card-images">
-            <div class="image1">
-              <img
-                src="./assets/images/ui/home/raw-images/when-dog.jpg"
-                class="image-rotate-left"
-                alt="A puppy watching into camera."
-              />
-              <div class="image-background bgr-rotate-left"></div>
-            </div>
-            <div class="image2">
-              <img
-                src="./assets/images/ui/home/raw-images/when-cat.jpg"
-                clas="image-rotate-right"
-                alt="A siiting kitten watching sideways."
-              />
-              <div class="image-background bgr-rotate-right"></div>
+          <div class="article-image">
+            <div class="image card-images">
+              <div class="image1">
+                <img
+                  src="./assets/images/ui/home/raw-images/when1.jpg"
+                  class="image-rotate-left"
+                  alt="A puppy watching into camera."
+                />
+                <div class="image-background bgr-rotate-left"></div>
+              </div>
+              <div class="image2">
+                <img
+                  src="./assets/images/ui/home/raw-images/when2.jpg"
+                  clas="image-rotate-right"
+                  alt="A siiting kitten watching sideways."
+                />
+                <div class="image-background bgr-rotate-right"></div>
+              </div>
             </div>
           </div>
           <div class="article">
@@ -168,7 +174,7 @@
         </div>
       </section>
     </div>
-    <footer></footer>
+    <footer class="footer"></footer>
     <script type="module" src="./src/presentation/init/index.js"></script>
   </body>
 </html>

@@ -8,18 +8,20 @@ const tokenChecker = require("../../middleware/token-login");
 
 // all animals
 animalRoute.get("/", animalController.getAllAnimals);
+// filter animals
+animalRoute.post("/filter-animals", animalController.filterAnimals);
+// get one animal
+animalRoute.get("/:id", animalController.getAnimal);
 
 animalRoute.use((req, res, next) => {
   tokenChecker(req, res, next);
 });
+
 animalRoute.post(
   "/register",
   uploadAnimalPictures,
   animalController.postAnimal
 );
-
-// get one animal
-animalRoute.get("/:id", animalController.getAnimal);
 // update existing pictures and data
 animalRoute.put(
   "/update/:id",

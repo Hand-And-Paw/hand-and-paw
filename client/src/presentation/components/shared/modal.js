@@ -5,8 +5,9 @@ const createModal = (content) => {
   modalDiv.className = "modal-background";
   const modal = document.createElement("div");
   modal.className = "modal";
-  const close = document.createElement("span");
-  close.innerText = "X";
+  const close = document.createElement("img");
+  close.src = "/assets/icons/cross.svg";
+  close.className = "close-modal";
   const modalContent = document.createElement("div");
   modalContent.className = "modal-content";
   modalContent.appendChild(content);

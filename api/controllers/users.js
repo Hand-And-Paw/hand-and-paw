@@ -44,8 +44,11 @@ const userRegister = {
         const user = await userManager.getUser(id);
         const newPassword = hashCreator(req.body.newPassword);
         const oldPassword = hashCreator(req.body.oldPassword);
+        if (newPassword === oldPassword) {
+          throw Error("New password and current password are the same");
+        }
         if (user[0].password !== oldPassword) {
-          throw Error("Old password incorrect!");
+          throw Error("Current password incorrect!");
         } else {
           newData.password = newPassword;
         }
@@ -80,7 +83,7 @@ const userRegister = {
           "avatar-uploads"
         );
       }
-      res.status(401).json({ message: error.message, stack: error.stack });
+      res.status(401).json({ message: error.message });
     }
   },
   deleteUser: async (req, res) => {
@@ -139,6 +142,23 @@ const userRegister = {
       if (user.length === 0) {
         throw new Error(`Cannot delete animal user doesn't exist`);
       }
+
+      if (user[0].registeredAnimals.length === 0) {
+        throw new Error(
+          `Cannot delete animal, the user do not have registered Animals`
+        );
+      }
+
+      const matchAnimal = user[0].registeredAnimals.some(
+        (element) => element === animalId
+      );
+
+      if (!matchAnimal) {
+        throw new Error(
+          `The animal was not registered by user with the id: ${userId}`
+        );
+      }
+
       const animal = await animalManager.getAnimal(animalId);
       if (animal.length === 0) {
         throw new Error(`Cannot delete animal, animal doesn't exist`);

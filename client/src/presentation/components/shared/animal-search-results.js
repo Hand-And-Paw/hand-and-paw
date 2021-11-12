@@ -1,15 +1,20 @@
 import { animalCard } from "./animal-card.js";
+import noAnimalsFound from "./no-animals-found-message.js";
 
-const animalSearchResults = (array) => {
+/**
+ * @param {array} array array of animal profile objects
+ * @param {string} searchResultPlaceholder message for when search returns 0 matches
+ * @returns div with animal cards
+ */
+const animalSearchResults = (array, searchResultPlaceholder) => {
   const container = document.createElement("div");
-  container.className = "container";
+  container.className = "container search-results";
   if (array.length !== 0) {
     array.forEach((animal) => {
-      container.appendChild(animalCard(animal));
+      container.appendChild(animalCard(animal, "search-result-card"));
     });
   } else {
-    container.innerText =
-      "Sorry, there are no matches for your request today. Try to change your request or come back tomorrow!";
+    container.appendChild(noAnimalsFound(searchResultPlaceholder));
   }
   return container;
 };

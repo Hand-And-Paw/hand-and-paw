@@ -1,40 +1,42 @@
-import { navbar } from "./navbar.js";
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import/no-named-as-default */
+import githubRepo from "./github-link.js";
+import createLogo from "./logo.js";
+import contactUs from "./contact-us-btn.js";
+import goToTopBottom from "./go-to-top-button.js";
+import mainMenuComponent from "./main-menu-component.js";
+import { callContactForm } from "../../handlers/call-contact-form.js";
 
-const footer = (mainMenu) => {
-  //main container
-  const container = document.createElement("div");
-  container.className = "container";
-  //navbar menu
-  const navigation = document.createElement("div");
-  navigation.className = "footer-navigation";
-  navigation.appendChild(navbar());
-  container.appendChild(navigation);
-  //about
+const footer = () => {
+  // create footer content
+  const footerContent = document.createElement("div");
+  footerContent.className = "footer-content";
+  // logo
+  footerContent.appendChild(
+    createLogo({
+      imageSource: "/assets/images/ui/logo-footer.svg",
+    })
+  );
+  // main menu
+  footerContent.appendChild(mainMenuComponent());
+  // about
   const about = document.createElement("div");
   about.className = "footer-about-project";
-  about.innerText = `Created by students of HackYourFuture Belgium`;
-  const button = document.createElement("button");
-  button.className = "contact-us";
-  button.innerText = "Contact us";
-  button.addEventListener("click", () => console.log("call contact us form"));
-  about.appendChild(button);
-  container.appendChild(about);
-  //copyright
-  const copyright = document.createElement("div");
-  const p = document.createElement("p");
-  p.id = "copyrigt";
-  p.innerHTML = `All rights reserved © 2021`;
-  copyright.appendChild(p);
-  container.appendChild(p);
-  //to the top
-  const goUp = document.createElement("div");
-  const upBtn = document.createElement("button");
-  upBtn.id = "goUp";
-  //insert icon
-  upBtn.innerText = "GO UP icon";
-  upBtn.addEventListener("click", () => console.log("go up handler"));
-  goUp.appendChild(upBtn);
-  container.appendChild(goUp);
-  return container;
+  about.innerHTML = `<p>Created by students of</p><p>HackYourFuture Belgium</p>
+  <p><a href="www.hackyourfuture.be"> hackyourfuture.be</a></p>`;
+  footerContent.appendChild(about);
+  // contact
+  const contact = document.createElement("div");
+  contact.className = "contact";
+  // to the top
+  contact.appendChild(goToTopBottom());
+
+  contact.appendChild(contactUs(callContactForm));
+  // github repo link
+  contact.appendChild(githubRepo());
+  footerContent.appendChild(contact);
+
+  return footerContent;
 };
+
 export default footer;
