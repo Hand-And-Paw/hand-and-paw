@@ -13,10 +13,11 @@
   background-color: #fff;
   grid-template-areas: "adoption-article adoption-image";
 }
-.call-to-action {
-  padding: 2em 0;
-}
+
 .adoption-image {
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
   padding-left: 4em;
 }
 .adoption-image img {
@@ -25,7 +26,6 @@
   object-fit: cover;
   border-radius: 5px;
   z-index: 1;
-  justify-self: center;
   border: 35px solid var(--secondary1);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow);

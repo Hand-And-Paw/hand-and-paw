@@ -2,14 +2,14 @@ import animalPhoto from "./animal-photo.js";
 import animalInfo from "./animal-info.js";
 import showAnimalProfile from "../../handlers/show-animal-profile.js";
 import ownerControlMenu from "./owner-control-menu.js";
-
+import seekerControlMenu from "./seeker-control-menu.js";
 /**
  * @param {object} animal object with information about 1 animal
  * @param {string} className card class name
  * @returns div with animal picture and info, has id equal to animal id
  */
 
-export const animalCard = (animal, className) => {
+export const animalCard = (animal, className, isFavorite) => {
   // create card
   const { _id, userId } = animal;
   const card = document.createElement("div");
@@ -26,8 +26,8 @@ export const animalCard = (animal, className) => {
   const animalGiver = userId;
   if (currentUser === animalGiver) {
     card.appendChild(ownerControlMenu("search-card-menu"));
+  } else {
+    card.appendChild(seekerControlMenu("search-card-menu"));
   }
-  // else -attach favorites icon
-
   return card;
 };

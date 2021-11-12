@@ -28,6 +28,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  /* font-size: 1.125rem; */
   font-size: 1.125rem;
   font-weight: 400;
   display: flex;
@@ -72,7 +73,8 @@ h4 {
 
 .grid-image-article {
   display: grid;
-  gap: 30px;
+  column-gap: 3rem;
+  /* gap: 30px; */
   grid-template-columns: 1fr 1fr;
 }
 
@@ -84,7 +86,8 @@ h4 {
 .container {
   align-content: center;
   justify-content: center;
-  padding: 1rem 12rem;
+  width: 80%;
+  padding: 1rem;
   margin: 0 auto 1rem auto;
 }
 
@@ -97,7 +100,7 @@ h4 {
   max-width: 800px;
   margin: auto;
   text-align: center;
-  padding: 1rem 1rem;
+  /* padding: 1rem 1rem; */
 }
 
 .call-to-action {
