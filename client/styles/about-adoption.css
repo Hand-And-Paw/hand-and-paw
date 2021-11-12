@@ -118,3 +118,34 @@ a:hover {
   cursor: pointer;
   border-bottom: 3px solid var(--primary2);
 }
+
+/* Responsive design start */
+
+@media screen and (max-width: 990px) {
+  /* .header-navbar-wrapper {
+    min-height: initial;
+  } */
+
+  /* .adoption-is-important {
+    display: block;
+  } */
+
+  .grid-image-article {
+    display: initial;
+  }
+  .article {
+    padding: 30px;
+  }
+
+  .stories-container {
+    display: block;
+    padding: 30px;
+    text-align: left;
+  }
+
+  h2,
+  ul {
+    width: 100vw;
+    padding: 30px;
+  }
+}
