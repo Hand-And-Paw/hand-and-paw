@@ -16,6 +16,14 @@ const userSubscriptionManager = {
   },
   // eslint-disable-next-line consistent-return
   updateUser: async (newData, avatar) => {
+    const objectWithValues = {};
+    for (const [key, value] of Object.entries(newData)) {
+      if (value === "" || value === "all") {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+      objectWithValues[key] = value;
+    }
     if (avatar) {
       const imageCompressed = await compressSharp(avatar.path);
       const pictureResized = {
@@ -23,10 +31,17 @@ const userSubscriptionManager = {
         contentType: avatar.mimetype,
       };
       deleteImage.deleteImageSync(avatar.filename, "avatar-uploads");
-      const updateUser = await databaseAccess.update(newData, pictureResized);
+      const updateUser = await databaseAccess.update(
+        objectWithValues,
+        pictureResized
+      );
       return updateUser;
     }
-    const updateUser = await databaseAccess.update(newData);
+    if (Object.keys(objectWithValues).length === 0) {
+      // eslint-disable-next-line consistent-return
+      return;
+    }
+    const updateUser = await databaseAccess.update(objectWithValues);
     return updateUser;
   },
   removeUser: async (userId) => {
