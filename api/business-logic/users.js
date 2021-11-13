@@ -71,6 +71,21 @@ const userSubscriptionManager = {
 
     return updateUserPublications;
   },
+  addFavorite: async (userId, animalId) => {
+    const updateUserPublications = await databaseAccess.addFavorite(
+      userId,
+      animalId
+    );
+    return updateUserPublications;
+  },
+  removeFavorite: async (userId, animalId) => {
+    const updateUserPublications = await databaseAccess.removeFavorite(
+      userId,
+      animalId
+    );
+
+    return updateUserPublications;
+  },
 };
 
 module.exports = userSubscriptionManager;

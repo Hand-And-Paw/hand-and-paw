@@ -177,6 +177,80 @@ const userRegister = {
       res.status(400).json({ message: error.message });
     }
   },
+  addFavorite: async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const { animalId } = req.body;
+      if ([...userId].length !== 24 || [...animalId].length !== 24) {
+        throw new Error(`invalid id`);
+      }
+
+      const user = await userManager.getUser(userId);
+      if (user.length === 0) {
+        throw new Error(`Cannot add animal user doesn't exist`);
+      }
+
+      if (user[0].registeredAnimals.length === 0) {
+        throw new Error(
+          `Cannot add animal, the user don't have registered Animals`
+        );
+      }
+
+      const matchAnimal = user[0].registeredAnimals.some(
+        (element) => element === animalId
+      );
+
+      if (matchAnimal) {
+        throw new Error(
+          `the animal cannot be added as favorite, belong to your animals`
+        );
+      }
+
+      const addFavorite = await userManager.addFavorite(userId, animalId);
+      if (addFavorite.modifiedCount === 1) {
+        res.status(200).send("animal added successfully");
+      }
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  },
+  removeFavorite: async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const { animalId } = req.body;
+      if ([...userId].length !== 24 || [...animalId].length !== 24) {
+        throw new Error(`invalid id`);
+      }
+
+      const user = await userManager.getUser(userId);
+      if (user.length === 0) {
+        throw new Error(`Cannot remove favorite user doesn't exist`);
+      }
+
+      if (user[0].registeredAnimals.length === 0) {
+        throw new Error(
+          `Cannot remove favorite, the user don't have registered Animals`
+        );
+      }
+
+      const matchAnimal = user[0].favorites.some(
+        (element) => element === animalId
+      );
+
+      if (!matchAnimal) {
+        throw new Error(
+          `the animal cannot be removed, user don't have it in favorites collection`
+        );
+      }
+
+      const addFavorite = await userManager.removeFavorite(userId, animalId);
+      if (addFavorite.modifiedCount === 1) {
+        res.status(200).send("animal removed successfully");
+      }
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  },
 };
 
 module.exports = userRegister;

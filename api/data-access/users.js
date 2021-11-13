@@ -86,7 +86,7 @@ const databaseAccess = {
   },
 
   all: async () => {
-    let users = await Users.find();
+    const users = await Users.find();
     return users;
   },
   updateUserPublication: async (animalId, userId) => {
@@ -114,6 +114,20 @@ const databaseAccess = {
       password: userPassword,
     });
     return user;
+  },
+  addFavorite: async (userId, animalId) => {
+    const favoriteAnimals = Users.updateOne(
+      { _id: userId },
+      { $push: { favorites: animalId } }
+    );
+    return favoriteAnimals;
+  },
+  removeFavorite: async (userId, animalId) => {
+    const favoriteAnimals = Users.updateOne(
+      { _id: userId },
+      { $pull: { favorites: animalId } }
+    );
+    return favoriteAnimals;
   },
 };
 
