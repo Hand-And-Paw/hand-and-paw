@@ -3,7 +3,7 @@ export const findYourPerfectCompanionComponent = () => {
   section.className = "page-intro";
   section.innerHTML = `    <div class="container">
     <article>
-      <h1>Find your perfect companion.</h1>
+      <h2 class="section-header">Find your perfect companion</h2>
       <p>
         Each animal has their own personality. It may take some time to
         find a perfect match, but it totally worth. Don't rush to make a

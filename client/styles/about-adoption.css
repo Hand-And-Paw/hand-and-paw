@@ -30,6 +30,12 @@
   box-shadow: var(--shadow);
 }
 
+
+.faq-invite {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
 /* section 2 stories */
 .stories-container {
   margin: auto;
