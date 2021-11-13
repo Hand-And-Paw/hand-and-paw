@@ -29,6 +29,7 @@
   grid-template-areas: "card-photo" "card-info";
   box-shadow: var(--shadow);
   cursor: pointer;
+  max-width: 350px;
 }
 
 .search-result-card .card-photo img {

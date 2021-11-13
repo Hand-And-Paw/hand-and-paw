@@ -245,31 +245,31 @@ Remove a user of the dataBase.
 
 Multiform data
 
-| key              | value                    | type    |
-| ---------------- | ------------------------ | ------- |
-| id               | 616ed72339ecbbf9b4c1c0b5 | text    |
-| name             | rafael                   | text    |
-| location         | location phote           | text    |
-| phone            | 0471758204               | text    |
-| email            | abcd@hyf.com             | text    |
-| repeatEmail      | abcd@hyf.com             | text    |
-| newPassword      | hello                    | text    |
-| oldPassword      | hello123                 | text    |
-| monday-access    | true                     | boolean |
-| monday-hours     | 8:00                     | text    |
-| tuesday-access   | true                     | boolean |
-| tuesday-hours    | 9:00 to 18:00            | text    |
-| wednesday-access | true                     | boolean |
-| wednesday-hours  | 9:00 to 18:00            | text    |
-| thursday-access  | true                     | boolean |
-| thursday-hours   | 9:00 to 18:00            | text    |
-| friday-access    | true                     | boolean |
-| friday-hours     | 9:00 to 18:00            | text    |
-| saturday-access  | true                     | boolean |
-| saturday-hours   | 9:00 to 18:00            | text    |
-| sunday-access    | true                     | boolean |
-| sunday-hours     | 9:00 to 18:00            | text    |
-| avatar           | profile.jpg              | file    |
+| key              | value                    | type |
+| ---------------- | ------------------------ | ---- |
+| id               | 616ed72339ecbbf9b4c1c0b5 | text |
+| name             | rafael                   | text |
+| location         | location phote           | text |
+| phone            | 0471758204               | text |
+| email            | abcd@hyf.com             | text |
+| repeatEmail      | abcd@hyf.com             | text |
+| newPassword      | hello                    | text |
+| oldPassword      | hello123                 | text |
+| monday-access    | on                       | text |
+| monday-hours     | 8:00                     | text |
+| tuesday-access   | on                       | text |
+| tuesday-hours    | 9:00 to 18:00            | text |
+| wednesday-access | on                       | text |
+| wednesday-hours  | 9:00 to 18:00            | text |
+| thursday-access  | on                       | text |
+| thursday-hours   | 9:00 to 18:00            | text |
+| friday-access    | on                       | text |
+| friday-hours     | 9:00 to 18:00            | text |
+| saturday-access  | on                       | text |
+| saturday-hours   | 9:00 to 18:00            | text |
+| sunday-access    | on                       | text |
+| sunday-hours     | 9:00 to 18:00            | text |
+| avatar           | profile.jpg              | file |
 
 - **Result:**
 
@@ -278,30 +278,30 @@ Multiform data
     {
       publicAccess: {
         monday: {
-          access: true,
+          access: on,
           hours: "8:00",
         },
         tuesday: {
-          access: true,
+          access: on,
           hours: "9:00 to 18:00",
         },
         wednesday: {
-          access: true,
+          access: on,
           hours: "9:00  to 18:00",
         },
         thursday: {
-          access: true,
+          access: on,
         },
         friday: {
-          access: true,
+          access: on,
           hours: "9:00 to 18:00",
         },
         saturday: {
-          access: true,
+          access: on,
           hours: "9:00 to 18:00",
         },
         sunday: {
-          access: true,
+          access: on,
           hours: "9:00 to 18:00",
         },
       },

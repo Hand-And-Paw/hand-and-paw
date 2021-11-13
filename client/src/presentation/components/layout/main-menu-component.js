@@ -31,13 +31,13 @@ const mainMenuComponent = (props) => {
   registerAnimalDiv.appendChild(registerAnimalAnchor);
   mainMenu.appendChild(registerAnimalDiv);
   // find shelter
-  const findShelterDiv = document.createElement("div");
-  const findShelterAnchor = document.createElement("a");
-  findShelterAnchor.href =
-    "/src/presentation/components/pages/find-shelter.html";
-  findShelterAnchor.innerHTML = "Find a shelter";
-  findShelterDiv.appendChild(findShelterAnchor);
-  mainMenu.appendChild(findShelterDiv);
+  // const findShelterDiv = document.createElement("div");
+  // const findShelterAnchor = document.createElement("a");
+  // findShelterAnchor.href =
+  //   "/src/presentation/components/pages/find-shelter.html";
+  // findShelterAnchor.innerHTML = "Find a shelter";
+  // findShelterDiv.appendChild(findShelterAnchor);
+  // mainMenu.appendChild(findShelterDiv);
   // about adoption
   const aboutAdoptionDiv = document.createElement("div");
   const aboutAdoptionAnchor = document.createElement("a");

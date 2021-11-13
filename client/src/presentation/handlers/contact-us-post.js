@@ -6,14 +6,14 @@ const _ = (id) => {
 export const contactUsPostHandler = async (event) => {
   event.preventDefault();
   const form = _("contact-us-form");
-  _("send-contact-message").disabled = true;
+  _("contact-us-form-submit").disabled = true;
   _("status").innerHTML = "please wait ...";
   const formData = new FormData(form);
   const userObj = {};
   for (const key of formData.keys()) {
     if (!formData.get(key)) {
       _("status").innerHTML = "Message not sent, please fill all the fields";
-      _("send-contact-message").disabled = false;
+      _("contact-us-form-submit").disabled = false;
       return;
     }
     userObj[key] = formData.get(key);
@@ -26,6 +26,6 @@ export const contactUsPostHandler = async (event) => {
     ).innerHTML = `<h2>Thanks ${userObj.name}, your message has been sent.</h2>`;
   } else {
     _("status").innerHTML = "An error has ocurred try again later";
-    _("send-contact-message").disabled = false;
+    _("contact-us-form-submit").disabled = false;
   }
 };

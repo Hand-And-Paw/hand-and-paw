@@ -27,7 +27,7 @@ export const animalCard = (animal, className, isFavorite) => {
   if (currentUser === animalGiver) {
     card.appendChild(ownerControlMenu("search-card-menu"));
   } else {
-    card.appendChild(seekerControlMenu("search-card-menu"));
+    card.appendChild(seekerControlMenu("search-card-menu favorites"));
   }
   return card;
 };

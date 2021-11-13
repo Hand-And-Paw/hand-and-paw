@@ -15,7 +15,6 @@ const getAddedAnimals = async () => {
     let animal = await getAnimal(addedAnimalsIds[i]);
     addedAnimals.push(animal[0]);
   }
-  // console.log(addedAnimals);
   return addedAnimals;
 };
 

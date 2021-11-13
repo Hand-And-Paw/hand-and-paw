@@ -1,7 +1,7 @@
 const editAnimalProfile = (animalId) => {
   localStorage.setItem("animalId", animalId);
   const editAnimalProfileBtn = document.createElement("img");
-  editAnimalProfileBtn.src = "/assets/icons/edit-icon.svg";
+  editAnimalProfileBtn.src = "/assets/icons/purple_edit.svg";
   editAnimalProfileBtn.id = "edit-animal";
   editAnimalProfileBtn.className = "edit-animal";
   editAnimalProfileBtn.addEventListener("click", (e) =>

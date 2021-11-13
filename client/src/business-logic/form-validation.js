@@ -1,4 +1,5 @@
-//show error
+/* eslint-disable no-use-before-define */
+// show error
 
 const showError = (input, message) => {
   const formControl = input.parentElement;
@@ -7,14 +8,14 @@ const showError = (input, message) => {
   small.innerText = message;
 };
 
-//show success
+// show success
 
 const showSuccess = (input) => {
   const formControl = input.parentElement;
   formControl.className = "form-control success";
 };
 
-//check email valid
+// check email valid
 
 const checkEmail = (input) => {
   const re =
@@ -22,16 +23,15 @@ const checkEmail = (input) => {
   if (re.test(input.value.trim())) {
     showSuccess(input);
     return true;
-  } else {
-    showError(input, "Email is not valid.");
-    return false;
   }
+  showError(input, "Email is not valid.");
+  return false;
 };
 
-//check required fields
+// check required fields
 
 const checkRequired = (inputArr) => {
-  let valid = true; 
+  let valid = true;
   inputArr.forEach((input) => {
     if (input.value.trim() === "") {
       showError(input, `${getFieldName(input)} is required.`);
@@ -43,7 +43,7 @@ const checkRequired = (inputArr) => {
   return valid;
 };
 
-//check input length
+// check input length
 const checkLength = (input, min, max) => {
   if (input.value.length < min) {
     showError(
@@ -51,7 +51,8 @@ const checkLength = (input, min, max) => {
       `${getFieldName(input)} must be at least ${min} characters`
     );
     return false;
-  } else if (input.value.length > max) {
+  }
+  if (input.value.length > max) {
     showError(
       input,
       `${getFieldName(input)} must be less then ${max} characters`
@@ -61,18 +62,24 @@ const checkLength = (input, min, max) => {
   return true;
 };
 
-//check passwords match
+// check passwords match
 const checkPasswordMatch = (input1, input2) => {
   if (input1.value !== input2.value) {
     showError(input2, "Passwords do not match.");
     return false;
-  } else {
-     return true;
   }
-
+  return true;
 };
 
-//get fieldname
+const checkEmailMatch = (input1, input2) => {
+  if (input1.value !== input2.value) {
+    showError(input2, "Emails do not match.");
+    return false;
+  }
+  return true;
+};
+
+// get fieldname
 
 const getFieldName = (input) => {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -83,4 +90,5 @@ export {
   checkPasswordMatch,
   checkRequired,
   showError,
+  checkEmailMatch,
 };
