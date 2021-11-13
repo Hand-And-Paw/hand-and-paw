@@ -111,7 +111,7 @@ li {
 }
 
 a {
-  all: unset;
+  /* all: unset; */
   color: var(--primary2);
   font-weight: 500;
 }
