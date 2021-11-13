@@ -75,8 +75,9 @@ navbar {
   display: none;
   width: 40px;
   height: 28px;
-  margin-right: 15px;
   margin-bottom: 25px;
+  margin-top: 20px;
+  margin-left: auto;
   position: relative;
   cursor: pointer;
 }
@@ -109,7 +110,7 @@ navbar {
     display: block;
   }
 
-  /* .pages-menu {
+  #top-navbar .pages-menu {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -121,6 +122,20 @@ navbar {
     transform: translateX(100%);
     transition: 0.2s all linear;
   }
+
+  #account-menu.account-menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 10;
+    padding: 75px;
+    transform: translateX(100%);
+    transition: 0.2s all linear;
+  }
+
   .pages-menu_active {
     transform: translateX(0);
   }
@@ -156,7 +171,7 @@ navbar {
   }
   .pages-menu-close-line:last-child {
     transform: translateY(-50%) rotate(-45deg);
-  } */
+  }
 }
 
 /* Media end */

@@ -14,3 +14,14 @@
 .button:hover {
   cursor: pointer;
 }
+
+
+/* Responsive design start */
+
+@media screen and (max-width: 990px) {
+  .button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-width: 35vw;
+  }

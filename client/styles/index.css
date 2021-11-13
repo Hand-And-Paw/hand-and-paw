@@ -129,10 +129,13 @@ hr {
   .grid-image-article {
     display: initial;
   }
+
   .call-to-action {
     margin-left: 20px;
-  }
-
-  .article-image {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: flex-start;
+    max-width: 0px;
   }
 }
