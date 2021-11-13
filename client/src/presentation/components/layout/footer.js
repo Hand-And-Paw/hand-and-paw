@@ -23,7 +23,7 @@ const footer = () => {
   const about = document.createElement("div");
   about.className = "footer-about-project";
   about.innerHTML = `<p>Created by students of</p><p>HackYourFuture Belgium</p>
-  <p><a href="www.hackyourfuture.be"> hackyourfuture.be</a></p>`;
+  <a href="http://www.hackyourfuture.be"> hackyourfuture.be</a>`;
   footerContent.appendChild(about);
   // contact
   const contact = document.createElement("div");

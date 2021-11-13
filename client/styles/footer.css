@@ -1,7 +1,7 @@
 footer {
   background-color: var(--primary2);
   height: 300px;
-  color: #fff !important;
+  color: var(--footerText);
 }
 
 .footer-content {
@@ -14,7 +14,7 @@ footer {
 }
 
 .footer-content * {
-  color: var(--secundary3);
+  color: var(--footerText);
   text-decoration: none;
 }
 
