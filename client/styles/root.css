@@ -3,8 +3,9 @@
 @import url("./footer.css");
 @import url("./regular-button.css");
 @import url("./animal-card-icons.css");
+@import url("./link-button.css");
 
-:root {
+:root  {
   --primary1: #fcc521;
   --primary2: #793093;
   --primaryHover1: #e9af01;

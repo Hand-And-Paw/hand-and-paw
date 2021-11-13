@@ -1,9 +1,7 @@
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { updateAnimal } from "../../data-access/animal-access/update-animal.js";
 import createModal from "../components/shared/modal.js";
-import closeModal from "./close-modal.js";
-import showAnimalProfile from "./show-animal-profile.js";
-import toMyAnimalsBtn from "../components/layout/go-to-added-animals.js";
+import goToAnimalProfile from "./go-to-animal-profile-handler.js";
 
 export const editAnimalProfileHandler = async (event) => {
   event.preventDefault();
@@ -42,33 +40,3 @@ export const editAnimalProfileHandler = async (event) => {
     .querySelector("body")
     .insertAdjacentElement("beforeend", createModal(divEl));
 };
-
-// async function goToAnimalProfile(e, animalId) {
-//   const modal = document.querySelector(".modal-background");
-//   if (document.body.contains(modal)) {
-//     closeModal();
-//   }
-//   await showAnimalProfile(e, animalId);
-//   const button = document.getElementById("to-search-results");
-//   button.remove();
-// }
-
-async function goToAnimalProfile(e, animalId) {
-  const modal = document.querySelector(".modal-background");
-  if (document.body.contains(modal)) {
-    closeModal();
-  }
-  await showAnimalProfile(e, animalId);
-  const button = document.getElementById("to-search-results");
-  button.remove();
-  //
-  const page = document.querySelector(".animal-profile-page.container");
-  page.insertAdjacentElement(
-    "afterbegin",
-    toMyAnimalsBtn(
-      "go-to-my-animals",
-      "Back to my animals",
-      "/src/presentation/components/pages/my-animals.html"
-    )
-  );
-}
