@@ -1,11 +1,11 @@
-import deleteAnimalHandler from "../../handlers/delete-animal-handler.js";
+// import deleteAnimalHandler from "../../handlers/delete-animal-handler.js";
 
-const deleteAnimalBtn = () => {
+const deleteAnimalBtn = (handler) => {
   const deleteAnimalButton = document.createElement("img");
   deleteAnimalButton.src = "/assets/icons/purple_cross.svg";
   deleteAnimalButton.id = "delete-animal";
   deleteAnimalButton.className = "delete-animal";
-  deleteAnimalButton.addEventListener("click", deleteAnimalHandler);
+  deleteAnimalButton.addEventListener("click", handler);
   return deleteAnimalButton;
 };
 
