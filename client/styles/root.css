@@ -28,6 +28,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  /* font-size: 1.125rem; */
   font-size: 1.125rem;
   font-weight: 400;
   display: flex;
@@ -39,19 +40,28 @@ body {
 h1 {
   font-size: 2.75rem;
   font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 2.188rem;
   font-weight: 600;
+  /* padding-top: 2.5rem; */
+  color: var(--primary2);
+  margin-bottom: 2rem;
 }
 
 h3 {
   font-size: 1.75rem;
+  /* padding-top: 1.5rem; */
+  color: var(--primary2);
+  margin-bottom: 2rem;
 }
 
 h4 {
   font-size: 1.438rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .main {
@@ -61,7 +71,8 @@ h4 {
 
 .grid-image-article {
   display: grid;
-  gap: 30px;
+  column-gap: 3rem;
+  /* gap: 30px; */
   grid-template-columns: 1fr 1fr;
 }
 
@@ -73,20 +84,20 @@ h4 {
 .container {
   align-content: center;
   justify-content: center;
-  padding: 1rem 12rem;
+  width: 80%;
+  padding: 1rem;
   margin: 0 auto 1rem auto;
 }
 
 .page-intro .container {
   text-align: center;
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
 
 .page-intro article {
   max-width: 800px;
   margin: auto;
   text-align: center;
-  padding: 1rem 1rem;
 }
 
 .call-to-action {
@@ -96,4 +107,9 @@ h4 {
 a:link,
 a:visited {
   text-decoration: none;
+}
+
+.section-header {
+  text-align: center;
+  padding-top: 2.5rem;
 }

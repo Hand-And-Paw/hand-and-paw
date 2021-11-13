@@ -9,12 +9,15 @@ const searchMenu = () => {
   const searchContainer = document.createElement("div");
   searchContainer.className = "container";
   // remove filters
+  const filtersControl = document.createElement("div");
+  filtersControl.className = "filters-control";
   const removeFiltersBtn = document.createElement("button");
   removeFiltersBtn.id = "remove-filters";
   removeFiltersBtn.className = "button link-button";
   removeFiltersBtn.innerText = "Remove filters";
   removeFiltersBtn.addEventListener("click", removeFilterFindAnimal);
-  searchContainer.appendChild(removeFiltersBtn);
+  filtersControl.appendChild(removeFiltersBtn);
+  searchContainer.appendChild(filtersControl);
   // search menu
   const searchDropDownMenu = document.createElement("div");
   searchDropDownMenu.className = "search-dropdown-menu";

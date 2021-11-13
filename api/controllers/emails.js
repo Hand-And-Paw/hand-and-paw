@@ -75,7 +75,7 @@ const emailController = {
       const mailOptions = {
         from: req.body.email,
         to: user[0].email,
-        subject: `Hand and Paw: ${req.body.subject}`,
+        subject: `Contact Hand and Paw: someone sent a message about your pet`,
         text: `New Mail`,
         template: "mail",
         context: {

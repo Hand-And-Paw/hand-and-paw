@@ -3,10 +3,12 @@
 }
 
 .search-results {
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
-  justify-content: center;
-  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-column-gap: 2.4rem;
+  grid-row-gap: 16px;
+  margin: 2rem 0;
   text-align: center;
 }
 
@@ -27,6 +29,7 @@
   grid-template-areas: "card-photo" "card-info";
   box-shadow: var(--shadow);
   cursor: pointer;
+  max-width: 350px;
 }
 
 .search-result-card .card-photo img {
@@ -56,4 +59,16 @@
 .animal-name {
   text-align: center;
   color: var(--primary2);
+}
+
+/* Responsive design start */
+
+@media only screen and (max-width: 1100px) {
+  .search-results {
+    grid-column-gap: 1rem;
+  }
+  .animal-card {
+    max-width: 350px;
+    justify-self: center;
+  }
 }

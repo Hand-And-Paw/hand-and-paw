@@ -28,7 +28,6 @@ const animalsController = {
   },
   updateAnimal: async (req, res) => {
     try {
-      console.log(req.body);
       const { id } = req.params;
       const newData = req.body;
       if (newData.type) {

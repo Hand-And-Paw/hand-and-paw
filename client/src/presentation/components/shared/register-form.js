@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import { registerFormValidation } from "../../handlers/register-form-validation.js";
 import { registerUserFormHandler } from "../../handlers/register-user-form-handler-.js";
 
@@ -41,14 +42,14 @@ export const registerForm = () => {
   </div>
     <button id="submit-register-form" type="sumbit" class="button form-button">Register</button>
   `;
-  //form.addEventListener("change", registerFormValidation);
+  // form.addEventListener("change", registerFormValidation);
   form.addEventListener("submit", registerHandler, false);
 
   return form;
 };
 
 const registerHandler = (event) => {
-   if( registerFormValidation(event) ) {
-      registerUserFormHandler(event);
-   }
-}
+  if (registerFormValidation(event)) {
+    registerUserFormHandler(event);
+  }
+};
