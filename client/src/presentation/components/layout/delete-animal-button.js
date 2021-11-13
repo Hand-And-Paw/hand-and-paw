@@ -1,5 +1,3 @@
-// import deleteAnimalHandler from "../../handlers/delete-animal-handler.js";
-
 const deleteAnimalBtn = (handler) => {
   const deleteAnimalButton = document.createElement("img");
   deleteAnimalButton.src = "/assets/icons/purple_cross.svg";

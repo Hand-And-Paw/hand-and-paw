@@ -18,7 +18,7 @@ const buildPage = async () => {
 
   [...cardPhotos].forEach((card) => {
     const menu = document.createElement("div");
-    menu.id = "owner-menu";
+    menu.id = "favorites-menu";
     menu.className = "search-card-menu";
     document.getElementById("seeker-menu").remove();
     menu.appendChild(deleteAnimalBtn(removeFavoriteHandler));
