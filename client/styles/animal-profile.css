@@ -16,7 +16,11 @@
     ". . . c"
     "s s s s";
 }
-
+.animal-profile-menu {
+  grid-area: i;
+  justify-self: end;
+  z-index: 5;
+}
 .animal-profile-page #to-search-results {
   grid-area: b;
 }

@@ -3,8 +3,7 @@
 import { registerAnimal } from "../../data-access/animal-access/register-animal.js";
 import createModal from "../components/shared/modal.js";
 import state from "../../data-access/state/state.js";
-import showAnimalProfile from "./show-animal-profile.js";
-import closeModal from "./close-modal.js";
+import goToAnimalProfile from "./go-to-animal-profile-handler.js";
 
 export const registerAnimalFormHandler = async (event) => {
   event.preventDefault();
@@ -46,13 +45,3 @@ export const registerAnimalFormHandler = async (event) => {
     .querySelector("body")
     .insertAdjacentElement("beforeend", createModal(divEl));
 };
-
-async function goToAnimalProfile(e, animalId) {
-  const modal = document.querySelector(".modal-background");
-  if (document.body.contains(modal)) {
-    closeModal();
-  }
-  await showAnimalProfile(e, animalId);
-  const button = document.getElementById("to-search-results");
-  button.remove();
-}
