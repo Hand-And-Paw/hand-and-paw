@@ -1,17 +1,16 @@
 import addToFavoritesHandler from "../../handlers/add-to-favorites-handler.js";
 
-const addToFavoritesBtn = (isFavorite) => {
+const addToFavoritesBtn = (isFavorite, animalId) => {
   const addToFavorites = document.createElement("img");
   addToFavorites.id = "heart";
   addToFavorites.src = "/assets/icons/red_heart.svg";
   if (isFavorite) {
-    addToFavorites.className = "active";
+    addToFavorites.classList.add("active");
   }
   addToFavorites.id = "favorite-animal";
-  addToFavorites.className = "favorite-animal";
-  addToFavorites.addEventListener("click", (e) =>
-    window.localStorage.setItem("animalId", e.target.closest(".animal-card").id)
-  );
+  addToFavorites.classList.add("favorite-animal");
+  // store the id
+  window.localStorage.setItem("animalId", animalId);
   addToFavorites.addEventListener("click", addToFavoritesHandler);
   return addToFavorites;
 };

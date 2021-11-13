@@ -6,13 +6,14 @@ import noAnimalsFound from "./no-animals-found-message.js";
  * @param {string} searchResultPlaceholder message for when search returns 0 matches
  * @returns div with animal cards
  */
-const animalSearchResults = (array, searchResultPlaceholder) => {
+
+const animalSearchResults = async (array, searchResultPlaceholder) => {
   const container = document.createElement("div");
   container.className = "container search-results";
   if (array.length !== 0) {
-    array.forEach((animal) => {
-      container.appendChild(animalCard(animal, "search-result-card"));
-    });
+    for await (const animal of array) {
+      container.appendChild(await animalCard(animal, "search-result-card"));
+    }
   } else {
     container.appendChild(noAnimalsFound(searchResultPlaceholder));
   }

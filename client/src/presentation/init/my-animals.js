@@ -11,7 +11,7 @@ const buildPage = async () => {
   const addedAnimals = await getAddedAnimals();
   document
     .querySelector(".my-animals-sort-results")
-    .appendChild(animalSearchResults(addedAnimals, message));
+    .appendChild(await animalSearchResults(addedAnimals, message));
   const cardPhotos = document.querySelectorAll(".card-photo");
 
   [...cardPhotos].forEach((card) => {
