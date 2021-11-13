@@ -9,6 +9,9 @@ const addToFavoritesBtn = (isFavorite) => {
   }
   addToFavorites.id = "favorite-animal";
   addToFavorites.className = "favorite-animal";
+  addToFavorites.addEventListener("click", (e) =>
+    window.localStorage.setItem("animalId", e.target.closest(".animal-card").id)
+  );
   addToFavorites.addEventListener("click", addToFavoritesHandler);
   return addToFavorites;
 };
