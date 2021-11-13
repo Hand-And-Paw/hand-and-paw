@@ -16,6 +16,6 @@ const buildPage = async () => {
   const array = await getAnimals();
   document
     .getElementById("animals-list")
-    .appendChild(animalSearchResults(array));
+    .appendChild(await animalSearchResults(array));
 };
 buildPage();
