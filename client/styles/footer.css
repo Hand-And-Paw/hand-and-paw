@@ -42,7 +42,22 @@ footer {
 .footer-content .contact .github-icon {
   height: 32px;
 }
-<<<<<<< HEAD
+
+.footer-content .pages-menu a {
+  position: relative;
+}
+.footer-content .pages-menu a:hover::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--footerText);
+}
+
+
 
 /* Responsive design start */
 @media screen and (max-width: 990px) {
@@ -68,18 +83,3 @@ footer {
   .footer-about-project {
     margin-top: 30px;
   }
-=======
-.footer-content .pages-menu a {
-  position: relative;
-}
-.footer-content .pages-menu a:hover::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: var(--footerText);
->>>>>>> a8e26d57acd89e3778c2a71491d547a0362321b6
-}
