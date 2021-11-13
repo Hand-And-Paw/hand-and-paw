@@ -8,11 +8,13 @@ const buildPage = async () => {
   const message = "You haven't added animals for adoption, yet.";
   document.getElementById("menu").appendChild(navbar());
   document.querySelector("footer").appendChild(footer());
+  // show added animals
   const addedAnimals = await getAddedAnimals();
   document
     .querySelector(".my-animals-sort-results")
     .appendChild(animalSearchResults(addedAnimals, message));
-  const cardPhotos = document.querySelectorAll(".card-photo");
+  // append menu
+  const cardPhotos = document.querySelectorAll(".animal");
 
   [...cardPhotos].forEach((card) => {
     document.getElementById("seeker-menu").remove();
