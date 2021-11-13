@@ -9,22 +9,27 @@
 @import url("./blob-shape.css");
 
 /* section 1about adoption  */
-.adoption-image {
-  display: flex;
-  align-content: flex-end;
-  justify-content: flex-end;
-  padding-left: 4em;
+.about-adoption .adoption-article {
+  grid-template-areas:
+    "article image"
+    "article image";
+}
+.adoption-article .article {
+  grid-area: article;
 }
 .adoption-image img {
-  max-width: 520px;
-  max-height: 459px;
-  object-fit: cover;
+  grid-area: image;
+  float: right;
+  width: 80%;
+  height: auto;
+  min-width: 200px;
   border-radius: 5px;
   z-index: 1;
   border: 35px solid var(--secondary1);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow);
 }
+
 /* section 2 stories */
 .stories-container {
   margin: auto;
