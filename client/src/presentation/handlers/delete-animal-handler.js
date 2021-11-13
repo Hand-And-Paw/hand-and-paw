@@ -13,6 +13,7 @@ const deleteAnimalHandler = async (e) => {
   if (e.target.parentElement.classList.contains("search-card-menu")) {
     deleteCard.remove();
   } else {
+    // notification?
     backToSearchResultsHandler();
   }
 };
