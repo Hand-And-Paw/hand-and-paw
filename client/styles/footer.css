@@ -9,7 +9,7 @@ footer {
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   justify-items: center;
-  height: 300px;
+  height: fit-content;
   padding: 4rem 10rem 4rem 10rem;
 }
 
@@ -62,7 +62,8 @@ footer {
 /* Responsive design start */
 @media screen and (max-width: 990px) {
   .footer {
-    height: 100vh;
+    height: fit-content;
+
   }
 
   .footer-content {

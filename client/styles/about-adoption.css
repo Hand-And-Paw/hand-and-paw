@@ -30,7 +30,6 @@
   box-shadow: var(--shadow);
 }
 
-
 .faq-invite {
   font-size: 1.3rem;
   font-weight: 700;
@@ -47,7 +46,6 @@
 }
 .happy-stories {
   background-color: var(--secondary2);
-  
 }
 .story-photo {
   max-width: 300px;
@@ -85,9 +83,8 @@ li {
   list-style: none;
   box-shadow: var(--shadow);
   border-radius: 8px;
-  
 }
-li .question{
+li .question {
   cursor: pointer;
 }
 .nested-list li {
@@ -154,9 +151,4 @@ a:hover {
     padding: 30px;
     text-align: left;
   }
-  /* h2,
-  ul {
-    width: 100vw;
-    padding: 30px;
-  } */
 }

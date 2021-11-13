@@ -31,8 +31,8 @@ navbar {
 
 .header-navbar-wrapper {
   /* The image used */
-  background-image: url("../assets/images/ui/home/figma-images/welcome-bg.png");
-  min-height: 600px;
+  background-image: url("../assets/images/ui/home/figma-images/welcome-bg1.png");
+  /* min-height: 600px; */
   /* Center and scale the image */
   background-position: left top;
   background-repeat: no-repeat;
@@ -131,6 +131,8 @@ hr {
   }
   .call-to-action {
     margin-left: 20px;
-    gap: 20px;
+  }
+
+  .article-image {
   }
 }
