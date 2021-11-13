@@ -5,7 +5,7 @@ const editAnimalProfile = (animalId) => {
   editAnimalProfileBtn.id = "edit-animal";
   editAnimalProfileBtn.className = "edit-animal";
   editAnimalProfileBtn.addEventListener("click", (e) =>
-    window.localStorage.setItem("animalId", e.target.closest(".animal-card").id)
+    window.localStorage.setItem("animalId", e.target.closest(".animal").id)
   );
   editAnimalProfileBtn.addEventListener(
     "click",

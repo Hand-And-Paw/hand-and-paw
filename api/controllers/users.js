@@ -208,7 +208,7 @@ const userRegister = {
 
       const addFavorite = await userManager.addFavorite(userId, animalId);
       if (addFavorite.modifiedCount === 1) {
-        res.status(200).send("animal added successfully");
+        res.status(200).json({ message: "animal added successfully" });
       }
     } catch (error) {
       res.status(500).json({ message: error.message });
@@ -245,7 +245,7 @@ const userRegister = {
 
       const addFavorite = await userManager.removeFavorite(userId, animalId);
       if (addFavorite.modifiedCount === 1) {
-        res.status(200).send("animal removed successfully");
+        res.status(200).json({ message: "animal removed successfully" });
       }
     } catch (error) {
       res.status(500).json({ message: error.message });

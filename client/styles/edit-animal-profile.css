@@ -6,6 +6,7 @@
 @import url("./link-button.css");
 @import url("./call-to-action-buttons.css");
 @import url("./input-select.css");
+@import url("./animal-profile.css");
 
 #update-animal-form .input-select {
   margin: 0;

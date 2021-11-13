@@ -7,9 +7,11 @@ import animalInfo from "../components/shared/animal-info.js";
 import aboutAnimal from "../components/shared/animal-story.js";
 import { backToSearchResultsHandler } from "./back-to-search-results-handler.js";
 import state from "../../data-access/state/state.js";
+import ownerControlMenu from "../components/shared/owner-control-menu.js";
+import seekerControlMenu from "../components/shared/seeker-control-menu.js";
 
 const showAnimalProfile = async (e, id) => {
-  const animalId = !id ? e.target.closest(".animal-card").id : id;
+  const animalId = !id ? e.target.closest(".animal").id : id;
   const animal = await getAnimal(animalId);
   state.userId = animal[0].userId;
   state.animalId = animal[0]._id;
@@ -19,10 +21,17 @@ const showAnimalProfile = async (e, id) => {
   main.innerHTML = "";
   // build profile
   const animalProfile = document.createElement("div");
-  animalProfile.className = "animal-profile-page container";
+  animalProfile.className = "animal animal-profile-page container";
+
   animalProfile.id = animalId;
   // back to search results
-  animalProfile.appendChild(backToSearchResults(backToSearchResultsHandler));
+  animalProfile.appendChild(
+    backToSearchResults(
+      "to-search-results",
+      "Back to search results",
+      backToSearchResultsHandler
+    )
+  );
   // add photo
   animalProfile.appendChild(animalPhoto(animal[0], "animal-photo"));
   // add basic info
@@ -31,6 +40,16 @@ const showAnimalProfile = async (e, id) => {
   animalProfile.appendChild(contactShelter(animal[0]._id));
   // add animal story
   animalProfile.appendChild(aboutAnimal(animal[0], "animal-story"));
+  // append card menu
+  const currentUser = localStorage.getItem("userId");
+  const animalGiver = animal[0].userId;
+  if (currentUser === animalGiver) {
+    animalProfile.appendChild(ownerControlMenu("animal-profile-menu"));
+  } else {
+    animalProfile.appendChild(
+      seekerControlMenu("animal-profile-menu favorites")
+    );
+  }
   // append components to the page
   main.appendChild(animalProfile);
 };
