@@ -109,7 +109,7 @@ navbar {
     display: block;
   }
 
-  .pages-menu {
+  /* .pages-menu {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -156,7 +156,7 @@ navbar {
   }
   .pages-menu-close-line:last-child {
     transform: translateY(-50%) rotate(-45deg);
-  }
+  } */
 }
 
 /* Media end */
