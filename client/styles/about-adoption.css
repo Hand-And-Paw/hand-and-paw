@@ -78,9 +78,11 @@ li {
   list-style: none;
   box-shadow: var(--shadow);
   border-radius: 8px;
+  
+}
+li .question{
   cursor: pointer;
 }
-
 .nested-list li {
   padding: 0.5em;
   margin: 0px;
