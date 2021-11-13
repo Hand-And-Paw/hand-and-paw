@@ -24,9 +24,7 @@ export const animalCard = (animal, className, isFavorite) => {
   // buttons: fave, edit, delete
   const currentUser = localStorage.getItem("userId");
   const animalGiver = userId;
-  if (currentUser === animalGiver) {
-    card.appendChild(ownerControlMenu("search-card-menu"));
-  } else {
+  if (currentUser !== animalGiver) {
     card.appendChild(seekerControlMenu("search-card-menu favorites"));
   }
   return card;
