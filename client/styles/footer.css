@@ -40,3 +40,16 @@ footer {
 .footer-content .contact .github-icon {
   height: 32px;
 }
+.footer-content .pages-menu a {
+  position: relative;
+}
+.footer-content .pages-menu a:hover::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--footerText);
+}
