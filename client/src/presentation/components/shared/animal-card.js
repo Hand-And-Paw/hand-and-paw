@@ -14,7 +14,7 @@ export const animalCard = (animal, className, isFavorite) => {
   const { _id, userId } = animal;
   const card = document.createElement("div");
   card.id = _id;
-  card.className = "animal-card";
+  card.className = "animal";
   card.classList.add(className);
   // create photo div
   card.appendChild(animalPhoto(animal, "card-photo"));

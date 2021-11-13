@@ -67,7 +67,7 @@
   .search-results {
     grid-column-gap: 1rem;
   }
-  .animal-card {
+  .search-result-card {
     max-width: 350px;
     justify-self: center;
   }

@@ -41,6 +41,7 @@ h1 {
   font-size: 2.75rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  color: var(--primary2);
 }
 
 h2 {
