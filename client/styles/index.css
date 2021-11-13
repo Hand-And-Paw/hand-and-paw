@@ -130,6 +130,7 @@ hr {
     display: initial;
   }
   .call-to-action {
-    flex-direction: column;
+    margin-left: 20px;
+    gap: 20px;
   }
 }
