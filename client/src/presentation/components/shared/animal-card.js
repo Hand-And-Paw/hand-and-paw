@@ -26,7 +26,6 @@ export const animalCard = async (animal, className) => {
   const checkFavorite = currentUser[0]?.favorites.some(
     (favoriteId) => favoriteId === _id
   );
-  console.log(checkFavorite);
   card.appendChild(
     seekerControlMenu("search-card-menu favorites", checkFavorite, _id)
   );

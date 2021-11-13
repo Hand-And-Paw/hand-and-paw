@@ -7,8 +7,8 @@ import animalInfo from "../components/shared/animal-info.js";
 import aboutAnimal from "../components/shared/animal-story.js";
 import { backToSearchResultsHandler } from "./back-to-search-results-handler.js";
 import state from "../../data-access/state/state.js";
-import ownerControlMenu from "../components/shared/owner-control-menu.js";
 import seekerControlMenu from "../components/shared/seeker-control-menu.js";
+import { getUser } from "../../data-access/user-access/get-user.js";
 
 const showAnimalProfile = async (e, id) => {
   const animalId = !id ? e.target.closest(".animal").id : id;
@@ -41,15 +41,19 @@ const showAnimalProfile = async (e, id) => {
   // add animal story
   animalProfile.appendChild(aboutAnimal(animal[0], "animal-story"));
   // append card menu
-  const currentUser = localStorage.getItem("userId");
-  const animalGiver = animal[0].userId;
-  if (currentUser === animalGiver) {
-    animalProfile.appendChild(ownerControlMenu("animal-profile-menu"));
-  } else {
-    animalProfile.appendChild(
-      seekerControlMenu("animal-profile-menu favorites")
-    );
-  }
+
+  const currentUser = await getUser(localStorage.getItem("userId"));
+  const checkFavorite = currentUser[0]?.favorites.some(
+    (favoriteId) => favoriteId === state.animalId
+  );
+  animalProfile.appendChild(
+    seekerControlMenu(
+      "animal-profile-menu favorites",
+      checkFavorite,
+      state.animalId
+    )
+  );
+
   // append components to the page
   main.appendChild(animalProfile);
 };
