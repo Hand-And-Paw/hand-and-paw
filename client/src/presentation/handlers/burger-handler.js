@@ -1,11 +1,11 @@
 export const burgerHandler = () => {
   const burgerItem = document.querySelector(".burger");
   const menu = document.querySelector(".pages-menu");
-  const menuItems = document.querySelectorAll("a");
+  const menuItems = document.querySelectorAll(".pages-menu-item");
   menuItems.forEach((menuItem) => {
-    menuItem.addEventListener("click", () =>
-      menu.classList.remove("pages-menu_active")
-    );
+    menuItem.addEventListener("click", () => {
+      menu.classList.remove("pages-menu_active");
+    });
   });
 
   const menuCloseItem = document.querySelector(".pages-menu-close");
