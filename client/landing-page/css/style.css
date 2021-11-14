@@ -614,9 +614,6 @@ body {
 }
 
 @media screen and (max-width: 660px) {
-  .wrapper-intro {
-    grid-template-rows: 150px 300px 200px;
-  }
   .intro_pic {
     padding-bottom: 200px;
   }
@@ -626,11 +623,12 @@ body {
     grid-row-start: 2;
     max-width: 500px;
     font-weight: 500;
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 26px;
+    line-height: 30px;
     color: #1e0b25;
     padding: 15px;
     margin-top: 450px;
+    margin-bottom: 32px;
   }
   .intro_subtitle {
     grid-column-start: 1;
