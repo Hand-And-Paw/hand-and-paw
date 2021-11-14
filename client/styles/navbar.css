@@ -105,9 +105,10 @@ navbar {
 }
 
 /* Media start */
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1325px) {
   .header_burger {
     display: block;
+    grid-area: account;
   }
 
   #top-navbar .pages-menu {
@@ -150,9 +151,7 @@ navbar {
   }
 
   .responsive-menu_active {
-    transform: translateX(0);
-/*     transform: translateX(0);
- */  
+    transform: translateX(0); 
   }
   .responsive-menu-close {
     width: 40px;
