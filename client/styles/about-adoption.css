@@ -129,6 +129,11 @@ a:hover {
 }
 
 /* Responsive design start */
+@media screen and (max-width: 1100px) {
+  .adoption-article .article {
+    width: 500px;
+  }
+}
 
 @media screen and (max-width: 990px) {
   .grid-image-article {
@@ -136,5 +141,8 @@ a:hover {
   }
   .article {
     padding: 30px;
+  }
+  .adoption-article .article {
+    width: auto;
   }
 }
