@@ -7,6 +7,8 @@ import searchMenu from "../components/shared/animal-search-menu.js";
 import searchResults from "../components/shared/search-results-section.js";
 
 export const backToSearchResultsHandler = async () => {
+  const message =
+    "Sorry, there are no matches for your request today. Try to change your request or come back tomorrow!";
   if (Object.keys(state.filterParameters).length === 0) {
     const main = document.getElementById("main-container");
     main.innerHTML = "";
@@ -16,7 +18,7 @@ export const backToSearchResultsHandler = async () => {
     const animals = await getAnimals(state.filterParameters);
     const animalList = document.getElementById("animals-list");
     animalList.innerHTML = "";
-    animalList.appendChild(animalSearchResults(animals));
+    animalList.appendChild(await animalSearchResults(animals, message));
     return;
   }
   const main = document.getElementById("main-container");
@@ -27,5 +29,5 @@ export const backToSearchResultsHandler = async () => {
   const filter = await filterAnimals(state.filterParameters);
   const animalList = document.getElementById("animals-list");
   animalList.innerHTML = "";
-  animalList.appendChild(animalSearchResults(filter));
+  animalList.appendChild(await animalSearchResults(filter));
 };

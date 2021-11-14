@@ -46,13 +46,18 @@ const showAnimalProfile = async (e, id) => {
   const checkFavorite = currentUser[0]?.favorites.some(
     (favoriteId) => favoriteId === state.animalId
   );
-  animalProfile.appendChild(
-    seekerControlMenu(
-      "animal-profile-menu favorites",
-      checkFavorite,
-      state.animalId
-    )
+  const belongsToUser = currentUser[0]?.registeredAnimals.some(
+    (addedAnimalId) => addedAnimalId === state.animalId
   );
+  if (!belongsToUser) {
+    animalProfile.appendChild(
+      seekerControlMenu(
+        "animal-profile-menu favorites",
+        checkFavorite,
+        state.animalId
+      )
+    );
+  }
 
   // append components to the page
   main.appendChild(animalProfile);
