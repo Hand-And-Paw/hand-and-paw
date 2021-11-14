@@ -31,7 +31,7 @@ export const animalCard = async (animal, className) => {
   );
   if (belongsToUser) return card;
   card.appendChild(
-    seekerControlMenu("search-card-menu favorites", checkFavorite, _id)
+    seekerControlMenu("search-card-menu favorites", checkFavorite)
   );
   return card;
 };
