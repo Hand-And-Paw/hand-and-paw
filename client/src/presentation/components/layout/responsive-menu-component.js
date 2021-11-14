@@ -6,6 +6,33 @@ const responsiveMenuComponent = (props) => {
 const responsiveMenu = document.createElement("div");
 responsiveMenu.classList.add('responsive-menu');
 
+// Find animal
+const findAnimalDiv = document.createElement("div");
+findAnimalDiv.className="responsive-menu-item";
+const findAnimalAnchor = document.createElement("a");
+findAnimalAnchor.href = "/src/presentation/components/pages/find-animal.html";
+findAnimalAnchor.innerHTML = "Find an animal";
+findAnimalDiv.appendChild(findAnimalAnchor);
+responsiveMenu.appendChild(findAnimalDiv);
+// Register animal
+const registerAnimalDiv = document.createElement("div");
+registerAnimalDiv.className="responsive-menu-item";
+const registerAnimalAnchor = document.createElement("a");
+registerAnimalAnchor.id = "register-animal-navBar";
+registerAnimalAnchor.href =
+  "/src/presentation/components/pages/add-animal.html";
+registerAnimalAnchor.innerHTML = "Register an animal";
+registerAnimalDiv.appendChild(registerAnimalAnchor);
+responsiveMenu.appendChild(registerAnimalDiv);
+// About adoption
+const aboutAdoptionDiv = document.createElement("div");
+const aboutAdoptionAnchor = document.createElement("a");
+aboutAdoptionAnchor.href =
+    "/src/presentation/components/pages/about-adoption.html";
+aboutAdoptionAnchor.innerHTML = "About adoption";
+aboutAdoptionDiv.appendChild(aboutAdoptionAnchor);
+responsiveMenu.appendChild(aboutAdoptionDiv);
+
 const responsiveMenuClose = document.createElement("div");
 responsiveMenuClose.classList.add('responsive-menu-close');
 responsiveMenuClose.innerHTML = `
