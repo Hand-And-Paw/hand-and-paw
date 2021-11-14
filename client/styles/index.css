@@ -19,10 +19,10 @@
     "space call-to-action";
 }
 .welcome-container .call-to-action {
-  width: 70%;
   margin-top: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  gap: 32px;
 }
 
 navbar {
@@ -48,12 +48,7 @@ hr {
   margin-top: 15px;
   border: 2px solid var(--primary2);
 }
-/* 
-.welcome-article {
-  background-color: cadetblue;
-  display: grid;
-  grid-template-rows: auto;
-} */
+
 .welcome-image {
   display: flex;
   align-content: flex-start;
@@ -70,7 +65,8 @@ hr {
 }
 
 .call-to-action {
-  grid-area: call-to-action;
+  width: 100%;
+
   float: left;
 }
 /* 1 section why adoption is important */
