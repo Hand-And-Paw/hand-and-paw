@@ -30,7 +30,6 @@
   box-shadow: var(--shadow);
 }
 
-
 .faq-invite {
   font-size: 1.3rem;
   font-weight: 700;
@@ -47,7 +46,6 @@
 }
 .happy-stories {
   background-color: var(--secondary2);
-  
 }
 .story-photo {
   max-width: 300px;
@@ -85,9 +83,8 @@ li {
   list-style: none;
   box-shadow: var(--shadow);
   border-radius: 8px;
-  
 }
-li .question{
+li .question {
   cursor: pointer;
 }
 .nested-list li {
@@ -130,13 +127,14 @@ a:hover {
   cursor: pointer;
   border-bottom: 3px solid var(--primary2);
 }
+
 /* Responsive design start */
+
 @media screen and (max-width: 990px) {
-  .stories-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
+  .grid-image-article {
+    display: inline-block;
+  }
+  .article {
+    padding: 30px;
   }
 }
