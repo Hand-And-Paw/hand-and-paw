@@ -30,6 +30,7 @@ const databaseAccess = {
           location: newData.location,
           phone: newData.phone,
           email: newData.email,
+          website: newData.website,
           avatar: userAvatar,
           updateDate: Date.now(),
           publicAccess: {
