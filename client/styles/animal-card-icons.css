@@ -1,12 +1,13 @@
 .search-card-menu {
   position: absolute;
-  display: inline-block;
+  display: flex;
   flex-direction: column;
   top: 20px;
   right: 10px;
   z-index: 10;
-  /* background-color: rgba(253, 241, 255, 0.6); */
+  background-color: rgba(253, 241, 255, 0.6);
 }
+
 .favorites {
   background-color: transparent;
 }
@@ -14,6 +15,7 @@
 #delete-animal,
 #edit-animal,
 #favorite-animal {
+  width: auto;
   margin: 0.6rem;
   transition: transform 0.2s;
 }

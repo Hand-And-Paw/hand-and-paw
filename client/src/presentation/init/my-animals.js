@@ -12,14 +12,8 @@ const buildPage = async () => {
   const addedAnimals = await getAddedAnimals();
   document
     .querySelector(".my-animals-sort-results")
-<<<<<<< HEAD
-    .appendChild(animalSearchResults(addedAnimals, message));
-  // append menu
-  const cardPhotos = document.querySelectorAll(".animal");
-=======
     .appendChild(await animalSearchResults(addedAnimals, message));
   const cardPhotos = document.querySelectorAll(".card-photo");
->>>>>>> 0905e2a8ada0f3724e280a6f919e925a174f13a6
 
   [...cardPhotos].forEach((card) => {
     document.getElementById("seeker-menu").remove();
