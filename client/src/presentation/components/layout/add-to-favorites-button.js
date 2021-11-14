@@ -5,10 +5,11 @@ const addToFavoritesBtn = (isFavorite) => {
   addToFavorites.id = "heart";
   addToFavorites.src = "/assets/icons/red_heart.svg";
   if (isFavorite) {
-    addToFavorites.className = "active";
+    addToFavorites.classList.add("active");
   }
   addToFavorites.id = "favorite-animal";
-  addToFavorites.className = "favorite-animal";
+  addToFavorites.classList.add("favorite-animal");
+  // store the id
   addToFavorites.addEventListener("click", addToFavoritesHandler);
   return addToFavorites;
 };

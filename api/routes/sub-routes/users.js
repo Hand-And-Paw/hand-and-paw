@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 
 const upload = require("../../middleware/multer-upload-avatar");
-const userRegisterController = require("../../controllers/users");
+const userController = require("../../controllers/users");
 const tokenChecker = require("../../middleware/token-login");
 
 const uploadAvatarPath = path.join(
@@ -16,30 +16,25 @@ const uploadAvatarPath = path.join(
   "avatar-uploads"
 );
 
-const userRegister = express.Router();
+const userRoute = express.Router();
 
-userRegister.post(
-  "/register",
-  upload.single(""),
-  userRegisterController.postUser
-);
+userRoute.post("/register", upload.single(""), userController.postUser);
 
-userRegister.use((req, res, next) => {
+userRoute.use((req, res, next) => {
   tokenChecker(req, res, next);
 });
 
-userRegister.use("/uploads", express.static(uploadAvatarPath));
-userRegister.get("/", userRegisterController.getAllUsers);
-userRegister.patch(
-  "/delete-animal/:id",
-  userRegisterController.deletePublishedAnimal
-);
-userRegister.get("/:id", userRegisterController.getUser);
-userRegister.put(
+userRoute.use("/uploads", express.static(uploadAvatarPath));
+userRoute.get("/", userController.getAllUsers);
+userRoute.patch("/delete-animal/:id", userController.deletePublishedAnimal);
+userRoute.get("/:id", userController.getUser);
+userRoute.put(
   "/update/:id",
   upload.single("avatar"),
-  userRegisterController.updateUser
+  userController.updateUser
 );
-userRegister.delete("/delete/:id", userRegisterController.deleteUser);
+userRoute.delete("/delete/:id", userController.deleteUser);
+userRoute.patch("/add-favorite/:id", userController.addFavorite);
+userRoute.patch("/remove-favorite/:id", userController.removeFavorite);
 
-module.exports = userRegister;
+module.exports = userRoute;

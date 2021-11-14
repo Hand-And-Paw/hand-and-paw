@@ -38,12 +38,13 @@ export const filterAnimalsHandler = async (event) => {
     const animals = await getAnimals(parametersObj);
     const animalList = document.getElementById("animals-list");
     animalList.innerHTML = "";
-    animalList.appendChild(animalSearchResults(animals));
+    animalList.appendChild(await animalSearchResults(animals));
     return;
   }
   state.filterParameters = parametersObj;
   const filter = await filterAnimals(parametersObj);
   const animalList = document.getElementById("animals-list");
   animalList.innerHTML = "";
-  animalList.appendChild(animalSearchResults(filter, noAnimalsMessage));
+
+  animalList.appendChild(await animalSearchResults(filter, noAnimalsMessage));
 };

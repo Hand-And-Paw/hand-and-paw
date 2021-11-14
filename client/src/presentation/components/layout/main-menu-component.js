@@ -10,6 +10,7 @@ const mainMenuComponent = (props) => {
   mainMenu.className = className;
   // find animal
   const findAnimalDiv = document.createElement("div");
+  findAnimalDiv.className="pages-menu-item"
   const findAnimalAnchor = document.createElement("a");
   findAnimalAnchor.href = "/src/presentation/components/pages/find-animal.html";
   findAnimalAnchor.innerHTML = "Find an animal";
