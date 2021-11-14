@@ -3,6 +3,7 @@
 @import url("./footer.css");
 @import url("./regular-button.css");
 @import url("./animal-card-icons.css");
+@import url("./link-button.css");
 
 :root {
   --primary1: #fcc521;
@@ -11,6 +12,7 @@
   --primaryHover2: #63197d;
   --secondary1: #fdf1ff;
   --secondary2: #f3f3f3;
+  --footerText: #fff8dc;
   --mainText: #0b040e;
   --regularBtn: #f5d7ff;
   --linkBtn: #006def;
@@ -41,6 +43,7 @@ h1 {
   font-size: 2.75rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  color: var(--primary2);
 }
 
 h2 {
@@ -73,7 +76,7 @@ h4 {
   display: grid;
   column-gap: 3rem;
   /* gap: 30px; */
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
 }
 
 .menu {
