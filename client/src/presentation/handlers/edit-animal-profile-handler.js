@@ -1,14 +1,18 @@
+/* eslint-disable no-continue */
+/* eslint-disable no-use-before-define */
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { updateAnimal } from "../../data-access/animal-access/update-animal.js";
 import createModal from "../components/shared/modal.js";
 import goToAnimalProfile from "./go-to-animal-profile-handler.js";
+import { getAnimal } from "../../data-access/animal-access/get-animal.js";
+// import { showAnimalImage } from "./show-animal-image.js";
 
 export const editAnimalProfileHandler = async (event) => {
   event.preventDefault();
   const form = document.getElementById("update-animal-form");
   const animalId = window.localStorage.getItem("animalId");
-  const formData = new FormData(form);
 
+  const formData = new FormData(form);
   formData.append("id", animalId);
   formData.append("userId", window.localStorage.getItem("userId"));
 
