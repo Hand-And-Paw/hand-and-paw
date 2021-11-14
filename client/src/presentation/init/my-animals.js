@@ -9,6 +9,7 @@ const buildPage = async () => {
   document.getElementById("menu").appendChild(navbar());
   document.querySelector("footer").appendChild(footer());
   // show added animals
+
   const addedAnimals = await getAddedAnimals();
   document
     .querySelector(".my-animals-sort-results")
@@ -17,7 +18,6 @@ const buildPage = async () => {
   const cardPhotos = document.querySelectorAll(".card-photo");
 
   [...cardPhotos].forEach((card) => {
-    document.getElementById("seeker-menu").remove();
     card.appendChild(ownerControlMenu("search-card-menu"));
   });
 };
