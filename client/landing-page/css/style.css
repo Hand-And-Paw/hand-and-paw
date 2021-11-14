@@ -460,7 +460,7 @@ body {
     transform: translateX(100%);
     transition: 0.2s all linear;
   }
-  .header_nav_active, .pages-menu_active {
+  .header_nav_active, .responsive-menu_active {
     transform: translateX(0);
   }
   .header_item {

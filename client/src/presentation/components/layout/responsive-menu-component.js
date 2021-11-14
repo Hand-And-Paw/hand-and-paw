@@ -1,8 +1,21 @@
-import openModal from "../../handlers/call-login-form.js";
+/* import openModal from "../../handlers/call-login-form.js";
 import { loginForm } from "../shared/login-form.js";
-
+ */
 const responsiveMenuComponent = (props) => {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
+const responsiveMenu = document.createElement("div");
+responsiveMenu.classList.add('responsive-menu');
+
+const responsiveMenuClose = document.createElement("div");
+responsiveMenuClose.classList.add('responsive-menu-close');
+responsiveMenuClose.innerHTML = `
+  <span class="pages-menu-close-line"></span>
+  <span class="pages-menu-close-line"></span>
+`;
+
+responsiveMenu.appendChild(responsiveMenuClose);
+
+/* 
   // Init properties
   let className = props?.className || "pages-menu";
   // Create component
@@ -47,8 +60,8 @@ const responsiveMenuComponent = (props) => {
   aboutAdoptionAnchor.innerHTML = "About adoption";
   aboutAdoptionDiv.appendChild(aboutAdoptionAnchor);
   mainMenu.appendChild(aboutAdoptionDiv);
-
-  return mainMenu;
+ */
+  return responsiveMenu;
 };
 
 export default responsiveMenuComponent;

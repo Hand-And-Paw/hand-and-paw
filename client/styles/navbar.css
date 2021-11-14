@@ -136,7 +136,7 @@ navbar {
     transition: 0.2s all linear;
   }
 
-  .pages-menu_active {
+  .responsive-menu_active {
     transform: translateX(0);
   }
   a {
@@ -148,7 +148,7 @@ navbar {
     margin-bottom: 0;
   }
 
-  .pages-menu-close {
+  .responsive-menu-close {
     width: 40px;
     height: 40px;
     position: absolute;
