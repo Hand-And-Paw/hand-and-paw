@@ -27,16 +27,18 @@
 
 .animal-profile-page .animal-photo {
   grid-area: p;
+  box-shadow: var(--shadow);
+  height: 400px;
+  background-color: var(--secondary1);
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .animal-profile-page .animal-photo img {
-  object-fit: cover;
   border-radius: 5px;
-  box-shadow: var(--shadow);
-  /* height: 400px; */
-  width: 100%;
-  max-height: 400px;
+  max-height: fit-content;
+  height: 400px;
   object-fit: cover;
-  justify-self: center;
 }
 .animal-profile-page .animal-info {
   grid-area: i;
