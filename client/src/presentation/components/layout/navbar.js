@@ -28,11 +28,10 @@ export const navbar = () => {
     const profileDropDownMenu = createProfileDropDownMenu();
     logoutMenu.appendChild(profileDropDownMenu);
     navbarEl.appendChild(logoutMenu);
-    navbarEl.appendChild(burgerComponent());
   } else {
     const loginSignupMenu = createLoginSignupMenu();
     navbarEl.appendChild(loginSignupMenu);
-    navbarEl.appendChild(burgerComponent());
   }
+  navbarEl.appendChild(burgerComponent());
   return navbarEl;
 };
