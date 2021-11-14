@@ -82,6 +82,10 @@ navbar {
   cursor: pointer;
 }
 
+.responsive-menu {
+  display: none;
+}
+
 .burger_line {
   display: block;
   width: 100%;
@@ -138,6 +142,7 @@ navbar {
   }
 
   .responsive-menu {
+    display: block;
     width: 100%;
     height: 100%;
     position: fixed;
