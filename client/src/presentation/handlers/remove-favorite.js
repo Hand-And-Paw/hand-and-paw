@@ -1,7 +1,6 @@
 import { removeFavorite } from "../../data-access/user-access/remove-favorite.js";
 
 const removeFavoriteHandler = async (e) => {
-  debugger;
   e.stopPropagation();
   // get current user id
   const currentUser = localStorage.getItem("userId");
