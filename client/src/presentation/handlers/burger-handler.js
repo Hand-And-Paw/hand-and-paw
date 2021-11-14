@@ -1,18 +1,19 @@
 export const burgerHandler = () => {
-  const burgerItem = document.querySelector(".burger");
-  const menu = document.querySelector(".pages-menu");
-  const menuItems = document.querySelectorAll(".pages-menu-item");
+  const menu = document.querySelector(".responsive-menu");
+  const menuItems = document.querySelectorAll(".responsive-menu-item");
   menuItems.forEach((menuItem) => {
     menuItem.addEventListener("click", () => {
-      menu.classList.remove("pages-menu_active");
+      menu.classList.remove("responsive-menu_active");
     });
   });
 
-  const menuCloseItem = document.querySelector(".pages-menu-close");
+  const burgerItem = document.querySelector(".burger");
   burgerItem.addEventListener("click", () => {
-    menu.classList.add("pages-menu_active");
+    menu.classList.add("responsive-menu_active");
   });
+
+  const menuCloseItem = document.querySelector(".responsive-menu-close");
   menuCloseItem.addEventListener("click", () => {
-    menu.classList.remove("pages-menu_active");
-  });
+    menu.classList.remove("responsive-menu_active");
+  });  
 };

@@ -58,6 +58,7 @@ hr {
   left: 0;
 }
 .welcome-image-dog {
+  object-fit: contain;
   margin: 0.6rem;
   position: relative;
   top: 10px;
@@ -106,7 +107,7 @@ hr {
 
 /* Responsive design start */
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1325px) {
   .welcome-container {
     display: block;
   }

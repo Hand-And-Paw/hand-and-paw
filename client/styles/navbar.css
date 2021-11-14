@@ -82,6 +82,10 @@ navbar {
   cursor: pointer;
 }
 
+.responsive-menu {
+  display: none;
+}
+
 .burger_line {
   display: block;
   width: 100%;
@@ -105,9 +109,10 @@ navbar {
 }
 
 /* Media start */
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1325px) {
   .header_burger {
     display: block;
+    grid-area: account;
   }
 
   #top-navbar .pages-menu {
@@ -136,7 +141,8 @@ navbar {
     transition: 0.2s all linear;
   }
 
-  .account-menu #account-menu-btn {
+  .responsive-menu {
+    display: block;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -149,19 +155,10 @@ navbar {
     transition: 0.2s all linear;
   }
 
-  .pages-menu_active {
-    transform: translateX(0);
+  .responsive-menu_active {
+    transform: translateX(0); 
   }
-  a {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
-  a:last-child {
-    margin-bottom: 0;
-  }
-
-  .pages-menu-close {
+  .responsive-menu-close {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -185,6 +182,16 @@ navbar {
   .pages-menu-close-line:last-child {
     transform: translateY(-50%) rotate(-45deg);
   }
+
+  a {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  a:last-child {
+    margin-bottom: 0;
+  }
+
 }
 
 /* Media end */
