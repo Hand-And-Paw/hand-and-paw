@@ -6,11 +6,11 @@ import addToFavoritesBtn from "../layout/add-to-favorites-button.js";
  * @returns div with buttons for seeker user
  */
 
-const seekerControlMenu = (className, isFavorite) => {
+const seekerControlMenu = (className, isFavorite, animalId) => {
   const menu = document.createElement("div");
   menu.id = "seeker-menu";
   menu.className = className;
-  menu.appendChild(addToFavoritesBtn(isFavorite));
+  menu.appendChild(addToFavoritesBtn(isFavorite, animalId));
 
   return menu;
 };

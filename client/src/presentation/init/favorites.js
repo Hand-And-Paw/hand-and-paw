@@ -12,7 +12,9 @@ const buildPage = async () => {
   const addedAnimals = await getFavoritesAnimals();
   const animalSortResults = document.querySelector(".favorites-sort-results");
 
-  animalSortResults.appendChild(animalSearchResults(addedAnimals, message));
+  animalSortResults.appendChild(
+    await animalSearchResults(addedAnimals, message)
+  );
 
   const cardPhotos = document.querySelectorAll(".card-photo");
 
