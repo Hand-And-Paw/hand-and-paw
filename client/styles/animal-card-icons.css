@@ -2,20 +2,31 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  bottom: 20px;
+  top: 20px;
   right: 10px;
   z-index: 10;
-  /* background-color: rgba(253, 241, 255, 0.6); */
+  background-color: rgba(253, 241, 255, 0.7);
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: auto;
+  padding: 0.4rem;
+  gap: 6px;
 }
-.favorites {
-  background-color: transparent;
+
+#delete-animal,
+#edit-animal {
+  width: 40px;
+  height: auto;
+  margin: 0.4rem 0;
 }
 
 #delete-animal,
 #edit-animal,
 #favorite-animal {
   /* width: 30px; */
-  margin: 0.6rem;
+
   transition: transform 0.2s;
 }
 
@@ -30,6 +41,6 @@
 #delete-animal:hover,
 #edit-animal:hover,
 #favorite-animal:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   cursor: pointer;
 }
