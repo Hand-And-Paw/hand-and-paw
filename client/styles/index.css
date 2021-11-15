@@ -133,8 +133,7 @@ hr {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-    height: 200px;
     justify-content: flex-start;
-    max-width: 0px;
+    justify-content: space-evenly;
   }
 }
