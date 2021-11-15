@@ -1,3 +1,7 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-use-before-define */
+/* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { updateUser } from "../../data-access/user-access/update-user.js";
 
 export const updateUserHandler = async () => {
@@ -21,11 +25,11 @@ export const updateUserHandler = async () => {
       form.reset();
       return;
     }
-    renderFailedSpan();
+    renderFailedSpan(post);
     setTimeout(clearFailedSpan, 1000);
   }
 };
-////////// helper functions //////////////////////
+/// /////// helper functions //////////////////////
 function renderSuccessfullySpan() {
   const form = document.querySelector("#edit-user-profile");
   const isSpan = document.getElementById("update-account-result-text");
@@ -46,7 +50,7 @@ function renderSuccessfullySpan() {
   form.appendChild(span);
 }
 
-function renderFailedSpan() {
+function renderFailedSpan(post) {
   const form = document.querySelector("#edit-user-profile");
   const span = document.createElement("span");
   const br = document.createElement("br");
@@ -103,7 +107,7 @@ function validateForm() {
 }
 
 const checkPhoneNumber = (input) => {
-  const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  const re = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
   if (re.test(input.value.trim())) {
     return true;
   }
@@ -119,6 +123,7 @@ const checkPhoneNumber = (input) => {
 
 const checkUrl = (input) => {
   const re =
+    // eslint-disable-next-line no-useless-escape
     /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/gm;
   if (re.test(input.value.trim())) {
     return true;
