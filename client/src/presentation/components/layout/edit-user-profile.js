@@ -14,7 +14,7 @@ export const editUserProfile = () => {
   form.className = "edit-user-profile-class";
 
   form.appendChild(createInput("text", "name", "Name"));
-  form.appendChild(createInput("number", "phone", "Phone"));
+  form.appendChild(createInput("tel", "phone", "Phone"));
   form.appendChild(createInput("text", "location", "Location"));
   form.appendChild(createInput("text", "website", "Website"));
   form.appendChild(
@@ -92,8 +92,13 @@ function createInput(type, name, nameLabel) {
   const label = document.createElement("label");
   label.htmlFor = inputEl.id;
   label.innerHTML = nameLabel;
+  const br = document.createElement("br");
+  const small = document.createElement("small");
+  small.id = `${name}-small-edit-profile-form`;
   containerEl.appendChild(label);
   containerEl.appendChild(inputEl);
+  containerEl.appendChild(br);
+  containerEl.appendChild(small);
 
   return containerEl;
 }

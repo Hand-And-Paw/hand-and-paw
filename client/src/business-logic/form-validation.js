@@ -28,6 +28,25 @@ const checkEmail = (input) => {
   return false;
 };
 
+const checkPhoneNumber = (input) => {
+  const re =
+    /^(\+{1}\d{2,3}\s?[(]{1}\d{1,3}[)]{1}\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}$/;
+  if (re.test(input.value.trim())) {
+    showSuccess(input);
+    return true;
+  }
+  showError(input, "Email is not valid.");
+  return false;
+};
+
+const checkUrl = (string) => {
+  try {
+    return Boolean(new URL(string));
+  } catch (e) {
+    return false;
+  }
+};
+
 // check required fields
 
 const checkRequired = (inputArr) => {
@@ -91,4 +110,6 @@ export {
   checkRequired,
   showError,
   checkEmailMatch,
+  checkPhoneNumber,
+  checkUrl,
 };
