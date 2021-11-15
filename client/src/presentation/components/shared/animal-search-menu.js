@@ -82,7 +82,7 @@ const searchMenu = () => {
   submitBtn.type = "submit";
   submitBtn.id = "submit-animal-search-form";
   submitBtn.className = "button regular-button";
-  submitBtn.innerHTML = " Apply";
+  submitBtn.innerHTML = "Search";
   submitBtn.addEventListener("click", filterAnimalsHandler);
   searchContainer.appendChild(submitBtn);
   // section appends container
