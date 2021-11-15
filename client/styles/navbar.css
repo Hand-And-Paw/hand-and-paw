@@ -126,6 +126,7 @@ navbar {
     padding: 75px;
     transform: translateX(100%);
     transition: 0.2s all linear;
+    z-index: 100;
   }
 
   #account-menu.account-menu {
@@ -156,7 +157,7 @@ navbar {
   }
 
   .responsive-menu_active {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
   .responsive-menu-close {
     width: 40px;
@@ -191,7 +192,6 @@ navbar {
   a:last-child {
     margin-bottom: 0;
   }
-
 }
 
 /* Media end */

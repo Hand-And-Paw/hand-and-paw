@@ -6,7 +6,6 @@ const addToFavoritesHandler = async (event) => {
   const { target } = event;
   const userId = localStorage.getItem("userId");
   const animalId = event.target.closest(".animal").id;
-
   target.classList.toggle("active");
   if ([...target.classList].includes("active")) {
     await addFavorite(userId, animalId);
