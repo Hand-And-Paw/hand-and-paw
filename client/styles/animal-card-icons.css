@@ -31,16 +31,16 @@
 }
 
 #favorite-animal {
-  opacity: 0.6;
+  position: relative;
 }
 
 .active {
-  opacity: 1 !important;
+  background-color: chartreuse;
 }
 
 #delete-animal:hover,
 #edit-animal:hover,
 #favorite-animal:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   cursor: pointer;
 }

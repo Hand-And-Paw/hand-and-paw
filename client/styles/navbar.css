@@ -134,6 +134,7 @@ navbar {
     padding: 75px;
     transform: translateX(100%);
     transition: 0.2s all linear;
+    z-index: 100;
   }
 
   #account-menu.account-menu {
