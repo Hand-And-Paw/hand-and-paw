@@ -15,7 +15,7 @@ const userRegister = {
       const users = await userManager.getAllUsers();
       res.status(200).send(users);
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: `${error.code} ${error.message}` });
     }
   },
   getUser: async (req, res) => {
@@ -101,12 +101,12 @@ const userRegister = {
     try {
       const { id } = req.params;
       if ([...id].length !== 24) {
-        throw new Error(`invalid id`);
+        throw new CustomError(`invalid id`, "ValidationError", "VE001");
       }
       const userDeleted = await userManager.removeUser(id);
       res.status(200).send(userDeleted);
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: `${error.code} ${error.message}` });
     }
   },
   postUser: async (req, res) => {
@@ -151,7 +151,7 @@ const userRegister = {
       const userId = req.params.id;
       const { animalId } = req.body;
       if ([...userId].length !== 24 || [...animalId].length !== 24) {
-        throw new Error(`invalid id`);
+        throw new CustomError(`invalid id`, "ValidationError", "VE001");
       }
 
       const user = await userManager.getUser(userId);
@@ -164,8 +164,10 @@ const userRegister = {
       }
 
       if (user[0].registeredAnimals.length === 0) {
-        throw new Error(
-          `Cannot delete animal, the user do not have registered Animals`
+        throw new CustomError(
+          `Cannot delete animal, the user do not have registered Animals`,
+          "ValidationError",
+          "VE008"
         );
       }
 
@@ -174,15 +176,17 @@ const userRegister = {
       );
 
       if (!matchAnimal) {
-        throw new Error(
-          `The animal was not registered by user with the id: ${userId}`
+        throw new CustomError(
+          `The animal was not registered by user with the id: ${userId}`,
+          "ValidationError",
+          "VE009"
         );
       }
 
       const animal = await animalManager.getAnimal(animalId);
       if (animal.length === 0) {
         throw new CustomError(
-          `Cannot delete animal user doesn't exist`,
+          `Cannot delete animal id doesn't exist`,
           "ValidationError",
           "VE007"
         );
@@ -206,12 +210,16 @@ const userRegister = {
       const userId = req.params.id;
       const { animalId } = req.body;
       if ([...userId].length !== 24 || [...animalId].length !== 24) {
-        throw new Error(`invalid id`);
+        throw new CustomError(`invalid id`, "ValidationError", "VE001");
       }
 
       const user = await userManager.getUser(userId);
       if (user.length === 0) {
-        throw new Error(`Cannot add animal user doesn't exist`);
+        throw new CustomError(
+          `Cannot add animal user doesn't exist`,
+          "NotFoundError",
+          "NF001"
+        );
       }
 
       if (user[0].registeredAnimals.length === 0) {
@@ -235,7 +243,7 @@ const userRegister = {
         res.status(200).json({ message: "animal added successfully" });
       }
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(401).json({ message: `${error.code} ${error.message}` });
     }
   },
   removeFavorite: async (req, res) => {
@@ -243,17 +251,23 @@ const userRegister = {
       const userId = req.params.id;
       const { animalId } = req.body;
       if ([...userId].length !== 24 || [...animalId].length !== 24) {
-        throw new Error(`invalid id`);
+        throw new CustomError(`invalid id`, "ValidationError", "VE001");
       }
 
       const user = await userManager.getUser(userId);
       if (user.length === 0) {
-        throw new Error(`Cannot remove favorite user doesn't exist`);
+        throw new CustomError(
+          `Cannot remove animal user doesn't exist`,
+          "NotFoundError",
+          "NF001"
+        );
       }
 
       if (user[0].registeredAnimals.length === 0) {
-        throw new Error(
-          `Cannot remove favorite, the user don't have registered Animals`
+        throw new CustomError(
+          `Cannot add animal, the user do not have registered Animals`,
+          "ValidationError",
+          "VE0010"
         );
       }
 
@@ -262,8 +276,10 @@ const userRegister = {
       );
 
       if (!matchAnimal) {
-        throw new Error(
-          `the animal cannot be removed, user don't have it in favorites collection`
+        throw new CustomError(
+          `the animal cannot be removed, not found in user's collection`,
+          "ValidationError",
+          "NF002"
         );
       }
 
@@ -272,7 +288,7 @@ const userRegister = {
         res.status(200).json({ message: "animal removed successfully" });
       }
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: `${error.code} ${error.message}` });
     }
   },
 };
