@@ -51,7 +51,7 @@ export const editUserProfile = () => {
 
   // Update account button
   const updateButton = button(
-    "edit-button",
+    "update-account button regular-button",
     "Update account",
     updateUserHandler
   );
@@ -86,6 +86,7 @@ function container(className) {
 function createInput(type, name, nameLabel) {
   const containerEl = container("input-form");
   const inputEl = document.createElement("input");
+  inputEl.className = "input-select";
   inputEl.type = type;
   inputEl.name = name;
   inputEl.id = `${name}-input`;

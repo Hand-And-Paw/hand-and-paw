@@ -6,6 +6,7 @@
 @import url("./link-button.css");
 @import url("./call-to-action-buttons.css");
 @import url("./input-select.css");
+@import url("./regular-button.css");
 
 #edit-account-main-title {
   text-align: center;
@@ -14,6 +15,10 @@
 /* user profile form */
 #edit-user-profile {
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
 #edit-user-profile .input-form {
@@ -26,12 +31,19 @@
 
 .edit-button {
   display: block;
-  border-color: black;
   margin: 20px auto;
   width: 50%;
   height: 50px;
   text-align: center;
-  background-color: rgb(162, 162, 173);
+  background-color: var(--primary2);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.update-account {
+  margin: auto;
+  align-self: center;
+  justify-self: center;
 }
 
 #edit-user-profile p {
