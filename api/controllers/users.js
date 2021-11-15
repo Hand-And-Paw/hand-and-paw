@@ -60,8 +60,6 @@ const userRegister = {
           newData.password = newPassword;
         }
       }
-
-      console.log(newData.email);
       // check if user update the email
       if (newData.email !== newData.repeatEmail) {
         throw new CustomError("Emails do not match!", "VE004");
@@ -222,9 +220,15 @@ const userRegister = {
         );
       }
 
-      if (user[0].registeredAnimals.length === 0) {
-        throw new Error(
-          `Cannot add animal, the user don't have registered Animals`
+      const checkFavoriteAnimal = user[0].favorites.some(
+        (element) => element === animalId
+      );
+
+      if (checkFavoriteAnimal) {
+        throw new CustomError(
+          `Cannot add animal already exist as favorite`,
+          "NotFoundError",
+          "VE006"
         );
       }
 
@@ -233,8 +237,10 @@ const userRegister = {
       );
 
       if (matchAnimal) {
-        throw new Error(
-          `the animal cannot be added as favorite, belong to your animals`
+        throw new CustomError(
+          `the animal cannot be added as favorite, belong to your animals`,
+          "NotFoundError",
+          "VE006"
         );
       }
 
@@ -263,9 +269,9 @@ const userRegister = {
         );
       }
 
-      if (user[0].registeredAnimals.length === 0) {
+      if (user[0].favorites.length === 0) {
         throw new CustomError(
-          `Cannot add animal, the user do not have registered Animals`,
+          `Cannot remove favorite animal, the user do not have registered Animals`,
           "ValidationError",
           "VE0010"
         );
