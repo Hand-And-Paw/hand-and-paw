@@ -3,7 +3,6 @@
  * @param {string} className info div class name
  * @returns div with animal's brief info
  */
-
 const animalInfo = (animal, className) => {
   const { type, breed, gender, character, age, location, province } = animal;
   const info = document.createElement("div");
@@ -23,5 +22,4 @@ const animalInfo = (animal, className) => {
     `;
   return info;
 };
-
 export default animalInfo;
