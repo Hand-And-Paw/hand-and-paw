@@ -2,25 +2,34 @@ import { updateUser } from "../../data-access/user-access/update-user.js";
 
 export const updateUserHandler = async () => {
   const form = document.querySelector("#edit-user-profile");
-  const formData = new FormData(form);
-  const userId = window.localStorage.getItem("userId");
-  formData.append("id", window.localStorage.getItem("userId"));
+  debugger;
+  // let isValidated;
+  // if (isValidated === false) {
+  //   isValidated = undefined;
+  // }
+  const isValidated = validateForm();
 
-  const post = await updateUser(userId, formData);
-  if (post[0]?._id) {
-    const publicAccess = document.getElementById("public-access");
-    if (publicAccess) {
-      publicAccess.remove();
+  if (isValidated) {
+    const formData = new FormData(form);
+    const userId = window.localStorage.getItem("userId");
+    formData.append("id", window.localStorage.getItem("userId"));
+
+    const post = await updateUser(userId, formData);
+    if (post[0]?._id) {
+      const publicAccess = document.getElementById("public-access");
+      if (publicAccess) {
+        publicAccess.remove();
+      }
+      renderSuccessfullySpan();
+      setTimeout(clearSuccessfullySpan, 1000);
+      form.reset();
+      return;
     }
-    renderSuccessfullySpan();
-    setTimeout(clearSuccessfullySpan, 1000);
-    form.reset();
-    return;
+    renderFailedSpan();
+    setTimeout(clearFailedSpan, 1000);
   }
-  renderFailedSpan();
-  setTimeout(clearFailedSpan, 1000);
 };
-
+////////// helper functions //////////////////////
 function renderSuccessfullySpan() {
   const form = document.querySelector("#edit-user-profile");
   const isSpan = document.getElementById("update-account-result-text");
@@ -71,4 +80,102 @@ function clearFailedSpan() {
     isSpan.remove();
     brEl.remove();
   }
+}
+
+function validateForm() {
+  const form = document.querySelector("#edit-user-profile");
+  const website = form.querySelector("#website-input");
+  const phone = form.querySelector("#phone-input");
+  const name = form.querySelector("#name-input");
+
+  let isValid = true;
+
+  if (!checkUrl(website)) {
+    isValid = false;
+  }
+
+  if (!checkPhoneNumber(phone)) {
+    isValid = false;
+  }
+
+  if (!checkLength(name, 3, 50)) {
+    isValid = false;
+  }
+  return isValid;
+}
+
+const checkPhoneNumber = (input) => {
+  const re =
+    /^(\+{1}\d{2,3}\s?[(]{1}\d{1,3}[)]{1}\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}$/;
+  if (re.test(input.value.trim())) {
+    return true;
+  }
+  input.style.borderColor = "red";
+  renderMessage(
+    "Phone is not valid.",
+    "phone-small-edit-profile-form",
+    "failText"
+  );
+  setTimeout(removePhoneError, 1500);
+  return false;
+};
+
+const checkUrl = (input) => {
+  const re = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+  if (re.test(input.value.trim())) {
+    return true;
+  }
+  input.style.borderColor = "red";
+  renderMessage(
+    "Url is not valid.",
+    "website-small-edit-profile-form",
+    "failText"
+  );
+  setTimeout(removeUrlError, 1500);
+  return false;
+};
+
+const checkLength = (input, min, max) => {
+  if (input.value.length < min) {
+    input.style.borderColor = "red";
+    renderMessage(
+      `Input must be at least ${min} characters`,
+      "name-small-edit-profile-form",
+      "failText"
+    );
+    setTimeout(removeNameError, 1500);
+    return false;
+  }
+  if (input.value.length > max) {
+    input.style.borderColor = "red";
+    renderMessage(
+      `Name must be less then ${max} characters`,
+      "name-small-edit-profile-form",
+      "failText"
+    );
+    setTimeout(removeNameError, 1500);
+    return false;
+  }
+  return true;
+};
+
+function renderMessage(text, id, className) {
+  const small = document.getElementById(id);
+  small.innerHTML = text;
+  small.className = className;
+}
+
+function removeNameError() {
+  document.getElementById("name-small-edit-profile-form").innerHTML = "";
+  document.getElementById("name-input").style.borderColor = "black";
+}
+
+function removePhoneError() {
+  document.getElementById("phone-small-edit-profile-form").innerHTML = "";
+  document.getElementById("phone-input").style.borderColor = "black";
+}
+
+function removeUrlError() {
+  document.getElementById("website-small-edit-profile-form").innerHTML = "";
+  document.getElementById("website-input").style.borderColor = "black";
 }

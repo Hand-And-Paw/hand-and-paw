@@ -130,3 +130,13 @@
 #yes-check {
   cursor: pointer;
 }
+
+.successText {
+  color: green;
+  margin-top: -25px;
+}
+
+.failText {
+  color: red;
+  margin-top: -25px;
+}
