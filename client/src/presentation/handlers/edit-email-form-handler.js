@@ -13,7 +13,7 @@ import { navbar } from "../components/layout/navbar.js";
 export const editEmailFormHandler = async () => {
   const form = document.querySelector("#edit-email-form");
 
-  const isValidated = validatePassword();
+  const isValidated = validateEmail();
 
   if (isValidated) {
     const formData = new FormData(form);
@@ -35,7 +35,7 @@ export const editEmailFormHandler = async () => {
       header.appendChild(navbar());
       return;
     }
-    debugger;
+
     const errorMessage = document.getElementById("email-error-message");
     const errorSpace = document.getElementById("space-error-message");
     if (errorMessage) {
@@ -56,7 +56,7 @@ export const editEmailFormHandler = async () => {
   }
 };
 
-function validatePassword() {
+function validateEmail() {
   const form = document.querySelector("#edit-email-form");
   const email = form.querySelector("#email-input");
   const confirmEmail = form.querySelector("#repeatEmail-input");
