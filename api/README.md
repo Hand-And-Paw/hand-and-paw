@@ -36,6 +36,9 @@ During the lecture the endpoints of the messages repo should be implemented in o
   - [Errors convention](#errors-convention)
     - [Validation errors:](#validation-errors)
     - [Not found errors:](#not-found-errors)
+    <<<<<<< HEAD - [Not found errors:](#not-found-errors)
+    =======
+    > > > > > > > da39c263e824a25e2d797ad3652b8fe0a29353fe
 
 ## Getting Started
 
