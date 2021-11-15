@@ -8,6 +8,7 @@
   text-align: center;
   min-width: fit-content;
   max-width: fit-content;
+  white-space: nowrap;
 }
 
 .button:hover {
@@ -21,6 +22,5 @@
   .button {
     display: flex;
     justify-content: center;
-    text-align: center;
-    
+    text-align: center;    
   }

@@ -1,6 +1,6 @@
 import { navbar } from "../components/layout/navbar.js";
 import footer from "../components/layout/footer.js";
-import faqListHandler from "../handlers/faq-handler.js";
+import { burgerHandler } from "../handlers/burger-handler.js";
 
 const buildPage = () => {
   document.getElementById("menu").appendChild(navbar());
@@ -30,5 +30,6 @@ const buildPage = () => {
   // question.forEach((element) => {
   //   element.addEventListener("click", faqListHandler);
   // });
+  burgerHandler();  
 };
 buildPage();
