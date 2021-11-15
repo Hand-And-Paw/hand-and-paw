@@ -2,11 +2,7 @@ import { updateUser } from "../../data-access/user-access/update-user.js";
 
 export const updateUserHandler = async () => {
   const form = document.querySelector("#edit-user-profile");
-  debugger;
-  // let isValidated;
-  // if (isValidated === false) {
-  //   isValidated = undefined;
-  // }
+
   const isValidated = validateForm();
 
   if (isValidated) {
@@ -90,23 +86,24 @@ function validateForm() {
 
   let isValid = true;
 
-  if (!checkUrl(website)) {
-    isValid = false;
-  }
-
-  if (!checkPhoneNumber(phone)) {
-    isValid = false;
-  }
-
   if (!checkLength(name, 3, 50)) {
     isValid = false;
+  }
+  if (phone.value !== "") {
+    if (!checkPhoneNumber(phone)) {
+      isValid = false;
+    }
+  }
+  if (website.value !== "") {
+    if (!checkUrl(website)) {
+      isValid = false;
+    }
   }
   return isValid;
 }
 
 const checkPhoneNumber = (input) => {
-  const re =
-    /^(\+{1}\d{2,3}\s?[(]{1}\d{1,3}[)]{1}\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}$/;
+  const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
   if (re.test(input.value.trim())) {
     return true;
   }
@@ -121,17 +118,18 @@ const checkPhoneNumber = (input) => {
 };
 
 const checkUrl = (input) => {
-  const re = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+  const re =
+    /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/gm;
   if (re.test(input.value.trim())) {
     return true;
   }
   input.style.borderColor = "red";
   renderMessage(
-    "Url is not valid.",
+    "Url is not valid must be complete url example http://www.yourpage.com.",
     "website-small-edit-profile-form",
     "failText"
   );
-  setTimeout(removeUrlError, 1500);
+  setTimeout(removeUrlError, 2500);
   return false;
 };
 
