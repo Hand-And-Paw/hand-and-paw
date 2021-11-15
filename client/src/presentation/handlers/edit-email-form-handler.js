@@ -35,13 +35,24 @@ export const editEmailFormHandler = async () => {
       header.appendChild(navbar());
       return;
     }
+    debugger;
+    const errorMessage = document.getElementById("email-error-message");
+    const errorSpace = document.getElementById("space-error-message");
+    if (errorMessage) {
+      errorMessage.remove();
+      errorSpace.remove();
+    }
 
     const span = document.createElement("span");
+    span.id = "email-error-message";
     const br = document.createElement("br");
+    br.id = "space-error-message";
     span.innerHTML = `${post.message}`;
     span.style.color = "red";
     form.appendChild(br);
     form.appendChild(span);
+
+    setTimeout(closeMessage, 3000);
   }
 };
 
@@ -64,4 +75,9 @@ function validatePassword() {
     isValid = false;
   }
   return isValid;
+}
+
+function closeMessage() {
+  document.getElementById("email-error-message").remove();
+  document.getElementById("space-error-message").remove();
 }
