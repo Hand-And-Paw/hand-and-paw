@@ -5,7 +5,7 @@
 .search-results {
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 360px));
   grid-column-gap: 2.4rem;
   grid-row-gap: 16px;
   margin: 2rem 0;
@@ -23,15 +23,14 @@
   background-color: var(--secondary1);
   border-radius: var(--borderRadius);
   height: fit-content;
-  width: 100%;
   box-shadow: var(--shadow);
   cursor: pointer;
-  max-width: 350px;
+  max-width: 360px;
 }
 
 .search-result-card .card-photo img {
-  width: 100%;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
 }
@@ -41,14 +40,15 @@
 }
 
 .search-result-card .card-info {
-  padding: 3rem 3rem;
+  font-size: 15px;
+  padding: 30px;
   display: block;
   text-align: justify;
   color: rgba(0, 0, 0, 0.8);
 }
 
 .search-result-card .card-info span {
-  font-size: 1.325rem;
+  font-size: 16px;
   margin-left: 0.4em;
   color: var(--mainText);
 }
