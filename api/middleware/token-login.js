@@ -11,8 +11,6 @@ const tokenChecker = async (req, res, next) => {
   try {
     const token = req.cookies.access_token;
 
-    console.log(token);
-
     if (!token) {
       res
         .status(401)

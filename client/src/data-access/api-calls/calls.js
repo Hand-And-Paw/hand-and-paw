@@ -1,9 +1,5 @@
 /* eslint-disable no-console */
 
-// import state from "../state/state.js";
-
-// state.token = window.localStorage.getItem("token");
-
 export const performFetch = async (path) => {
   const URL = `${window.location.origin}/api/${path}`;
 
@@ -12,7 +8,6 @@ export const performFetch = async (path) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
   });
   if (!response.ok) {
@@ -33,7 +28,6 @@ export const performPostJson = async (path, body) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
     body: JSON.stringify(body),
   });
@@ -50,9 +44,6 @@ export const performPostFormData = async (path, formDataBody) => {
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
     method: "POST",
-    // headers: {
-    //   // Authorization: `bearer ${!state.token ? "" : state.token}`,
-    // },
     body: formDataBody,
   });
   if (!response.ok) {
@@ -71,7 +62,6 @@ export const performDelete = async (path) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
   });
   if (!response.ok) {
@@ -90,9 +80,6 @@ export const performUpdate = async (path, formDataBody) => {
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
     method: "PUT",
-    // headers: {
-    //   // Authorization: `bearer ${!state.token ? "" : state.token}`,
-    // },
     body: formDataBody,
   });
   if (!response.ok) {
@@ -109,9 +96,6 @@ export const performSpecificUpdate = async (path, formDataBody) => {
   const encodedURL = encodeURI(URL);
   const response = await fetch(encodedURL, {
     method: "PATCH",
-    // headers: {
-    //   Authorization: `bearer ${!state.token ? "" : state.token}`,
-    // },
     body: formDataBody,
   });
   if (!response.ok) {
@@ -130,7 +114,6 @@ export const performSpecificUpdateJson = async (path, body) => {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `bearer ${!state.token ? "" : state.token}`,
     },
     body: JSON.stringify(body),
   });
