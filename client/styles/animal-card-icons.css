@@ -17,9 +17,13 @@
 
 #delete-animal,
 #edit-animal {
-  width: 40px;
+  width: 35px;
   height: auto;
   margin: 0.4rem 0;
+}
+
+#delete-animal {
+  width: 30px;
 }
 
 #delete-animal,
