@@ -20,10 +20,6 @@ const userRoute = express.Router();
 
 userRoute.post("/register", upload.single(""), userController.postUser);
 
-// userRoute.use((req, res, next) => {
-//   tokenChecker(req, res, next);
-// });
-
 userRoute.use("/uploads", express.static(uploadAvatarPath));
 userRoute.get("/", tokenChecker, userController.getAllUsers);
 userRoute.patch(

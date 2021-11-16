@@ -13,10 +13,6 @@ animalRoute.post("/filter-animals", animalController.filterAnimals);
 // get one animal
 animalRoute.get("/:id", animalController.getAnimal);
 
-// animalRoute.use((req, res, next) => {
-//   tokenChecker(req, res, next);
-// });
-
 animalRoute.post(
   "/register",
   uploadAnimalPictures,
