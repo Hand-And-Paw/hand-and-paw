@@ -6,7 +6,7 @@ import ownerControlMenu from "../components/shared/owner-control-menu.js";
 
 const buildPage = async () => {
   const message = "You haven't added animals for adoption, yet.";
-  document.getElementById("menu").appendChild(navbar());
+  document.getElementById("menu").appendChild(await navbar());
   document.querySelector("footer").appendChild(footer());
   // show added animals
 

@@ -30,6 +30,14 @@ navbar {
   cursor: pointer;
 }
 
+#avatar-image {
+  height: 75px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  padding-left: 10px;
+}
+
 #top-navbar .pages-menu {
   grid-area: menu;
   display: flex;
@@ -156,7 +164,7 @@ navbar {
   }
 
   .responsive-menu_active {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
   .responsive-menu-close {
     width: 40px;
@@ -191,7 +199,6 @@ navbar {
   a:last-child {
     margin-bottom: 0;
   }
-
 }
 
 /* Media end */
