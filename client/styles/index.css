@@ -127,7 +127,7 @@ hr {
 
 /* Responsive design start */
 
-@media screen and (max-width: 1325px) {
+@media screen and (max-width: 990px) {
   .welcome-container {
     display: block;
   }
@@ -153,7 +153,8 @@ hr {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
+    height: 200px;
     justify-content: flex-start;
-    justify-content: space-evenly;
+    max-width: 0px;
   }
 }
