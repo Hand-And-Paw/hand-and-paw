@@ -6,8 +6,6 @@
   padding: 0.9em 1.6em;
   box-shadow: var(--shadow);
   text-align: center;
-  /* min-width: fit-content;
-  max-width: fit-content; */
   min-width: 200px;
   max-width: 200px;
   white-space: nowrap;
@@ -24,5 +22,9 @@
   .button {
     display: flex;
     justify-content: center;
-    text-align: center;    
+    text-align: center;
+    min-width: 180px;
+    max-width: 180px;  
   }
+
+  /* Responsive design end */

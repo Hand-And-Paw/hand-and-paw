@@ -17,8 +17,13 @@
 }
 
 /* Responsive design start */
+
 @media screen and (max-width: 990px) {
   .call-to-action1 {
     margin-bottom: 0;
   }
-}
+
+
+  /* Responsive design end */
+
+
