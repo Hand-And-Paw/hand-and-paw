@@ -4,7 +4,6 @@ import { removeFavorite } from "../../data-access/user-access/remove-favorite.js
 const addToFavoritesHandler = async (event) => {
   event.stopPropagation();
   const { target } = event;
-
   // change front-end
   const imgFile = target.closest("#heart").src.split("/").pop();
   const userId = localStorage.getItem("userId");
@@ -19,6 +18,7 @@ const addToFavoritesHandler = async (event) => {
     }
   } else {
     target.src = "/assets/icons/heart.svg";
+
     await removeFavorite(userId, animalId);
   }
 };
