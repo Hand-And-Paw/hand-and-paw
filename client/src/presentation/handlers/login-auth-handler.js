@@ -5,6 +5,7 @@ import { navbar } from "../components/layout/navbar.js";
 import closeModal from "./close-modal.js";
 
 export const loginAuthHandler = async (event) => {
+  debugger;
   event.preventDefault();
   const form = document.getElementById("login-form");
   const formData = new FormData(form);
