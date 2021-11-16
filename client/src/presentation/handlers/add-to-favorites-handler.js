@@ -4,23 +4,21 @@ import { removeFavorite } from "../../data-access/user-access/remove-favorite.js
 const addToFavoritesHandler = async (event) => {
   event.stopPropagation();
   const { target } = event;
-  console.log(target);
-  //change front-end
-  let imgFile = target.closest("#heart").src.split("/").pop();
-  console.log(imgFile);
+  // change front-end
+  const imgFile = target.closest("#heart").src.split("/").pop();
+  const userId = localStorage.getItem("userId");
+  const animalId = event.target.closest(".animal").id;
+
   if (imgFile === "heart.svg") {
     target.src = "/assets/icons/active-heart.svg";
-  } else {
-    target.src = "/assets/icons/heart.svg";
-    //change DB
-    const userId = localStorage.getItem("userId");
-    const animalId = event.target.closest(".animal").id;
-    console.log(animalId);
+    // change DB
     target.classList.toggle("favorite");
     if ([...target.classList].includes("favorite")) {
       await addFavorite(userId, animalId);
-      return;
     }
+  } else {
+    target.src = "/assets/icons/heart.svg";
+
     await removeFavorite(userId, animalId);
   }
 };
