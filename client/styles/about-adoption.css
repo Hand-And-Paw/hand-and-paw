@@ -65,8 +65,18 @@
 
 .story.three .story-photo img {
   height: 100%;
+  /* position: relative; */
 }
+.story-photo{
+  /* content: url("../assets/images/ui/about-adoption/figma-images/Anna\ and\ Fluffy\ bubbles.svg"); */
+  background-image:url("../assets/images/ui/about-adoption/figma-images/Anna\ and\ Fluffy\ bubbles.svg") ;
+  /* position: absolute; */
 
+  background-repeat: no-repeat;
+  background-size: 500px;
+  /* position the navbar */
+  margin-bottom: 3rem;
+}
 /* FAQ */
 .answer {
   padding: 1rem;
