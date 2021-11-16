@@ -21,6 +21,8 @@ During the lecture the endpoints of the messages repo should be implemented in o
     - [Delete user](#delete-user)
     - [Update User](#update-user)
     - [Delete user publication](#delete-user-publication)
+    - [Add favorite](#add-favorite)
+    - [Remove favorite](#remove-favorite)
   - [Animals](#animals)
     - [Create new animal](#create-new-animal)
     - [Get animals](#get-animals)
@@ -31,6 +33,12 @@ During the lecture the endpoints of the messages repo should be implemented in o
     - [Delete Picture](#delete-picture)
     - [Update Picture](#update-picture)
     - [Update Principal picture](#update-principal-picture)
+  - [Errors convention](#errors-convention)
+    - [Validation errors:](#validation-errors)
+    - [Not found errors:](#not-found-errors)
+    <<<<<<< HEAD - [Not found errors:](#not-found-errors)
+    =======
+    > > > > > > > da39c263e824a25e2d797ad3652b8fe0a29353fe
 
 ## Getting Started
 
@@ -360,6 +368,90 @@ Remove the animal id in the `registeredAnimals` property, and deletes the animal
     }
       "message": "publication id: 61701cf768400ebe536a57c8 was removed successfully"
     }
+  ```
+
+  > [Back to index routes](#index)
+
+---
+
+### Add favorite
+
+Add the animal id in the `favorites` property
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/users/add-favorite/:id
+
+- **Method:**
+
+  `PATCH`
+
+- **URL Params**
+
+  `id = string` -> the user id
+
+  **Required:**
+
+  `id = string, animalId = string`
+
+  **Body**
+
+```js
+  {
+    "animalId": "61701cf768400ebe536a57c8"
+  }
+```
+
+- **Result:**
+
+  ```js
+  {
+    "message": "animal added successfully"
+  }
+  ```
+
+  > [Back to index routes](#index)
+
+---
+
+### Remove favorite
+
+Remove the animal id from the `favorites` property
+
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+
+- **URL**
+
+  /api/users/remove-favorite/:id
+
+- **Method:**
+
+  `PATCH`
+
+- **URL Params**
+
+  `id = string` -> the user id
+
+  **Required:**
+
+  `id = string, animalId = string`
+
+  **Body**
+
+```js
+  {
+    "animalId": "61701cf768400ebe536a57c8"
+  }
+```
+
+- **Result:**
+
+  ```js
+  {
+    "message": "animal removed successfully"
+  }
   ```
 
   > [Back to index routes](#index)
@@ -818,6 +910,32 @@ Updates the principal picture of the animal
     message: `picture, with the id: '61751428e9e34386a8e8cf02' updated successfully`;
   }
   ```
+
+> [Back to index routes](#index)
+
+---
+
+## Errors convention
+
+### Validation errors:
+
+start with the letter `VE`, followed by the number error, each number is an different error, detailed as follows:
+
+- **VE001:** The length of the `id` is not equal to 20 characters.
+- **VE002:** Bad entry `Id`, the `id `send in the form is different than the `id` that is set as parameter.
+- **VE003:** The password supplied by the user is not the same than the one that is stored in the server.
+- **VE004:** The` email` and `repeat email` field do not match.
+- **VE005** Cannot update email, the user supply an email that is already stored in the database.
+- **VE006** Cannot register new user, the user supply an email that is already stored in the database.
+- **VE007** cannot delete animal because the `id` supplied do not match with the animal or do not exist .
+- **VE008** cannot delete animal because the with the id supplied do not have registered animals.
+- **VE009** cannot delete animal because the with the id supplied because do not belong to the user with the id supplied
+- **VE010** cannot delete animal because the with the id supplied do not have registered animals.
+
+### Not found errors:
+
+- **NF001** The user Id supplied doe'nt exist
+- **NF002** The animal Id supplied doe'nt exist, in user's collection
 
 > [Back to index routes](#index)
 

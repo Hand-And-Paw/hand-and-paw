@@ -13,10 +13,12 @@ export const editUserProfile = () => {
   form.id = "edit-user-profile";
   form.className = "edit-user-profile-class";
 
-  form.appendChild(createInput("text", "name", "Name"));
-  form.appendChild(createInput("number", "phone", "Phone"));
-  form.appendChild(createInput("text", "location", "Location"));
-  form.appendChild(createInput("text", "website", "Website"));
+  form.appendChild(createInput("text", "name", "Name", "Your name"));
+  form.appendChild(createInput("tel", "phone", "Phone", "+32123456789"));
+  form.appendChild(createInput("text", "location", "City", "Your city"));
+  form.appendChild(
+    createInput("text", "website", "Website", "http://www.yourpage.com")
+  );
   form.appendChild(
     button("edit-button", "Edit email", openModal, editEmailForm)
   );
@@ -51,7 +53,7 @@ export const editUserProfile = () => {
 
   // Update account button
   const updateButton = button(
-    "edit-button",
+    "update-account button regular-button",
     "Update account",
     updateUserHandler
   );
@@ -83,17 +85,24 @@ function container(className) {
   return containerEl;
 }
 
-function createInput(type, name, nameLabel) {
+function createInput(type, name, nameLabel, placeHolder) {
   const containerEl = container("input-form");
   const inputEl = document.createElement("input");
+  inputEl.className = "input-select";
   inputEl.type = type;
   inputEl.name = name;
   inputEl.id = `${name}-input`;
+  inputEl.placeholder = placeHolder;
   const label = document.createElement("label");
   label.htmlFor = inputEl.id;
   label.innerHTML = nameLabel;
+  const br = document.createElement("br");
+  const small = document.createElement("small");
+  small.id = `${name}-small-edit-profile-form`;
   containerEl.appendChild(label);
   containerEl.appendChild(inputEl);
+  containerEl.appendChild(br);
+  containerEl.appendChild(small);
 
   return containerEl;
 }

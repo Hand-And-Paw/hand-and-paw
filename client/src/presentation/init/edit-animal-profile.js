@@ -9,7 +9,7 @@ import { getAnimal } from "../../data-access/animal-access/get-animal.js";
 import { addValuesToEditAnimal } from "../../business-logic/add-values-to-edit-animal.js";
 
 const buildPage = async () => {
-  document.getElementById("menu").appendChild(navbar());
+  document.getElementById("menu").appendChild(await navbar());
   document.querySelector("footer").appendChild(footer());
   const form = document.getElementById("update-animal-form");
   form.addEventListener("submit", editAnimalProfileHandler);

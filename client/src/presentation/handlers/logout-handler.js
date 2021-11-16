@@ -2,7 +2,7 @@
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
 
-const logOut = (event) => {
+const logOut = async (event) => {
   if (event.target.id === "log-out") {
     // delete token, change isLoggedIn, change navbar
     state.token = undefined;
@@ -14,7 +14,7 @@ const logOut = (event) => {
     const header = document.getElementById("menu");
     const navbarEl = document.getElementById("top-navbar");
     header.removeChild(navbarEl);
-    header.appendChild(navbar());
+    header.appendChild(await navbar());
   }
 };
 

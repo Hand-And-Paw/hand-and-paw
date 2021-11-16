@@ -98,12 +98,32 @@ hr {
 .help-article .article-image {
   grid-area: image;
 }
-/* 2 section video */
+/* Video styles start */
+
 .video {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  margin: 140px 0 70px 0;
+  width: 100%;
 }
+
+.video_wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.video_item {
+  padding-top: 56.25%;
+}
+
+.video_element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Video styles end */
 
 /* Responsive design start */
 

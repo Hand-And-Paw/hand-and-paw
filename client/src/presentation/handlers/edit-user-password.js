@@ -29,16 +29,27 @@ export const editPasswordFormHandler = async () => {
       const header = document.getElementById("menu");
       const navbarEl = document.getElementById("top-navbar");
       header.removeChild(navbarEl);
-      header.appendChild(navbar());
+      header.appendChild(await navbar());
       return;
     }
 
+    const errorMessage = document.getElementById("password-error-message");
+    const errorSpace = document.getElementById("password-error-message-space");
+    if (errorMessage) {
+      errorMessage.remove();
+      errorSpace.remove();
+    }
+
     const span = document.createElement("span");
+    span.id = "password-error-message";
     const br = document.createElement("br");
+    br.id = "password-error-message-space";
     span.innerHTML = `${post.message}`;
     span.style.color = "red";
     form.appendChild(br);
     form.appendChild(span);
+
+    setTimeout(closeMessage, 3000);
   }
 };
 
@@ -83,3 +94,8 @@ const showError = (input, message) => {
   const small = formControl.querySelector("small");
   small.innerText = message;
 };
+
+function closeMessage() {
+  document.getElementById("password-error-message").remove();
+  document.getElementById("password-error-message-space").remove();
+}
