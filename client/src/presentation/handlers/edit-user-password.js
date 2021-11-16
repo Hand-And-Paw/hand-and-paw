@@ -29,7 +29,7 @@ export const editPasswordFormHandler = async () => {
       const header = document.getElementById("menu");
       const navbarEl = document.getElementById("top-navbar");
       header.removeChild(navbarEl);
-      header.appendChild(navbar());
+      header.appendChild(await navbar());
       return;
     }
 

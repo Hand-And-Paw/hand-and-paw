@@ -7,7 +7,7 @@ import removeFavoriteHandler from "../handlers/remove-favorite.js";
 
 const buildPage = async () => {
   const message = 'You have no animals added into "Favorites", yet.';
-  document.getElementById("menu").appendChild(navbar());
+  document.getElementById("menu").appendChild(await navbar());
   document.querySelector("footer").appendChild(footer());
   const addedAnimals = await getFavoritesAnimals();
   const animalSortResults = document.querySelector(".favorites-sort-results");
