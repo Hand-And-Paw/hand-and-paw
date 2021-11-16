@@ -9,9 +9,12 @@ const jwt = require("jsonwebtoken");
 
 const tokenChecker = async (req, res, next) => {
   try {
-    const authHeader = req.headers.authorization;
+    // const authHeader = req.headers.authorization;
 
-    const token = authHeader && authHeader.split(" ")[1];
+    // const token = authHeader && authHeader.split(" ")[1];
+    const token = req.cookies.access_token;
+
+    console.log(token);
 
     if (!token) {
       res
