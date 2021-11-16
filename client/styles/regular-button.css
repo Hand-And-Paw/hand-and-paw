@@ -2,4 +2,5 @@
   color: var(--primary2) !important;
   background-color: var(--regularBtn);
   margin: 1.5em auto 1.5em auto !important;
+  padding: 18px;
 }
