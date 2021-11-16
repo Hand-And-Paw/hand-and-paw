@@ -13,9 +13,9 @@ animalRoute.post("/filter-animals", animalController.filterAnimals);
 // get one animal
 animalRoute.get("/:id", animalController.getAnimal);
 
-animalRoute.use((req, res, next) => {
-  tokenChecker(req, res, next);
-});
+// animalRoute.use((req, res, next) => {
+//   tokenChecker(req, res, next);
+// });
 
 animalRoute.post(
   "/register",
@@ -26,6 +26,7 @@ animalRoute.post(
 animalRoute.put(
   "/update/:id",
   uploadAnimalPictures,
+  tokenChecker,
   animalController.updateAnimal
 );
 animalRoute.delete("/delete/:id", animalController.deleteAnimal);
@@ -33,23 +34,27 @@ animalRoute.delete("/delete/:id", animalController.deleteAnimal);
 animalRoute.patch(
   "/update-picture/:animalId",
   upload.single("animal-picture"),
+  tokenChecker,
   animalController.updateOnePictureAnimal
 );
 // delete one picture
 animalRoute.patch(
   "/delete-picture/:animalId",
+  tokenChecker,
   animalController.deleteOnePictureAnimal
 );
 // upload pictures
 animalRoute.patch(
   "/upload-pictures/:animalId",
   uploadAnimalPictures,
+  tokenChecker,
   animalController.uploadPictures
 );
 
 // update the isPrincipal properties
 animalRoute.patch(
   "/update-isPrincipal/:animalId",
+  tokenChecker,
   animalController.updatePrincipalPicture
 );
 

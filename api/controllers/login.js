@@ -46,10 +46,11 @@ const loginController = {
       return res
         .cookie("access_token", accessToken, {
           httpOnly: true,
+          SameSite: "None",
           secure: process.env.NODE_ENV === "production",
         })
         .status(200)
-        .send("logged");
+        .json({ message: "welcome", user });
     } catch (error) {
       res.status(401).json({ message: error.message });
     }

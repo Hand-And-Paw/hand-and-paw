@@ -1,10 +1,12 @@
 /* eslint-disable no-undefined */
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
+import { logout } from "../../data-access/login/logout.js";
 
 const logOut = (event) => {
   if (event.target.id === "log-out") {
     // delete token, change isLoggedIn, change navbar
+    logout();
     state.token = undefined;
     state.userId = undefined;
     state.isLoggedIn = false;
