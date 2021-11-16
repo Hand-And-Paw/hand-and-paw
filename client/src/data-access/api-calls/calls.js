@@ -40,7 +40,7 @@ export const performPostJson = async (path, body) => {
   if (!response.ok) {
     console.error(`HTTP error! status: ${response.message}\n-> ${URL}`);
   }
-  const data = response;
+  const data = await response.json();
 
   return data;
 };

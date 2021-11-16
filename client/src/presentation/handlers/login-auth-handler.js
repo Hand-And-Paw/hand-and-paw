@@ -5,7 +5,6 @@ import { navbar } from "../components/layout/navbar.js";
 import closeModal from "./close-modal.js";
 
 export const loginAuthHandler = async (event) => {
-  debugger;
   event.preventDefault();
   const form = document.getElementById("login-form");
   const formData = new FormData(form);
@@ -16,12 +15,10 @@ export const loginAuthHandler = async (event) => {
   state.email = userObj.email;
   state.password = userObj.password;
   const userLog = await loginUser();
-  if (userLog?.user?.token) {
-    state.token = userLog.user.token;
+  if (userLog.message.includes("welcome")) {
     state.userId = userLog.user.userId;
     state.password = undefined;
     state.isLoggedIn = true;
-    localStorage.setItem("token", state.token);
     localStorage.setItem("userId", state.userId);
     localStorage.setItem("isLoggedIn", state.isLoggedIn);
     form.innerHTML = `<p>${userLog.message}</p>`;
