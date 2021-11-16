@@ -6,7 +6,7 @@ import { addValuesToEditUser } from "../../business-logic/add-calues-to-edit-use
 import { getUser } from "../../data-access/user-access/get-user.js";
 
 const buildPage = async () => {
-  document.getElementById("menu").appendChild(navbar());
+  document.getElementById("menu").appendChild(await navbar());
   document.querySelector("footer").appendChild(footer());
   document.getElementById("main-container").appendChild(editUserProfile());
   // add values

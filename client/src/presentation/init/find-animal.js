@@ -8,7 +8,7 @@ import searchResults from "../components/shared/search-results-section.js";
 import { burgerHandler } from "../handlers/burger-handler.js";
 
 const buildPage = async () => {
-  document.getElementById("menu").appendChild(navbar());
+  document.getElementById("menu").appendChild(await navbar());
   document.querySelector("footer").appendChild(footer());
   const main = document.getElementById("main-container");
   main.appendChild(findYourPerfectCompanionComponent());
@@ -18,6 +18,6 @@ const buildPage = async () => {
   document
     .getElementById("animals-list")
     .appendChild(await animalSearchResults(array));
-    burgerHandler();  
+  burgerHandler();
 };
 buildPage();

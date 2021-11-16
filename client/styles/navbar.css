@@ -30,6 +30,14 @@ navbar {
   cursor: pointer;
 }
 
+#avatar-image {
+  height: 75px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  padding-left: 10px;
+}
+
 #top-navbar .pages-menu {
   grid-area: menu;
   display: flex;

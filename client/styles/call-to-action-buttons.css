@@ -15,3 +15,15 @@
 .call-to-action2:hover {
   background-color: var(--primaryHover2);
 }
+
+/* Responsive design start */
+
+@media screen and (max-width: 990px) {
+  .call-to-action1 {
+    margin-bottom: 0;
+  }
+
+
+  /* Responsive design end */
+
+
