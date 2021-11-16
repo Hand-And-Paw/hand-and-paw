@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-underscore-dangle */
 const validator = require("validator");
 const jwt = require("jsonwebtoken");
@@ -42,15 +43,14 @@ const loginController = {
       };
       const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
 
-      res.status(200).json({
-        message: `Welcome ${user.userName}`,
-        user: {
-          userId: userRegistered[0].id,
-          userName: userRegistered[0].name,
-          userEmail: userRegistered[0].email,
-          token: accessToken,
-        },
-      });
+      return res
+        .cookie("access_token", accessToken, {
+          httpOnly: true,
+          SameSite: "None",
+          secure: process.env.NODE_ENV === "production",
+        })
+        .status(200)
+        .json({ message: "welcome", user });
     } catch (error) {
       res.status(401).json({ message: error.message });
     }
