@@ -3,11 +3,11 @@
   font-weight: 500;
   border-bottom: 5px;
   border-radius: var(--borderRadius);
-  padding: 0.9em 2em;
+  padding: 0.9em 1.6em;
   box-shadow: var(--shadow);
   text-align: center;
-  min-width: 180px;
-  max-width: 180px;
+  min-width: 200px;
+  max-width: 200px;
   white-space: nowrap;
 }
 
