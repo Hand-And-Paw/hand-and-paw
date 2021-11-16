@@ -8,6 +8,7 @@
   text-align: center;
   min-width: 200px;
   max-width: 200px;
+  height:fit-content;
   white-space: nowrap;
   height:fit-content;
 }
