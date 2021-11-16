@@ -131,7 +131,7 @@ navbar {
     left: 0;
     background: #fff;
     z-index: 10;
-    padding: 75px;
+    padding: 1.6rem;
     transform: translateX(100%);
     transition: 0.2s all linear;
     z-index: 100;
