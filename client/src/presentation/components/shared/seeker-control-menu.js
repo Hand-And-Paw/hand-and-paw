@@ -1,5 +1,4 @@
 import addToFavoritesBtn from "../layout/add-to-favorites-button.js";
-
 /**
  * @param {boolean} isFavorite if animal is added to favorites
  * @param {string} className  class name
@@ -11,7 +10,6 @@ const seekerControlMenu = (className, isFavorite) => {
   menu.id = "seeker-menu";
   menu.className = className;
   menu.appendChild(addToFavoritesBtn(isFavorite));
-
   return menu;
 };
 
