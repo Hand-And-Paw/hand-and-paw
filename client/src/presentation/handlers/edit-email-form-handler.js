@@ -6,7 +6,7 @@ import { updateUser } from "../../data-access/user-access/update-user.js";
 import {
   checkEmail,
   checkEmailMatch,
-} from "../../business-logic/form-validation.js";
+} from "../../business-logic/modal-form-validation.js";
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
 

@@ -3,7 +3,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { updateUser } from "../../data-access/user-access/update-user.js";
-import { checkPasswordMatch } from "../../business-logic/form-validation.js";
+import { checkPasswordMatch } from "../../business-logic/modal-form-validation.js";
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
 
