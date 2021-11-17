@@ -50,7 +50,7 @@ const checkUrl = (input, className) => {
   input.formInput.style.borderColor = "red";
   renderMessage(
     input.formMessage,
-    `Url is not valid must be complete url example: http://www.yourpage.com`,
+    `Url must be complete. Example: http://www.yourpage.com`,
     className
   );
   return false;

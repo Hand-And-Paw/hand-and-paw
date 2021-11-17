@@ -20,6 +20,10 @@
   font-size: 1.125rem;
 }
 
+#login-form .link-button {
+  margin-bottom: 1.5rem;
+}
+
 .modal-form label {
   font-size: 0.9rem !important;
   position: absolute;
@@ -27,21 +31,17 @@
   left: 1rem;
   display: block;
 }
-/* .login-form .modal-form h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-} */
+
 #form-title {
   color: var(--primary2);
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
 }
 .form-control {
   position: relative;
   /* padding: 0 0.3rem; */
 }
-.form-control {
-  border: 1px solid tomato;
-  margin-bottom: 0;
-}
+
 .form-control img {
   position: absolute;
   top: 37px;
@@ -66,8 +66,8 @@ textarea {
 }
 
 .form-control textarea {
-  height: 150px;
-  margin-bottom: 1rem;
+  height: 140px;
+  /* margin-bottom: 1rem; */
 }
 
 /* error message */
@@ -119,7 +119,12 @@ textarea {
 .subject-animal {
   height: 150px;
   width: 150px;
-  margin: auto;
+  margin: 0.1rem auto;
+}
+
+.referred-animal h3 {
+  font-size: 1.125rem !important;
+  margin-bottom: 0;
 }
 .subject-animal img {
   width: 100%;
