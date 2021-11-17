@@ -6,10 +6,12 @@
 @import url("./link-button.css");
 
 .animal-profile-page {
+  justify-content: center;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 90px;
-  row-gap: 30px;
+  column-gap: 32px;
+  row-gap: 32px;
   grid-template-areas:
     "b . . ."
     "p p i i "
@@ -20,29 +22,48 @@
   grid-area: i;
   justify-self: end;
   z-index: 5;
+  margin: 1rem 1rem 0 0;
 }
 .animal-profile-page #to-search-results {
   grid-area: b;
+  display: flex;
+  align-content: flex-start;
+  width: 100%;
 }
-
 .animal-profile-page .animal-photo {
+  justify-self: center;
+  border-radius: 5px;
   grid-area: p;
   box-shadow: var(--shadow);
-  height: 400px;
   background-color: var(--secondary1);
   display: flex;
   justify-content: center;
   align-content: center;
+  height: 420px;
+  width: 100%;
+  padding: 1rem;
+  max-width: 700px;
 }
-.animal-profile-page .animal-photo img {
-  border-radius: 5px;
-  max-height: fit-content;
-  height: 400px;
-  object-fit: cover;
-}
+
 .animal-profile-page .animal-info {
+  justify-self: center;
   grid-area: i;
   line-height: 180%;
+  height: 420px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 700px;
+}
+
+.animal-profile-page .animal-photo img {
+  border-radius: 5px;
+  height: 100%;
+  object-fit: cover;
+  height: 100%;
+  /* width: auto; */
+  max-width: 100%;
+  min-width: 180px;
+  grid-area: p;
 }
 
 .animal-profile-page #contact-shelter {
@@ -51,14 +72,17 @@
 
 .animal-profile-page .animal-story {
   grid-area: s;
+  width: 100%;
 }
 
 .animal-info,
 .animal-story {
+  width: 100%;
   background-color: var(--secondary1);
   border-radius: 5px;
   box-shadow: var(--shadow);
   padding: 3em;
+  justify-self: center;
 }
 
 .animal-story h3 {
@@ -69,4 +93,28 @@
   font-size: 1.325rem;
   margin-left: 0.4em;
   color: var(--mainText);
+}
+
+/* Responsive design start */
+
+@media screen and (max-width: 1100px) {
+  .animal-profile-page {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 700px));
+
+    /* grid-template-columns: 700px; */
+    grid-template-areas:
+      "b "
+      "p "
+      "i "
+      "c "
+      "s ";
+  }
+  .animal-info {
+    grid-area: i;
+  }
+  .animal-profile-menu {
+    grid-area: i;
+  }
 }
