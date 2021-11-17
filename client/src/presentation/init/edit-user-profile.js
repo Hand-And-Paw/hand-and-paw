@@ -2,8 +2,9 @@ import { navbar } from "../components/layout/navbar.js";
 import footer from "../components/layout/footer.js";
 import { editUserProfile } from "../components/layout/edit-user-profile.js";
 import { showAnimalImage } from "../handlers/show-animal-image.js";
-import { addValuesToEditUser } from "../../business-logic/add-calues-to-edit-user.js";
+import { addValuesToEditUser } from "../../business-logic/add-values-to-edit-user.js";
 import { getUser } from "../../data-access/user-access/get-user.js";
+import { burgerHandler } from "../handlers/burger-handler.js";
 
 const buildPage = async () => {
   document.getElementById("menu").appendChild(await navbar());
@@ -15,5 +16,6 @@ const buildPage = async () => {
   addValuesToEditUser(user[0]);
   const imgInput = document.getElementById("avatar-image");
   imgInput.addEventListener("change", showAnimalImage);
+  burgerHandler();
 };
 buildPage();

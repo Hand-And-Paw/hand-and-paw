@@ -4,6 +4,7 @@ import footer from "../components/layout/footer.js";
 import getFavoritesAnimals from "../../business-logic/get-favorites-animals.js";
 import deleteAnimalBtn from "../components/layout/delete-animal-button.js";
 import removeFavoriteHandler from "../handlers/remove-favorite.js";
+import { burgerHandler } from "../handlers/burger-handler.js";
 
 const buildPage = async () => {
   const message = 'You have no animals added into "Favorites", yet.';
@@ -26,6 +27,7 @@ const buildPage = async () => {
     menu.appendChild(deleteAnimalBtn(removeFavoriteHandler));
     card.appendChild(menu);
   });
+  burgerHandler();
 };
 
 buildPage();

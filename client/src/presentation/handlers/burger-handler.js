@@ -15,5 +15,5 @@ export const burgerHandler = () => {
   const menuCloseItem = document.querySelector(".responsive-menu-close");
   menuCloseItem.addEventListener("click", () => {
     menu.classList.remove("responsive-menu_active");
-  });  
+  });
 };

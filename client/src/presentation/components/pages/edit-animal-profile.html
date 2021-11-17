@@ -33,6 +33,8 @@
               <div>
                 <label for="name">Name*</label>
                 <input id="edit-name" type="text" name="name"  />
+                <br>
+                <small id="name-small"> </small>
               </div>
               <div>
                 <label for="type">Type*</label>
@@ -53,14 +55,25 @@
               </div>
               <div>
                 <label for="character">Character*</label>
-                <select id="edit-character" name="character">
+                <select name="character">
                   <option value="all">All characters</option>
-                  <option value="happy">Happy</option>
-                  <option value="sympathetic">Sympathetic</option>
+                  <option value="affectionate">Affectionate</option>
+                  <option value="aggressive">Aggressive</option>
+                  <option value="aloof">Aloof</option>
                   <option value="angry">Angry</option>
-                  <option value="jealousy">Jealousy</option>
-                  <option value="fear">Fear</option>
-                </select>
+                  <option value="asocial">Asocial</option>
+                  <option value="calm">Calm</option>
+                  <option value="energetic">Energetic</option>
+                  <option value="energetic">Energetic</option>
+                  <option value="friendly">Friendly</option>
+                  <option value="needy">Needy</option>
+                  <option value="noisy">Noisy</option>
+                  <option value="passive">Passive</option>
+                  <option value="playful">Playful</option>
+                  <option value="quiet">Quiet</option>
+                  <option value="shy">Shy</option>
+                  <option value="social">Social</option>
+                  </select>
               </div>
               <div>
                 <label for="age">Age*</label>
@@ -90,11 +103,15 @@
               </div>
               <div>
                 <label for="Phone">Phone*</label>
-                <input id="edit-phone" type="number" name="phone"  />
+                <input id="edit-phone" type="tel" name="phone" placeholder="+32123456789" />
+                <br>
+                <small id="phone-small"> </small>
               </div>
               <div>
                 <label for="Website">Website</label>
-                <input id="edit-webSite" type="text" name="website" /><br />
+                <input id="edit-webSite" type="text" name="website" placeholder="http://www.yourpage.com" /><br />
+                <br>
+                <small id="website-small"> </small>
               </div>
             </div>
             <div class="animal-description">

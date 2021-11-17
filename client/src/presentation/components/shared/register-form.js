@@ -8,7 +8,7 @@ export const registerForm = () => {
   form.id = "register-form";
   form.action = "#";
   form.innerHTML = `
-  <h1>Register account</h1>
+  <h1>Register an account</h1>
   <div class="form-control">
     <label for="name"> Name:</label><br />
     <input type="name" id="name" name="name"/><br />
@@ -40,7 +40,7 @@ export const registerForm = () => {
     /></br>
     <small>Error message</small>
   </div>
-    <button id="submit-register-form" type="sumbit" class="button form-button">Register</button>
+    <button id="submit-register-form" type="sumbit" class="button regular-button">Register</button>
   `;
   // form.addEventListener("change", registerFormValidation);
   form.addEventListener("submit", registerHandler, false);

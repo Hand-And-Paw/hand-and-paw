@@ -62,8 +62,8 @@ hr {
 
 .call-to-action {
   width: 100%;
-  float: left;
-}
+/*   float: left;
+ */}
 
 .welcome-container .call-to-action {
   margin-top: 1.5rem;
@@ -156,6 +156,6 @@ hr {
     flex-direction: column;
     height: 200px;
     justify-content: flex-start;
-    max-width: 0px;
-  }
+/*     max-width: 0px;
+ */  }
 }

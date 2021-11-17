@@ -3,7 +3,7 @@ import {
   checkLength,
   checkPasswordMatch,
   checkRequired,
-} from "../../business-logic/form-validation.js";
+} from "../../business-logic/modal-form-validation.js";
 
 export const registerFormValidation = (event) => {
   event.preventDefault();
@@ -16,20 +16,20 @@ export const registerFormValidation = (event) => {
   const password2 = form.querySelector("#repeat-password");
 
   let isValid = true;
-  if( !checkRequired([username, email, password, password2]) ) {
-     isValid = false;
+  if (!checkRequired([username, email, password, password2])) {
+    isValid = false;
   }
-  if( !checkLength(username, 3, 15)) {
-     isValid = false;
+  if (!checkLength(username, 3, 15)) {
+    isValid = false;
   }
-  if( !checkLength(password, 6, 25)) {
-     isValid = false;
+  if (!checkLength(password, 6, 25)) {
+    isValid = false;
   }
-  if( !checkEmail(email)) {
-     isValid = false;
+  if (!checkEmail(email)) {
+    isValid = false;
   }
-  if( !checkPasswordMatch(password, password2)) {
-     isValid = false;
+  if (!checkPasswordMatch(password, password2)) {
+    isValid = false;
   }
   return isValid;
 };
