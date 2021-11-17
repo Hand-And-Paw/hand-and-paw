@@ -53,12 +53,23 @@ const searchMenu = () => {
   </select>
 
   <select name="character">
-    <option value="all">All characters</option>
-    <option value="happy">Happy</option>
-    <option value="sympathetic">Sympathetic</option>
-    <option value="angry">Angry</option>
-    <option value="jealousy">Jealousy</option>
-    <option value="fear">Fear</option>
+  <option value="all">All characters</option>
+  <option value="affectionate">Affectionate</option>
+  <option value="aggressive">Aggressive</option>
+  <option value="aloof">Aloof</option>
+  <option value="angry">Angry</option>
+  <option value="asocial">Asocial</option>
+  <option value="calm">Calm</option>
+  <option value="energetic">Energetic</option>
+  <option value="energetic">Energetic</option>
+  <option value="friendly">Friendly</option>
+  <option value="needy">Needy</option>
+  <option value="noisy">Noisy</option>
+  <option value="passive">Passive</option>
+  <option value="playful">Playful</option>
+  <option value="quiet">Quiet</option>
+  <option value="shy">Shy</option>
+  <option value="social">Social</option>
   </select>
   <select name="province">
     <option value="all">All provinces</option>

@@ -3,6 +3,7 @@ import state from "../../data-access/state/state.js";
 import { loginUser } from "../../data-access/login/login.js";
 import { navbar } from "../components/layout/navbar.js";
 import closeModal from "./close-modal.js";
+import { burgerHandler } from "./burger-handler.js";
 
 export const loginAuthHandler = async (event) => {
   event.preventDefault();
@@ -27,6 +28,7 @@ export const loginAuthHandler = async (event) => {
     header.removeChild(navbarEl);
     header.prepend(await navbar());
     setTimeout(closeModal, 1500);
+    burgerHandler();
     return;
   }
   document.getElementById("login-error").className = "error show-error";

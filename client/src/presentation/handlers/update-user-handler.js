@@ -3,11 +3,18 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { updateUser } from "../../data-access/user-access/update-user.js";
+import { getUser } from "../../data-access/user-access/get-user.js";
+import { addValuesToEditUser } from "../../business-logic/add-values-to-edit-user.js";
+import { validateForm } from "../../business-logic/regular-form-input-validation.js";
 
 export const updateUserHandler = async () => {
   const form = document.querySelector("#edit-user-profile");
 
-  const isValidated = validateForm();
+  const name = getInput("name-input", "name-small-edit-profile-form");
+  const phone = getInput("phone-input", "phone-small-edit-profile-form");
+  const website = getInput("website-input", "website-small-edit-profile-form");
+
+  const isValidated = validateForm(name, phone, website);
 
   if (isValidated) {
     const formData = new FormData(form);
@@ -23,6 +30,12 @@ export const updateUserHandler = async () => {
       renderSuccessfullySpan();
       setTimeout(clearSuccessfullySpan, 1000);
       form.reset();
+      // remove input errors
+      removeError(name);
+      removeError(phone);
+      removeError(website);
+      const user = await getUser(userId);
+      setTimeout(() => addValuesToEditUser(user[0]), 1001);
       return;
     }
     renderFailedSpan(post);
@@ -82,103 +95,15 @@ function clearFailedSpan() {
   }
 }
 
-function validateForm() {
-  const form = document.querySelector("#edit-user-profile");
-  const website = form.querySelector("#website-input");
-  const phone = form.querySelector("#phone-input");
-  const name = form.querySelector("#name-input");
+function getInput(inputId, smallId) {
+  const object = {};
+  object.formInput = document.getElementById(inputId);
+  object.formMessage = document.getElementById(smallId);
 
-  let isValid = true;
-
-  if (!checkLength(name, 3, 50)) {
-    isValid = false;
-  }
-  if (phone.value !== "") {
-    if (!checkPhoneNumber(phone)) {
-      isValid = false;
-    }
-  }
-  if (website.value !== "") {
-    if (!checkUrl(website)) {
-      isValid = false;
-    }
-  }
-  return isValid;
+  return object;
 }
 
-const checkPhoneNumber = (input) => {
-  const re = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
-  if (re.test(input.value.trim())) {
-    return true;
-  }
-  input.style.borderColor = "red";
-  renderMessage(
-    "Phone is not valid.",
-    "phone-small-edit-profile-form",
-    "failText"
-  );
-  setTimeout(removePhoneError, 1500);
-  return false;
-};
-
-const checkUrl = (input) => {
-  const re =
-    // eslint-disable-next-line no-useless-escape
-    /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/gm;
-  if (re.test(input.value.trim())) {
-    return true;
-  }
-  input.style.borderColor = "red";
-  renderMessage(
-    "Url is not valid must be complete url example http://www.yourpage.com.",
-    "website-small-edit-profile-form",
-    "failText"
-  );
-  setTimeout(removeUrlError, 2500);
-  return false;
-};
-
-const checkLength = (input, min, max) => {
-  if (input.value.length < min) {
-    input.style.borderColor = "red";
-    renderMessage(
-      `Input must be at least ${min} characters`,
-      "name-small-edit-profile-form",
-      "failText"
-    );
-    setTimeout(removeNameError, 1500);
-    return false;
-  }
-  if (input.value.length > max) {
-    input.style.borderColor = "red";
-    renderMessage(
-      `Name must be less then ${max} characters`,
-      "name-small-edit-profile-form",
-      "failText"
-    );
-    setTimeout(removeNameError, 1500);
-    return false;
-  }
-  return true;
-};
-
-function renderMessage(text, id, className) {
-  const small = document.getElementById(id);
-  small.innerHTML = text;
-  small.className = className;
-}
-
-function removeNameError() {
-  document.getElementById("name-small-edit-profile-form").innerHTML = "";
-  document.getElementById("name-input").style.borderColor = "black";
-}
-
-function removePhoneError() {
-  document.getElementById("phone-small-edit-profile-form").innerHTML = "";
-  document.getElementById("phone-input").style.borderColor = "black";
-}
-
-function removeUrlError() {
-  document.getElementById("website-small-edit-profile-form").innerHTML = "";
-  document.getElementById("website-input").style.borderColor = "black";
+function removeError(inputObj) {
+  inputObj.formMessage.innerHTML = "";
+  inputObj.formInput.style.borderColor = "black";
 }
