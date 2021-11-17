@@ -25,8 +25,10 @@ const showAnimalProfile = async (e, id) => {
   animalProfile.className = "animal animal-profile-page container";
 
   animalProfile.id = animalId;
+
   // back to search results
-  //append back to search/favorites/added
+
+  // append back to search/favorites/added
 
   // my animals
   if (
@@ -41,7 +43,7 @@ const showAnimalProfile = async (e, id) => {
       )
     );
   }
-  //favorites
+  // favorites
   if (
     window.location.pathname ===
     "/src/presentation/components/pages/favorites.html"
@@ -54,7 +56,7 @@ const showAnimalProfile = async (e, id) => {
       )
     );
   }
-  //find animal
+  // find animal
   if (
     window.location.pathname ===
     "/src/presentation/components/pages/find-animal.html"
