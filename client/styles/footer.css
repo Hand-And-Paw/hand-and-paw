@@ -10,7 +10,7 @@ footer {
   grid-auto-columns: 1fr;
   justify-items: center;
   height: fit-content;
-  padding: 4rem 10rem 4rem 10rem;
+  padding: 4rem 0rem;
 }
 
 .footer-content * {

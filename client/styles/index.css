@@ -7,41 +7,31 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
-@import url("./about-adoption.css");
+/* @import url("./about-adoption.css"); */
 @import url("./animal-profile.css");
 
 /* top article + navbar section */
-.welcome-container {
-  justify-content: center;
-  padding: 0 10rem;
-  grid-template-areas:
-    "welcome-image-dog welcome-article"
-    "space call-to-action";
-}
-.welcome-container .call-to-action {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: left;
-  gap: 32px;
-}
-
-navbar {
-  background-color: transparent !important;
-}
-
 .header-navbar-wrapper {
-  /* The image used */
-
   background-image: url("../assets/images/ui/home/figma-images/welcome-bg.svg");
-
-  /* min-height: 600px; */
-  /* Center and scale the image */
   background-position: left top;
   background-repeat: no-repeat;
   background-size: 600px;
   /* position the navbar */
   position: relative;
   margin-bottom: 3rem;
+}
+
+.welcome-container {
+  justify-content: center;
+  /* padding: 0 10rem; */
+  grid-template-areas:
+    "welcome-image welcome-article"
+    "space call-to-action";
+  gap: 32px;
+}
+
+navbar {
+  background-color: transparent !important;
 }
 
 hr {
@@ -53,22 +43,33 @@ hr {
   display: flex;
   align-content: flex-start;
   justify-content: flex-start;
-  position: relative;
+  grid-area: welcome-image;
+  /* position: relative;
   top: 0;
-  left: 0;
+  left: 0; */
 }
+
 .welcome-image-dog {
-  object-fit: contain;
-  margin: 0.6rem;
-  position: relative;
-  top: 10px;
-  left: 10px;
+  max-width: 600px;
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+}
+
+.welcome-shift {
+  grid-area: welcome-article;
 }
 
 .call-to-action {
   width: 100%;
-
   float: left;
+}
+
+.welcome-container .call-to-action {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: left;
+  gap: 32px;
 }
 /* 1 section why adoption is important */
 .adoption-is-important {
@@ -127,22 +128,22 @@ hr {
 
 /* Responsive design start */
 
-@media screen and (max-width: 990px) {
-  .welcome-container {
+@media screen and (max-width: 1100px) {
+  .welcome,
+  .adoption-is-important,
+  .lonely-animals-need-help,
+  .video {
     display: block;
+    padding: 1.6rem;
+    justify-content: center;
+    align-content: center;
   }
-  .adoption-article {
-    display: block;
-  }
+
   .welcome-image-dog {
-    max-width: 100%;
+    max-width: 500px;
   }
   .header-navbar-wrapper {
     min-height: initial;
-  }
-
-  .adoption-is-important {
-    display: block;
   }
 
   .grid-image-article {

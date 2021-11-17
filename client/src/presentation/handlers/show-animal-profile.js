@@ -27,7 +27,7 @@ const showAnimalProfile = async (e, id) => {
   animalProfile.id = animalId;
   // back to search results
   //append back to search/favorites/added
-  console.log(window.location.pathname);
+
   // my animals
   if (
     window.location.pathname ===
@@ -77,7 +77,7 @@ const showAnimalProfile = async (e, id) => {
   // add animal story
   animalProfile.appendChild(aboutAnimal(animal[0], "animal-story"));
   // append card menu
-
+  console.log(document.querySelector(".animal-info"));
   const currentUser = await getUser(localStorage.getItem("userId"));
   const checkFavorite = currentUser[0]?.favorites.some(
     (favoriteId) => favoriteId === state.animalId
