@@ -50,7 +50,7 @@ function createInput(type, name, nameLabel) {
 function button(innerHtml, id, handler) {
   const btn = document.createElement("button");
   btn.id = id;
-  btn.classList.add("button", "form-button");
+  btn.classList.add("button", "regular-button");
   btn.innerHTML = innerHtml;
   btn.addEventListener("click", (e) => {
     e.preventDefault();
