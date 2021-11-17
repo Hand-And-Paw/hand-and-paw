@@ -45,8 +45,68 @@ aboutAdoptionAnchor.innerHTML = "About adoption";
 aboutAdoptionDiv.appendChild(aboutAdoptionAnchor);
 responsiveMenu.appendChild(aboutAdoptionDiv);
 
-// Logout
+// Login / Logout
 if (isLoggedIn) {
+  const spacer1 = document.createElement("div");
+  spacer1.className="responsive-spacer_item";
+  spacer1.innerHTML = "&nbsp;";
+  responsiveMenu.appendChild(spacer1);
+
+  const favoritesMenuItem = document.createElement("div");
+  favoritesMenuItem.className="responsive-sub-menu_item";
+  const favoritesAnchor = document.createElement("a");
+  favoritesAnchor.className="header_link";
+  favoritesAnchor.href =
+    "/src/presentation/components/pages/favorites.html";
+  favoritesAnchor.innerHTML = "Favorites";
+  favoritesMenuItem.appendChild(favoritesAnchor);
+  responsiveMenu.appendChild(favoritesMenuItem);
+
+  const myAnimalsMenuItem = document.createElement("div");
+  myAnimalsMenuItem.className="responsive-sub-menu_item";
+  const myAnimalsAnchor = document.createElement("a");
+  myAnimalsAnchor.className="header_link";
+  myAnimalsAnchor.href =
+    "/src/presentation/components/pages/my-animals.html";
+    myAnimalsAnchor.innerHTML = "My animals";
+  myAnimalsMenuItem.appendChild(myAnimalsAnchor);
+  responsiveMenu.appendChild(myAnimalsMenuItem);
+  
+  const editProfileMenuItem = document.createElement("div");
+  editProfileMenuItem.className="responsive-sub-menu_item";
+  const editProfileAnchor = document.createElement("a");
+  editProfileAnchor.className="header_link";
+  editProfileAnchor.href =
+    "/src/presentation/components/pages/edit-user-profile.html";
+    editProfileAnchor.innerHTML = "Edit profile";
+    editProfileMenuItem.appendChild(editProfileAnchor);
+  responsiveMenu.appendChild(editProfileMenuItem);
+  
+  /* 
+  profileMenu.id = "navbar-dropdown";
+  profileMenu.className = "responsive-menu_item";
+  profileMenu.innerHTML = `
+   <div id="show-favorites" class="profile-menu-item">
+      <img class="profile-menu-image" src="/assets/icons/dropdown menu/akar-icons_heart.svg" alt="Favorites"> 
+      <a href="/src/presentation/components/pages/favorites.html">Favorites</a>
+   </div>
+   <div id="show-my-animals" class="profile-menu-item">
+      <img class="profile-menu-image" file-menu-image" src="/assets/icons/dropdown menu/ph_dog.svg" alt="Animal"> 
+      <a href="/src/presentation/components/pages/my-animals.html">My animals</a>
+   </div>
+   <div id="edit-profile" class="profile-menu-item">
+      <img class="profile-menu-image" src="/assets/icons/dropdown menu/dropdownmenu_codicon_account.svg" alt="Avatar"> 
+      <a href="/src/presentation/components/pages/edit-user-profile.html">Edit profile</a>
+   </div>
+`;
+responsiveMenu.appendChild(profileMenu);
+ */
+
+  const spacer2 = document.createElement("div");
+  spacer2.className="responsive-spacer_item";
+  spacer2.innerHTML = "&nbsp;";
+  responsiveMenu.appendChild(spacer2);
+
   const logoutDiv = document.createElement("div");
   logoutDiv.className="responsive-menu_item";
   const logoutLink = document.createElement("a");
@@ -58,6 +118,8 @@ if (isLoggedIn) {
   logoutLink.addEventListener("click", async () => {logOut(event)} );
   logoutDiv.appendChild(logoutLink);
   responsiveMenu.appendChild(logoutDiv);
+
+
 } else {
   const loginDiv = document.createElement("div");
   loginDiv.className="responsive-menu_item";
@@ -66,7 +128,7 @@ if (isLoggedIn) {
 /*   loginLink.href =
   "/index.html";
  */  loginLink.className="header_link";
-  loginLink.innerHTML = "Login";
+  loginLink.innerHTML = "Log in / Sign up";
   loginLink.addEventListener("click", () => {openModal(loginForm("modal-form"))} );
   loginDiv.appendChild(loginLink);
   responsiveMenu.appendChild(loginDiv);
