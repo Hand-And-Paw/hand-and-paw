@@ -33,7 +33,7 @@ const contactShelterForm = async (title, formId, handler) => {
   const divEl = document.createElement("div");
   const button = document.createElement("button");
   button.id = `${formId}-submit`;
-  button.classList.add("button", "form-button");
+  button.classList.add("button", "regular-button");
   button.type = "submit";
   button.innerHTML = "Send";
   button.addEventListener("click", handler);
