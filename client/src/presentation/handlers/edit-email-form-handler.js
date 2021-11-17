@@ -9,6 +9,7 @@ import {
 } from "../../business-logic/modal-form-validation.js";
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
+import { burgerHandler } from "./burger-handler.js";
 
 export const editEmailFormHandler = async () => {
   const form = document.querySelector("#edit-email-form");
@@ -33,6 +34,7 @@ export const editEmailFormHandler = async () => {
       const navbarEl = document.getElementById("top-navbar");
       header.removeChild(navbarEl);
       header.appendChild(await navbar());
+      burgerHandler();
       return;
     }
 
