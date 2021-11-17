@@ -28,8 +28,8 @@
   position: relative;
   background-color: var(--secondary1);
   border-radius: var(--borderRadius);
-  width: 500px;
-  min-width: 200px;
+  width: clamp(310px, 40%, 500px);
+  /* min-width: 180px; */
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
