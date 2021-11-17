@@ -7,6 +7,7 @@ const animalInfo = (animal, className) => {
   const { type, breed, gender, character, age, location, province } = animal;
   const info = document.createElement("div");
   info.className = className;
+
   info.innerHTML = `
     
     <div class="animal-name"> <h3>${animal.name}</h3> </div> <br>
@@ -17,7 +18,9 @@ const animalInfo = (animal, className) => {
     Age: <span>${age}</span><br>
     City: <span>${location}</span> <br>
     Province: <span>${
-      [...province][0].toUpperCase() + [...province].slice(1).join("")
+      province
+        ? [...province][0].toUpperCase() + [...province].slice(1).join("")
+        : ""
     }</span> <br>
     `;
   return info;
