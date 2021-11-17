@@ -173,6 +173,7 @@ navbar {
     top: 20px;
     right: 20px;
     z-index: 11;
+    cursor: pointer;
   }
   .pages-menu-close-line {
     display: block;
