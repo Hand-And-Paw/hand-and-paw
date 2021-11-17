@@ -1,7 +1,3 @@
-.login-form .modal-form h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-}
 .modal .modal-form {
   /* background-color: tomato; */
   font-size: 1.125rem;
@@ -11,7 +7,7 @@
   justify-content: space-evenly;
   align-content: center;
   color: var(--mainText);
-  min-width: 250px;
+  /* min-width: 250px; */
   width: 100%;
 }
 
@@ -30,6 +26,10 @@
   left: 1rem;
   display: block;
 }
+/* .login-form .modal-form h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+} */
 #form-title {
   color: var(--primary2);
 }
@@ -39,7 +39,7 @@
 }
 .form-control img {
   position: absolute;
-  top: 40px;
+  top: 37px;
   right: 20px;
   height: 20px;
   width: 20px;
@@ -51,7 +51,6 @@ textarea {
   border-radius: var(--borderRadius);
   border: 2px solid var(--primary2);
   width: 100%;
-
   padding: 0.3em 0.5em;
   margin: auto;
 }
@@ -88,11 +87,19 @@ textarea {
 .form-control.error small,
 .error.show-error {
   color: var(--errorColor);
-  visibility: visible;
+  /* visibility: visible; */
+  display: block;
+}
+.error-message {
+  /* visibility: hidden; */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.error-message {
-  visibility: hidden;
+.error-message p {
+  font-size: 1rem;
 }
 /* error message end */
 .referred-animal {
