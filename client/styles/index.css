@@ -62,8 +62,9 @@ hr {
 
 .call-to-action {
   width: 100%;
-/*   float: left;
- */}
+  /*   float: left;
+ */
+}
 
 .welcome-container .call-to-action {
   margin-top: 1.5rem;
@@ -127,8 +128,10 @@ hr {
 /* Video styles end */
 
 /* Responsive design start */
+@media screen and (max-width: 1325px) {
+}
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 990px) {
   .welcome,
   .adoption-is-important,
   .lonely-animals-need-help,
@@ -156,6 +159,7 @@ hr {
     flex-direction: column;
     height: 200px;
     justify-content: flex-start;
-/*     max-width: 0px;
- */  }
+    /*     max-width: 0px;
+ */
+  }
 }
