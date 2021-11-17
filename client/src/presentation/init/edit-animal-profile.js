@@ -7,6 +7,7 @@ import { editAnimalProfileHandler } from "../handlers/edit-animal-profile-handle
 import { showAnimalImage } from "../handlers/show-animal-image.js";
 import { getAnimal } from "../../data-access/animal-access/get-animal.js";
 import { addValuesToEditAnimal } from "../../business-logic/add-values-to-edit-animal.js";
+import { burgerHandler } from "../handlers/burger-handler.js";
 
 const buildPage = async () => {
   document.getElementById("menu").appendChild(await navbar());
@@ -19,5 +20,6 @@ const buildPage = async () => {
   addValuesToEditAnimal(animal[0]);
   const imgInput = document.getElementById("animal-image");
   imgInput.addEventListener("change", showAnimalImage);
+  burgerHandler();
 };
 buildPage();

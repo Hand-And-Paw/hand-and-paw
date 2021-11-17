@@ -1,6 +1,5 @@
-/* import openModal from "../../handlers/call-login-form.js";
+import openModal from "../../handlers/call-login-form.js";
 import { loginForm } from "../shared/login-form.js";
- */
 import logOut from "../../handlers/logout-handler.js";
 
 
@@ -58,7 +57,20 @@ if (isLoggedIn) {
   logoutLink.innerHTML = "Logout";
   logoutLink.addEventListener("click", async () => {logOut(event)} );
   logoutDiv.appendChild(logoutLink);
-  responsiveMenu.appendChild(logoutDiv);}
+  responsiveMenu.appendChild(logoutDiv);
+} else {
+  const loginDiv = document.createElement("div");
+  loginDiv.className="responsive-menu_item";
+  const loginLink = document.createElement("a");
+  loginLink.id = 'log-in';
+/*   loginLink.href =
+  "/index.html";
+ */  loginLink.className="header_link";
+  loginLink.innerHTML = "Login";
+  loginLink.addEventListener("click", () => {openModal(loginForm("modal-form"))} );
+  loginDiv.appendChild(loginLink);
+  responsiveMenu.appendChild(loginDiv);
+}
 
 
 const responsiveMenuClose = document.createElement("div");

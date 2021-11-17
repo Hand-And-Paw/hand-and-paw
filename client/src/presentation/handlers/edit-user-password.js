@@ -6,6 +6,7 @@ import { updateUser } from "../../data-access/user-access/update-user.js";
 import { checkPasswordMatch } from "../../business-logic/modal-form-validation.js";
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
+import { burgerHandler } from "./burger-handler.js";
 
 export const editPasswordFormHandler = async () => {
   const form = document.querySelector("#edit-password-form");
@@ -30,6 +31,7 @@ export const editPasswordFormHandler = async () => {
       const navbarEl = document.getElementById("top-navbar");
       header.removeChild(navbarEl);
       header.appendChild(await navbar());
+      burgerHandler();
       return;
     }
 

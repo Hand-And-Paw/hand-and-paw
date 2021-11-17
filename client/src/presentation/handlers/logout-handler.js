@@ -18,6 +18,7 @@ const logOut = async (event) => {
     const navbarEl = document.getElementById("top-navbar");
     header.removeChild(navbarEl);
     header.appendChild(await navbar());
+    burgerHandler();
   }
 };
 
