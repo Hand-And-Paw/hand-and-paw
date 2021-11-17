@@ -66,7 +66,7 @@ navbar {
   position: relative;
 }
 
-/* #menu .pages-menu a:hover::after {
+#menu .pages-menu a:hover::after {
   content: "";
   position: absolute;
   display: block;
@@ -75,7 +75,7 @@ navbar {
   bottom: -20px;
   left: 0;
   background-color: var(--primary2);
-} */
+}
 
 /* Responsive design start */
 
@@ -131,7 +131,7 @@ navbar {
     left: 0;
     background: #fff;
     z-index: 10;
-    padding: 75px;
+    padding: 1.6rem;
     transform: translateX(100%);
     transition: 0.2s all linear;
     z-index: 100;

@@ -10,6 +10,7 @@
   max-width: 200px;
   height:fit-content;
   white-space: nowrap;
+  height:fit-content;
 }
 
 .button:hover {
