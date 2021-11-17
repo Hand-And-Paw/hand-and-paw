@@ -25,7 +25,9 @@ const showAnimalProfile = async (e, id) => {
   animalProfile.className = "animal animal-profile-page container";
 
   animalProfile.id = animalId;
+
   // back to search results
+
   // append back to search/favorites/added
 
   // my animals
