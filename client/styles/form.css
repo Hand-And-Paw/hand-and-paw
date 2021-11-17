@@ -1,16 +1,26 @@
-form {
+/* form {
   font-size: 1.125rem;
-}
-.modal-form {
+} */
+.modal .modal-form {
+  /* background-color: tomato; */
   font-size: 1.125rem;
   box-sizing: border-box;
-  display: block;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-content: center;
   color: var(--mainText);
   width: 470px;
   min-width: 250px;
   width: 100%;
+}
+
+.modal-form input {
+  padding: 0.4rem 1.5rem !important;
+}
+
+#login-form input {
+  font-size: 1.125rem;
 }
 
 .modal-form label {
@@ -24,9 +34,8 @@ form {
 }
 .form-control {
   position: relative;
-  padding: 0 0.6rem;
+  padding: 0 0.3rem;
 }
-
 .form-control img {
   position: absolute;
   top: 40px;
@@ -41,8 +50,8 @@ textarea {
   border-radius: var(--borderRadius);
   border: 2px solid var(--primary2);
   width: 100%;
-  font-size: 1.125rem;
-  padding: 0.6em 1em;
+
+  padding: 0.3em 0.5em;
   margin: auto;
 }
 
@@ -52,7 +61,7 @@ textarea {
 }
 
 .form-control textarea {
-  height: 200px;
+  height: 150px;
   margin-bottom: 1rem;
 }
 
@@ -84,6 +93,7 @@ textarea {
 .error-message {
   visibility: hidden;
 }
+/* error message end */
 .referred-animal {
   height: 150px;
   display: flex;
