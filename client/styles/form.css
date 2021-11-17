@@ -21,8 +21,9 @@
 }
 
 .modal-form label {
+  font-size: 0.9rem !important;
   position: absolute;
-  top: 0;
+  top: 4px;
   left: 1rem;
   display: block;
 }
@@ -35,7 +36,11 @@
 }
 .form-control {
   position: relative;
-  padding: 0 0.3rem;
+  /* padding: 0 0.3rem; */
+}
+.form-control {
+  border: 1px solid tomato;
+  margin-bottom: 0;
 }
 .form-control img {
   position: absolute;
@@ -81,7 +86,9 @@ textarea {
   position: absolute;
   bottom: 0;
   left: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
+  align-self: center;
 }
 
 .form-control.error small,

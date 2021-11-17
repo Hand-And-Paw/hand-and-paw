@@ -24,7 +24,7 @@ const checkEmail = (input) => {
     showSuccess(input);
     return true;
   }
-  showError(input, "Email is not valid.");
+  showError(input, "Email has invalid format.");
   return false;
 };
 
@@ -34,7 +34,7 @@ const checkPhoneNumber = (input) => {
     showSuccess(input);
     return true;
   }
-  showError(input, "Phone is not valid example: +32123456789");
+  showError(input, "This entry can only contain numbers.");
   return false;
 };
 
@@ -52,7 +52,8 @@ const checkRequired = (inputArr) => {
   let valid = true;
   inputArr.forEach((input) => {
     if (input.value.trim() === "") {
-      showError(input, `${getFieldName(input)} is required.`);
+      // showError(input, `${getFieldName(input)} is required.`);
+      showError(input, `Field is required.`);
       valid = false;
     } else {
       showSuccess(input);
@@ -64,11 +65,15 @@ const checkRequired = (inputArr) => {
 // check input length
 const checkLength = (input, min, max) => {
   if (input.value.length < min) {
-    showError(input, `${input.name} must be at least ${min} characters`);
+    // showError(input, `${input.name} must be at least ${min} characters`);
+    showError(input, `Must be at least ${min} characters`);
+
     return false;
   }
   if (input.value.length > max) {
-    showError(input, `${input.name} must be less then ${max} characters`);
+    // showError(input, `${input.name} must be less then ${max} characters`);
+    showError(input, `Must be at least ${min} characters`);
+
     return false;
   }
   showSuccess(input);
