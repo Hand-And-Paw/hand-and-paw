@@ -1,6 +1,9 @@
 /* import openModal from "../../handlers/call-login-form.js";
 import { loginForm } from "../shared/login-form.js";
  */
+import logOut from "../../handlers/logout-handler.js";
+
+
 const responsiveMenuComponent = (props) => {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
 const responsiveMenu = document.createElement("div");
@@ -8,30 +11,55 @@ responsiveMenu.classList.add('responsive-menu');
 
 // Find animal
 const findAnimalDiv = document.createElement("div");
-findAnimalDiv.className="responsive-menu-item";
+findAnimalDiv.className="responsive-menu_item";
 const findAnimalAnchor = document.createElement("a");
+findAnimalAnchor.className="header_link";
 findAnimalAnchor.href = "/src/presentation/components/pages/find-animal.html";
 findAnimalAnchor.innerHTML = "Find an animal";
 findAnimalDiv.appendChild(findAnimalAnchor);
 responsiveMenu.appendChild(findAnimalDiv);
 // Register animal
 const registerAnimalDiv = document.createElement("div");
-registerAnimalDiv.className="responsive-menu-item";
+registerAnimalDiv.className="responsive-menu_item";
 const registerAnimalAnchor = document.createElement("a");
+registerAnimalAnchor.className="header_link";
 registerAnimalAnchor.id = "register-animal-navBar";
 registerAnimalAnchor.href =
   "/src/presentation/components/pages/add-animal.html";
 registerAnimalAnchor.innerHTML = "Register an animal";
+if (!isLoggedIn) {
+  registerAnimalAnchor.href = "#";
+  registerAnimalDiv.addEventListener("click", () =>
+    openModal(loginForm("modal-form"))
+  );
+}
 registerAnimalDiv.appendChild(registerAnimalAnchor);
 responsiveMenu.appendChild(registerAnimalDiv);
 // About adoption
 const aboutAdoptionDiv = document.createElement("div");
+aboutAdoptionDiv.className="responsive-menu_item";
 const aboutAdoptionAnchor = document.createElement("a");
+aboutAdoptionAnchor.className="header_link";
 aboutAdoptionAnchor.href =
     "/src/presentation/components/pages/about-adoption.html";
 aboutAdoptionAnchor.innerHTML = "About adoption";
 aboutAdoptionDiv.appendChild(aboutAdoptionAnchor);
 responsiveMenu.appendChild(aboutAdoptionDiv);
+
+// Logout
+if (isLoggedIn) {
+  const logoutDiv = document.createElement("div");
+  logoutDiv.className="responsive-menu_item";
+  const logoutLink = document.createElement("a");
+  logoutLink.id = 'log-out';
+  logoutLink.href =
+  "/index.html";
+  logoutLink.className="header_link";
+  logoutLink.innerHTML = "Logout";
+  logoutLink.addEventListener("click", async () => {logOut(event)} );
+  logoutDiv.appendChild(logoutLink);
+  responsiveMenu.appendChild(logoutDiv);}
+
 
 const responsiveMenuClose = document.createElement("div");
 responsiveMenuClose.classList.add('responsive-menu-close');

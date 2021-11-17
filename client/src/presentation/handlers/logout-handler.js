@@ -4,6 +4,7 @@ import { navbar } from "../components/layout/navbar.js";
 import { logout } from "../../data-access/login/logout.js";
 
 const logOut = async (event) => {
+  console.log('hey',event)
   if (event.target.id === "log-out") {
     // delete token, change isLoggedIn, change navbar
     logout();
