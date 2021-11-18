@@ -129,6 +129,17 @@ hr {
 
 /* Responsive design start */
 @media screen and (max-width: 1325px) {
+  .welcome-image-dog {
+    max-width: 500px;
+    position: relative;
+    top: -100px;
+    left: -30px;
+  }
+
+  .welcome-shift {
+    width: 500px;
+    right: 40px;
+  }
 }
 
 @media screen and (max-width: 990px) {
@@ -144,6 +155,9 @@ hr {
 
   .welcome-image-dog {
     max-width: 500px;
+    position: relative;
+    top: -70px;
+    left: 40px;
   }
   .header-navbar-wrapper {
     min-height: initial;
