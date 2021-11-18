@@ -7,8 +7,6 @@ const buildPage = async () => {
   document.querySelector("footer").appendChild(footer());
   // faqListHandler();
 
-  // const question = document.querySelectorAll(".question");
-
   var faq = document.getElementsByClassName("question");
   var i;
 
@@ -27,9 +25,6 @@ const buildPage = async () => {
     });
   }
 
-  // question.forEach((element) => {
-  //   element.addEventListener("click", faqListHandler);
-  // });
   burgerHandler();
 };
 buildPage();
