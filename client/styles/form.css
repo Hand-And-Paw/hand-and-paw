@@ -11,8 +11,9 @@
   width: 100%;
 }
 
-.modal-form input {
-  padding: 0.4rem 1.5rem !important;
+.modal-form h1 {
+  font-size: 32px;
+  margin: 0;
 }
 
 #login-form input,
@@ -25,9 +26,9 @@
 }
 
 .modal-form label {
-  font-size: 0.9rem !important;
+  font-size: 14px !important;
   position: absolute;
-  top: 4px;
+  top: 6px;
   left: 1rem;
   display: block;
 }
@@ -49,6 +50,10 @@
   height: 20px;
   width: 20px;
 }
+.form-control input {
+  height: 32px;
+  font-size: 16px;
+}
 
 .form-control input,
 textarea {
@@ -68,8 +73,8 @@ textarea {
 }
 
 .form-control textarea {
-  height: 140px;
-  /* margin-bottom: 1rem; */
+  height: 120px;
+  border-radius: 25px;
 }
 
 /* error message */
@@ -79,26 +84,23 @@ textarea {
 }
 
 .form-control.error input,
-.form-control.error textarea {
+.form-control.error.size textarea {
   border: 2px solid var(--errorColor);
 }
 
-.form-control small {
-  color: var(--errorColor);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  /* visibility: hidden; */
-  display: none;
-  align-self: center;
+.form-control.error.size {
+  margin-bottom: 15px;
+  height: 140px;
 }
 
-.form-control.error small,
-.error.show-error {
-  color: var(--errorColor);
-  /* visibility: visible; */
-  display: block;
+.form-control.error textarea {
+  height: 120px;
 }
+
+.form-control.error {
+  height: 65px;
+}
+
 .error-message {
   /* visibility: hidden; */
   display: none;
@@ -112,16 +114,17 @@ textarea {
 }
 /* error message end */
 .referred-animal {
-  height: 150px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 .subject-animal {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   margin: 0.1rem auto;
+  object-fit: contain;
 }
 
 .referred-animal h3 {
@@ -132,4 +135,122 @@ textarea {
   width: 100%;
   object-fit: cover;
   clip-path: circle(40%);
+}
+
+.form-control p {
+  color: "red";
+  font-size: "15px";
+  padding-bottom: "10px";
+}
+
+@media screen and (max-width: 1230px) {
+  .form-control input {
+    height: 24px;
+    font-size: 12px;
+  }
+  .modal-form label {
+    font-size: 12px !important;
+    position: absolute;
+    top: 9px;
+    left: 1rem;
+    display: block;
+  }
+
+  .modal-content label {
+    font-size: 12px !important;
+    /* position: absolute;
+    top: 9px;
+    left: 1rem;
+    display: block; */
+  }
+
+  .form-control textarea {
+    height: 100px;
+    border-radius: 20px;
+    /* margin-bottom: 1rem; */
+  }
+  .form-control.error {
+    height: 53px;
+  }
+
+  .form-control.error.size {
+    height: 130px;
+  }
+
+  .form-control.error.size textarea {
+    height: 100px;
+  }
+
+  .placeholderError::-webkit-input-placeholder {
+    color: red;
+    font-size: 12px;
+  }
+  .modal-form h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+  #get-in-touch-btn-container {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .form-control input {
+    height: 20px;
+    font-size: 14px;
+  }
+  .modal-form label {
+    font-size: 10px !important;
+    position: absolute;
+    top: 11px;
+    left: 1rem;
+    display: block;
+  }
+  .form-control textarea {
+    height: 80px;
+    border-radius: 16px;
+    /* margin-bottom: 1rem; */
+  }
+
+  .form-control.error textarea {
+    height: 80px;
+    border-radius: 16px;
+    /* margin-bottom: 1rem; */
+  }
+
+  .placeholderError::-webkit-input-placeholder {
+    color: red;
+    font-size: 11px;
+  }
+  .modal-form h1 {
+    font-size: 16px;
+    margin: 0;
+  }
+  .form-control.error {
+    height: 45px;
+  }
+
+  .form-control {
+    position: relative;
+    height: auto;
+    /* padding: 0 0.3rem; */
+  }
+  .referred-animal {
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .subject-animal {
+    height: 80px;
+    width: 80px;
+    margin: 0.1rem auto;
+    object-fit: contain;
+  }
+
+  .referred-animal h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0;
+  }
 }

@@ -5,7 +5,8 @@ import { editEmailFormHandler } from "../../handlers/edit-email-form-handler.js"
 export const editEmailForm = () => {
   const form = document.createElement("form");
   form.id = "edit-email-form";
-  const title = document.createElement("h2");
+  form.className = "modal-form";
+  const title = document.createElement("h1");
   title.innerText = "Change email";
   form.appendChild(title);
   form.appendChild(createInput("text", "email", "Email"));
@@ -30,16 +31,12 @@ function createInput(type, name, nameLabel) {
   inputEl.id = `${name}-input`;
   inputEl.setAttribute("required", "");
   const label = document.createElement("label");
+  const br = document.createElement("br");
   label.htmlFor = inputEl.id;
   label.innerHTML = nameLabel;
-  const br = document.createElement("br");
-  const small = document.createElement("small");
-  small.id = `${name}-small`;
-  small.innerHTML = "Error message";
   containerEl.appendChild(label);
-  containerEl.appendChild(inputEl);
   containerEl.appendChild(br);
-  containerEl.appendChild(small);
+  containerEl.appendChild(inputEl);
 
   return containerEl;
 }
