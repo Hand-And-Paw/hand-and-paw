@@ -28,13 +28,14 @@
   position: relative;
   background-color: var(--secondary1);
   border-radius: var(--borderRadius);
-  padding: 16px 10px;
-  width: 40%;
-  min-width: 250px;
+  width: clamp(310px, 40%, 500px);
+  /* min-width: 180px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  justify-content: space-evenly;
+  height: fit-content;
 }
 
 .modal-content {
@@ -46,8 +47,4 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-}
-
-h1 {
-  margin-bottom: 1em !important;
 }

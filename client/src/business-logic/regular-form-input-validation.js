@@ -9,7 +9,7 @@ const checkLength = (input, min, max, className) => {
     input.formInput.style.borderColor = "red";
     renderMessage(
       input.formMessage,
-      `Input must be at least ${min} characters`,
+      `Must be at least ${min} characters`,
       className
     );
     return false;
@@ -18,7 +18,7 @@ const checkLength = (input, min, max, className) => {
     input.formInput.style.borderColor = "red";
     renderMessage(
       input.formMessage,
-      `Name must be less then ${max} characters`,
+      `Must be less then ${max} characters`,
       className
     );
     return false;
@@ -34,7 +34,7 @@ const checkPhoneNumber = (input, className) => {
   input.formInput.style.borderColor = "red";
   renderMessage(
     input.formMessage,
-    "Phone is not valid example: +32123456789",
+    "This entry can only contain numbers.",
     className
   );
   return false;
@@ -50,7 +50,7 @@ const checkUrl = (input, className) => {
   input.formInput.style.borderColor = "red";
   renderMessage(
     input.formMessage,
-    `Url is not valid must be complete url example: http://www.yourpage.com`,
+    `Url must be complete. Example: http://www.yourpage.com`,
     className
   );
   return false;

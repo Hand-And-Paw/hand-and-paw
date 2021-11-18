@@ -1,35 +1,50 @@
-form {
-  font-size: 1.125rem;
-}
-.modal-form {
+.modal .modal-form {
+  /* background-color: tomato; */
   font-size: 1.125rem;
   box-sizing: border-box;
-  display: block;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-content: center;
   color: var(--mainText);
-  width: 470px;
-  min-width: 250px;
+  /* min-width: 250px; */
   width: 100%;
 }
 
+.modal-form input {
+  padding: 0.4rem 1.5rem !important;
+}
+
+#login-form input,
+#register-form input {
+  font-size: 1.125rem;
+}
+
+#login-form .link-button {
+  margin-bottom: 1.5rem;
+}
+
 .modal-form label {
+  font-size: 0.9rem !important;
   position: absolute;
-  top: 0;
+  top: 4px;
   left: 1rem;
   display: block;
 }
+
 #form-title {
   color: var(--primary2);
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
 }
 .form-control {
   position: relative;
-  padding: 0 0.6rem;
+  /* padding: 0 0.3rem; */
 }
 
 .form-control img {
   position: absolute;
-  top: 40px;
+  top: 37px;
   right: 20px;
   height: 20px;
   width: 20px;
@@ -41,19 +56,20 @@ textarea {
   border-radius: var(--borderRadius);
   border: 2px solid var(--primary2);
   width: 100%;
-  font-size: 1.125rem;
-  padding: 0.6em 1em;
+  padding: 0.3em 0.5em;
   margin: auto;
 }
-
+#register-form .regular-button {
+  margin-top: 1.3rem;
+}
 .form-control input,
 .form-control textarea {
   outline: 0;
 }
 
 .form-control textarea {
-  height: 200px;
-  margin-bottom: 1rem;
+  height: 140px;
+  /* margin-bottom: 1rem; */
 }
 
 /* error message */
@@ -72,18 +88,29 @@ textarea {
   position: absolute;
   bottom: 0;
   left: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
+  align-self: center;
 }
 
 .form-control.error small,
 .error.show-error {
   color: var(--errorColor);
-  visibility: visible;
+  /* visibility: visible; */
+  display: block;
+}
+.error-message {
+  /* visibility: hidden; */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.error-message {
-  visibility: hidden;
+.error-message p {
+  font-size: 1rem;
 }
+/* error message end */
 .referred-animal {
   height: 150px;
   display: flex;
@@ -94,7 +121,12 @@ textarea {
 .subject-animal {
   height: 150px;
   width: 150px;
-  margin: auto;
+  margin: 0.1rem auto;
+}
+
+.referred-animal h3 {
+  font-size: 1.125rem !important;
+  margin-bottom: 0;
 }
 .subject-animal img {
   width: 100%;
