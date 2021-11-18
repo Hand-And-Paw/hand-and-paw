@@ -45,8 +45,8 @@
 
 .form-control img {
   position: absolute;
-  top: 37px;
-  right: 20px;
+  top: 33px;
+  right: 18px;
   height: 20px;
   width: 20px;
 }
@@ -252,5 +252,26 @@ textarea {
   .referred-animal h3 {
     font-size: 1rem !important;
     margin-bottom: 0;
+  }
+}
+
+/* Responsive design start */
+@media screen and (max-width: 1325px) {
+  .form-control img {
+    position: absolute;
+    top: 32px;
+    right: 12px;
+    height: 14px;
+    width: 14px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .form-control img {
+    position: absolute;
+    top: 32px;
+    right: 10px;
+    height: 10px;
+    width: 10px;
   }
 }
