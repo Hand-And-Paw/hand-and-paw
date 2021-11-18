@@ -147,11 +147,11 @@
 }
 
 .successText {
-  color: green;
+  color: var(--successColor);
   margin-top: -25px;
 }
 
 .failText {
-  color: red;
+  color: var(--errorColor);
   margin-top: -25px;
 }
