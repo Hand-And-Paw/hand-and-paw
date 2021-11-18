@@ -231,9 +231,7 @@ navbar {
   }
 }
 
-
 @media screen and (max-width: 700px) {
-
   .responsive-menu_item {
     margin-bottom: 12px;
   }
@@ -249,7 +247,6 @@ navbar {
   .responsive-sub-menu_item > a {
     font-size: 20px;
   }
-   
 }
 
 /* Media end */
