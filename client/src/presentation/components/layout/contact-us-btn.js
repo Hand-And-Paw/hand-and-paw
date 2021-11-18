@@ -1,11 +1,11 @@
 const contactUs = (handler) => {
-  const contactUsEl = document.createElement("div");
-  const button = document.createElement("button");
-  button.innerText = "Contact us";
-  button.id = "contact-us";
-  button.addEventListener("click", handler);
-  contactUsEl.appendChild(button);
-  return contactUsEl;
+  const contactUs = document.createElement("div");
+  const contactUsParagraph = document.createElement("p");
+  contactUsParagraph.innerText = "Contact us";
+  contactUsParagraph.id = "contact-us";
+  contactUsParagraph.addEventListener("click", handler);
+  contactUs.appendChild(contactUsParagraph);
+  return contactUs;
 };
 
 export default contactUs;
