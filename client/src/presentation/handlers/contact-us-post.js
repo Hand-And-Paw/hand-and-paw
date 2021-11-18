@@ -50,6 +50,12 @@ function validate() {
   const subject = form.querySelector("#contact-us-form-subject");
   const message = form.querySelector("#contact-us-form-message");
 
+  // delete existing error if the is to append new one
+  if (document.getElementById("error-message")) {
+    const errorMessages = document.querySelectorAll("#error-message");
+    [...errorMessages].forEach((element) => element.remove());
+  }
+
   let isValid = true;
   if (!checkLength(name, 3, 25)) {
     isValid = false;

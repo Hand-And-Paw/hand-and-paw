@@ -3,9 +3,25 @@
 
 const showError = (input, message) => {
   const formControl = input.parentElement;
+  if (input.parentElement.lastElementChild.type === "textarea") {
+    formControl.className = "form-control error size";
+    const p = document.createElement("p");
+    p.id = "error-message";
+    p.innerHTML = message;
+    p.style.color = "red";
+    p.style.fontSize = "10px";
+    formControl.appendChild(p);
+    return;
+  }
+
   formControl.className = "form-control error";
-  const small = formControl.querySelector("small");
-  small.innerText = message;
+  const p = document.createElement("p");
+  p.id = "error-message";
+  p.innerHTML = message;
+  p.style.color = "red";
+  p.style.fontSize = "10px";
+  p.style.marginBottom = "50px";
+  formControl.appendChild(p);
 };
 
 // show success
@@ -99,9 +115,6 @@ const checkEmailMatch = (input1, input2) => {
 
 // get fieldname
 
-const getFieldName = (input) => {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-};
 export {
   checkEmail,
   checkLength,

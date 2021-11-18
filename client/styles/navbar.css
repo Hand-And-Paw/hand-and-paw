@@ -15,12 +15,12 @@ navbar {
 }
 
 #top-navbar {
-  /* align-items: baseline; */
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-areas: "logo menu account";
-  gap: 60px;
+  gap: 32px;
   align-items: center;
+  justify-content: left;
 }
 
 #top-navbar .logo {
@@ -220,6 +220,27 @@ navbar {
       line-height: 48px;
       cursor: pointer;
   }
+}
+
+
+@media screen and (max-width: 700px) {
+
+  .responsive-menu_item {
+    margin-bottom: 12px;
+  }
+
+  .responsive-menu_item > a {
+    font-size: 24px;
+  }
+
+  .responsive-sub-menu_item {
+    margin-bottom: 10px;
+  }
+
+  .responsive-sub-menu_item > a {
+    font-size: 20px;
+  }
+   
 }
 
 /* Media end */

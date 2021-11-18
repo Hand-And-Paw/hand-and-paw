@@ -9,7 +9,11 @@ export const registerFormValidation = (event) => {
   event.preventDefault();
 
   const form = event.target;
-
+  // delete existing error if the is to append new one
+  if (document.getElementById("error-message")) {
+    const errorMessages = document.querySelectorAll("#error-message");
+    [...errorMessages].forEach((element) => element.remove());
+  }
   const username = form.querySelector("#name");
   const email = form.querySelector("#email");
   const password = form.querySelector("#password");
