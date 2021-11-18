@@ -131,8 +131,6 @@ hr {
 
 @media screen and (max-width: 1100px) {
   .welcome .grid-image-article,
-  /* .adoption-is-important,
-  .lonely-animals-need-help, */
   .video {
     display: block;
     justify-content: center;
