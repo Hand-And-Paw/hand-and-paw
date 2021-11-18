@@ -61,7 +61,6 @@ const searchMenu = () => {
   <option value="asocial">Asocial</option>
   <option value="calm">Calm</option>
   <option value="energetic">Energetic</option>
-  <option value="energetic">Energetic</option>
   <option value="friendly">Friendly</option>
   <option value="needy">Needy</option>
   <option value="noisy">Noisy</option>
