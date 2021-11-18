@@ -66,6 +66,6 @@
 }
 
 .failText {
-  color: red;
+  color: var(--errorColor);
   margin-top: -25px;
 }
