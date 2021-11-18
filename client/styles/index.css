@@ -62,8 +62,9 @@ hr {
 
 .call-to-action {
   width: 100%;
-/*   float: left;
- */}
+  /*   float: left;
+ */
+}
 
 .welcome-container .call-to-action {
   margin-top: 1.5rem;
@@ -134,7 +135,6 @@ hr {
   .lonely-animals-need-help,
   .video {
     display: block;
-    padding: 1.6rem;
     justify-content: center;
     align-content: center;
   }
@@ -146,8 +146,29 @@ hr {
     min-height: initial;
   }
 
-  .grid-image-article {
-    display: initial;
+  .lonely-animals-need-help .grid-image-article,
+  .adoption-is-important .grid-image-article {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 32px;
+    grid-template-areas:
+      "img"
+      "text"
+      "btn";
+  }
+  .lonely-animals-need-help .article-image,
+  .adoption-is-important .article-image {
+    grid-area: img;
+  }
+
+  .lonely-animals-need-help .article,
+  .adoption-is-important .article {
+    grid-area: text;
+  }
+
+  .lonely-animals-need-help .call-to-action,
+  .adoption-is-important .call-to-action {
+    grid-area: btn;
   }
 
   .call-to-action {
@@ -156,6 +177,7 @@ hr {
     flex-direction: column;
     height: 200px;
     justify-content: flex-start;
-/*     max-width: 0px;
- */  }
+    /*     max-width: 0px;
+ */
+  }
 }

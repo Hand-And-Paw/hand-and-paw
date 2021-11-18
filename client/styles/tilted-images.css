@@ -67,8 +67,5 @@
     flex-direction: horizontal;
     justify-content: center;
   }
-  .image1, .image2{
-    margin: -4px;
-  }
+ 
 }​
-
