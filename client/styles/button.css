@@ -11,8 +11,8 @@
   max-width: 200px;
   height: fit-content;
   white-space: nowrap;
-  height: fit-content;
-  margin: 15px auto !important;
+  /* height: fit-content; */
+  /* margin: 15px auto !important; */
 }
 
 .button:hover {
@@ -20,7 +20,7 @@
 }
 
 /* Responsive design start */
-
+/* 
 @media screen and (max-width: 1230px) {
   .button {
     margin: 15px auto !important;
@@ -32,5 +32,5 @@
     height: 35px;
     padding-top: 8px;
   }
-}
+} */
 /* Responsive design end */
