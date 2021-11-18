@@ -103,7 +103,7 @@ hr {
 /* Video styles start */
 
 .video {
-  /* margin: 140px 0 70px 0; */
+  margin: 140px 0 70px 0;
   width: 100%;
 }
 
@@ -128,46 +128,43 @@ hr {
 /* Video styles end */
 
 /* Responsive design start */
+@media screen and (max-width: 1325px) {
+  .welcome-image-dog {
+    max-width: 500px;
+    position: relative;
+    top: -100px;
+    left: -30px;
+  }
 
-@media screen and (max-width: 1100px) {
-  .welcome .grid-image-article,
+  .welcome-shift {
+    width: 500px;
+    right: 40px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .welcome,
+  .adoption-is-important,
+  .lonely-animals-need-help,
   .video {
     display: block;
+    padding: 1.6rem;
     justify-content: center;
     align-content: center;
   }
 
   .welcome-image-dog {
     max-width: 500px;
+    position: relative;
+    top: -70px;
+    left: 40px;
   }
   .header-navbar-wrapper {
     min-height: initial;
   }
 
-  .lonely-animals-need-help .grid-image-article,
-  .adoption-is-important .grid-image-article {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
-    row-gap: 64px;
-    column-gap: 32px;
-    grid-template-areas:
-      "img"
-      "text"
-      "btn";
-  }
-  .lonely-animals-need-help .article-image,
-  .adoption-is-important .article-image {
-    grid-area: img;
-  }
-
-  .lonely-animals-need-help .article,
-  .adoption-is-important .article {
-    grid-area: text;
-  }
-
-  .lonely-animals-need-help .call-to-action,
-  .adoption-is-important .call-to-action {
-    grid-area: btn;
+  .grid-image-article {
+    display: initial;
   }
 
   .call-to-action {

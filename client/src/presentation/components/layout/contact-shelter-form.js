@@ -16,7 +16,7 @@ const contactShelterForm = async (title, formId, handler) => {
   </div>
   <div class="form-control">
     <label for="phone-number">Phone number</label><br />
-    <input id="${formId}-phone" type="number" name="phone" />
+    <input id="${formId}-phone" type="text" name="phone" />
 
   </div>
   <div class="form-control">

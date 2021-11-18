@@ -15,7 +15,6 @@
 
 .image-background {
   background: var(--secondary1);
-
   width: 325px;
   height: 325px;
   border-radius: 15px;
@@ -49,6 +48,7 @@
   grid-row-start: 3;
 }
 
+
 @media screen and (max-width: 540px) {
   .card-images img {
     width: 200px;
@@ -66,4 +66,5 @@
     flex-direction: horizontal;
     justify-content: center;
   }
-}​
+}
+

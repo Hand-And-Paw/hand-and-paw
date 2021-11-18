@@ -14,7 +14,7 @@ export const editUserProfile = () => {
   form.className = "edit-user-profile-class";
 
   form.appendChild(createInput("text", "name", "Name", "Your name"));
-  form.appendChild(createInput("tel", "phone", "Phone", "+32123456789"));
+  form.appendChild(createInput("text", "phone", "Phone", "+32123456789"));
   form.appendChild(createInput("text", "location", "City", "Your city"));
   form.appendChild(
     createInput("text", "website", "Website", "http://www.yourpage.com")
@@ -128,7 +128,7 @@ function avatarImage() {
   const inputUploadImage = document.createElement("input");
   inputUploadImage.type = "file";
   inputUploadImage.name = "avatar";
-  inputUploadImage.id = `avatar-image`;
+  inputUploadImage.id = `upload-avatar-image`;
   inputUploadImage.classList.add("link-button", "update-animal-image-button");
   inputUploadImage.setAttribute("accept", "image/*");
   const labelInputImage = document.createElement("label");
@@ -139,7 +139,7 @@ function avatarImage() {
   inputImageContainer.appendChild(inputUploadImage);
   const avatarPreviewContainer = container("avatar-preview-container");
   const avatarImageEl = document.createElement("img");
-  avatarImageEl.id = "animal-preview";
+  avatarImageEl.id = "avatar-preview";
   avatarImageEl.className = "animal-preview";
   avatarPreviewContainer.appendChild(avatarImageEl);
   imageContainer.appendChild(inputImageContainer);
