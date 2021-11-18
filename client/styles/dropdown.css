@@ -10,6 +10,7 @@
   margin-right: 25px;
   opacity: 0;
   box-shadow: var(--shadow);
+  z-index: 100;
 }
 .active {
   opacity: 1;
