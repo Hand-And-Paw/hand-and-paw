@@ -28,17 +28,18 @@
   position: relative;
   background-color: var(--secondary1);
   border-radius: var(--borderRadius);
-  padding: 16px 10px;
-  width: 40%;
-  min-width: 250px;
+  width: clamp(260px, 40%, 330px);
+  /* min-width: 180px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  justify-content: space-evenly;
+  height: fit-content;
 }
 
 .modal-content {
-  width: 80%;
+  width: 85%;
   min-width: 200px;
   margin: 20px;
   display: flex;
@@ -46,8 +47,4 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-}
-
-h1 {
-  margin-bottom: 1em !important;
 }

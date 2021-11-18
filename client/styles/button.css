@@ -1,4 +1,5 @@
 .button {
+  border: 0;
   font-size: 1rem;
   font-weight: 500;
   border-bottom: 5px;
@@ -8,25 +9,12 @@
   text-align: center;
   min-width: 200px;
   max-width: 200px;
-  height:fit-content;
+  height: fit-content;
   white-space: nowrap;
-  height:fit-content;
 }
 
 .button:hover {
   cursor: pointer;
 }
 
-
-/* Responsive design start */
-
-@media screen and (max-width: 990px) {
-  .button {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    min-width: 180px;
-    max-width: 180px;  
-  }
-
-  /* Responsive design end */
+/* Responsive design end */

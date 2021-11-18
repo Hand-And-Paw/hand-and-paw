@@ -4,7 +4,6 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
-@import url("./call-to-action-buttons.css");
 @import url("./input-select.css");
 @import url("./regular-button.css");
 
@@ -30,6 +29,7 @@
 }
 
 .edit-button {
+  border: 0;
   display: block;
   margin: 20px auto;
   width: 50%;
@@ -38,6 +38,7 @@
   background-color: var(--primary2);
   border-radius: 5px;
   color: #fff;
+  font-size: 1.125rem;
 }
 
 .update-account {
@@ -45,7 +46,9 @@
   align-self: center;
   justify-self: center;
 }
-
+.edit-button:hover {
+  background-color: var(--primaryHover2);
+}
 #edit-user-profile p {
   text-align: center;
 }
@@ -144,11 +147,11 @@
 }
 
 .successText {
-  color: green;
+  color: var(--successColor);
   margin-top: -25px;
 }
 
 .failText {
-  color: red;
+  color: var(--errorColor);
   margin-top: -25px;
 }
