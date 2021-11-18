@@ -229,6 +229,10 @@ navbar {
     line-height: 48px;
     cursor: pointer;
   }
+  .responsive-menu.responsive-menu_active .header_link:hover{
+    position: relative;
+    border-bottom: 2px solid var(--primary2);
+  }
 }
 
 
