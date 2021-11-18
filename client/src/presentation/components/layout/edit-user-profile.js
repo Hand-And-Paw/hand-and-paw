@@ -128,7 +128,7 @@ function avatarImage() {
   const inputUploadImage = document.createElement("input");
   inputUploadImage.type = "file";
   inputUploadImage.name = "avatar";
-  inputUploadImage.id = `avatar-image`;
+  inputUploadImage.id = `upload-avatar-image`;
   inputUploadImage.classList.add("link-button", "update-animal-image-button");
   inputUploadImage.setAttribute("accept", "image/*");
   const labelInputImage = document.createElement("label");
@@ -139,7 +139,7 @@ function avatarImage() {
   inputImageContainer.appendChild(inputUploadImage);
   const avatarPreviewContainer = container("avatar-preview-container");
   const avatarImageEl = document.createElement("img");
-  avatarImageEl.id = "animal-preview";
+  avatarImageEl.id = "avatar-preview";
   avatarImageEl.className = "animal-preview";
   avatarPreviewContainer.appendChild(avatarImageEl);
   imageContainer.appendChild(inputImageContainer);
