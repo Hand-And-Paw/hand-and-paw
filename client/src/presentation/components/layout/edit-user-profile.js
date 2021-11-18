@@ -14,7 +14,7 @@ export const editUserProfile = () => {
   form.className = "edit-user-profile-class";
 
   form.appendChild(createInput("text", "name", "Name", "Your name"));
-  form.appendChild(createInput("tel", "phone", "Phone", "+32123456789"));
+  form.appendChild(createInput("text", "phone", "Phone", "+32123456789"));
   form.appendChild(createInput("text", "location", "City", "Your city"));
   form.appendChild(
     createInput("text", "website", "Website", "http://www.yourpage.com")
