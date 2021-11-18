@@ -37,14 +37,6 @@ export const editEmailFormHandler = async () => {
       burgerHandler();
       return;
     }
-
-    const errorMessage = document.getElementById("email-error-message");
-    const errorSpace = document.getElementById("space-error-message");
-    if (errorMessage) {
-      errorMessage.remove();
-      errorSpace.remove();
-    }
-
     const span = document.createElement("span");
     span.id = "email-error-message";
     const br = document.createElement("br");
@@ -62,7 +54,11 @@ function validateEmail() {
   const form = document.querySelector("#edit-email-form");
   const email = form.querySelector("#email-input");
   const confirmEmail = form.querySelector("#repeatEmail-input");
-
+  // delete existing error if the is to append new one
+  if (document.getElementById("error-message")) {
+    const errorMessages = document.querySelectorAll("#error-message");
+    [...errorMessages].forEach((element) => element.remove());
+  }
   let isValid = true;
 
   if (!checkEmail(email)) {

@@ -11,26 +11,26 @@ const contactShelterForm = async (title, formId, handler) => {
   <h1 id="form-title">${title}</h1>
   <div class="form-control">
     <label for="name">Name</label><br />
-    <input id="${formId}-name" type="name" name="name"/><br />
-    <small> Error message </small>
+    <input id="${formId}-name" type="name" name="name"/>
+
   </div>
   <div class="form-control">
     <label for="phone-number">Phone number</label><br />
-    <input id="${formId}-phone" type="number" name="phone" /><br />
-    <small> Error message </small>
+    <input id="${formId}-phone" type="number" name="phone" />
+
   </div>
   <div class="form-control">
     <label for="email">Email</label><br />
-    <input id="${formId}-email" type="email" name="email" autocomplete="email"  required/><br />
-    <small> Error message </small>
+    <input id="${formId}-email" type="email" name="email" autocomplete="email"  required/>
+ 
   </div>
   <div class="form-control">
     <label for="Message">Message</label><br />
-    <textarea id="${formId}-message" name="message" rows="14" cols="60" required> </textarea><br />
-    <small> Error message </small>
+    <textarea id="${formId}-message" name="message" rows="14" cols="60" required> </textarea>
   </div>
    `;
   const divEl = document.createElement("div");
+  divEl.id = "get-in-touch-btn-container";
   const button = document.createElement("button");
   button.id = `${formId}-submit`;
   button.classList.add("button", "regular-button");
