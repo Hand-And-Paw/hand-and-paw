@@ -1,8 +1,9 @@
 /**
- * @param {object} animal object with information about 1 animal
- * @param {string} className info div class name
- * @returns div with animal's brief info
+ * @param {object} Animal object with information about 1 animal.
+ * @param {string} ClassName info div class name.
+ * @returns A div with animal's brief info.
  */
+
 const animalInfo = (animal, className) => {
   const { type, breed, gender, character, age, location, province } = animal;
   const info = document.createElement("div");
@@ -15,7 +16,7 @@ const animalInfo = (animal, className) => {
     Breed: <span>${breed}</span> <br>
     Gender: <span>${gender}</span><br>
     Character: <span>${character}</span><br>
-    Age: <span>${age}</span><br>
+    Age: <span>${age === 0 ? "less than 1 year" : age}</span><br>
     City: <span>${location}</span> <br>
     Province: <span>${
       province

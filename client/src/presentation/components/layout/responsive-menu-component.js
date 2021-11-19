@@ -2,8 +2,8 @@ import openModal from "../../handlers/call-login-form.js";
 import { loginForm } from "../shared/login-form.js";
 import logOut from "../../handlers/logout-handler.js";
 
-const responsiveMenuComponent = (props) => {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
+const responsiveMenuComponent = () => {
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn");
   const responsiveMenu = document.createElement("div");
   responsiveMenu.classList.add("responsive-menu");
 
@@ -112,6 +112,7 @@ responsiveMenu.appendChild(profileMenu);
     logoutLink.className = "header_link";
     logoutLink.innerHTML = "Log out";
     logoutLink.addEventListener("click", async () => {
+      // eslint-disable-next-line no-restricted-globals
       logOut(event);
     });
     logoutDiv.appendChild(logoutLink);

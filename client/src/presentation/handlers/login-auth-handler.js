@@ -17,11 +17,13 @@ export const loginAuthHandler = async (event) => {
   state.password = userObj.password;
   const userLog = await loginUser();
   if (userLog.message.includes("welcome")) {
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
     state.userId = userLog.user.userId;
     state.password = undefined;
     state.isLoggedIn = true;
     localStorage.setItem("userId", state.userId);
-    localStorage.setItem("isLoggedIn", state.isLoggedIn);
+    sessionStorage.setItem("isLoggedIn", state.isLoggedIn);
     form.innerHTML = `<p>${userLog.message}</p>`;
     const header = document.getElementById("menu");
     const navbarEl = document.getElementById("top-navbar");

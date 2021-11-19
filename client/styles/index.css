@@ -15,7 +15,7 @@
   background-image: url("../assets/images/ui/home/figma-images/welcome-bg.svg");
   background-position: left top;
   background-repeat: no-repeat;
-  background-size: 600px;
+  background-size: 800px;
   /* position the navbar */
   position: relative;
   margin-bottom: 3rem;
@@ -27,7 +27,7 @@
   grid-template-areas:
     "welcome-image welcome-article"
     "space call-to-action";
-  gap: 32px;
+  gap: 60px;
 }
 
 navbar {
@@ -62,8 +62,9 @@ hr {
 
 .call-to-action {
   width: 100%;
-/*   float: left;
- */}
+  /*   float: left;
+ */
+}
 
 .welcome-container .call-to-action {
   margin-top: 1.5rem;
@@ -102,7 +103,7 @@ hr {
 /* Video styles start */
 
 .video {
-  margin: 140px 0 70px 0;
+  /* margin: 140px 0 70px 0; */
   width: 100%;
 }
 
@@ -129,25 +130,51 @@ hr {
 /* Responsive design start */
 
 @media screen and (max-width: 1100px) {
-  .welcome,
-  .adoption-is-important,
-  .lonely-animals-need-help,
+  .welcome .grid-image-article,
   .video {
     display: block;
-    padding: 1.6rem;
+    justify-content: center;
+    align-content: center;
+  }
+  .welcome-image {
+    justify-content: center;
+    align-content: center;
+  }
+  .welcome-image-dog {
+    display: flex;
+    max-width: 500px;
     justify-content: center;
     align-content: center;
   }
 
-  .welcome-image-dog {
-    max-width: 500px;
-  }
   .header-navbar-wrapper {
     min-height: initial;
   }
 
-  .grid-image-article {
-    display: initial;
+  .lonely-animals-need-help .grid-image-article,
+  .adoption-is-important .grid-image-article {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 64px;
+    column-gap: 32px;
+    grid-template-areas:
+      "img"
+      "text"
+      "btn";
+  }
+  .lonely-animals-need-help .article-image,
+  .adoption-is-important .article-image {
+    grid-area: img;
+  }
+
+  .lonely-animals-need-help .article,
+  .adoption-is-important .article {
+    grid-area: text;
+  }
+
+  .lonely-animals-need-help .call-to-action,
+  .adoption-is-important .call-to-action {
+    grid-area: btn;
   }
 
   .call-to-action {
@@ -156,6 +183,83 @@ hr {
     flex-direction: column;
     height: 200px;
     justify-content: flex-start;
-/*     max-width: 0px;
- */  }
+    /*     max-width: 0px;
+ */
+  }
+}
+
+.card-images {
+  display: grid;
+  grid-template-rows: repeat(5, 20%);
+  justify-content: center;
+}
+
+.card-images img {
+  width: 297px;
+  height: 297px;
+  object-fit: cover;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+}
+
+.image-background {
+  background: var(--secondary1);
+
+  width: 325px;
+  height: 325px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.image-rotate-left {
+  transform: rotate(-15deg);
+}
+.image-rotate-right {
+  transform: rotate(15deg);
+}
+
+.bgr-rotate-left {
+  transform: rotate(-5deg);
+}
+.bgr-rotate-right {
+  transform: rotate(30deg);
+}
+
+.image1 {
+  grid-column: 6 / span 4;
+  grid-column-end: 3;
+}
+
+.image2 {
+  grid-column: 4 / span 4;
+  grid-row-start: 3;
+}
+
+@media screen and (max-width: 540px) {
+  .card-images img {
+    width: 200px;
+    height: 200px;
+  }
+  .image-background {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1100px) {
+  .card-images {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header-navbar-wrapper {
+    background-size: 500px;
+  }
 }

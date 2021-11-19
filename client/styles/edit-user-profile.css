@@ -109,7 +109,7 @@
   display: none;
 }
 
-.update-animal-image-upload {
+.update-avatar-image-upload {
   cursor: pointer;
   color: var(--linkBtn);
   margin-right: 32px;
@@ -119,7 +119,10 @@
   display: flex;
   align-items: center;
   width: 40%;
-  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .upload-images > div {
@@ -130,10 +133,12 @@
   margin: auto;
 }
 
-.animal-preview {
-  height: 100px;
-  width: auto;
-  object-fit: contain;
+.avatar-preview {
+
+  height: 75px;
+  width: 75px;
+
+  object-fit: cover;
   border-radius: 50%;
 }
 
