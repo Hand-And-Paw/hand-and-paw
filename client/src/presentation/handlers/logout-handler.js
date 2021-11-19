@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-undefined */
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
@@ -8,6 +9,7 @@ const logOut = async (event) => {
   if (event.target.id === "log-out") {
     // delete token, change isLoggedIn, change navbar
     logout();
+    location.reload();
     state.token = undefined;
     state.userId = undefined;
     state.isLoggedIn = false;
