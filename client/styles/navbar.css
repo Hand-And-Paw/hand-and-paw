@@ -32,11 +32,11 @@ navbar {
 }
 
 #avatar-image {
-  height: 75px;
-  width: auto;
-  object-fit: contain;
+  margin-top: 2px;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
   border-radius: 50%;
-  padding-left: 10px;
 }
 
 #top-navbar .pages-menu {

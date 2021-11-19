@@ -109,7 +109,7 @@
   display: none;
 }
 
-.update-animal-image-upload {
+.update-avatar-image-upload {
   cursor: pointer;
   color: var(--linkBtn);
   margin-right: 32px;
@@ -134,8 +134,10 @@
 }
 
 .avatar-preview {
-  height: 100px;
-  width: 100px;
+
+  height: 75px;
+  width: 75px;
+
   object-fit: cover;
   border-radius: 50%;
 }
