@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-invalid-this */
 export const faqListHandler = () => {
   const faq = document.getElementsByClassName("question");
