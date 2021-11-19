@@ -30,6 +30,7 @@ const searchMenu = () => {
   <!-- </select> -->
 
   <select name="age">
+  <option value="all">all ages</option>
   <option value="0">less than 1 year</option>
   <option value="1">1 year</option>
   <option value="2">2 years</option>
