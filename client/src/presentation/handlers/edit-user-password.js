@@ -29,7 +29,7 @@ export const editPasswordFormHandler = async () => {
       state.isLoggedIn = false;
       localStorage.removeItem("token");
       localStorage.removeItem("userId");
-      localStorage.removeItem("isLoggedIn");
+      sessionStorage.removeItem("isLoggedIn");
       const header = document.getElementById("menu");
       const navbarEl = document.getElementById("top-navbar");
       header.removeChild(navbarEl);

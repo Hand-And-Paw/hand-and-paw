@@ -21,7 +21,6 @@ export const loginAuthHandler = async (event) => {
     state.password = undefined;
     state.isLoggedIn = true;
     localStorage.setItem("userId", state.userId);
-    // localStorage.setItem("isLoggedIn", state.isLoggedIn);
     sessionStorage.setItem("isLoggedIn", state.isLoggedIn);
     form.innerHTML = `<p>${userLog.message}</p>`;
     const header = document.getElementById("menu");

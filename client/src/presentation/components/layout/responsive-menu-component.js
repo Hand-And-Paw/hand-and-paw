@@ -3,7 +3,7 @@ import { loginForm } from "../shared/login-form.js";
 import logOut from "../../handlers/logout-handler.js";
 
 const responsiveMenuComponent = (props) => {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn");
   const responsiveMenu = document.createElement("div");
   responsiveMenu.classList.add("responsive-menu");
 
