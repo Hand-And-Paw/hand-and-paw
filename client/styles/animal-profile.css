@@ -16,7 +16,8 @@
     "b . . ."
     "p p i i "
     ". . . c"
-    "s s s s";
+    "s s s s"
+    "d d d d";
 }
 .animal-profile-menu {
   grid-area: i;
@@ -94,6 +95,38 @@
   margin-left: 0.4em;
   color: var(--mainText);
 }
+/* Animal public access*/
+.animal-public-access {
+  grid-area: d;
+  width: 100%;
+  background-color: var(--secondary1);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  padding: 3em;
+  justify-self: center;
+}
+
+.animal-public-access h3 {
+  text-align: center;
+}
+.access-days-component li {
+  list-style-type: none;
+}
+.li-public-access-hour {
+  list-style-type: none;
+  font-weight: bolder;
+  font-size: 20px;
+  color: var(--primary2);
+  margin: 10px 0px;
+}
+
+.li-webSite-hour {
+  list-style-type: none;
+  font-weight: bolder;
+  font-size: 20px;
+  color: var(--primary2);
+  margin: 10px 0px;
+}
 
 /* Responsive design start */
 
@@ -101,7 +134,7 @@
   .animal-profile-page {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 700px));
+    grid-template-columns: minmax(200px, 700px);
 
     /* grid-template-columns: 700px; */
     grid-template-areas:
@@ -109,7 +142,8 @@
       "p "
       "i "
       "c "
-      "s ";
+      "s "
+      "d";
   }
   .animal-info {
     grid-area: i;

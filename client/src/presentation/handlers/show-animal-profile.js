@@ -10,6 +10,7 @@ import state from "../../data-access/state/state.js";
 import seekerControlMenu from "../components/shared/seeker-control-menu.js";
 import { getUser } from "../../data-access/user-access/get-user.js";
 import toMyAnimalsBtn from "../components/layout/go-to-added-animals.js";
+import { publicAccessHoursComponent } from "../components/shared/public-access-hours.js";
 
 const showAnimalProfile = async (e, id) => {
   const animalId = !id ? e.target.closest(".animal").id : id;
@@ -76,6 +77,7 @@ const showAnimalProfile = async (e, id) => {
   animalProfile.appendChild(animalInfo(animal[0], "animal-info"));
   // contact shelter btn
   animalProfile.appendChild(contactShelter(animal[0]._id));
+
   // add animal story
   animalProfile.appendChild(aboutAnimal(animal[0], "animal-story"));
   // append card menu
@@ -93,6 +95,12 @@ const showAnimalProfile = async (e, id) => {
         checkFavorite,
         state.animalId
       )
+    );
+  }
+  const giver = await getUser(animal[0].userId);
+  if (giver[0].publicAccess) {
+    animalProfile.appendChild(
+      publicAccessHoursComponent(giver[0], animal[0].name)
     );
   }
 
