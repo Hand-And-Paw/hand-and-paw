@@ -140,7 +140,7 @@ function avatarImage() {
   const avatarPreviewContainer = container("avatar-preview-container");
   const avatarImageEl = document.createElement("img");
   avatarImageEl.id = "avatar-preview";
-  avatarImageEl.className = "animal-preview";
+  avatarImageEl.className = "avatar-preview";
   avatarPreviewContainer.appendChild(avatarImageEl);
   imageContainer.appendChild(inputImageContainer);
   imageContainer.appendChild(avatarPreviewContainer);
