@@ -124,7 +124,6 @@ textarea {
   height: 100px;
   width: 100px;
   margin: 0.1rem auto;
-  object-fit: contain;
 }
 
 .referred-animal h3 {
@@ -133,6 +132,7 @@ textarea {
 }
 .subject-animal img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   clip-path: circle(40%);
 }
