@@ -17,6 +17,8 @@ export const loginAuthHandler = async (event) => {
   state.password = userObj.password;
   const userLog = await loginUser();
   if (userLog.message.includes("welcome")) {
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
     state.userId = userLog.user.userId;
     state.password = undefined;
     state.isLoggedIn = true;
