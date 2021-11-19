@@ -2,15 +2,15 @@ import openModal from "../../handlers/call-login-form.js";
 import { loginForm } from "../shared/login-form.js";
 
 const mainMenuComponent = (props) => {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn");
   // Init properties
-  let className = props?.className || "pages-menu";
+  const className = props?.className || "pages-menu";
   // Create component
   const mainMenu = document.createElement("div");
   mainMenu.className = className;
   // find animal
   const findAnimalDiv = document.createElement("div");
-  findAnimalDiv.className="pages-menu-item"
+  findAnimalDiv.className = "pages-menu-item";
   const findAnimalAnchor = document.createElement("a");
   findAnimalAnchor.href = "/src/presentation/components/pages/find-animal.html";
   findAnimalAnchor.innerHTML = "Find an animal";
