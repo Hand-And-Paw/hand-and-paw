@@ -8,7 +8,8 @@ import burgerComponent from "./burger.js";
 
 export const navbar = async () => {
   // Is the user logged in
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  // const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn");
 
   /// ///////////////////////////////
   // Create the navbar
