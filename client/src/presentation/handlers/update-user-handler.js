@@ -6,6 +6,7 @@ import { updateUser } from "../../data-access/user-access/update-user.js";
 import { getUser } from "../../data-access/user-access/get-user.js";
 import { addValuesToEditUser } from "../../business-logic/add-values-to-edit-user.js";
 import { validateForm } from "../../business-logic/regular-form-input-validation.js";
+import { navbar } from "../components/layout/navbar.js";
 
 export const updateUserHandler = async () => {
   const form = document.querySelector("#edit-user-profile");
@@ -35,7 +36,11 @@ export const updateUserHandler = async () => {
       removeError(phone);
       removeError(website);
       const user = await getUser(userId);
+
       setTimeout(() => addValuesToEditUser(user[0]), 1001);
+      setTimeout(() => renderNavbar(), 1001);
+      // eslint-disable-next-line no-return-await
+
       return;
     }
     renderFailedSpan(post);
@@ -106,4 +111,12 @@ function getInput(inputId, smallId) {
 function removeError(inputObj) {
   inputObj.formMessage.innerHTML = "";
   inputObj.formInput.style.borderColor = "black";
+}
+
+async function renderNavbar() {
+  const navbarEl = document.getElementById("top-navbar");
+  if (navbarEl) {
+    navbarEl.remove();
+    document.getElementById("menu").appendChild(await navbar());
+  }
 }

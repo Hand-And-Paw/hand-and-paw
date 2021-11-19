@@ -134,13 +134,13 @@ function avatarImage() {
   const labelInputImage = document.createElement("label");
   labelInputImage.htmlFor = inputUploadImage.id;
   labelInputImage.innerHTML = " Upload Image";
-  labelInputImage.className = "update-animal-image-upload";
+  labelInputImage.className = "update-avatar-image-upload";
   inputImageContainer.appendChild(labelInputImage);
   inputImageContainer.appendChild(inputUploadImage);
   const avatarPreviewContainer = container("avatar-preview-container");
   const avatarImageEl = document.createElement("img");
   avatarImageEl.id = "avatar-preview";
-  avatarImageEl.className = "animal-preview";
+  avatarImageEl.className = "avatar-preview";
   avatarPreviewContainer.appendChild(avatarImageEl);
   imageContainer.appendChild(inputImageContainer);
   imageContainer.appendChild(avatarPreviewContainer);
