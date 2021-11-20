@@ -50,7 +50,7 @@ const checkPhoneNumber = (input) => {
     showSuccess(input);
     return true;
   }
-  showError(input, "This entry can only contain numbers.");
+  showError(input, "Entry is not valid.Example: +32123456789");
   return false;
 };
 
