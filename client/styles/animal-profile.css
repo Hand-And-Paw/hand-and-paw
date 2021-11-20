@@ -116,7 +116,7 @@
 .li-public-access-hour {
   list-style-type: none;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 1.125rem;
   color: var(--primary2);
   margin: 10px 0px;
 }
@@ -124,9 +124,15 @@
 .li-webSite-hour {
   list-style-type: none;
   font-weight: bolder;
-  font-size: 20px;
+  padding-top: 20px !important;
+}
+.li-webSite-hour a {
+  font-size: 1.125rem;
   color: var(--primary2);
-  margin: 10px 0px;
+}
+
+.li-webSite-hour a:hover {
+  border-bottom: 3px solid var(--primary2);
 }
 
 /* Responsive design start */
