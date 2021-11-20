@@ -98,10 +98,8 @@ const showAnimalProfile = async (e, id) => {
     );
   }
   const giver = await getUser(animal[0].userId);
-  if (giver[0].publicAccess) {
-    animalProfile.appendChild(
-      publicAccessHoursComponent(giver[0], animal[0].name)
-    );
+  if (giver[0].publicAccess || giver[0].website) {
+    animalProfile.appendChild(publicAccessHoursComponent(giver[0], animal[0]));
   }
 
   // append components to the page
