@@ -33,6 +33,7 @@ export const publicAccessHoursComponent = (user, animal) => {
     const a = document.createElement("a");
     a.href = user.website;
     a.innerText = user.website;
+    a.target = "_blank";
     liWebsite.appendChild(a);
     ulEl.appendChild(liWebsite);
   }
