@@ -9,7 +9,10 @@ const goToAnimalProfile = async (e, animalId) => {
   }
   await showAnimalProfile(e, animalId);
   const button = document.getElementById("to-search-results");
-  button.remove();
+  if (button) {
+    button.remove();
+  }
+
   // append go to my animals
   const page = document.querySelector(".animal-profile-page.container");
   page.insertAdjacentElement(
