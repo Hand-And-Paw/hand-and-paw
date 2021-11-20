@@ -27,7 +27,8 @@ userRoute.patch(
   tokenChecker,
   userController.deletePublishedAnimal
 );
-userRoute.get("/:id", tokenChecker, userController.getUser);
+// disable validation auth
+userRoute.get("/:id", userController.getUser);
 userRoute.put(
   "/update/:id",
   upload.single("avatar"),
