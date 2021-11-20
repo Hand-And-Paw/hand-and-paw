@@ -97,8 +97,9 @@ const showAnimalProfile = async (e, id) => {
       )
     );
   }
+
   const giver = await getUser(animal[0].userId);
-  if (giver[0].publicAccess || giver[0].website) {
+  if (giver[0].publicAccess || giver[0].website || animal[0].webSite) {
     animalProfile.appendChild(publicAccessHoursComponent(giver[0], animal[0]));
   }
 

@@ -24,7 +24,7 @@ export const publicAccessHoursComponent = (user, animal) => {
       ulEl.appendChild(liEl);
     }
   }
-  if (user.website || animal.webSite) {
+  if (user.website) {
     const liTitleWebsite = document.createElement("li");
     liTitleWebsite.innerText = "Website";
     liTitleWebsite.className = "li-webSite-hour";
@@ -33,6 +33,18 @@ export const publicAccessHoursComponent = (user, animal) => {
     const a = document.createElement("a");
     a.href = user.website;
     a.innerText = user.website;
+    a.target = "_blank";
+    liWebsite.appendChild(a);
+    ulEl.appendChild(liWebsite);
+  } else if (animal.webSite) {
+    const liTitleWebsite = document.createElement("li");
+    liTitleWebsite.innerText = "Website";
+    liTitleWebsite.className = "li-webSite-hour";
+    ulEl.appendChild(liTitleWebsite);
+    const liWebsite = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = animal.webSite;
+    a.innerText = animal.webSite;
     a.target = "_blank";
     liWebsite.appendChild(a);
     ulEl.appendChild(liWebsite);
