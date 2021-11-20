@@ -125,6 +125,7 @@
   list-style-type: none;
   font-weight: bolder;
   padding-top: 20px !important;
+  color: var(--primary2);
 }
 .li-webSite-hour a {
   font-size: 1.125rem;
