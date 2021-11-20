@@ -1,8 +1,6 @@
 # Hand and paw API
 
-This project will serve as the first introduction to setting up a simple REST backend for the HackYourFuture Web Apps module. The code in the start-of-class branch has all the endpoints for the channels resource implemented and serves as example code and starting point for the lecture.
-
-During the lecture the endpoints of the messages repo should be implemented in order to make the chat client work. A reference implementation of the end goal can be found on the reference-implementation branch.
+Is an open API where you can use already to get animals and publish them in your project, below is a full description of all routes that you can use for development purposes
 
 ## Index
 
@@ -36,9 +34,6 @@ During the lecture the endpoints of the messages repo should be implemented in o
   - [Errors convention](#errors-convention)
     - [Validation errors:](#validation-errors)
     - [Not found errors:](#not-found-errors)
-    <<<<<<< HEAD - [Not found errors:](#not-found-errors)
-    =======
-    > > > > > > > da39c263e824a25e2d797ad3652b8fe0a29353fe
 
 ## Getting Started
 
@@ -117,7 +112,7 @@ Creates a new user.
 
 Get all users from the collection.
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 Returns json data about a single channel.
 
@@ -157,7 +152,7 @@ api/users
 
 Get one user from the system.
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -201,9 +196,9 @@ Get one user from the system.
 
 ### Delete user
 
-Remove a user of the dataBase.
+Remove a user and all registered animals of the dataBase.
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -235,7 +230,7 @@ Remove a user of the dataBase.
 
 ### Update User
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -336,7 +331,7 @@ Multiform data
 
 Remove the animal id in the `registeredAnimals` property, and deletes the animal in Animal collection
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -378,7 +373,7 @@ Remove the animal id in the `registeredAnimals` property, and deletes the animal
 
 Add the animal id in the `favorites` property
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -420,7 +415,7 @@ Add the animal id in the `favorites` property
 
 Remove the animal id from the `favorites` property
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -462,7 +457,7 @@ Remove the animal id from the `favorites` property
 
 ### Create new animal
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 Creates a new user.
 
@@ -637,7 +632,7 @@ No registration or authorization required
 
 Remove an animal of the dataBase.
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -669,7 +664,7 @@ Remove an animal of the dataBase.
 
 ### Update Animal
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -746,7 +741,7 @@ Multiform data
 
 Upload one or multiple pictures
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -791,7 +786,7 @@ Multiform Data
 
 Deletes one picture
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -833,7 +828,7 @@ Deletes one picture
 
 Updates one picture
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
@@ -876,7 +871,7 @@ Multiform Data
 
 Updates the principal picture of the animal
 
-> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Authorization** and value **bearer token** where **token** is the code that you are going to receive as response once you are logged in.
+> To use this route, you must register and then login. Once logged in, in Postman you need to put in the header section as key **Cookie** and value **Token receive in postman** [for more info about cookies here](https://learning.postman.com/docs/sending-requests/cookies/) where **token** is the code that you are going to receive as response once you are logged in.
 
 - **URL**
 
