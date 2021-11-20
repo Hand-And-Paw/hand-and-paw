@@ -34,7 +34,7 @@ const checkPhoneNumber = (input, className) => {
   input.formInput.style.borderColor = "red";
   renderMessage(
     input.formMessage,
-    "This entry can only contain numbers.",
+    "Entry is not valid. Example: +32123456789.",
     className
   );
   return false;
