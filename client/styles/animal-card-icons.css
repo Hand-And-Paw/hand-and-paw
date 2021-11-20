@@ -28,34 +28,13 @@
 
 #delete-animal,
 #edit-animal,
-#favorite-animal {
-  /* width: 30px; */
-
+.favorite-animal {
   transition: transform 0.2s;
 }
 
 #delete-animal:hover,
 #edit-animal:hover,
-#favorite-animal:hover {
+.favorite-animal:hover {
   transform: scale(1.1);
   cursor: pointer;
-}
-
-#favorite-animal {
-  position: static;
-}
-
-#favorite-animal,
-#favorite-animal::before {
-  cursor: pointer;
-}
-
-#favorite-animal {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }

@@ -4,6 +4,7 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
+@import url("./animal-card-icons.css");
 
 .animal-profile-page {
   justify-content: center;
