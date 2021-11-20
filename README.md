@@ -1,8 +1,10 @@
 # Hand an Paw
 
 - [Hand an Paw](#hand-an-paw)
+
   - [About](#about)
-  - [Screenshots](#screenshots)
+  - [Screenshots Landing Page](#screenshots-landing-page)
+  - [Screenshots App](#screenshots-app)
   - [Features](#features)
   - [License](#license)
   - [Tools and Technologies](#tools-and-technologies)
@@ -15,9 +17,9 @@
     - [Install database server](#install-database-server)
     - [In the Hand and Paw app repo](#in-the-hand-and-paw-app-repo)
     - [Using the API](#using-the-api)
-    - [Fetch data from the API using VITE](#fetch-data-from-the-api-using-vite)
     - [Run the app](#run-the-app)
   - [Contact](#contact)
+  - [Project's landing page](https://handandpaw.herokuapp.com/landing-page/)
 
 ## About
 
@@ -35,9 +37,29 @@
 - the website provides information about adoption process in Belgium
 - the website is in English
 
-## Screenshots
+## Screenshots Landing Page
+
+![Main landing page](./client/assets/images/project-screenshots/main-landing-page.png)
+![About project landing page](./client/assets/images/project-screenshots/about-project-landing-page.png)
+
+## Screenshots App
+
+![Home page](./client/assets/images/project-screenshots/home-page.png)
+
+![find animal](./client/assets/images/project-screenshots/find-animal.png)
+
+![find animal](./client/assets/images/project-screenshots/animal-profile.png)
 
 ## Features
+
+- Home Page Design
+- Internal Web Pages
+- Backend Admin
+- Call to Action
+- Favorites
+- Mobile responsive
+- Hamburger menu on mobile site
+- Reviews and Testimonials
 
 ## License
 
@@ -57,11 +79,23 @@ Figma
 
 ### Back-End
 
+- Node.js 16.13.0
+- Express 4.17.1
+- Nodemon 2.0.2
+- Mongoose 6.0.9
+- Multer 1.4.3
+- Sharp 0.29.2
+- Nodemailer 6.7.0
+- VSC 1.51
+- Postman 8.3.0
+
 ### Dev-OPs
 
 - Heroku
 
 ## Contribute
+
+We are open for contributions, and we'll be glad to add new contributions to the project after acceptance criteria
 
 ## Getting Started
 
@@ -74,19 +108,13 @@ Follow the steps explained by [mongodb](https://docs.mongodb.com/manual/administ
 - `npm install`
 - **run the server**
   - `npm run dev:api` - uses `nodemon` to restart the server each time you save a change
-- **run the front end**
-  - `npm run dev:client` - deploy the front end using `vite` package
 
 ### Using the API
 
 - **from postman**
-  - `http://localhost:xxxx/api` - the main entry point to the API
+  - `{{url}}/api` - the main entry point to the API, must select in postman the environment, (**heroku** or **npm start**)
 - **from the browser**
   - `http://localhost:xxxx/` serves `/api/<route-api>`
-
-### Fetch data from the API using VITE
-
-You must run at the same time the server: `npm run dev:api` and the the client `npm run dev:client`(in different VSCode windows)
 
 ### Run the app
 
@@ -98,7 +126,7 @@ Only run the script `npm start`
 
 **Project owner:** [Alina](https://github.com/alinamarasca)
 
-**FrontEnd Developer:** [Alina](https://github.com/alinamarasca),[Zehra](https://github.com/zehrayelkenci)
+**FrontEnd Developer:** [Alina](https://github.com/alinamarasca), [Zehra](https://github.com/zehrayelkenci), [Oksana](https://github.com/OksanaShulha)
 
 **Backend Developer:** [Rafael](https://github.com/rago89), [Mayuri](https://github.com/mayuri2510)
 

@@ -4,8 +4,8 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
-@import url("./call-to-action-buttons.css");
 @import url("./input-select.css");
+@import url("./regular-button.css");
 
 #edit-account-main-title {
   text-align: center;
@@ -14,6 +14,10 @@
 /* user profile form */
 #edit-user-profile {
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
 #edit-user-profile .input-form {
@@ -25,15 +29,26 @@
 }
 
 .edit-button {
+  border: 0;
   display: block;
-  border-color: black;
   margin: 20px auto;
   width: 50%;
   height: 50px;
   text-align: center;
-  background-color: rgb(162, 162, 173);
+  background-color: var(--primary2);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.125rem;
 }
 
+.update-account {
+  margin: auto;
+  align-self: center;
+  justify-self: center;
+}
+.edit-button:hover {
+  background-color: var(--primaryHover2);
+}
 #edit-user-profile p {
   text-align: center;
 }
@@ -94,7 +109,7 @@
   display: none;
 }
 
-.update-animal-image-upload {
+.update-avatar-image-upload {
   cursor: pointer;
   color: var(--linkBtn);
   margin-right: 32px;
@@ -104,7 +119,10 @@
   display: flex;
   align-items: center;
   width: 40%;
-  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .upload-images > div {
@@ -115,10 +133,12 @@
   margin: auto;
 }
 
-.animal-preview {
-  height: 100px;
-  width: auto;
-  object-fit: contain;
+.avatar-preview {
+
+  height: 75px;
+  width: 75px;
+
+  object-fit: cover;
   border-radius: 50%;
 }
 
@@ -129,4 +149,14 @@
 
 #yes-check {
   cursor: pointer;
+}
+
+.successText {
+  color: var(--successColor);
+  margin-top: -25px;
+}
+
+.failText {
+  color: var(--errorColor);
+  margin-top: -25px;
 }

@@ -1,10 +1,10 @@
 import { navbar } from "../components/layout/navbar.js";
 import footer from "../components/layout/footer.js";
-// import { animalCard } from "../components/shared/animal-card.js";
+import { burgerHandler } from "../handlers/burger-handler.js";
 
-const buildPage = () => {
-  document.getElementById("menu").appendChild(navbar("top-navbar"));
+const buildPage = async () => {
+  document.getElementById("menu").appendChild(await navbar("top-navbar"));
   document.querySelector("footer").appendChild(footer("footer-navigation"));
-  // document.querySelector(".animal-info").appendChild(animalCard());
+  burgerHandler();
 };
 buildPage();

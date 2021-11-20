@@ -6,14 +6,15 @@ import { updateUser } from "../../data-access/user-access/update-user.js";
 import {
   checkEmail,
   checkEmailMatch,
-} from "../../business-logic/form-validation.js";
+} from "../../business-logic/modal-form-validation.js";
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
+import { burgerHandler } from "./burger-handler.js";
 
 export const editEmailFormHandler = async () => {
   const form = document.querySelector("#edit-email-form");
 
-  const isValidated = validatePassword();
+  const isValidated = validateEmail();
 
   if (isValidated) {
     const formData = new FormData(form);
@@ -28,28 +29,36 @@ export const editEmailFormHandler = async () => {
       state.isLoggedIn = false;
       localStorage.removeItem("token");
       localStorage.removeItem("userId");
-      localStorage.removeItem("isLoggedIn");
+      sessionStorage.removeItem("isLoggedIn");
       const header = document.getElementById("menu");
       const navbarEl = document.getElementById("top-navbar");
       header.removeChild(navbarEl);
-      header.appendChild(navbar());
+      header.appendChild(await navbar());
+      burgerHandler();
       return;
     }
-
     const span = document.createElement("span");
+    span.id = "email-error-message";
     const br = document.createElement("br");
+    br.id = "space-error-message";
     span.innerHTML = `${post.message}`;
     span.style.color = "red";
     form.appendChild(br);
     form.appendChild(span);
+
+    setTimeout(closeMessage, 3000);
   }
 };
 
-function validatePassword() {
+function validateEmail() {
   const form = document.querySelector("#edit-email-form");
   const email = form.querySelector("#email-input");
   const confirmEmail = form.querySelector("#repeatEmail-input");
-
+  // delete existing error if the is to append new one
+  if (document.getElementById("error-message")) {
+    const errorMessages = document.querySelectorAll("#error-message");
+    [...errorMessages].forEach((element) => element.remove());
+  }
   let isValid = true;
 
   if (!checkEmail(email)) {
@@ -64,4 +73,9 @@ function validatePassword() {
     isValid = false;
   }
   return isValid;
+}
+
+function closeMessage() {
+  document.getElementById("email-error-message").remove();
+  document.getElementById("space-error-message").remove();
 }

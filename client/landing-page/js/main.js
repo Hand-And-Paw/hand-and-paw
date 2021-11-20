@@ -1,3 +1,7 @@
+import { burgerHandler } from "../../src/presentation/handlers/burger-handler.js";
+
+burgerHandler();
+
 //Header changes color
 (function () {
   const header = document.querySelector(".header");
@@ -10,26 +14,7 @@
   };
 })();
 
-//Burger handler
 
-const burgerHandler = () => {
-  const burgerItem = document.querySelector(".burger");
-  const menu = document.querySelector(".header_nav");
-  const menuItems = document.querySelectorAll(".header_item");
-  menuItems.forEach((menuItem) => {
-    menuItem.addEventListener("click", () =>
-      menu.classList.remove("header_nav_active")
-    );
-  });
-
-  const menuCloseItem = document.querySelector(".header_nav-close");
-  burgerItem.addEventListener("click", () => {
-    menu.classList.add("header_nav_active");
-  });
-  menuCloseItem.addEventListener("click", () => {
-    menu.classList.remove("header_nav_active");
-  });
-};
 
 // Scroll to anchors
 (function () {

@@ -1,36 +1,40 @@
 .search-card-menu {
   position: absolute;
-  display: inline-block;
+  display: flex;
   flex-direction: column;
   top: 20px;
   right: 10px;
-  z-index: 10;
-  background-color: rgba(253, 241, 255, 0.6);
+  z-index: 1;
+  background-color: rgba(253, 241, 255, 0.7);
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: auto;
+  padding: 0.4rem;
+  gap: 6px;
 }
-.favorites {
-  background-color: transparent;
+
+#delete-animal,
+#edit-animal {
+  width: 35px;
+  height: auto;
+  margin: 0.4rem 0;
+}
+
+#delete-animal {
+  width: 30px;
 }
 
 #delete-animal,
 #edit-animal,
-#favorite-animal {
-  width: 25px;
-  height: 25px;
-  margin: 0.6rem;
+.favorite-animal {
   transition: transform 0.2s;
-}
-
-#favorite-animal {
-  opacity: 0.6;
-}
-
-.active {
-  opacity: 1 !important;
 }
 
 #delete-animal:hover,
 #edit-animal:hover,
-#favorite-animal:hover {
-  transform: scale(1.5);
+.favorite-animal:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }

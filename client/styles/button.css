@@ -1,16 +1,20 @@
 .button {
+  border: 0;
   font-size: 1rem;
   font-weight: 500;
   border-bottom: 5px;
   border-radius: var(--borderRadius);
-  padding: 0.9em 2.7em;
+  padding: 0.9em 1.6em;
   box-shadow: var(--shadow);
   text-align: center;
+  min-width: 200px;
+  max-width: 200px;
+  height: fit-content;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .button:hover {
   cursor: pointer;
 }
+
+/* Responsive design end */

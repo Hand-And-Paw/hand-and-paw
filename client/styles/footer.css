@@ -9,8 +9,8 @@ footer {
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   justify-items: center;
-  height: 300px;
-  padding: 4rem 10rem 4rem 10rem;
+  height: fit-content;
+  padding: 4rem 0rem;
 }
 
 .footer-content * {
@@ -20,16 +20,22 @@ footer {
 
 .footer-content .pages-menu > div {
   margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 172px;
 }
 
 .footer-content .footer-about-project > p {
   margin-bottom: 10px;
+  width: 172px;
+  margin-right: 30px;
 }
 
 .footer-content .contact {
   display: flex;
   flex-direction: column;
   align-items: end;
+  width: 100px;
 }
 
 .footer-content .contact > div {
@@ -40,6 +46,7 @@ footer {
 .footer-content .contact .github-icon {
   height: 32px;
 }
+
 .footer-content .pages-menu a {
   position: relative;
 }
@@ -50,6 +57,44 @@ footer {
   width: 100%;
   height: 2px;
   bottom: -4px;
-  left: 0;
+  left: 0;nm
   background-color: var(--footerText);
 }
+
+
+
+/* Responsive design start */
+@media screen and (max-width: 990px) {
+  .footer {
+    height: fit-content;
+
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-content .pages-menu {
+    margin-top: 20px;
+    width: 240px;
+  }
+
+  .footer-content .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+    width: 240px;
+  }
+
+  .footer-about-project {
+    margin-top: 30px;
+    width: 172px;
+  }
+}
+
+/* Responsive design end */

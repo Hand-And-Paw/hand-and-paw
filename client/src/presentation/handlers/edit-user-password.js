@@ -3,9 +3,13 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { updateUser } from "../../data-access/user-access/update-user.js";
-import { checkPasswordMatch } from "../../business-logic/form-validation.js";
 import state from "../../data-access/state/state.js";
 import { navbar } from "../components/layout/navbar.js";
+import { burgerHandler } from "./burger-handler.js";
+import {
+  checkLength,
+  checkPasswordMatch,
+} from "../../business-logic/modal-form-validation.js";
 
 export const editPasswordFormHandler = async () => {
   const form = document.querySelector("#edit-password-form");
@@ -25,16 +29,19 @@ export const editPasswordFormHandler = async () => {
       state.isLoggedIn = false;
       localStorage.removeItem("token");
       localStorage.removeItem("userId");
-      localStorage.removeItem("isLoggedIn");
+      sessionStorage.removeItem("isLoggedIn");
       const header = document.getElementById("menu");
       const navbarEl = document.getElementById("top-navbar");
       header.removeChild(navbarEl);
-      header.appendChild(navbar());
+      header.appendChild(await navbar());
+      burgerHandler();
       return;
     }
 
     const span = document.createElement("span");
+    span.id = "password-error-message";
     const br = document.createElement("br");
+    br.id = "password-error-message-space";
     span.innerHTML = `${post.message}`;
     span.style.color = "red";
     form.appendChild(br);
@@ -46,6 +53,11 @@ function validatePassword() {
   const form = document.querySelector("#edit-password-form");
   const password = form.querySelector("#newPassword-input");
   const confirmPassword = form.querySelector("#confirmPassword-input");
+  // delete existing error if the is to append new one
+  if (document.getElementById("error-message")) {
+    const errorMessages = document.querySelectorAll("#error-message");
+    [...errorMessages].forEach((element) => element.remove());
+  }
 
   let isValid = true;
 
@@ -62,24 +74,3 @@ function validatePassword() {
   }
   return isValid;
 }
-
-const checkLength = (input, min, max) => {
-  if (input.value.length < min) {
-    input.value = "";
-    showError(input, `To short min ${min} characters`);
-    return false;
-  }
-  if (input.value.length > max) {
-    input.value = "";
-    showError(input, `To large max ${max} characters`);
-    return false;
-  }
-  return true;
-};
-
-const showError = (input, message) => {
-  const formControl = input.parentElement;
-  formControl.className = "form-control error";
-  const small = formControl.querySelector("small");
-  small.innerText = message;
-};

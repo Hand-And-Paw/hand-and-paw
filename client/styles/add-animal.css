@@ -65,3 +65,8 @@
   width: fit-content;
   height: 30px;
 }
+
+.failText {
+  color: var(--errorColor);
+  margin-top: -25px;
+}

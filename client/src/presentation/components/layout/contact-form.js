@@ -13,34 +13,34 @@ const contactForm = (title, formId, handler) => {
   <h1>${title}</h1>
   <div class="form-control">
     <label for="name">Name</label><br />
-    <input type="name" name="name"/><br />
-    <small> Error message </small>
+    <input id="${formId}-name" type="name" name="name"/>
+ 
   </div>
   <div class="form-control">
     <label for="phone-number">Phone number</label><br />
-    <input type="number" name="phone" /><br />
-    <small> Error message </small>
+    <input id="${formId}-phone" type="text" name="phone" />
+
   </div>
   <div class="form-control">
     <label for="email">Email</label><br />
-    <input type="email" name="email" autocomplete="email"  required/><br />
-    <small> Error message </small>
+    <input id="${formId}-email" type="email" name="email" autocomplete="email"  required/>
+   
   </div>
   <div class="form-control">
   <label for="subject">Subject</label><br />
-  <input type="text" name="subject" /><br />
-  <small> Error message </small>
+  <input id="${formId}-subject" type="text" name="subject" />
+
 </div>
   <div class="form-control">
     <label for="Message">Message</label><br />
-    <textarea name="message" rows="10" cols="60" required> </textarea>
-    <small> Error message </small>
+    <textarea id="${formId}-message" name="message" rows="10" cols="60" required> </textarea>
+
   </div>
    `;
   const divEl = document.createElement("div");
   const button = document.createElement("button");
   button.id = `${formId}-submit`;
-  button.classList.add("button", "form-button");
+  button.classList.add("button", "regular-button");
   button.type = "submit";
   button.innerHTML = "Send";
   button.addEventListener("click", handler);

@@ -7,69 +7,70 @@
 @import url("./modal.css");
 @import url("./form.css");
 @import url("./link-button.css");
-@import url("./about-adoption.css");
+/* @import url("./about-adoption.css"); */
 @import url("./animal-profile.css");
 
 /* top article + navbar section */
+.header-navbar-wrapper {
+  background-image: url("../assets/images/ui/home/figma-images/welcome-bg.svg");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 800px;
+  /* position the navbar */
+  position: relative;
+  margin-bottom: 3rem;
+}
+
 .welcome-container {
   justify-content: center;
-  padding: 0 10rem;
+  /* padding: 0 10rem; */
   grid-template-areas:
-    "welcome-image-dog welcome-article"
+    "welcome-image welcome-article"
     "space call-to-action";
-}
-.welcome-container .call-to-action {
-  width: 70%;
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: space-between;
+  gap: 60px;
 }
 
 navbar {
   background-color: transparent !important;
 }
 
-.header-navbar-wrapper {
-  /* The image used */
-  background-image: url("../assets/images/ui/home/figma-images/welcome-bg.png");
-  min-height: 600px;
-  /* Center and scale the image */
-  background-position: left top;
-  background-repeat: no-repeat;
-  background-size: 600px;
-  /* position the navbar */
-  position: relative;
-  margin-bottom: 3rem;
-}
-
 hr {
   margin-top: 15px;
   border: 2px solid var(--primary2);
 }
-/* 
-.welcome-article {
-  background-color: cadetblue;
-  display: grid;
-  grid-template-rows: auto;
-} */
+
 .welcome-image {
   display: flex;
   align-content: flex-start;
   justify-content: flex-start;
-  position: relative;
+  grid-area: welcome-image;
+  /* position: relative;
   top: 0;
-  left: 0;
+  left: 0; */
 }
+
 .welcome-image-dog {
-  margin: 0.6rem;
-  position: relative;
-  top: 10px;
-  left: 10px;
+  max-width: 600px;
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+}
+
+.welcome-shift {
+  grid-area: welcome-article;
 }
 
 .call-to-action {
-  grid-area: call-to-action;
-  float: left;
+  width: 100%;
+  /*   float: left;
+ */
+}
+
+.welcome-container .call-to-action {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: left;
+  gap: 32px;
 }
 /* 1 section why adoption is important */
 .adoption-is-important {
@@ -99,37 +100,166 @@ hr {
 .help-article .article-image {
   grid-area: image;
 }
-/* 2 section video */
+/* Video styles start */
+
 .video {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  /* margin: 140px 0 70px 0; */
+  width: 100%;
 }
+
+.video_wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.video_item {
+  padding-top: 56.25%;
+}
+
+.video_element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Video styles end */
 
 /* Responsive design start */
 
-@media screen and (max-width: 990px) {
-  .welcome-container {
+@media screen and (max-width: 1100px) {
+  .welcome .grid-image-article,
+  .video {
     display: block;
+    justify-content: center;
+    align-content: center;
   }
-  .adoption-article {
-    display: block;
+  .welcome-image {
+    justify-content: center;
+    align-content: center;
   }
   .welcome-image-dog {
-    max-width: 100%;
+    display: flex;
+    max-width: 500px;
+    justify-content: center;
+    align-content: center;
   }
+
   .header-navbar-wrapper {
     min-height: initial;
   }
 
-  .adoption-is-important {
-    display: block;
+  .lonely-animals-need-help .grid-image-article,
+  .adoption-is-important .grid-image-article {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 64px;
+    column-gap: 32px;
+    grid-template-areas:
+      "img"
+      "text"
+      "btn";
+  }
+  .lonely-animals-need-help .article-image,
+  .adoption-is-important .article-image {
+    grid-area: img;
   }
 
-  .grid-image-article {
-    display: initial;
+  .lonely-animals-need-help .article,
+  .adoption-is-important .article {
+    grid-area: text;
   }
+
+  .lonely-animals-need-help .call-to-action,
+  .adoption-is-important .call-to-action {
+    grid-area: btn;
+  }
+
   .call-to-action {
+    margin-left: 20px;
+    display: flex;
     flex-direction: column;
+    height: 200px;
+    justify-content: flex-start;
+    /*     max-width: 0px;
+ */
+  }
+}
+
+.card-images {
+  display: grid;
+  grid-template-rows: repeat(5, 20%);
+  justify-content: center;
+}
+
+.card-images img {
+  width: 297px;
+  height: 297px;
+  object-fit: cover;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+}
+
+.image-background {
+  background: var(--secondary1);
+
+  width: 325px;
+  height: 325px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.image-rotate-left {
+  transform: rotate(-15deg);
+}
+.image-rotate-right {
+  transform: rotate(15deg);
+}
+
+.bgr-rotate-left {
+  transform: rotate(-5deg);
+}
+.bgr-rotate-right {
+  transform: rotate(30deg);
+}
+
+.image1 {
+  grid-column: 6 / span 4;
+  grid-column-end: 3;
+}
+
+.image2 {
+  grid-column: 4 / span 4;
+  grid-row-start: 3;
+}
+
+@media screen and (max-width: 540px) {
+  .card-images img {
+    width: 200px;
+    height: 200px;
+  }
+  .image-background {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1100px) {
+  .card-images {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header-navbar-wrapper {
+    background-size: 500px;
   }
 }
