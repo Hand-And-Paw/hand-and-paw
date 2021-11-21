@@ -1,6 +1,4 @@
-# Hand anD Paw
-
-- [Hand an Paw](#hand-an-paw)
+# Hand and Paw
 
   - [About](#about)
   - [Screenshots Landing Page](#screenshots-landing-page)
