@@ -188,7 +188,6 @@ body {
 /*Intro styles start*/
 
 .wrapper-intro {
-  max-width: 1440px;
   margin: 0 auto;
   padding: 0px;
   display: grid;
