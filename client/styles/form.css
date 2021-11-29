@@ -196,7 +196,7 @@ textarea {
 
 @media screen and (max-width: 1024px) {
   .form-control input {
-    height: 20px;
+    height: 35px;
     font-size: 14px;
   }
   .modal-form label {
