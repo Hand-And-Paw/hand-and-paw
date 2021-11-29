@@ -7,212 +7,187 @@ Functions you can use in your Business Logic to access and modify program state.
 Each function is stored in a separate file so that all actions are easily visible, and so that dependency graphs clearly indicate which actions are used where.
 
 - [Data Access](#data-access)
-  - [`insert(key = '', value)`](#insertkey---value)
-  - [`find(key = '')`](#findkey--)
-  - [`findAll()`](#findall)
-  - [`save(key ='', value)`](#savekey--value)
-  - [`remove(key = '')`](#removekey--)
-  - [`removeAll()`](#removeall)
-  - [`hasKey(key = '')`](#haskeykey--)
-  - [`allKeys()`](#allkeys)
-  - [`load(dataPath = '', import.meta)`](#loaddatapath---importmeta)
+  - [User access](#user-access)
+    - [`getUsers = async ()`](#getusers--async-)
+    - [`getUser = async (id="")`](#getuser--async-id)
+    - [`deleteUser = async (id = "")`](#deleteuser--async-id--)
+    - [`registerUser = async (newUser = {}) `](#registeruser--async-newuser---)
+    - [`updateUser = async (userId = "", updateData = {}`](#updateuser--async-userid---updatedata--)
+    - [`deleteAnimalRegistration = async (userId = "", animalId = ""`](#deleteanimalregistration--async-userid---animalid--)
+    - [`addFavorite = async (userId = "", animalId)`](#addfavorite--async-userid---animalid)
+    - [`removeFavorite = async (userId = "", animalId)`](#removefavorite--async-userid---animalid)
 
 > These Data Access functions will only work in the browser, not in Node.js
 
 ---
 
-## [`insert(key = '', value)`](./insert.js)
+## User access
 
-This function will add a new key/value pair to your program's state. It will only work if the key does not exist already, if you try inserting a key that already exists the function will throw an error
+A collection of functions to make multiple requests to the database
 
-- **args**:
-  - _key (string)_: The key to insert into your program's state.
-  - _value (JSON data)_: The value to save in key. The value must be a JSON type: _string, number, boolean, null, array or object_
-- **returns**: `undefined`, no return value
-- **throws**:
-  - _TypeError_: If the key is not a string
-  - _TypeError_: if the value is not a JSON data type
-  - _ReferenceError_: If the key already exists in state
-- **side-effect**: There will be a new key/value pair in your program's state
+### [`getUsers = async ()`](./user-access/get-users.js)
 
-<details>
-<summary>use case</summary>
-
-```js
-import { insert } from "... ... data-access/insert.js";
-
-// a business logic function
-export const addNewUser = (userName = "", email = "") => {
-  try {
-    insert(userName, email);
-    return `success! new user "${userName}" was created`;
-  } catch (err) {
-    console.error(err);
-    return `failure! unable to create new user`;
-  }
-};
-```
-
-</details>
-
-## [`find(key = '')`](./find.js)
-
-This function will return the value saved behind a specific key. It can only find keys that already exist in state!
+This function send a get request to the backend requesting all the users from database and the return value is an array where each element is an object that represents a user
 
 - **args**:
-  - _key (string)_: The key to find
-- **returns**: the value stored in your key
-- **throws**:
-  - _TypeError_: If the key is not a string
-  - _ReferenceError_: If the key does not exist in state
+  - No arguments
+- **returns**: `[{user},{user}]`, an array of objects or an empty array if there are not users in hte collections
+
+### [`getUser = async (id="")`](./user-access/get-user.js)
+
+This function send a get request to the backend requesting the user with the id passed as argument
+
+- **args**:
+  - _id (string)_: The user id to find
+- **returns**: [{user}] an array with one element that is the object user or an empty array if there is not user
+
 - **side-effect**: none
 
 <details>
 <summary>use case</summary>
 
 ```js
-import { find } from "... ... data-access/find.js";
-
-// a business logic function
-export const getUser = (userName = "") => {
-  try {
-    const userEmail = find(userName);
-    return userEmail;
-  } catch (err) {
-    console.error(err);
-    return `failure! user "${userName}" does not exist`;
-  }
-};
+import { performFetch } from "../api-calls/calls.js";
+import { state } from "./state/state.js";
+// Check if the animal is favorite in current user
+const currentUser = await getUser(localStorage.getItem("userId"));
+const checkFavorite = currentUser[0]?.favorites.some(
+  (favoriteId) => favoriteId === state.animalId
+);
 ```
 
 </details>
 
-## [`findAll()`](./find-all.js)
+### [`deleteUser = async (id = "")`](./user-access/delete-user.js)
 
-Returns all of the key/value pairs in state as an array of objects:
+Delete send a delete request to the backend requesting delete user from database and all animals that the user has published
 
-- **args**: none
-- **returns**: An array of objects representing all the key/value pairs in state. The values are all clones so you cannot modify state by side-effect.
-- **throws**: none
+- **args**: the id of the user
+- **returns**: An object {message:"success message"} with `message` as property and the value is a success message with the id of the user removed..
+- **throws**:
+  - An error is the user doesn't exist
+  - If the id have an invalid format
 - **side-effect**: none
 
 <details>
 <summary>use case</summary>
 
 ```js
-import { findAll } from "... ... data-access/find-all.js";
+import { deleteUser } from "../data-access/user-access/delete-user.js";
+import { state } from "./state/state.js";
+// a handler that unsubscribe the user
 
-// a business logic function
-export const listUsers = () => {
-  const allUsers = findAll();
-  console.log(allUsers); /*
-    [
-      { key: 'user 1', value: 'email 1' },
-      { key: 'user 2', value: 'email 2' },
-      { key: 'user 3', value: 'email 3' },
-      ...
-    ]
-  */
-  const allUserNames = allUsers.map((userEntry) => userEntry.key);
-  const formattedUserNames = "all users:\n- " + allUserNames.join("\n- ");
-  console.log(formattedUserNames); /*
-    all users:
-    - user 1
-    - user 2
-    - user 3
-    ...
-  */
-  return formattedUserNames;
+export const unsubscribeUserHandler = (event) => {
+  const deleteUser = await deleteUser(state.userId);
+  if (deleteUser.message.includes("state.userId")) {
+    const titleMessage = document.getElementById("title-message");
+    titleMessage.innerText = `You're successfully unsubscribed`;
+  }
 };
 ```
 
 </details>
 
-## [`save(key ='', value)`](./save.js)
+### [`registerUser = async (newUser = {}) `](./user-access/register-user.js)
 
-Updates an existing entry in state with a new value. If the key does not already exist it will throw an error, you need to `insert` first before you can `save` changes later.
+Send a post request to backend that creates a new user in the database.
 
 - **args**:
-  - _key (string)_: where to save changes
+  - _object {name, password, repeatPassword, email}_
   - _value (JSON data)_: the new data to save
-- **returns**: `undefined`, no return value.
+- **returns**: `{}`, an object that is the user registered..
 - **throws**:
-  - _TypeError_: If the key is not a string
-  - _TypeError_: If the value is not JSON data
-  - _ReferenceError_: If the key does not exist in state
-- **side-effect**: The data stored behind your key will be changed.
+  - An error is one of the parameters are missing,
+  - If passwords do not match
+  - Is email already exists
+- **side-effect**: no side effects.
 
 <details>
 <summary>use case</summary>
 
 ```js
-import { save } from "... ... data-access/save.js";
+import { registerUser } from "./data-access/register-user.js";
 
-// a business logic function
-export const changeEmail = (userName = "", newEmail = "") => {
-  try {
-    save(userName, email);
-    return `success! ${userName}'s email has been changed`;
-  } catch (err) {
-    console.error(err);
-    return `failure! unable to save new email`;
+// a handler that get data if the form
+export const registerUserHandler = (event) => {
+  event.preventDefault();
+  const form = document.getElementById("register-form");
+  const formData = new FormData(form);
+  const userObj = {};
+  for (const key of formData.keys()) {
+    userObj[key] = formData.get(key);
   }
+  const post = await registerUser(userObj);
+
+  if (post?.user?._id) {
+    form.innerHTML = `<p>${post.message}</p>`;
+    setTimeout(closeModal, 1000);
+    setTimeout(renderLoginForm, 1120);
+  }
+  return post;
 };
 ```
 
 </details>
 
-## [`remove(key = '')`](./remove.js)
+### [`updateUser = async (userId = "", updateData = {}`](./user-access/update-user.js)
 
-Removes a key/value pair from state.
+Send a PUT request to the backend that updates all values that are added by the user
 
 - **args**:
-  - _key (string)_: which key/value pair to remove
-- **returns**: `undefined`, no return value.
+  - _userId (string)_: the id of the use to be updated
+- **returns**: `[{user}]`, the user object ina an array with properties updated.
 - **throws**:
-  - _TypeError_: If the key is not a string
-  - _ReferenceError_: If the key does not exist in state
-- **side-effect**: The key/value pair will be removed from state
+  - _ValidationError_: If the userId is not a string, or in he format that is stored
 
 <details>
 <summary>use case</summary>
 
 ```js
-import { remove } from "... ... data-access/remove.js";
+import { update } from "... ... data-access/update-user.js";
 
-// a business logic function
-export const deleteUser = (userName = "") => {
-  try {
-    remove(userName);
-    return `success! ${userName} has been deleted`;
-  } catch (err) {
-    console.error(err);
-    return `failure! unable to remove user "${userName}"`;
-  }
+// a handler
+export const updateUserHandler = async (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  const userId = window.localStorage.getItem("userId");
+  formData.append("id", window.localStorage.getItem("userId"));
+
+  const post = await updateUser(userId, formData);
 };
 ```
 
 </details>
 
-## [`removeAll()`](./remove-all.js)
+### [`deleteAnimalRegistration = async (userId = "", animalId = ""`](./user-access/delete-animal-registration.js)
 
-Removes all key/value pairs
+Send a patch request to the backend that Removes the animal in animal collection and the animal id in he user registeredAnimalsProperties
 
-- **args**: none
-- **returns**: `undefined`, no return value.
-- **throws**: none
-- **side-effect**: All data will be removed from state, no key/value pairs will be left.
+- **args**:
+  - _userId (string)_ the id of the user.
+  - _animalId (string)_ the id of the animal.
+- **returns**: `{message: 'success message...'}`.
+- **throws**:
+  - ValidationError if the ids are not in correct format or in not a string
+  - ValidationError if the animal doesn't exist
+  - ValidationError if the user doesn't exist
+  - ValidationError if the animal doesn't belong to the user
+- **side-effect**: The animal will be removed from database and also from user registered animals
 
 <details>
 <summary>use case</summary>
 
 ```js
-import { removeAll } from "... ... data-access/remove-all.js";
+import { deleteAnimalRegistration } from "... ... data-access/user-access/delete-animal-registration.js";
 
-// a business logic function
-export const closeWebsite = () => {
-  removeAll();
-  return "your website has been closed, there are no more users";
+// a handler that deletes the users posted animal
+export const deleteUserAnimalHandler = async (event) => {
+  event.stopPropagation();
+  // get current user id
+  const currentUser = localStorage.getItem("userId");
+  // delete animal
+  const animalToDelete = e.target.closest(".animal").id;
+  await deleteAnimalRegistration(currentUser, animalToDelete);
 };
 ```
 
@@ -220,16 +195,20 @@ export const closeWebsite = () => {
 
 ---
 
-## [`hasKey(key = '')`](./has-key.js)
+### [`addFavorite = async (userId = "", animalId)`](./user-access/add-favorite.js)
 
-Tells you if a specific key exists in your state.
+Send a PATCH request
 
 - **args**:
-  - _key (string)_: the key to check for in state
-- **returns**: `true` or `false`, depending on if the key exists or not.
+  - _userId (string)_ the id of the user.
+  - _animalId (string)_ the id of the animal.
+- **returns**: `{message: 'success message...'}`.
 - **throws**:
-  - _TypeError_: if the key is not a string
-- **side-effect**: none
+  - ValidationError if the ids are not in correct format or in not a string
+  - ValidationError if the animal doesn't exist
+  - ValidationError if the user doesn't exist
+  - ValidationError if the animal doesn't belong to the user
+- **sideEffect** none
 
 <details>
 <summary>use case</summary>
@@ -238,27 +217,39 @@ Tells you if a specific key exists in your state.
 import { hasKey } from "... ... data-access/has-key.js";
 import { remove } from "... ... data-access/remove.js";
 
-// a business logic function
-export const deleteUser = (userName = "") => {
-  if (!hasKey(userName)) {
-    return `user "${userName}" does not exist, cannot delete.`;
-  }
+// a handler that adds the favorite one the heart is clicked
+export const addFavorite = async (event) => {
+  const imgFile = target.closest("#heart").src.split("/").pop();
+  const userId = localStorage.getItem("userId");
+  const animalId = event.target.closest(".animal").id;
 
-  remove(userName);
-  return `success! ${userName} has been deleted`;
+  if (imgFile === "heart.svg") {
+    target.src = "/assets/icons/active-heart.svg";
+    // change DB
+    target.classList.toggle("favorite");
+    if ([...target.classList].includes("favorite")) {
+      await addFavorite(userId, animalId);
+    }
+  }
 };
 ```
 
 </details>
 
-## [`allKeys()`](./all-keys.js)
+### [`removeFavorite = async (userId = "", animalId)`](./user-access/remove-favorite.js)
 
-Returns an array containing all the keys in state.
+Sends a PATCH request to the backend removing the animal id in favorites collection
 
-- **args**: none
-- **returns**: An array of strings.
-- **throws**: none
-- **side-effect**: none
+- **args**:
+  - _userId (string)_ the id of the user.
+  - _animalId (string)_ the id of the animal.
+- **returns**: `{message: 'success message...'}`.
+- **throws**:
+  - ValidationError if the ids are not in correct format or in not a string
+  - ValidationError if the animal doesn't exist
+  - ValidationError if the user doesn't exist
+  - ValidationError if the animal doesn't belong to the user
+- **sideEffect** updates the favorites array by removing tha animal id passed as argument
 
 <details>
 <summary>use case</summary>
@@ -266,64 +257,22 @@ Returns an array containing all the keys in state.
 ```js
 import { allKeys } from "... ... data-access/all-keys.js";
 
-// a business logic function
-export const listUsers = () => {
-  const allUserNames = allKeys();
-  console.log(allUsers); /*
-    [
-      'user 1',
-      'user 2',
-      'user 3',
-      ...
-    ]
-  */
-  const formattedUserNames = "all users:\n- " + allUserNames.join("\n- ");
-  console.log(formattedUserNames); /*
-    all users:
-    - user 1
-    - user 2
-    - user 3
-    ...
-  */
-  return formattedUserNames;
+// a handler that remove the favorite
+export const listUsers = (e) => {
+  e.stopPropagation();
+  // get current user id
+  const currentUser = localStorage.getItem("userId");
+  // delete animal
+  const animalToDelete = e.target.parentElement.closest(
+    ".search-result-card"
+  ).id;
+  await removeFavorite(currentUser, animalToDelete);
+  // update search results
+  const deleteCard = e.target.parentElement.closest(".search-result-card");
+  deleteCard.remove();
 };
 ```
 
 </details>
 
 ---
-
-## [`load(dataPath = '', import.meta)`](./load.js)
-
-The `load` function is different from the rest of these functions. You will need to call it once when your program is initialized and never again.
-
-It also works using `async`/`await` - you don't need to be understand this! The project starter will already have this code written for you, and you will study it in the next module.
-
-- **args**
-  - _dataPath (string)_: A relative path from the file calling `load` to your .json data file.
-  - _meta ({ url: '' })_: the value of `import.meta` in the file initiating the `load` call
-- **returns**: `undefined`, no return value
-- **throws**:
-  - _TypeError_: If the dataPath is not a string
-  - _TypeError_: if the loaded JSON data is not an object
-  - _Error_: If there was a problem fetching the data
-  - _Error_: If the initial state does not match the schema
-- **side-effects**:
-  - removes extra keys from state that are not in your data
-  - adds keys to state that are not in your data
-  - _does not_ modify keys in state that are also in your data (careful! This means your program's state will not always be what is written in your data file)
-
-<details>
-<summary>use case</summary>
-
-```js
-import { load } from "... ... data-access/load.js";
-
-// a business logic function
-export const initializeState = async () => {
-  // it will fetch this JSON data and initialize your program state
-  await load("../ ... /path/to/data-file.json", import.meta);
-};
-```
-
-</details>
