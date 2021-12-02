@@ -42,11 +42,11 @@ const loginController = {
         userEmail: userRegistered[0].email,
       };
       const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-
+      // send cookie
       return res
         .cookie("access_token", accessToken, {
           httpOnly: true,
-          SameSite: "None",
+          sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
           secure: process.env.NODE_ENV === "production",
         })
         .status(200)
