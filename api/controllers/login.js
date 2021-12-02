@@ -46,7 +46,7 @@ const loginController = {
       return res
         .cookie("access_token", accessToken, {
           httpOnly: true,
-          SameSite: "None",
+          sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
           secure: process.env.NODE_ENV === "production",
         })
         .status(200)
